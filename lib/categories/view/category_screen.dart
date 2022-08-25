@@ -7,6 +7,7 @@ class CategoriesScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return ListView.builder(
+        physics: BouncingScrollPhysics(),
         itemCount: categoryList.length,
         itemBuilder: (BuildContext context, int index) {
           return CategoryCards(
@@ -50,6 +51,7 @@ class CategoryCards extends StatelessWidget {
               title: Text(
                 categoryList[index]['categary'].toString(),
                 style: const TextStyle(
+                  color: Color.fromARGB(252, 78, 78, 99),
                   fontSize: 25,
                   fontStyle: FontStyle.italic,
                   fontWeight: FontWeight.bold,

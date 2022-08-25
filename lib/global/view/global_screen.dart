@@ -16,8 +16,11 @@ class GlobalScreen extends StatelessWidget {
     return SafeArea(
       child: Scaffold(
         appBar: AppBar(
-          backgroundColor: pBlue,
-          title: const Text('menZcart'),
+          backgroundColor: kWhite,
+          title: Text(
+            'menZcart',
+            style: TextStyle(color: pBlue),
+          ),
         ),
         body: Consumer<GlobalProvider>(builder: (context, value, _) {
           return value.pages[value.pageIndex];

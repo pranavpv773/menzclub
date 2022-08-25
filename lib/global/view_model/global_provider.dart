@@ -1,4 +1,5 @@
 import 'package:flutter/widgets.dart';
+import 'package:menz_cart_app/account/view/account_screen.dart';
 import 'package:menz_cart_app/categories/view/category_screen.dart';
 import 'package:menz_cart_app/home/view/home_screen.dart';
 import 'package:menz_cart_app/shirt/view/shirt_screen.dart';
@@ -12,9 +13,7 @@ class GlobalProvider with ChangeNotifier {
     const ShirtScreen(
       string: 'Notification',
     ),
-    const ShirtScreen(
-      string: 'account',
-    ),
+    const AccountScreen(),
     const ShirtScreen(
       string: 'cart',
     ),
