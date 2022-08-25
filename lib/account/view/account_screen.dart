@@ -20,7 +20,6 @@ class AccountScreen extends StatelessWidget {
           ColoredBox(
             color: kWhite,
             child: Column(
-              crossAxisAlignment: CrossAxisAlignment.center,
               children: const [
                 AcountTexWidgget(
                   text: 'ABOUT US',
@@ -48,9 +47,9 @@ class AcountTexWidgget extends StatelessWidget {
   final String text;
   @override
   Widget build(BuildContext context) {
-    return Padding(
-      padding: const EdgeInsets.all(20.0),
-      child: Text(
+    return ListTile(
+      leading: const SizedBox(),
+      title: Text(
         text,
         style: const TextStyle(
           color: Colors.grey,
