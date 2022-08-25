@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:menz_cart_app/constants/colors.dart';
 import 'package:menz_cart_app/global/view_model/global_provider.dart';
 import 'package:provider/provider.dart';
 
@@ -12,14 +13,17 @@ class GlobalScreen extends StatelessWidget {
     final width = MediaQuery.of(context).size.width;
     final height = MediaQuery.of(context).size.height;
 
-    return Scaffold(
-      appBar: AppBar(
-        title: Text('menZcart'),
+    return SafeArea(
+      child: Scaffold(
+        appBar: AppBar(
+          backgroundColor: pBlue,
+          title: const Text('menZcart'),
+        ),
+        body: Consumer<GlobalProvider>(builder: (context, value, _) {
+          return value.pages[value.pageIndex];
+        }),
+        bottomNavigationBar: const BottomNav(),
       ),
-      body: Consumer<GlobalProvider>(builder: (context, value, _) {
-        return value.pages[value.pageIndex];
-      }),
-      bottomNavigationBar: const BottomNav(),
     );
   }
 }

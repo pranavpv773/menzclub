@@ -23,8 +23,8 @@ class BottomNav extends StatelessWidget {
           BottomNavItems(
             index: 0,
             section: 'Home',
-            icon1: Icons.home_filled,
-            icon2: Icons.home_outlined,
+            icon1: Icons.man,
+            icon2: Icons.man,
           ),
           BottomNavItems(
             index: 1,
@@ -70,26 +70,39 @@ class BottomNavItems extends StatelessWidget {
   final IconData icon2;
   @override
   Widget build(BuildContext context) {
-    return Consumer<GlobalProvider>(builder: (context, value, _) {
-      return Column(
-        children: [
-          IconButton(
-            enableFeedback: false,
-            onPressed: () {
-              value.onTabIndexChange(index);
-            },
-            icon: value.pageIndex == index
-                ? BottomNavIcon(
-                    icon: icon1,
+    return Consumer<GlobalProvider>(
+      builder: (context, value, _) {
+        return Column(
+          children: [
+            IconButton(
+              enableFeedback: false,
+              onPressed: () {
+                value.onTabIndexChange(index);
+              },
+              icon: value.pageIndex == index
+                  ? BottomNavIcon(
+                      icon: icon1,
+                    )
+                  : NonBottomNavIcon(
+                      icon: icon2,
+                    ),
+            ),
+            value.pageIndex != index
+                ? Text(
+                    section,
+                    style: const TextStyle(
+                      fontWeight: FontWeight.bold,
+                      color: Colors.black26,
+                    ),
                   )
-                : NonBottomNavIcon(
-                    icon: icon2,
+                : Text(
+                    section,
+                    style: TextStyle(color: pBlue),
                   ),
-          ),
-          Text(section),
-        ],
-      );
-    });
+          ],
+        );
+      },
+    );
   }
 }
 
@@ -103,8 +116,8 @@ class NonBottomNavIcon extends StatelessWidget {
   Widget build(BuildContext context) {
     return Icon(
       icon,
-      color: Colors.black,
-      size: 35,
+      color: Colors.black26,
+      size: 30,
     );
   }
 }
@@ -119,8 +132,8 @@ class BottomNavIcon extends StatelessWidget {
   Widget build(BuildContext context) {
     return Icon(
       icon,
-      color: Colors.blue[800],
-      size: 35,
+      color: pBlue,
+      size: 30,
     );
   }
 }
