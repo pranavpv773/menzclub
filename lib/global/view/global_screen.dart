@@ -13,10 +13,12 @@ class GlobalScreen extends StatelessWidget {
     final height = MediaQuery.of(context).size.height;
 
     return Scaffold(
-      appBar: AppBar(),
-      body: context
-          .read<GlobalProvider>()
-          .pages[context.read<GlobalProvider>().pageIndex],
+      appBar: AppBar(
+        title: Text('menZcart'),
+      ),
+      body: Consumer<GlobalProvider>(builder: (context, value, _) {
+        return value.pages[value.pageIndex];
+      }),
       bottomNavigationBar: const BottomNav(),
     );
   }

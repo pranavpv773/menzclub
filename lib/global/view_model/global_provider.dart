@@ -6,11 +6,21 @@ class GlobalProvider with ChangeNotifier {
   int pageIndex = 0;
 
   final pages = [
-    const ShirtScreen(),
-    const ShirtScreen(),
-    const ShirtScreen(),
-    const ShirtScreen(),
-    const ShirtScreen(),
+    const ShirtScreen(
+      string: 'home',
+    ),
+    const ShirtScreen(
+      string: 'categories',
+    ),
+    const ShirtScreen(
+      string: 'notification',
+    ),
+    const ShirtScreen(
+      string: 'account',
+    ),
+    const ShirtScreen(
+      string: 'cart',
+    ),
   ];
 
   onTabIndexChange(int number) {
