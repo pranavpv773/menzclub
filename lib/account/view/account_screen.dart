@@ -20,24 +20,41 @@ class AccountScreen extends StatelessWidget {
           ColoredBox(
             color: kWhite,
             child: Column(
-              crossAxisAlignment: CrossAxisAlignment.center,
               children: const [
-                Padding(
-                  padding: EdgeInsets.all(20.0),
-                  child: Text('ABOUT US'),
+                AcountTexWidgget(
+                  text: 'ABOUT US',
                 ),
-                Padding(
-                  padding: EdgeInsets.all(20.0),
-                  child: Text('PRIVACY POLICY'),
+                AcountTexWidgget(
+                  text: 'PRIVACY POLICY',
                 ),
-                Padding(
-                  padding: EdgeInsets.all(20.0),
-                  child: Text('TERMS OF USE'),
+                AcountTexWidgget(
+                  text: 'TERMS OF USE',
                 ),
               ],
             ),
           )
         ],
+      ),
+    );
+  }
+}
+
+class AcountTexWidgget extends StatelessWidget {
+  const AcountTexWidgget({
+    Key? key,
+    required this.text,
+  }) : super(key: key);
+  final String text;
+  @override
+  Widget build(BuildContext context) {
+    return ListTile(
+      leading: const SizedBox(),
+      title: Text(
+        text,
+        style: const TextStyle(
+          color: Colors.grey,
+          fontStyle: FontStyle.italic,
+        ),
       ),
     );
   }
