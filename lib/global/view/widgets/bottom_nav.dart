@@ -9,10 +9,10 @@ class BottomNav extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      height: 70,
+      height: 50,
       decoration: BoxDecoration(
         color: kWhite,
-        border: Border.all(color: pBlue, width: 2),
+
         // borderRadius: const BorderRadius.only(
         //   topLeft: Radius.circular(20),
         //   topRight: Radius.circular(20),
@@ -24,8 +24,8 @@ class BottomNav extends StatelessWidget {
           BottomNavItems(
             index: 0,
             section: 'Home',
-            icon1: Icons.man,
-            icon2: Icons.man,
+            icon1: Icons.home_rounded,
+            icon2: Icons.home,
           ),
           BottomNavItems(
             index: 1,
@@ -45,12 +45,12 @@ class BottomNav extends StatelessWidget {
             icon1: Icons.person,
             icon2: Icons.person_outline_outlined,
           ),
-          BottomNavItems(
-            index: 4,
-            section: 'Cart',
-            icon1: Icons.shopping_cart,
-            icon2: Icons.shopping_cart_outlined,
-          ),
+          // BottomNavItems(
+          //   index: 4,
+          //   section: 'Cart',
+          //   icon1: Icons.shopping_cart,
+          //   icon2: Icons.shopping_cart_outlined,
+          // ),
         ],
       ),
     );
@@ -73,33 +73,42 @@ class BottomNavItems extends StatelessWidget {
   Widget build(BuildContext context) {
     return Consumer<GlobalProvider>(
       builder: (context, value, _) {
-        return Column(
+        return Stack(
           children: [
-            IconButton(
-              enableFeedback: false,
-              onPressed: () {
-                value.onTabIndexChange(index);
-              },
-              icon: value.pageIndex == index
-                  ? BottomNavIcon(
-                      icon: icon1,
-                    )
-                  : NonBottomNavIcon(
-                      icon: icon2,
-                    ),
+            Positioned(
+              bottom: 0,
+              top: 0,
+              right: 0,
+              left: 0,
+              child: IconButton(
+                enableFeedback: false,
+                onPressed: () {
+                  value.onTabIndexChange(index);
+                },
+                icon: value.pageIndex == index
+                    ? BottomNavIcon(
+                        icon: icon1,
+                      )
+                    : NonBottomNavIcon(
+                        icon: icon2,
+                      ),
+              ),
             ),
-            value.pageIndex != index
-                ? Text(
-                    section,
-                    style: const TextStyle(
-                      fontWeight: FontWeight.bold,
-                      color: Color.fromARGB(255, 114, 108, 108),
-                    ),
-                  )
-                : Text(
-                    section,
-                    style: TextStyle(color: pBlue),
-                  ),
+            // Align(
+            //   alignment: Alignment.bottomCenter,
+            //   child: value.pageIndex != index
+            //       ? Text(
+            //           section,
+            //           style: const TextStyle(
+            //             fontWeight: FontWeight.w300,
+            //             color: Color.fromARGB(255, 114, 108, 108),
+            //           ),
+            //         )
+            //       : Text(
+            //           section,
+            //           style: TextStyle(color: pBlue),
+            //         ),
+            // ),
           ],
         );
       },
@@ -118,7 +127,7 @@ class NonBottomNavIcon extends StatelessWidget {
     return Icon(
       icon,
       color: Color.fromARGB(255, 114, 108, 108),
-      size: 30,
+      size: 23,
     );
   }
 }
@@ -134,7 +143,7 @@ class BottomNavIcon extends StatelessWidget {
     return Icon(
       icon,
       color: pBlue,
-      size: 30,
+      size: 25,
     );
   }
 }
