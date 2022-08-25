@@ -12,10 +12,11 @@ class BottomNav extends StatelessWidget {
       height: 70,
       decoration: BoxDecoration(
         color: kWhite,
-        borderRadius: const BorderRadius.only(
-          topLeft: Radius.circular(20),
-          topRight: Radius.circular(20),
-        ),
+        border: Border.all(color: pBlue, width: 2),
+        // borderRadius: const BorderRadius.only(
+        //   topLeft: Radius.circular(20),
+        //   topRight: Radius.circular(20),
+        // ),
       ),
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceAround,
@@ -92,7 +93,7 @@ class BottomNavItems extends StatelessWidget {
                     section,
                     style: const TextStyle(
                       fontWeight: FontWeight.bold,
-                      color: Colors.black26,
+                      color: Color.fromARGB(255, 114, 108, 108),
                     ),
                   )
                 : Text(
@@ -116,7 +117,7 @@ class NonBottomNavIcon extends StatelessWidget {
   Widget build(BuildContext context) {
     return Icon(
       icon,
-      color: Colors.black26,
+      color: Color.fromARGB(255, 114, 108, 108),
       size: 30,
     );
   }
