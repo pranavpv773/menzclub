@@ -1,10 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:menz_cart_app/constants/colors.dart';
-import 'package:menz_cart_app/home/view/home_screen.dart';
-import 'package:menz_cart_app/home/view_model/home_provider.dart';
+import 'package:menz_cart_app/global/view/global_screen.dart';
 import 'package:provider/provider.dart';
 
-import 'splash/view/splash_screen.dart';
+import 'global/view_model/global_provider.dart';
 
 void main() {
   runApp(const MyApp());
@@ -17,7 +16,7 @@ class MyApp extends StatelessWidget {
     return MultiProvider(
       providers: [
         ChangeNotifierProvider(
-          create: (crete) => HomeProvider(),
+          create: (crete) => GlobalProvider(),
         ),
       ],
       child: MaterialApp(
@@ -26,7 +25,7 @@ class MyApp extends StatelessWidget {
           scaffoldBackgroundColor: kWhite,
           primarySwatch: Colors.blue,
         ),
-        home: const HomeScreen(),
+        home: const GlobalScreen(),
       ),
     );
   }
