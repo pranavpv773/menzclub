@@ -35,7 +35,7 @@ class ProfileCard extends StatelessWidget {
           child: TextButton(
             onPressed: () {},
             style: ButtonStyle(
-              backgroundColor: MaterialStateProperty.all(pBlue),
+              backgroundColor: MaterialStateProperty.all(primary),
               padding: MaterialStateProperty.all(
                 const EdgeInsets.symmetric(
                   horizontal: 70,

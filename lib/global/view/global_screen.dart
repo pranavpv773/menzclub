@@ -19,7 +19,7 @@ class GlobalScreen extends StatelessWidget {
           backgroundColor: kWhite,
           title: Text(
             'menZcart',
-            style: TextStyle(color: pBlue),
+            style: TextStyle(color: primary),
           ),
         ),
         body: Consumer<GlobalProvider>(builder: (context, value, _) {

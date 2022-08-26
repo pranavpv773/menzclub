@@ -14,9 +14,6 @@ class GlobalProvider with ChangeNotifier {
       string: 'Notification',
     ),
     const AccountScreen(),
-    const ShirtScreen(
-      string: 'cart',
-    ),
   ];
 
   onTabIndexChange(int number) {
