@@ -73,43 +73,18 @@ class BottomNavItems extends StatelessWidget {
   Widget build(BuildContext context) {
     return Consumer<GlobalProvider>(
       builder: (context, value, _) {
-        return Stack(
-          children: [
-            Positioned(
-              bottom: 0,
-              top: 0,
-              right: 0,
-              left: 0,
-              child: IconButton(
-                enableFeedback: false,
-                onPressed: () {
-                  value.onTabIndexChange(index);
-                },
-                icon: value.pageIndex == index
-                    ? BottomNavIcon(
-                        icon: icon1,
-                      )
-                    : NonBottomNavIcon(
-                        icon: icon2,
-                      ),
-              ),
-            ),
-            // Align(
-            //   alignment: Alignment.bottomCenter,
-            //   child: value.pageIndex != index
-            //       ? Text(
-            //           section,
-            //           style: const TextStyle(
-            //             fontWeight: FontWeight.w300,
-            //             color: Color.fromARGB(255, 114, 108, 108),
-            //           ),
-            //         )
-            //       : Text(
-            //           section,
-            //           style: TextStyle(color: pBlue),
-            //         ),
-            // ),
-          ],
+        return IconButton(
+          enableFeedback: false,
+          onPressed: () {
+            value.onTabIndexChange(index);
+          },
+          icon: value.pageIndex == index
+              ? BottomNavIcon(
+                  icon: icon1,
+                )
+              : NonBottomNavIcon(
+                  icon: icon2,
+                ),
         );
       },
     );
@@ -142,7 +117,7 @@ class BottomNavIcon extends StatelessWidget {
   Widget build(BuildContext context) {
     return Icon(
       icon,
-      color: pBlue,
+      color: primary,
       size: 25,
     );
   }
