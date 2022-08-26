@@ -37,9 +37,10 @@ class HomeScreen extends StatelessWidget {
           ),
           LargeCardsWidget(
             width: width,
-            heights: heights / 2,
+            heights: heights,
             list: shirts,
-          )
+          ),
+          TshirtBanner(),
         ],
       ),
     );
@@ -61,7 +62,7 @@ class LargeCardsWidget extends StatelessWidget {
   Widget build(BuildContext context) {
     return SizedBox(
       width: width,
-      height: heights,
+      height: heights / 2,
       child: ListView(
         scrollDirection: Axis.horizontal,
         children: List.generate(
@@ -72,7 +73,7 @@ class LargeCardsWidget extends StatelessWidget {
               children: [
                 Container(
                   width: width / 1.5,
-                  height: heights,
+                  height: heights / 2,
                   decoration: BoxDecoration(
                     borderRadius: BorderRadius.circular(15),
                     image: DecorationImage(
