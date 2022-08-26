@@ -15,11 +15,45 @@ class GlobalScreen extends StatelessWidget {
 
     return SafeArea(
       child: Scaffold(
-        appBar: AppBar(
-          backgroundColor: kWhite,
-          title: Text(
-            'menZcart',
-            style: TextStyle(color: primary),
+        appBar: PreferredSize(
+          preferredSize: const Size.fromHeight(120),
+          child: Stack(
+            children: <Widget>[
+              Container(
+                // Background
+                color: primary,
+                height: MediaQuery.of(context).size.height * 0.2,
+                width: MediaQuery.of(context).size.width,
+              ),
+              Positioned(
+                top: 50.0,
+                left: 20.0,
+                right: 20.0,
+                child: AppBar(
+                  backgroundColor: kWhite,
+                  leading: Icon(
+                    Icons.menu,
+                    color: primary,
+                  ),
+                  primary: false,
+                  title: const TextField(
+                      decoration: InputDecoration(
+                          hintText: "Search",
+                          border: InputBorder.none,
+                          hintStyle: TextStyle(color: Colors.grey))),
+                  actions: <Widget>[
+                    IconButton(
+                      icon: Icon(Icons.search, color: primary),
+                      onPressed: () {},
+                    ),
+                    IconButton(
+                      icon: Icon(Icons.notifications, color: primary),
+                      onPressed: () {},
+                    )
+                  ],
+                ),
+              )
+            ],
           ),
         ),
         body: Consumer<GlobalProvider>(builder: (context, value, _) {

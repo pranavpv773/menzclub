@@ -4,7 +4,6 @@ import 'package:menz_cart_app/constants/colors.dart';
 import 'package:menz_cart_app/global/view/global_screen.dart';
 import 'package:menz_cart_app/home/view_model/home_provider.dart';
 import 'package:provider/provider.dart';
-
 import 'global/view_model/global_provider.dart';
 
 void main() {

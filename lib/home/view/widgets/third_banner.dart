@@ -20,3 +20,27 @@ class ThirdBanner extends StatelessWidget {
     );
   }
 }
+
+class TshirtBanner extends StatelessWidget {
+  const TshirtBanner({
+    Key? key,
+  }) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return Padding(
+      padding: const EdgeInsets.all(8.0),
+      child: Container(
+        width: 500,
+        height: 150,
+        decoration: const BoxDecoration(
+          image: DecorationImage(
+              image: AssetImage(
+                'assets/banner4.webp',
+              ),
+              fit: BoxFit.fitHeight),
+        ),
+      ),
+    );
+  }
+}
