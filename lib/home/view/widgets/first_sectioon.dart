@@ -13,32 +13,32 @@ class CircleAvatharTop extends StatelessWidget {
       child: ListView(
         scrollDirection: Axis.horizontal,
         children: List.generate(
-            categoryList.length,
-            (index) => Column(
-                  children: [
-                    Padding(
-                      padding: const EdgeInsets.all(8.0),
-                      child: CircleAvatar(
-                        radius: 30,
-                        backgroundImage:
-                            const AssetImage('assets/round_frame2.png'),
-                        child: CircleAvatar(
-                          backgroundColor: kWhite,
-                          radius: 25,
-                          backgroundImage: NetworkImage(
-                            categoryList[index]['circleAvatharImg'].toString(),
-                          ),
-                        ),
-                      ),
+          categoryList.length,
+          (index) => Column(
+            children: [
+              Padding(
+                padding: const EdgeInsets.all(8.0),
+                child: CircleAvatar(
+                  radius: 30,
+                  backgroundImage: const AssetImage('assets/round_frame2.png'),
+                  child: CircleAvatar(
+                    backgroundColor: kWhite,
+                    radius: 25,
+                    backgroundImage: NetworkImage(
+                      categoryList[index]['circleAvatharImg'].toString(),
                     ),
-                    Text(
-                      categoryList[index]['categary'].toString(),
-                      style: const TextStyle(
-                        fontWeight: FontWeight.bold,
-                      ),
-                    )
-                  ],
-                )),
+                  ),
+                ),
+              ),
+              Text(
+                categoryList[index]['categary'].toString(),
+                style: const TextStyle(
+                  fontWeight: FontWeight.bold,
+                ),
+              )
+            ],
+          ),
+        ),
       ),
     );
   }
