@@ -1,11 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:menz_cart_app/categories/view_model/map.dart';
 import 'package:menz_cart_app/constants/colors.dart';
+import 'package:menz_cart_app/constants/widgets.dart';
 import 'package:menz_cart_app/home/view_model/shirts.dart';
 import 'widgets/carousel_banner.dart';
 import 'widgets/circle_dot.dart';
 import 'widgets/first_sectioon.dart';
+import 'widgets/grid_view_card.dart';
+import 'widgets/large_card.dart';
 import 'widgets/third_banner.dart';
 
 class HomeScreen extends StatelessWidget {
@@ -21,70 +23,87 @@ class HomeScreen extends StatelessWidget {
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          CircleAvatharTop(width: width),
-          HomeCarouselBanners(width: width, heights: heights),
-          const DotIndicator(),
-          const ThirdBanner(),
-          Padding(
-            padding: const EdgeInsets.only(left: 16.0),
-            child: Text(
-              'SHIRTS',
-              style: TextStyle(
-                  fontSize: 16,
-                  fontWeight: FontWeight.w400,
-                  fontFamily: GoogleFonts.acme().fontFamily),
-            ),
+          CircleAvatharTop(
+            width: width,
           ),
-          LargeCardsWidget(
+          HomeCarouselBanners(
             width: width,
             heights: heights,
-            list: shirts,
           ),
-          TshirtBanner(),
+          const DotIndicator(),
+          const ThirdBanner(),
+          sizedBox20,
+          Container(
+            decoration: const BoxDecoration(
+                image: DecorationImage(
+                    image: NetworkImage(
+                      'https://img.wallpapersafari.com/desktop/1280/1024/87/31/QG0FhB.jpg',
+                    ),
+                    fit: BoxFit.cover)),
+            child: Padding(
+              padding: const EdgeInsets.symmetric(vertical: 8.0),
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  const HeaderWidget(
+                    text: '   SHIRTS',
+                  ),
+                  LargeCardsWidget(
+                    width: width,
+                    heights: heights,
+                    list: shirts,
+                  ),
+                ],
+              ),
+            ),
+          ),
+          sizedBox20,
+          const Padding(
+            padding: EdgeInsets.all(
+              8.0,
+            ),
+            child: TshirtBanner(),
+          ),
+          sizedBox20,
+          Container(
+              decoration: const BoxDecoration(
+                  image: DecorationImage(
+                      image: NetworkImage(
+                        'https://thumbs.dreamstime.com/b/texture-blue-decorative-plaster-concrete-vignette-abstract-grunge-background-design-234969184.jpg',
+                      ),
+                      fit: BoxFit.cover)),
+              child: Column(
+                children: [
+                  const HeaderWidget(
+                    text: 'T-Shirts',
+                  ),
+                  GridViewCard(
+                    heights: heights,
+                    width: width,
+                  ),
+                ],
+              )),
         ],
       ),
     );
   }
 }
 
-class LargeCardsWidget extends StatelessWidget {
-  const LargeCardsWidget({
-    Key? key,
-    required this.width,
-    required this.heights,
-    required this.list,
-  }) : super(key: key);
-
-  final double width;
-  final double heights;
-  final List list;
+class HeaderWidget extends StatelessWidget {
+  const HeaderWidget({Key? key, required this.text}) : super(key: key);
+  final String text;
   @override
   Widget build(BuildContext context) {
-    return SizedBox(
-      width: width,
-      height: heights / 2,
-      child: ListView(
-        scrollDirection: Axis.horizontal,
-        children: List.generate(
-          list.length,
-          (index) => Padding(
-            padding: const EdgeInsets.all(8.0),
-            child: Stack(
-              children: [
-                Container(
-                  width: width / 1.5,
-                  height: heights / 2,
-                  decoration: BoxDecoration(
-                    borderRadius: BorderRadius.circular(15),
-                    image: DecorationImage(
-                      image: NetworkImage(list[index]),
-                      fit: BoxFit.cover,
-                    ),
-                  ),
-                ),
-              ],
-            ),
-          ),
+    return Padding(
+      padding: const EdgeInsets.only(
+        top: 16.0,
+      ),
+      child: Text(
+        text,
+        style: TextStyle(
+          fontSize: 16,
+          fontWeight: FontWeight.w400,
+          fontFamily: GoogleFonts.acme().fontFamily,
         ),
       ),
     );

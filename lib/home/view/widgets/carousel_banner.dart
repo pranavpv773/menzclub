@@ -20,10 +20,9 @@ class HomeCarouselBanners extends StatelessWidget {
       return CarouselSlider.builder(
         itemCount: context.read<HomeProvider>().banners.length,
         itemBuilder: (BuildContext context, int index, int itemIndex) {
-          print(index);
           return Container(
             width: width / 1,
-            margin: EdgeInsets.all(6.0),
+            margin: const EdgeInsets.all(6.0),
             decoration: BoxDecoration(
               color: primary,
               borderRadius: BorderRadius.circular(8.0),
@@ -43,7 +42,7 @@ class HomeCarouselBanners extends StatelessWidget {
           // aspectRatio: 16 / 9,
           autoPlayCurve: Curves.fastOutSlowIn,
           enableInfiniteScroll: true,
-          autoPlayAnimationDuration: Duration(milliseconds: 800),
+          autoPlayAnimationDuration: const Duration(milliseconds: 800),
           viewportFraction: 1,
         ),
       );
@@ -64,7 +63,7 @@ class CarouselBannerCard extends StatelessWidget {
     return Consumer<HomeProvider>(builder: (context, value, _) {
       return Container(
         width: width / 1,
-        margin: EdgeInsets.all(6.0),
+        margin: const EdgeInsets.all(6.0),
         decoration: BoxDecoration(
           color: primary,
           borderRadius: BorderRadius.circular(8.0),

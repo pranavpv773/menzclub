@@ -14,6 +14,7 @@ class NotImportant extends StatelessWidget {
   Widget build(BuildContext context) {
     return Padding(
       padding: const EdgeInsets.all(8.0),
+      // ignore: avoid_unnecessary_containers
       child: Container(
         child: Column(
           children: [
@@ -49,7 +50,7 @@ class NotImportant extends StatelessWidget {
                     child: Container(
                       width: 150,
                       height: 80,
-                      decoration: BoxDecoration(
+                      decoration: const BoxDecoration(
                           image: DecorationImage(
                               image: NetworkImage(
                                   'https://1000logos.net/wp-content/uploads/2017/05/PUMA-logo.jpg'),
