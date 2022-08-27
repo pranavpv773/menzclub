@@ -49,6 +49,61 @@ class TshirtScreen extends StatelessWidget {
                   const TshirtCategoryWidget(
                     text: 'BUDGET BUYS',
                   ),
+                  Container(
+                    decoration: const BoxDecoration(
+                      image: DecorationImage(
+                          image: NetworkImage(
+                              'https://us.123rf.com/450wm/rottenman/rottenman1905/rottenman190500005/126050469-modern-futuristic-neon-lights-on-old-grunge-brick-wall-room-background-3d-rendering.jpg?ver=6'),
+                          fit: BoxFit.fitHeight),
+                    ),
+                    child: SizedBox(
+                      width: width,
+                      height: height / 1.8,
+                      child: ListView(
+                        scrollDirection: Axis.horizontal,
+                        children: List.generate(
+                          tShirts.length,
+                          (index) => Padding(
+                            padding: const EdgeInsets.symmetric(
+                                vertical: 20.0, horizontal: 8),
+                            child: Column(
+                              children: [
+                                Container(
+                                  width: width / 1.5,
+                                  height: height / 2,
+                                  decoration: BoxDecoration(
+                                    borderRadius: BorderRadius.circular(15),
+                                    image: DecorationImage(
+                                      image: NetworkImage(tShirts[index]),
+                                      fit: BoxFit.cover,
+                                    ),
+                                  ),
+                                  child: Align(
+                                      alignment: Alignment.bottomCenter,
+                                      child: Container(
+                                        width: width,
+                                        height: height / 20,
+                                        decoration: const BoxDecoration(
+                                          borderRadius: BorderRadius.only(
+                                              bottomLeft: Radius.circular(15),
+                                              bottomRight: Radius.circular(15)),
+                                          color: Colors.black,
+                                        ),
+                                        child: Center(
+                                          child: Text(
+                                            'data',
+                                            style: TextStyle(color: kWhite),
+                                          ),
+                                        ),
+                                      )),
+                                ),
+                              ],
+                            ),
+                          ),
+                        ),
+                      ),
+                    ),
+                  ),
                   TopCollectionsWidget(
                     height: height,
                     width: width,
