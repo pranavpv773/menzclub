@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:menz_cart_app/constants/colors.dart';
 import 'package:menz_cart_app/constants/widgets.dart';
 import 'package:menz_cart_app/home/view_model/shirts.dart';
 import 'widgets/carousel_banner.dart';
 import 'widgets/circle_dot.dart';
 import 'widgets/first_sectioon.dart';
+import 'widgets/full_card_.dart';
 import 'widgets/grid_view_card.dart';
 import 'widgets/large_card.dart';
 import 'widgets/third_banner.dart';
@@ -66,23 +66,28 @@ class HomeScreen extends StatelessWidget {
           ),
           sizedBox20,
           Container(
-              decoration: const BoxDecoration(
-                  image: DecorationImage(
-                      image: NetworkImage(
-                        'https://thumbs.dreamstime.com/b/texture-blue-decorative-plaster-concrete-vignette-abstract-grunge-background-design-234969184.jpg',
-                      ),
-                      fit: BoxFit.cover)),
-              child: Column(
-                children: [
-                  const HeaderWidget(
-                    text: 'T-Shirts',
-                  ),
-                  GridViewCard(
-                    heights: heights,
-                    width: width,
-                  ),
-                ],
-              )),
+            decoration: const BoxDecoration(
+                image: DecorationImage(
+                    image: NetworkImage(
+                      'https://thumbs.dreamstime.com/b/texture-blue-decorative-plaster-concrete-vignette-abstract-grunge-background-design-234969184.jpg',
+                    ),
+                    fit: BoxFit.cover)),
+            child: Column(
+              children: [
+                const HeaderWidget(
+                  text: 'T-Shirts',
+                ),
+                GridViewCard(
+                  heights: heights,
+                  width: width,
+                ),
+              ],
+            ),
+          ),
+          NotImportant(
+            heights: heights,
+            width: width,
+          )
         ],
       ),
     );
