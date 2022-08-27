@@ -1,60 +1,78 @@
 import 'package:flutter/material.dart';
 import 'package:menz_cart_app/categories/view_model/map.dart';
+import 'package:menz_cart_app/routes/routes.dart';
+import 'package:menz_cart_app/shirt/view/shirt_screen.dart';
 
 class CategoriesScreen extends StatelessWidget {
   const CategoriesScreen({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
-    return ListView.builder(
-        physics: const BouncingScrollPhysics(),
-        itemCount: categoryList.length,
-        itemBuilder: (BuildContext context, int index) {
-          return CategoryCards(
-            index: index,
-          );
-        });
+    return ListView(
+      physics: const BouncingScrollPhysics(),
+      children: const [
+        CategoryCards(
+          index: 0,
+          screen: ShirtScreen(string: 'Shirts'),
+        ),
+        CategoryCards(index: 1, screen: CategoriesScreen()),
+        CategoryCards(index: 2, screen: CategoriesScreen()),
+        CategoryCards(index: 3, screen: CategoriesScreen()),
+        CategoryCards(index: 4, screen: CategoriesScreen()),
+        CategoryCards(index: 5, screen: CategoriesScreen()),
+        CategoryCards(index: 6, screen: CategoriesScreen()),
+        CategoryCards(index: 7, screen: CategoriesScreen()),
+        CategoryCards(index: 8, screen: CategoriesScreen()),
+      ],
+    );
   }
 }
 
 class CategoryCards extends StatelessWidget {
-  const CategoryCards({Key? key, required this.index}) : super(key: key);
+  const CategoryCards({Key? key, required this.index, required this.screen})
+      : super(key: key);
   final int index;
+  final dynamic screen;
   @override
   Widget build(BuildContext context) {
     return Padding(
       padding: const EdgeInsets.all(16.0),
-      child: Material(
-        borderRadius: BorderRadius.circular(8),
-        elevation: 10,
-        shadowColor: Colors.black,
-        child: Container(
-          height: 150,
-          decoration: BoxDecoration(
-            borderRadius: BorderRadius.circular(8),
-            image: DecorationImage(
-              image: NetworkImage(
-                categoryList[index]['backgroundImg'].toString(),
+      child: GestureDetector(
+        onTap: () {
+          RoutesProvider.nextScreen(screen: screen);
+        },
+        child: Material(
+          borderRadius: BorderRadius.circular(8),
+          elevation: 10,
+          shadowColor: Colors.black,
+          child: Container(
+            height: 150,
+            decoration: BoxDecoration(
+              borderRadius: BorderRadius.circular(8),
+              image: DecorationImage(
+                image: NetworkImage(
+                  categoryList[index]['backgroundImg'].toString(),
+                ),
+                fit: BoxFit.cover,
               ),
-              fit: BoxFit.cover,
             ),
-          ),
-          child: Center(
-            child: ListTile(
-              subtitle: Text(
-                categoryList[index]['subTitle'].toString(),
-                style: const TextStyle(
-                    fontSize: 16,
-                    fontStyle: FontStyle.normal,
-                    fontWeight: FontWeight.bold),
-              ),
-              title: Text(
-                categoryList[index]['categary'].toString(),
-                style: const TextStyle(
-                  color: Color.fromARGB(252, 78, 78, 99),
-                  fontSize: 25,
-                  fontStyle: FontStyle.italic,
-                  fontWeight: FontWeight.bold,
+            child: Center(
+              child: ListTile(
+                subtitle: Text(
+                  categoryList[index]['subTitle'].toString(),
+                  style: const TextStyle(
+                      fontSize: 16,
+                      fontStyle: FontStyle.normal,
+                      fontWeight: FontWeight.bold),
+                ),
+                title: Text(
+                  categoryList[index]['categary'].toString(),
+                  style: const TextStyle(
+                    color: Color.fromARGB(252, 78, 78, 99),
+                    fontSize: 25,
+                    fontStyle: FontStyle.italic,
+                    fontWeight: FontWeight.bold,
+                  ),
                 ),
               ),
             ),
