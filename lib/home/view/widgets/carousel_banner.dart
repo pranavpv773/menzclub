@@ -5,15 +5,16 @@ import 'package:menz_cart_app/home/view_model/home_provider.dart';
 import 'package:provider/provider.dart';
 
 class HomeCarouselBanners extends StatelessWidget {
-  const HomeCarouselBanners({
-    Key? key,
-    required this.width,
-    required this.heights,
-  }) : super(key: key);
+  const HomeCarouselBanners(
+      {Key? key,
+      required this.width,
+      required this.heights,
+      required this.list})
+      : super(key: key);
 
   final double width;
   final double heights;
-
+  final List list;
   @override
   Widget build(BuildContext context) {
     return Consumer<HomeProvider>(builder: (context, value, _) {
@@ -28,7 +29,7 @@ class HomeCarouselBanners extends StatelessWidget {
               borderRadius: BorderRadius.circular(8.0),
               image: DecorationImage(
                 image: NetworkImage(
-                  value.banners[index],
+                  list[index],
                 ),
                 fit: BoxFit.fill,
               ),
@@ -51,10 +52,9 @@ class HomeCarouselBanners extends StatelessWidget {
 }
 
 class CarouselBannerCard extends StatelessWidget {
-  const CarouselBannerCard({
-    Key? key,
-    required this.width,
-  }) : super(key: key);
+  const CarouselBannerCard({Key? key, required this.width, required this.list})
+      : super(key: key);
+  final List list;
 
   final double width;
 

@@ -32,9 +32,10 @@ class CircleDots extends StatelessWidget {
   Widget build(BuildContext context) {
     return Padding(
       padding: const EdgeInsets.all(8.0),
-      child: CircleAvatar(
-        radius: 5,
-        backgroundColor: primary,
+      child: Container(
+        width: 10,
+        height: 10,
+        color: primary,
       ),
     );
   }

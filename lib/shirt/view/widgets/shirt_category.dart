@@ -1,38 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:menz_cart_app/constants/colors.dart';
-import 'package:menz_cart_app/home/view/widgets/carousel_banner.dart';
-import 'package:menz_cart_app/home/view/widgets/circle_dot.dart';
-import 'package:menz_cart_app/home/view_model/shirts.dart';
-
-class ShirtScreen extends StatelessWidget {
-  const ShirtScreen({Key? key, required this.string}) : super(key: key);
-  final String string;
-  @override
-  Widget build(BuildContext context) {
-    final width = MediaQuery.of(context).size.width;
-    final height = MediaQuery.of(context).size.height;
-
-    return Scaffold(
-        body: SingleChildScrollView(
-      physics: const BouncingScrollPhysics(),
-      child: Column(
-        children: [
-          HomeCarouselBanners(
-            width: width,
-            heights: height / 2,
-            list: shirts,
-          ),
-          const DotIndicator(),
-          ShirtCategoryCards(
-            width: width,
-            height: height,
-          )
-        ],
-      ),
-    ));
-  }
-}
+import 'package:menz_cart_app/utilities/view/container_network.dart';
 
 class ShirtCategoryCards extends StatelessWidget {
   const ShirtCategoryCards({
@@ -105,32 +73,6 @@ class ShirtCategories extends StatelessWidget {
           ),
         )
       ],
-    );
-  }
-}
-
-class ContainerImage extends StatelessWidget {
-  const ContainerImage({
-    Key? key,
-    required this.width,
-    required this.height,
-    required this.image,
-  }) : super(key: key);
-
-  final double width;
-  final double height;
-  final String image;
-  @override
-  Widget build(BuildContext context) {
-    return Container(
-      width: width / 4,
-      height: height / 6,
-      decoration: BoxDecoration(
-        image: DecorationImage(
-          image: NetworkImage(image),
-          fit: BoxFit.cover,
-        ),
-      ),
     );
   }
 }

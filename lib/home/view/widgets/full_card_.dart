@@ -1,8 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:menz_cart_app/constants/colors.dart';
-import 'package:menz_cart_app/home/view_model/home_provider.dart';
 import 'package:menz_cart_app/home/view_model/shirts.dart';
-import 'package:provider/provider.dart';
 
 class NotImportant extends StatelessWidget {
   const NotImportant({
@@ -46,7 +44,7 @@ class NotImportant extends StatelessWidget {
                   child: Column(
                     children: [
                       Container(
-                        height: heights / 2,
+                        height: heights,
                         decoration: BoxDecoration(
                           image: DecorationImage(
                             image: NetworkImage(
