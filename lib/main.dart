@@ -1,10 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:menz_cart_app/constants/colors.dart';
-import 'package:menz_cart_app/global/view/global_screen.dart';
-import 'package:menz_cart_app/home/view_model/home_provider.dart';
+import 'package:menz_cart_app/app/global/view_model/global_provider.dart';
 import 'package:provider/provider.dart';
-import 'global/view_model/global_provider.dart';
+import 'app/constants/colors.dart';
+import 'app/global/view/global_screen.dart';
+import 'app/home/view_model/home_provider.dart';
+import 'routes/routes.dart';
 
 void main() {
   runApp(const MyApp());
@@ -24,6 +25,7 @@ class MyApp extends StatelessWidget {
         ),
       ],
       child: MaterialApp(
+        navigatorKey: RoutesProvider.navigatorKey,
         debugShowCheckedModeBanner: false,
         theme: ThemeData(
           scaffoldBackgroundColor: kWhite,
