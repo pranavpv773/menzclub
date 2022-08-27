@@ -1,11 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:menz_cart_app/constants/colors.dart';
+import 'package:menz_cart_app/constants/widgets.dart';
 import 'package:menz_cart_app/home/view/widgets/carousel_banner.dart';
 import 'package:menz_cart_app/home/view/widgets/circle_dot.dart';
 import 'package:menz_cart_app/home/view/widgets/grid_view_card.dart';
 import 'package:menz_cart_app/home/view_model/shirts.dart';
 import 'package:menz_cart_app/shirt/view/widgets/shirt_fit.dart';
+import 'package:menz_cart_app/shirt/view/widgets/shirt_material.dart';
 import 'package:menz_cart_app/shirt/view_model/map_shirt.dart';
 
 import 'widgets/shirt_category.dart';
@@ -60,6 +62,9 @@ class ShirtScreen extends StatelessWidget {
                     )
                   ],
                 ),
+                ShirtMaterialWidget(height: height),
+                sizedBox50,
+                sizedBox50,
               ],
             ),
             const ShopNowButton(
