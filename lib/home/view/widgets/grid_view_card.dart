@@ -57,24 +57,17 @@ class GridViewCard extends StatelessWidget {
                       ),
                     ),
                     Column(
-                      children: [
-                        const Padding(
+                      children: const [
+                        Padding(
                           padding: EdgeInsets.all(8.0),
                           child: Text('Product Name'),
                         ),
-                        const Text(
+                        Text(
                           '60-80% Off',
-                          style: const TextStyle(color: Colors.green),
+                          style: TextStyle(color: Colors.green),
                         ),
-                        TextButton(
-                          style: ButtonStyle(
-                            backgroundColor: MaterialStateProperty.all(primary),
-                          ),
-                          onPressed: () {},
-                          child: Text(
-                            'SHOP NOW',
-                            style: TextStyle(color: kWhite),
-                          ),
+                        ShopNowButton(
+                          textButton: 'SHOP NOW',
                         ),
                       ],
                     )
@@ -83,6 +76,33 @@ class GridViewCard extends StatelessWidget {
               ),
             );
           }),
+    );
+  }
+}
+
+class ShopNowButton extends StatelessWidget {
+  const ShopNowButton({
+    Key? key,
+    required this.textButton,
+  }) : super(key: key);
+  final String textButton;
+  @override
+  Widget build(BuildContext context) {
+    return Padding(
+      padding: const EdgeInsets.symmetric(horizontal: 8.0),
+      child: SizedBox(
+        width: double.infinity,
+        child: TextButton(
+          style: ButtonStyle(
+            backgroundColor: MaterialStateProperty.all(primary),
+          ),
+          onPressed: () {},
+          child: Text(
+            textButton,
+            style: TextStyle(color: kWhite),
+          ),
+        ),
+      ),
     );
   }
 }

@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:menz_cart_app/constants/widgets.dart';
+import 'package:menz_cart_app/home/view_model/home_provider.dart';
 import 'package:menz_cart_app/home/view_model/shirts.dart';
+import 'package:provider/provider.dart';
 import 'widgets/carousel_banner.dart';
 import 'widgets/circle_dot.dart';
 import 'widgets/first_sectioon.dart';
@@ -29,6 +31,7 @@ class HomeScreen extends StatelessWidget {
           HomeCarouselBanners(
             width: width,
             heights: heights,
+            list: context.read<HomeProvider>().banners,
           ),
           const DotIndicator(),
           const ThirdBanner(),
@@ -85,7 +88,7 @@ class HomeScreen extends StatelessWidget {
             ),
           ),
           NotImportant(
-            heights: heights,
+            heights: heights / 2,
             width: width,
           )
         ],
