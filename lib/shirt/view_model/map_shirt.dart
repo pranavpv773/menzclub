@@ -4,6 +4,8 @@ const shirtList = [
     'topcollection': 'Check',
     'fit': 'Slim',
     'color': 'Red',
+    'material': 'assets/material/polyster.png',
+    'materialname': 'POLYSTER',
     'circleAvatharImg':
         'https://cdn.shopify.com/s/files/1/0536/3594/0515/collections/shop-linen-mens-shirts_large.jpg?v=1653051113',
     'backgroundImg':
@@ -14,6 +16,8 @@ const shirtList = [
     'topcollection': 'Print',
     'fit': 'Regular',
     'color': 'Blue',
+    'material': 'assets/material/cotton.jpeg',
+    'materialname': 'COTTON',
     'circleAvatharImg':
         'https://5.imimg.com/data5/SELLER/Default/2021/2/PD/DX/DR/105753947/brand-lp-1000x1000.jpeg',
     'backgroundImg':
@@ -24,6 +28,8 @@ const shirtList = [
     'topcollection': 'Solid',
     'fit': 'Tailors',
     'color': 'Black',
+    'material': 'assets/material/linen.jpeg',
+    'materialname': 'LINEN',
     'circleAvatharImg':
         'https://img2.exportersindia.com/product_images/bc-full/2019/12/5855964/men-jeans-1577338374-5222610.jpeg',
     'backgroundImg':
@@ -34,6 +40,8 @@ const shirtList = [
     'topcollection': 'Comfortable',
     'fit': 'Comfortable',
     'color': 'Green',
+    'material': 'assets/material/lycol.jpeg',
+    'materialname': 'LYCOL',
     'circleAvatharImg':
         'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRdmH5wk30Lk47ai6Ewgv-11XDvxufRE3arzXql3RMTV8Re7YXex_zqe1jyogZHSRbI8H8&usqp=CAU',
     'backgroundImg':
@@ -44,6 +52,7 @@ const shirtList = [
     'topcollection': 'Stripes',
     'fit': 'Fat',
     'color': 'Yellow',
+    'material': 'assets/material/polyster.png',
     'circleAvatharImg':
         'https://assets.gqindia.com/photos/5cdc6032e994c8ee73b68f52/master/pass/wedding-outfits-top-image.jpg',
     'backgroundImg':
@@ -54,6 +63,7 @@ const shirtList = [
     'topcollection': 'Stripes',
     'fit': 'Slim',
     'color': 'White',
+    'material': 'assets/material/polyster.png',
     'circleAvatharImg':
         'https://brand.assets.reebok.com/f_auto,q_auto,fl_lossy/capi/reebok_enUS/comfyshoes-mobile_274-636858.jpg',
     'backgroundImg':
@@ -64,6 +74,7 @@ const shirtList = [
     'topcollection': 'Stripes',
     'fit': 'Slim',
     'color': 'red',
+    'material': 'assets/material/polyster.png',
     'circleAvatharImg':
         'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSmT3dmWh80KmAchc0B-kWjzazrxECF44f0Rg&usqp=CAU',
     'backgroundImg':
@@ -74,6 +85,7 @@ const shirtList = [
     'topcollection': 'Stripes',
     'fit': 'Slim',
     'color': 'red',
+    'material': 'assets/material/polyster.png',
     'circleAvatharImg':
         'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcScMApytfkHvkDQNQImltkVoCWz73EFYLMOj_s6Opkf2BdFeFTr4VNlxgEk1PyNYHDRq0M&usqp=CAU',
     'backgroundImg':
@@ -84,6 +96,7 @@ const shirtList = [
     'topcollection': 'Stripes',
     'fit': 'Slim',
     'color': 'red',
+    'material': 'assets/material/polyster.png',
     'circleAvatharImg':
         'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRI2ZjhazTQeuzZweNFZuK_e_DMoLCrdOxx1ulFlbo9sFiGdvOZ9XmAdKonjb3Rb-v6MpE&usqp=CAU',
     'backgroundImg':
@@ -94,6 +107,7 @@ const shirtList = [
     'topcollection': 'Stripes',
     'fit': 'Slim',
     'color': 'red',
+    'material': 'assets/material/polyster.png',
     'circleAvatharImg':
         'https://media.istockphoto.com/photos/mens-accessories-organized-on-table-in-knolling-arrangement-picture-id638385938?b=1&k=20&m=638385938&s=170667a&w=0&h=XwwYLrr25QjA78p6sHHE9tVjQMsCgTWroUWHSp5bFnQ=',
     'backgroundImg':
