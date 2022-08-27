@@ -20,8 +20,7 @@ class GlobalScreen extends StatelessWidget {
           child: Stack(
             children: <Widget>[
               Container(
-                // Background
-                color: primary,
+                color: primary1,
                 height: MediaQuery.of(context).size.height * 0.2,
                 width: MediaQuery.of(context).size.width,
               ),

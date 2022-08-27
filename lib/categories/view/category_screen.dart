@@ -7,7 +7,7 @@ class CategoriesScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return ListView.builder(
-        physics: BouncingScrollPhysics(),
+        physics: const BouncingScrollPhysics(),
         itemCount: categoryList.length,
         itemBuilder: (BuildContext context, int index) {
           return CategoryCards(

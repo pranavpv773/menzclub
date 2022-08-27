@@ -101,7 +101,7 @@ class NonBottomNavIcon extends StatelessWidget {
   Widget build(BuildContext context) {
     return Icon(
       icon,
-      color: Color.fromARGB(255, 114, 108, 108),
+      color: const Color.fromARGB(255, 114, 108, 108),
       size: 23,
     );
   }

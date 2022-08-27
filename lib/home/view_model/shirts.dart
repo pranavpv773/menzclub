@@ -5,3 +5,9 @@ final List shirts = [
   'https://rukminim1.flixcart.com/image/432/518/khtghow0-0/shirt/h/v/a/xl-br201-being-real-original-imafxr7p2dzgcfax.jpeg?q=70',
   'https://prod-img.thesouledstore.com/public/theSoul/uploads/catalog/product/1619202162_4419494.jpg'
 ];
+final List tShirts = [
+  'https://www.dhresource.com/0x0/f2/albu/g8/M01/85/67/rBVaV12Rb1-AVRPDAAPeHYeatXY139.jpg',
+  'https://images.meesho.com/images/products/102963318/opgux_400.jpg',
+  'https://i.pinimg.com/550x/f3/ea/03/f3ea033cd43b991628b3f271ec6ecae7.jpg',
+  'https://penji.co/wp-content/uploads/2018/10/Penji-Sample-Tshirt-Design-5.jpeg',
+];
