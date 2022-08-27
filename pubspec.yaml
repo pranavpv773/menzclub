@@ -38,7 +38,7 @@ dependencies:
   carousel_slider: ^4.1.1
   google_fonts: ^3.0.1
   animated_text_kit: ^4.2.2
-
+  simple_gradient_text: 1.2.3
 dev_dependencies:
   flutter_test:
     sdk: flutter
@@ -67,6 +67,8 @@ flutter:
     - assets/users/
     - assets/banners/
     - assets/material/
+    - assets/frames/
+    - assets/tshirt/
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware

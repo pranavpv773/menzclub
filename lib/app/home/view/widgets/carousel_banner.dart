@@ -19,7 +19,7 @@ class HomeCarouselBanners extends StatelessWidget {
   Widget build(BuildContext context) {
     return Consumer<HomeProvider>(builder: (context, value, _) {
       return CarouselSlider.builder(
-        itemCount: context.read<HomeProvider>().banners.length,
+        itemCount: list.length,
         itemBuilder: (BuildContext context, int index, int itemIndex) {
           return Container(
             width: width / 1,

@@ -1,8 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:menz_cart_app/app/constants/colors.dart';
-import 'package:menz_cart_app/app/home/view/widgets/grid_view_card.dart';
-import 'package:menz_cart_app/app/home/view_model/shirts.dart';
 import 'package:menz_cart_app/app/shirt/view_model/map_shirt.dart';
 
 class ShirtFitWidget extends StatelessWidget {
