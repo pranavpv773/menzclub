@@ -49,6 +49,10 @@ class ShirtScreen extends StatelessWidget {
                       width: width,
                     ),
                     ShirtFitWidget(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      crossAxisAlignment: CrossAxisAlignment.center,
+                      image: 'assets/banners/shirt1.jpeg',
+                      image2: 'assets/banners/shirt2.jpeg',
                       height: height,
                       width: width,
                     ),

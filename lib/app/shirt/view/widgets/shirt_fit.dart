@@ -4,13 +4,22 @@ import 'package:menz_cart_app/app/constants/colors.dart';
 import 'package:menz_cart_app/app/shirt/view_model/map_shirt.dart';
 
 class ShirtFitWidget extends StatelessWidget {
-  const ShirtFitWidget({
-    Key? key,
-    required this.height,
-    required this.width,
-  }) : super(key: key);
+  const ShirtFitWidget(
+      {Key? key,
+      required this.height,
+      required this.width,
+      required this.image,
+      required this.image2,
+      required this.crossAxisAlignment,
+      required this.mainAxisAlignment})
+      : super(key: key);
   final double width;
   final double height;
+  final String image;
+  final String image2;
+
+  final MainAxisAlignment mainAxisAlignment;
+  final CrossAxisAlignment crossAxisAlignment;
   @override
   Widget build(BuildContext context) {
     return Column(
@@ -18,10 +27,10 @@ class ShirtFitWidget extends StatelessWidget {
         ShirtContentBanner(
           width: width,
           height: height,
-          image: 'assets/banners/shirt1.jpeg',
+          image: image,
           topic: 'SHOP SHIRT BY FIT',
-          mainAxisAlignment: MainAxisAlignment.center,
-          crossAxisAlignment: CrossAxisAlignment.start,
+          mainAxisAlignment: mainAxisAlignment,
+          crossAxisAlignment: crossAxisAlignment,
         ),
         GridView.builder(
             padding: const EdgeInsets.symmetric(vertical: 16.0),
@@ -46,10 +55,10 @@ class ShirtFitWidget extends StatelessWidget {
                   child: Container(
                     width: width / 2.5,
                     height: height / 8,
-                    decoration: const BoxDecoration(
+                    decoration: BoxDecoration(
                       image: DecorationImage(
                         image: AssetImage(
-                          'assets/banners/shirt2.jpeg',
+                          image2,
                         ),
                         fit: BoxFit.cover,
                       ),
@@ -91,9 +100,12 @@ class ShirtContentBanner extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       width: width,
-      height: height / 3,
+      height: height / 4,
       decoration: BoxDecoration(
-        image: DecorationImage(image: AssetImage(image), fit: BoxFit.fitWidth),
+        image: DecorationImage(
+          image: AssetImage(image),
+          fit: BoxFit.fitWidth,
+        ),
       ),
       child: Padding(
         padding: const EdgeInsets.symmetric(horizontal: 18.0),
@@ -104,7 +116,9 @@ class ShirtContentBanner extends StatelessWidget {
             Text(
               topic,
               style: TextStyle(
-                  fontSize: 22, fontFamily: GoogleFonts.amarante().fontFamily),
+                fontSize: 22,
+                fontFamily: GoogleFonts.amarante().fontFamily,
+              ),
             )
           ],
         ),
@@ -141,10 +155,14 @@ class ShirtBannerBuilder extends StatelessWidget {
             8.0,
           ),
           child: Material(
+            borderRadius: BorderRadius.circular(10),
             elevation: 10,
             shadowColor: Colors.black,
             child: Container(
-              color: primary1,
+              decoration: BoxDecoration(
+                color: primary1,
+                borderRadius: BorderRadius.circular(10),
+              ),
               child: Column(
                 children: [
                   Padding(
@@ -153,8 +171,9 @@ class ShirtBannerBuilder extends StatelessWidget {
                       width: width / 5,
                       height: height / 8,
                       decoration: BoxDecoration(
-                          color: primary,
-                          borderRadius: BorderRadius.circular(25)),
+                        color: colorList[index],
+                        borderRadius: BorderRadius.circular(5),
+                      ),
                     ),
                   ),
                   Text(shirtList[index]['color'].toString()),
