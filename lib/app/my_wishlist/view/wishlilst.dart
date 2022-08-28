@@ -10,7 +10,7 @@ class MyWishListScreen extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(),
       body: Container(
-        decoration: BoxDecoration(
+        decoration: const BoxDecoration(
             image: DecorationImage(
                 image: AssetImage('assets/lottee/doodle.png'),
                 fit: BoxFit.cover)),
