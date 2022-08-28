@@ -26,7 +26,10 @@ class AccountListTile extends StatelessWidget {
       ),
       title: Text(title),
       subtitle: Text(subtitle),
-      trailing: const Icon(Icons.arrow_circle_right_outlined),
+      trailing: const Icon(
+        Icons.arrow_forward_ios_outlined,
+        size: 15,
+      ),
       onTap: () {
         RoutesProvider.nextScreen(screen: screen);
       },

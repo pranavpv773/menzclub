@@ -31,7 +31,7 @@ class ProfileCard extends StatelessWidget {
         ),
         Positioned(
           bottom: 40,
-          right: 15,
+          right: 10,
           child: TextButton(
             onPressed: () {},
             style: ButtonStyle(
@@ -43,7 +43,7 @@ class ProfileCard extends StatelessWidget {
               ),
             ),
             child: Text(
-              'LOGIN/SIGN UP',
+              'LOGIN / SIGN UP',
               style: TextStyle(color: kWhite),
             ),
           ),
