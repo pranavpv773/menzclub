@@ -6,7 +6,7 @@ import 'package:menz_cart_app/app/shirt/view/shirt_screen.dart';
 
 class GlobalProvider with ChangeNotifier {
   int pageIndex = 0;
-
+  bool showAppbar = true;
   final pages = [
     const HomeScreen(),
     const CategoriesScreen(),
@@ -18,6 +18,11 @@ class GlobalProvider with ChangeNotifier {
 
   onTabIndexChange(int number) {
     pageIndex = number;
+    notifyListeners();
+  }
+
+  onTabAppbarCheck(bool check) {
+    showAppbar = check;
     notifyListeners();
   }
 }

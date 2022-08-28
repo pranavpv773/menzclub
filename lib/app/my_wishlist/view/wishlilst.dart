@@ -1,9 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/src/foundation/key.dart';
-import 'package:flutter/src/widgets/framework.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:menz_cart_app/app/constants/colors.dart';
-import 'package:menz_cart_app/app/home/view/widgets/grid_view_card.dart';
 import 'package:menz_cart_app/app/order_summary/view/widgets/button.dart';
 
 class MyWishListScreen extends StatelessWidget {
@@ -21,7 +18,7 @@ class MyWishListScreen extends StatelessWidget {
         height: double.infinity,
         decoration: BoxDecoration(
           image: DecorationImage(
-            image: AssetImage('assets/lottee/wishlistbg.jpg'),
+            image: const AssetImage('assets/lottee/wishlistbg.jpg'),
             fit: BoxFit.fill,
             colorFilter:
                 ColorFilter.mode(primary.withOpacity(0.36), BlendMode.dstATop),
