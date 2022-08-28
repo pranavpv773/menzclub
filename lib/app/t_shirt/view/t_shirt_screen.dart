@@ -30,8 +30,17 @@ class TshirtScreen extends StatelessWidget {
       child: Scaffold(
         appBar: AppBar(
           backgroundColor: primary,
-          title: Text(
-            'T-Shirts'.toUpperCase(),
+          title: GradientText(
+            'T-SHIRT',
+            style: TextStyle(
+                fontSize: 30.0,
+                fontWeight: FontWeight.bold,
+                fontFamily: GoogleFonts.alumniSans().fontFamily),
+            colors: [
+              kWhite,
+              const Color.fromARGB(255, 235, 194, 238),
+              const Color.fromARGB(255, 186, 122, 199),
+            ],
           ),
         ),
         body: SingleChildScrollView(
@@ -49,94 +58,134 @@ class TshirtScreen extends StatelessWidget {
                   const TshirtCategoryWidget(
                     text: 'BUDGET BUYS',
                   ),
-                  Container(
-                    decoration: const BoxDecoration(
-                      image: DecorationImage(
-                          image: NetworkImage(
-                              'https://us.123rf.com/450wm/rottenman/rottenman1905/rottenman190500005/126050469-modern-futuristic-neon-lights-on-old-grunge-brick-wall-room-background-3d-rendering.jpg?ver=6'),
-                          fit: BoxFit.fitHeight),
-                    ),
-                    child: SizedBox(
-                      width: width,
-                      height: height / 1.8,
-                      child: ListView(
-                        scrollDirection: Axis.horizontal,
-                        children: List.generate(
-                          tShirts.length,
-                          (index) => Padding(
-                            padding: const EdgeInsets.symmetric(
-                                vertical: 20.0, horizontal: 8),
-                            child: Column(
-                              children: [
-                                Container(
-                                  width: width / 1.5,
-                                  height: height / 2,
-                                  decoration: BoxDecoration(
-                                    borderRadius: BorderRadius.circular(15),
-                                    image: DecorationImage(
-                                      image: NetworkImage(tShirts[index]),
-                                      fit: BoxFit.cover,
-                                    ),
-                                  ),
-                                  child: Align(
-                                      alignment: Alignment.bottomCenter,
-                                      child: Container(
-                                        width: width,
-                                        height: height / 20,
-                                        decoration: const BoxDecoration(
-                                          borderRadius: BorderRadius.only(
-                                              bottomLeft: Radius.circular(15),
-                                              bottomRight: Radius.circular(15)),
-                                          color: Colors.black,
-                                        ),
-                                        child: Center(
-                                          child: Text(
-                                            'data',
-                                            style: TextStyle(color: kWhite),
-                                          ),
-                                        ),
-                                      )),
-                                ),
-                              ],
-                            ),
-                          ),
-                        ),
-                      ),
-                    ),
-                  ),
-                  TopCollectionsWidget(
-                    height: height,
-                    width: width,
-                  ),
+                  TshirtofferCard(width: width, height: height),
                   ShirtFitWidget(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    crossAxisAlignment: CrossAxisAlignment.end,
+                    image: 'assets/tshirt/banner1.jpeg',
+                    image2: 'assets/banners/tshirt.jpg',
                     height: height,
                     width: width,
                   ),
-                  Column(
-                    children: [
-                      ShirtContentBanner(
-                        width: width,
-                        height: height,
-                        image: 'assets/banners/shirt3.jpg',
-                        topic: 'SHOP  BY COLOR',
-                        mainAxisAlignment: MainAxisAlignment.center,
-                        crossAxisAlignment: CrossAxisAlignment.end,
-                      ),
-                      ShirtBannerBuilder(
-                        width: width,
-                        height: height,
-                      )
-                    ],
-                  ),
-                  ShirtMaterialWidget(height: height),
+                  TshirtByColor(width: width, height: height),
                   sizedBox50,
                   sizedBox50,
                 ],
               ),
               const ShopNowButton(
-                textButton: 'SHOP ALL SHIRTS',
+                textButton: 'SHOP ALL T-SHIRTS',
               )
             ],
+          ),
+        ),
+      ),
+    );
+  }
+}
+
+class TshirtByColor extends StatelessWidget {
+  const TshirtByColor({
+    Key? key,
+    required this.width,
+    required this.height,
+  }) : super(key: key);
+
+  final double width;
+  final double height;
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      width: width,
+      height: height / 1.2,
+      decoration: const BoxDecoration(
+          image: DecorationImage(
+              image: NetworkImage(
+                  'https://img.freepik.com/free-vector/realistic-leaves-with-blue-neon-frame_52683-33597.jpg'),
+              fit: BoxFit.cover)),
+      child: Column(
+        children: [
+          ShirtContentBanner(
+            width: width,
+            height: height,
+            image: 'assets/tshirt/neonshirt.jpg',
+            topic: 'SHOP  BY COLOR',
+            mainAxisAlignment: MainAxisAlignment.center,
+            crossAxisAlignment: CrossAxisAlignment.start,
+          ),
+          ShirtBannerBuilder(
+            width: width,
+            height: height,
+          )
+        ],
+      ),
+    );
+  }
+}
+
+class TshirtofferCard extends StatelessWidget {
+  const TshirtofferCard({
+    Key? key,
+    required this.width,
+    required this.height,
+  }) : super(key: key);
+
+  final double width;
+  final double height;
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      decoration: const BoxDecoration(
+        image: DecorationImage(
+            image: NetworkImage(
+                'https://thumbs.dreamstime.com/b/brick-walls-neon-light-background-rays-glow-211376300.jpg'),
+            fit: BoxFit.fitHeight),
+      ),
+      child: SizedBox(
+        width: width,
+        height: height / 1.8,
+        child: ListView(
+          scrollDirection: Axis.horizontal,
+          children: List.generate(
+            tShirts.length,
+            (index) => Padding(
+              padding:
+                  const EdgeInsets.symmetric(vertical: 20.0, horizontal: 8),
+              child: Column(
+                children: [
+                  Container(
+                    width: width / 1.5,
+                    height: height / 2,
+                    decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(15),
+                      image: DecorationImage(
+                        image: NetworkImage(tShirts[index]),
+                        fit: BoxFit.cover,
+                      ),
+                    ),
+                    child: Align(
+                        alignment: Alignment.bottomCenter,
+                        child: Container(
+                          width: width,
+                          height: height / 20,
+                          decoration: const BoxDecoration(
+                            borderRadius: BorderRadius.only(
+                                bottomLeft: Radius.circular(15),
+                                bottomRight: Radius.circular(15)),
+                            color: Colors.black,
+                          ),
+                          child: Center(
+                            child: Text(
+                              'Upto ${offerList[index]}%',
+                              style: TextStyle(color: kWhite),
+                            ),
+                          ),
+                        )),
+                  ),
+                ],
+              ),
+            ),
           ),
         ),
       ),
@@ -163,7 +212,7 @@ class TshirtCategoryWidget extends StatelessWidget {
               fontFamily: GoogleFonts.alumniSans().fontFamily),
           colors: [
             primary,
-            Color.fromARGB(255, 236, 29, 255),
+            const Color.fromARGB(255, 236, 29, 255),
             const Color.fromARGB(255, 146, 8, 174),
           ],
         ),

@@ -19,3 +19,10 @@ final colorizeTextStyle = TextStyle(
   fontSize: 20.0,
   fontFamily: GoogleFonts.anekTamil().fontFamily,
 );
+final offerList = [
+  '50',
+  '60',
+  '65',
+  '70',
+  '75',
+];

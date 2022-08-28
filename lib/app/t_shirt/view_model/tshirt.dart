@@ -27,7 +27,7 @@ const tShirtList = [
     'fit': 'Tailors',
     'color': 'Black',
     'material': 'assets/material/linen.jpeg',
-    'materialname': 'LINEN',
+    'materialname': 'FABRIC',
     'categoryImage': 'assets/tshirt/tshirt4.png',
     'backgroundImg':
         'https://thumbs.dreamstime.com/b/denium-blue-jean-closeup-banner-space-text-view-old-jeans-details-denim-background-texture-219103615.jpg',
@@ -38,7 +38,7 @@ const tShirtList = [
     'fit': 'Comfortable',
     'color': 'Green',
     'material': 'assets/material/lycol.jpeg',
-    'materialname': 'LYCOL',
+    'materialname': 'NYLON',
     'categoryImage': 'assets/tshirt/tshirt7.png',
     'backgroundImg':
         'http://cdn.shopify.com/s/files/1/0246/4995/7428/collections/0089_ecom_SiteAssets_Fall1_2019_CollectionBanners_Super_Desktop_Mens_9_Pants_grande.jpg?v=1603326477',
