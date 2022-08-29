@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:menz_cart_app/app/constants/colors.dart';
 import 'package:menz_cart_app/app/constants/widgets.dart';
 import 'package:menz_cart_app/app/home/view/widgets/carousel_banner.dart';
@@ -71,20 +72,33 @@ class ShoesScreen extends StatelessWidget {
                       width: width,
                       height: height / 4,
                       color: const Color.fromARGB(255, 200, 234, 7),
-                      child: Row(
+                      child: Column(
                         mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                         children: [
-                          CircleAvatharOffer(
-                            width: width,
-                            offer: '1500',
+                          Text(
+                            "OFFER BY PRIZE",
+                            style: TextStyle(
+                              color: Colors.black,
+                              fontSize: 20,
+                              fontFamily: GoogleFonts.notoSerif().fontFamily,
+                            ),
                           ),
-                          CircleAvatharOffer(
-                            width: width,
-                            offer: '3000',
-                          ),
-                          CircleAvatharOffer(
-                            width: width,
-                            offer: '5000',
+                          Row(
+                            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                            children: [
+                              CircleAvatharOffer(
+                                width: width,
+                                offer: '1500',
+                              ),
+                              CircleAvatharOffer(
+                                width: width,
+                                offer: '3000',
+                              ),
+                              CircleAvatharOffer(
+                                width: width,
+                                offer: '5000',
+                              ),
+                            ],
                           ),
                         ],
                       ),
