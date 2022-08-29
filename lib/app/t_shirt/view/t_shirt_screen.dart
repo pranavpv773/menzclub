@@ -53,6 +53,8 @@ class TshirtScreen extends StatelessWidget {
                   ),
                   TshirtofferCard(width: width, height: height),
                   ShirtFitWidget(
+                    topic: 'SHOP T-SHIRT BY FIT',
+                    color: Colors.black,
                     mainAxisAlignment: MainAxisAlignment.center,
                     crossAxisAlignment: CrossAxisAlignment.end,
                     image: 'assets/tshirt/banner1.jpeg',
