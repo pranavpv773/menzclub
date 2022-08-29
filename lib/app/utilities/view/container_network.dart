@@ -51,3 +51,33 @@ class AssetContainerImage extends StatelessWidget {
     );
   }
 }
+
+class ContainerImageChild extends StatelessWidget {
+  const ContainerImageChild({
+    Key? key,
+    required this.width,
+    required this.height,
+    required this.image,
+    required this.widget,
+  }) : super(key: key);
+
+  final double width;
+  final double height;
+  final String image;
+  final Widget widget;
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      width: width / 4,
+      height: height / 6,
+      decoration: BoxDecoration(
+        borderRadius: BorderRadius.circular(10),
+        image: DecorationImage(
+          image: NetworkImage(image),
+          fit: BoxFit.cover,
+        ),
+      ),
+      child: widget,
+    );
+  }
+}

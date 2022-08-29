@@ -48,8 +48,10 @@ class ShirtScreen extends StatelessWidget {
                       width: width,
                     ),
                     ShirtFitWidget(
+                      topic: 'SHOP SHIRT BY FIT',
+                      color: Colors.black,
                       mainAxisAlignment: MainAxisAlignment.center,
-                      crossAxisAlignment: CrossAxisAlignment.center,
+                      crossAxisAlignment: CrossAxisAlignment.start,
                       image: 'assets/banners/shirt1.jpeg',
                       image2: 'assets/banners/shirt2.jpeg',
                       height: height,
@@ -58,6 +60,7 @@ class ShirtScreen extends StatelessWidget {
                     Column(
                       children: [
                         ShirtContentBanner(
+                          color: Colors.black,
                           width: width,
                           height: height,
                           image: 'assets/banners/shirt3.jpg',

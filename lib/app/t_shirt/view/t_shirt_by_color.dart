@@ -24,6 +24,7 @@ class TshirtByColor extends StatelessWidget {
       child: Column(
         children: [
           ShirtContentBanner(
+            color: Colors.black,
             width: width,
             height: height,
             image: 'assets/tshirt/neonshirt.jpg',

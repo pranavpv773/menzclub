@@ -10,6 +10,8 @@ class ShirtFitWidget extends StatelessWidget {
       required this.width,
       required this.image,
       required this.image2,
+      required this.color,
+      required this.topic,
       required this.crossAxisAlignment,
       required this.mainAxisAlignment})
       : super(key: key);
@@ -17,7 +19,9 @@ class ShirtFitWidget extends StatelessWidget {
   final double height;
   final String image;
   final String image2;
+  final String topic;
 
+  final Color color;
   final MainAxisAlignment mainAxisAlignment;
   final CrossAxisAlignment crossAxisAlignment;
   @override
@@ -25,10 +29,11 @@ class ShirtFitWidget extends StatelessWidget {
     return Column(
       children: [
         ShirtContentBanner(
+          color: color,
           width: width,
           height: height,
           image: image,
-          topic: 'SHOP SHIRT BY FIT',
+          topic: topic,
           mainAxisAlignment: mainAxisAlignment,
           crossAxisAlignment: crossAxisAlignment,
         ),
@@ -84,12 +89,13 @@ class ShirtContentBanner extends StatelessWidget {
     Key? key,
     required this.width,
     required this.height,
+    required this.color,
     required this.image,
     required this.topic,
     required this.crossAxisAlignment,
     required this.mainAxisAlignment,
   }) : super(key: key);
-
+  final Color color;
   final double width;
   final double height;
   final String image;
@@ -118,6 +124,7 @@ class ShirtContentBanner extends StatelessWidget {
               style: TextStyle(
                 fontSize: 22,
                 fontFamily: GoogleFonts.amarante().fontFamily,
+                color: color,
               ),
             )
           ],

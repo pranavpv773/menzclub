@@ -11,3 +11,9 @@ final List tShirts = [
   'https://i.pinimg.com/550x/f3/ea/03/f3ea033cd43b991628b3f271ec6ecae7.jpg',
   'https://penji.co/wp-content/uploads/2018/10/Penji-Sample-Tshirt-Design-5.jpeg',
 ];
+final List jeans = [
+  'https://images.milledcdn.com/2018-09-10/-2eflga3USkAHJqB/bnt6nphtJyx1.jpg',
+  'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT30y6cak5xngvS4QlWJiomDHjg6NX6021vHFRjmPX-zUx2Tm_oazQxG-7DADgjHBFRm6A&usqp=CAU',
+  'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQDvr5ZyLC_ltNbPUfjYYrnI6uZafTlodgEaT2a58v2kz5ZwCTC1CSS3F4Nd3cuGM6GtlU&usqp=CAU',
+  'https://ik.imagekit.io/w16cqmxhb/catalog/brandstore/kkclmultibrand/homepage-banner-3.jpg',
+];
