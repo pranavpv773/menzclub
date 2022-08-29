@@ -17,3 +17,17 @@ final List jeans = [
   'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQDvr5ZyLC_ltNbPUfjYYrnI6uZafTlodgEaT2a58v2kz5ZwCTC1CSS3F4Nd3cuGM6GtlU&usqp=CAU',
   'https://ik.imagekit.io/w16cqmxhb/catalog/brandstore/kkclmultibrand/homepage-banner-3.jpg',
 ];
+final List shoes = [
+  'https://mir-s3-cdn-cf.behance.net/project_modules/fs/2bbcfa99737217.5ef9be3dbb9a9.jpg',
+  'https://cdn.shopify.com/s/files/1/0285/9873/0883/files/Top_5_Men_s_Shoes_That_You_Should_Be_Counting_On_This_New_Year_Party_Banner_1024x1024.jpg?v=1585571953',
+  'https://i.pinimg.com/originals/a5/7e/35/a57e355e60c9401fee414c6d2efb38dd.jpg',
+  'https://images-eu.ssl-images-amazon.com/images/G/31/img18/Shoes/May/MenShoesGW/harkum_2018-04-26T13-00_9647b9_1112610_1024x300._CB496450020_.jpg',
+  'https://graphicsfamily.com/wp-content/uploads/edd/2021/07/Professional-E-Commerce-Shoes-Banner-Design-1180x664.jpg',
+];
+final List shoesCollections = [
+  'https://mir-s3-cdn-cf.behance.net/project_modules/fs/2bbcfa99737217.5ef9be3dbb9a9.jpg',
+  'https://cdn.shopify.com/s/files/1/0285/9873/0883/files/Top_5_Men_s_Shoes_That_You_Should_Be_Counting_On_This_New_Year_Party_Banner_1024x1024.jpg?v=1585571953',
+  'https://i.pinimg.com/originals/a5/7e/35/a57e355e60c9401fee414c6d2efb38dd.jpg',
+  'https://images-eu.ssl-images-amazon.com/images/G/31/img18/Shoes/May/MenShoesGW/harkum_2018-04-26T13-00_9647b9_1112610_1024x300._CB496450020_.jpg',
+  'https://graphicsfamily.com/wp-content/uploads/edd/2021/07/Professional-E-Commerce-Shoes-Banner-Design-1180x664.jpg',
+];

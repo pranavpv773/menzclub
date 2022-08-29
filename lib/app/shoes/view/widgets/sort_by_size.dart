@@ -1,0 +1,92 @@
+import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
+import 'package:menz_cart_app/app/constants/colors.dart';
+
+class SortBySize extends StatelessWidget {
+  const SortBySize({
+    Key? key,
+    required this.height,
+    required this.width,
+  }) : super(key: key);
+
+  final double height;
+  final double width;
+
+  @override
+  Widget build(BuildContext context) {
+    return Padding(
+      padding: const EdgeInsets.symmetric(vertical: 16.0),
+      child: Container(
+        decoration: const BoxDecoration(
+            image: DecorationImage(
+                image: AssetImage('assets/banners/shirt2.jpeg'),
+                fit: BoxFit.cover)),
+        child: Padding(
+          padding: const EdgeInsets.all(15.0),
+          child: Column(
+            children: [
+              Text(
+                "SELECT BY SIZE",
+                style: TextStyle(
+                    color: kWhite,
+                    fontSize: 30,
+                    fontFamily: GoogleFonts.abel().fontFamily),
+              ),
+              Image.asset(
+                'assets/shoes/shoes_gif.gif',
+                width: width,
+                height: height / 5,
+              ),
+              GridView.builder(
+                  padding: const EdgeInsets.symmetric(vertical: 16.0),
+                  physics: const ScrollPhysics(),
+                  shrinkWrap: true,
+                  gridDelegate: SliverGridDelegateWithMaxCrossAxisExtent(
+                    maxCrossAxisExtent: 200,
+                    mainAxisExtent: height / 8,
+                    childAspectRatio: 3 / 2,
+                    crossAxisSpacing: 20,
+                    mainAxisSpacing: 20,
+                  ),
+                  itemCount: 8,
+                  itemBuilder: (BuildContext ctx, index) {
+                    return Column(
+                      children: [
+                        Container(
+                          color: kWhite,
+                          child: Container(
+                            width: width / 3,
+                            height: height / 15,
+                            decoration: const BoxDecoration(
+                              image: DecorationImage(
+                                image: NetworkImage(
+                                  'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSRFw7k2JngskIKJ0jfZlHCq0uWjvvXFLFkEZaMLVm9SKN9zr2IFWEXAnEThXmJ9-25ZrM&usqp=CAU',
+                                ),
+                                fit: BoxFit.fill,
+                              ),
+                            ),
+                            child: Center(
+                              child: Text(
+                                'UK${6 + index}',
+                                style: TextStyle(
+                                    color: Colors.black,
+                                    fontSize: 20,
+                                    fontFamily:
+                                        GoogleFonts.aBeeZee().fontFamily),
+                              ),
+                            ),
+                          ),
+                        ),
+                        // Text(
+                        //   shirtList[index]['topcollection'].toString(),
+                        // ),
+                      ],
+                    );
+                  }),
+            ],
+          ),
+        ),
+      ),
+    );
+  }
+}

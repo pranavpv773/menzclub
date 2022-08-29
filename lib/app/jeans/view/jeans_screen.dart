@@ -8,6 +8,7 @@ import 'package:menz_cart_app/app/home/view_model/shirts.dart';
 import 'package:menz_cart_app/app/jeans/view/widgets/budget_buys.dart';
 import 'package:menz_cart_app/app/jeans/view/widgets/grab_offers.dart';
 import 'package:menz_cart_app/app/shirt/view/widgets/shirt_fit.dart';
+import 'package:menz_cart_app/app/utilities/view/appbar_widget.dart';
 
 import 'widgets/jeans_color_builder.dart';
 
@@ -18,11 +19,12 @@ class JeansScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     final width = MediaQuery.of(context).size.width;
     final height = MediaQuery.of(context).size.height;
-
     return Scaffold(
-      appBar: AppBar(
-        backgroundColor: primary,
-        title: const Text('JEANS'),
+      appBar: PreferredSize(
+        preferredSize: Size.fromHeight(height / 15),
+        child: const CommonAppBarWidget(
+          section: 'JEANS',
+        ),
       ),
       body: SingleChildScrollView(
         physics: const BouncingScrollPhysics(),
