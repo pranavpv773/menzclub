@@ -1,6 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:menz_cart_app/app/constants/colors.dart';
-import 'package:menz_cart_app/app/constants/widgets.dart';
 import 'package:menz_cart_app/app/global/view_model/global_provider.dart';
 import 'package:provider/provider.dart';
 
