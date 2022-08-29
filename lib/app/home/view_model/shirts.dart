@@ -31,3 +31,10 @@ final List shoesCollections = [
   'https://images-eu.ssl-images-amazon.com/images/G/31/img18/Shoes/May/MenShoesGW/harkum_2018-04-26T13-00_9647b9_1112610_1024x300._CB496450020_.jpg',
   'https://graphicsfamily.com/wp-content/uploads/edd/2021/07/Professional-E-Commerce-Shoes-Banner-Design-1180x664.jpg',
 ];
+final List watchCollections = [
+  'https://cdn.dribbble.com/users/2856407/screenshots/6922561/image_2019_08_05t14_45_52_797z.png?compress=1&resize=400x300&vertical=top',
+  'https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/1791677b-5bf5-4fd7-8642-e17627638d62/ddqbakl-02430685-44aa-416a-a4f5-9ab5cb14c6bb.png?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7InBhdGgiOiJcL2ZcLzE3OTE2NzdiLTViZjUtNGZkNy04NjQyLWUxNzYyNzYzOGQ2MlwvZGRxYmFrbC0wMjQzMDY4NS00NGFhLTQxNmEtYTRmNS05YWI1Y2IxNGM2YmIucG5nIn1dXSwiYXVkIjpbInVybjpzZXJ2aWNlOmZpbGUuZG93bmxvYWQiXX0.TnPz6pYHNW-J9zC0LOZvKZD1c3-0ewPW9gNQcEV6eck',
+  'https://d1csarkz8obe9u.cloudfront.net/posterpreviews/digital-smart-watch-banner-design-template-d7aa954477c61d4aaf74a2001b70e98f_screen.jpg?ts=1652077676',
+  'https://mir-s3-cdn-cf.behance.net/project_modules/max_1200/89670937352801.573d3df298ad9.jpg',
+  'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSVxYBHWUunSOyp0OUqY3cZpTDCK25ePmEUUA&usqp=CAU',
+];
