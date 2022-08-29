@@ -5,8 +5,13 @@ class ShopTransparentButton extends StatelessWidget {
   const ShopTransparentButton({
     Key? key,
     required this.button,
+    required this.buttonBgColor,
+    required this.buttonColor,
   }) : super(key: key);
   final String button;
+  final Color buttonColor;
+  final Color buttonBgColor;
+
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -20,8 +25,8 @@ class ShopTransparentButton extends StatelessWidget {
         ),
         onPressed: () {},
         padding: const EdgeInsets.all(10.0),
-        color: Colors.transparent.withOpacity(0.1),
-        textColor: primary,
+        color: buttonBgColor,
+        textColor: buttonColor,
         child: Text(
           button,
           style: const TextStyle(

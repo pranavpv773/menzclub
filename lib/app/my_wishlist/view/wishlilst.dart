@@ -53,7 +53,11 @@ class MyWishListScreen extends StatelessWidget {
                 fontFamily: GoogleFonts.actor().fontFamily,
               ),
             ),
-            const ShopTransparentButton(button: 'SHOP NOW')
+            ShopTransparentButton(
+              button: 'SHOP NOW',
+              buttonBgColor: Colors.transparent.withOpacity(0.1),
+              buttonColor: primary,
+            )
           ],
         ),
       ),

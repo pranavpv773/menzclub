@@ -33,7 +33,9 @@ class OrderSummary extends StatelessWidget {
                 ),
               ),
             ),
-            const ShopTransparentButton(
+            ShopTransparentButton(
+              buttonBgColor: Colors.transparent.withOpacity(0.1),
+              buttonColor: primary,
               button: "START SHOPPING",
             ),
           ],
