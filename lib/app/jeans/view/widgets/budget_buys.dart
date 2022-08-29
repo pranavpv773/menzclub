@@ -70,26 +70,30 @@ class BudgetBuysCategories extends StatelessWidget {
   final String caption;
   @override
   Widget build(BuildContext context) {
-    return Column(
-      children: [
-        ContainerImageChild(
-          width: width,
-          height: height,
-          image:
-              'https://png.pngtree.com/thumb_back/fh260/background/20190222/ourmid/pngtree-creative-jeans-paper-cut-wind-background-cut-wind-backgroundcropfashion-image_56520.jpg',
-          widget: Center(
-            child: Text(
-              caption,
-              style: TextStyle(
-                color: kWhite,
-                fontWeight: FontWeight.bold,
-                fontSize: 20,
-                fontFamily: GoogleFonts.abhayaLibre().fontFamily,
+    return Material(
+      elevation: 15,
+      shadowColor: Colors.black,
+      child: Column(
+        children: [
+          ContainerImageChild(
+            width: width,
+            height: height,
+            image:
+                'https://png.pngtree.com/thumb_back/fh260/background/20190222/ourmid/pngtree-creative-jeans-paper-cut-wind-background-cut-wind-backgroundcropfashion-image_56520.jpg',
+            widget: Center(
+              child: Text(
+                caption,
+                style: TextStyle(
+                  color: kWhite,
+                  fontWeight: FontWeight.bold,
+                  fontSize: 20,
+                  fontFamily: GoogleFonts.abhayaLibre().fontFamily,
+                ),
               ),
             ),
           ),
-        ),
-      ],
+        ],
+      ),
     );
   }
 }
