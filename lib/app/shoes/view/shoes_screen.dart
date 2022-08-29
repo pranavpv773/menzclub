@@ -8,7 +8,9 @@ import 'package:menz_cart_app/app/shirt/view/widgets/shirt_fit.dart';
 import 'package:menz_cart_app/app/shoes/view/widgets/collections.dart';
 import 'package:menz_cart_app/app/shoes/view/widgets/shoes_color_builder.dart';
 import 'package:menz_cart_app/app/shoes/view/widgets/sort_by_size.dart';
+import 'package:menz_cart_app/app/shoes/view_model/shoes_map.dart';
 import 'package:menz_cart_app/app/utilities/view/appbar_widget.dart';
+import 'package:menz_cart_app/app/watches/view_model/watch_map.dart';
 
 import 'widgets/offer_by_prize.dart';
 
@@ -45,7 +47,10 @@ class ShoesScreen extends StatelessWidget {
                     const Center(
                       child: Text('TOP COLLECTIONS'),
                     ),
-                    ShoesCollectionBuilder(width: width, height: height),
+                    ShoesCollectionBuilder(
+                      width: width,
+                      height: height,
+                    ),
                   ],
                 ),
                 SortBySize(height: height, width: width),
