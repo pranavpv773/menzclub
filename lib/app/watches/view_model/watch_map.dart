@@ -2,47 +2,51 @@ const watchMap = [
   {
     'categary': 'Formal',
     'topcollection': 'Check',
-    'fit': 'Straight',
+    'occasion': 'Minimal Watches for maximum impact',
     'color': 'Black',
     'material': 'assets/material/polyster.png',
     'materialname': 'POLYSTER',
     'WatchcolorImage': 'assets/watches/black.png',
-    'collectionImage': 'assets/shoes/slippers.png',
+    'collectionImage':
+        'https://www.realmenrealstyle.com/wp-content/uploads/2021/07/mens-watches-women-love.jpg',
   },
   {
     'categary': 'Casual',
     'topcollection': 'Print',
-    'fit': 'Regular',
+    'occasion': 'These take the boring out of basic',
     'color': 'Blue',
     'material': 'assets/material/cotton.jpeg',
     'materialname': 'COTTON',
     'WatchcolorImage': 'assets/watches/blue_watch.png',
-    'collectionImage': 'assets/shoes/casuals.png',
+    'collectionImage':
+        'https://www.themanual.com/wp-content/uploads/sites/9/2021/04/mvmt-watch-feature.jpg?fit=800%2C800&p=1',
   },
   {
     'categary': 'Sporty',
     'topcollection': 'Solid',
-    'fit': 'Loose',
+    'occasion': 'These take the boring out of basic',
     'color': 'Brown',
     'material': 'assets/material/linen.jpeg',
     'materialname': 'LINEN',
     'WatchcolorImage': 'assets/watches/brown.png',
-    'collectionImage': 'assets/shoes/sports.png',
+    'collectionImage':
+        'https://img.joomcdn.net/d2662eb4541946262fddd5b5b86324207f379967_original.jpeg',
   },
   {
     'categary': 'Festive',
     'topcollection': 'Comfortable',
-    'fit': 'Tapered',
+    'occasion': 'These take the boring out of basic',
     'color': 'Gold',
     'material': 'assets/material/lycol.jpeg',
     'materialname': 'LYCOL',
     'WatchcolorImage': 'assets/watches/gold.png',
-    'collectionImage': 'assets/shoes/formal.png',
+    'collectionImage':
+        'https://dmzr5ikm7nos4.cloudfront.net/blog/wp-content/uploads/2018/10/10182519/Rolex_Datejust-116233.jpg',
   },
   {
     'categary': 'Sandals',
     'topcollection': 'Stripes',
-    'fit': 'Skinny',
+    'occasion': 'These take the boring out of basic',
     'color': 'Colorful',
     'material': 'assets/material/polyster.png',
     'WatchcolorImage': 'assets/watches/colorful.png',
@@ -51,7 +55,7 @@ const watchMap = [
   {
     'categary': 'Loafers',
     'topcollection': 'Stripes',
-    'fit': 'Slim',
+    'occasion': 'These take the boring out of basic',
     'color': 'Silver',
     'material': 'assets/material/polyster.png',
     'WatchcolorImage': 'assets/watches/silver.png',
@@ -60,7 +64,7 @@ const watchMap = [
   // {
   //   'categary': 'Sportswear',
   //   'topcollection': 'Stripes',
-  //   'fit': 'Straight',
+  //   'occasion': 'Straight',
   //   'color': 'red',
   //   'material': 'assets/material/polyster.png',
   //   'WatchcolorImage':
@@ -71,7 +75,7 @@ const watchMap = [
   // {
   //   'categary': 'Watches',
   //   'topcollection': 'Stripes',
-  //   'fit': 'Slim',
+  //   'occasion': 'Slim',
   //   'color': 'red',
   //   'material': 'assets/material/polyster.png',
   //   'WatchcolorImage':
@@ -82,7 +86,7 @@ const watchMap = [
   // {
   //   'categary': 'Inner-wear',
   //   'topcollection': 'Stripes',
-  //   'fit': 'Slim',
+  //   'occasion': 'Slim',
   //   'color': 'red',
   //   'material': 'assets/material/polyster.png',
   //   'WatchcolorImage':
@@ -93,7 +97,7 @@ const watchMap = [
   // {
   //   'categary': 'Accessories',
   //   'topcollection': 'Stripes',
-  //   'fit': 'Slim',
+  //   'occasion': 'Slim',
   //   'color': 'red',
   //   'material': 'assets/material/polyster.png',
   //   'WatchcolorImage':

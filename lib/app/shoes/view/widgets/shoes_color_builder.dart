@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:menz_cart_app/app/constants/colors.dart';
-import 'package:menz_cart_app/app/jeans/view_model/jeans_map.dart';
 import 'package:menz_cart_app/app/shoes/view_model/shoes_map.dart';
 
 class ShoesColorBuilder extends StatelessWidget {

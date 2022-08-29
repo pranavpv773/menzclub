@@ -47,11 +47,13 @@ class WatchColorBuilder extends StatelessWidget {
                       width: width / 5,
                       height: height / 8,
                       decoration: BoxDecoration(
-                          borderRadius: BorderRadius.circular(5),
-                          image: DecorationImage(
-                              image: AssetImage(watchMap[index]
-                                      ['WatchcolorImage']
-                                  .toString()))),
+                        borderRadius: BorderRadius.circular(5),
+                        image: DecorationImage(
+                          image: AssetImage(
+                            watchMap[index]['WatchcolorImage'].toString(),
+                          ),
+                        ),
+                      ),
                     ),
                   ),
                   Text(watchMap[index]['color'].toString()),
