@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:menz_cart_app/app/categories/view_model/map.dart';
+import 'package:menz_cart_app/app/jeans/view/jeans_screen.dart';
 import 'package:menz_cart_app/routes/routes.dart';
 import 'package:menz_cart_app/app/shirt/view/shirt_screen.dart';
 import 'package:menz_cart_app/app/t_shirt/view/t_shirt_screen.dart';
@@ -17,7 +18,7 @@ class CategoriesScreen extends StatelessWidget {
           screen: ShirtScreen(string: 'Shirts'),
         ),
         CategoryCards(index: 1, screen: TshirtScreen()),
-        CategoryCards(index: 2, screen: CategoriesScreen()),
+        CategoryCards(index: 2, screen: JeansScreen()),
         CategoryCards(index: 3, screen: CategoriesScreen()),
         CategoryCards(index: 4, screen: CategoriesScreen()),
         CategoryCards(index: 5, screen: CategoriesScreen()),
