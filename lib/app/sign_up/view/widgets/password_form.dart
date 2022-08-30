@@ -20,54 +20,57 @@ class PasswordTextforms extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return TextFormField(
-      validator: (value) {
-        if (value!.isEmpty) {
-          return 'Please fill this field';
-        }
-      },
-      keyboardType: TextInputType.visiblePassword,
-      controller: controller,
-      style: TextStyle(
-        color: kGrey,
-        fontSize: 16,
-      ),
-      obscureText: obscureText,
-      decoration: InputDecoration(
-        fillColor: kWhite,
-        filled: true,
-        prefixIcon: Padding(
-          padding: const EdgeInsets.symmetric(horizontal: 20.0),
-          child: Icon(
-            icon,
-            color: primary,
-          ),
-        ),
-        enabledBorder: UnderlineInputBorder(
-          borderRadius: BorderRadius.circular(10),
-          borderSide: BorderSide(
-            color: kGrey,
-            width: 2.0,
-          ),
-        ),
-        focusedBorder: UnderlineInputBorder(
-          borderRadius: BorderRadius.circular(10),
-          borderSide: const BorderSide(
-            color: Colors.teal,
-            width: 2.0,
-          ),
-        ),
-        border: UnderlineInputBorder(
-          borderRadius: BorderRadius.circular(10),
-          borderSide: BorderSide(
-            color: kGrey,
-            width: 2.0,
-          ),
-        ),
-        hintText: text,
-        hintStyle: TextStyle(
-          fontSize: 15,
+    return Padding(
+      padding: const EdgeInsets.all(8.0),
+      child: TextFormField(
+        validator: (value) {
+          if (value!.isEmpty) {
+            return 'Please fill this field';
+          }
+        },
+        keyboardType: TextInputType.visiblePassword,
+        controller: controller,
+        style: TextStyle(
           color: kGrey,
+          fontSize: 16,
+        ),
+        obscureText: obscureText,
+        decoration: InputDecoration(
+          fillColor: kWhite,
+          filled: true,
+          prefixIcon: Padding(
+            padding: const EdgeInsets.symmetric(horizontal: 20.0),
+            child: Icon(
+              icon,
+              color: primary,
+            ),
+          ),
+          enabledBorder: OutlineInputBorder(
+            borderRadius: BorderRadius.circular(10),
+            borderSide: BorderSide(
+              color: kGrey,
+              width: 2.0,
+            ),
+          ),
+          focusedBorder: OutlineInputBorder(
+            borderRadius: BorderRadius.circular(10),
+            borderSide: const BorderSide(
+              color: Colors.teal,
+              width: 2.0,
+            ),
+          ),
+          border: OutlineInputBorder(
+            borderRadius: BorderRadius.circular(10),
+            borderSide: BorderSide(
+              color: kGrey,
+              width: 2.0,
+            ),
+          ),
+          hintText: text,
+          hintStyle: TextStyle(
+            fontSize: 15,
+            color: kGrey,
+          ),
         ),
       ),
     );
