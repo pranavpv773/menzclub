@@ -2,6 +2,7 @@ const jeansList = [
   {
     'categary': 'Jeans',
     'productName': 'Jeans1',
+    'productPrice': '2500',
     'topcollection': 'Check',
     'productImage':
         'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRZiS9szjLs6zY8FWSqDnVxnD6CxfEd6QpFHQ&usqp=CAU',
@@ -16,6 +17,7 @@ const jeansList = [
   {
     'categary': 'T-shirt',
     'productName': 'Jeans2',
+    'productPrice': '2500',
     'topcollection': 'Print',
     'productImage':
         'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTkpm_nggRDrslgk-u2mdg7J7WV7reCX6Elww&usqp=CAU',
@@ -30,6 +32,7 @@ const jeansList = [
   {
     'categary': 'Jeans',
     'productName': 'Jeans3',
+    'productPrice': '2500',
     'topcollection': 'Solid',
     'productImage':
         'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSrrGxvmbFm1LIhb0seb85pXp3LYJhibhdacQ&usqp=CAU',
@@ -44,6 +47,7 @@ const jeansList = [
   {
     'categary': 'Trousers',
     'productName': 'Jeans4',
+    'productPrice': '3299',
     'topcollection': 'Comfortable',
     'productImage':
         'https://rukminim1.flixcart.com/image/332/398/jvtujrk0/jean/s/s/f/32-2338117-wrogn-original-imafgmprytkwkcju.jpeg?q=50',
@@ -58,6 +62,7 @@ const jeansList = [
   {
     'categary': 'Ethic-wear',
     'productName': 'Jeans5',
+    'productPrice': '699',
     'topcollection': 'Stripes',
     'productImage':
         'https://rukminim1.flixcart.com/image/332/398/km0x5zk0/jean/d/r/c/32-mss21jn713-metronaut-original-imagfyzz4zbekbb9.jpeg?q=50',
@@ -71,6 +76,7 @@ const jeansList = [
   {
     'categary': 'Shoes',
     'productName': 'Jeans6',
+    'productPrice': '1359',
     'topcollection': 'Stripes',
     'productImage':
         'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQldLDdeP5mtKCoj7Ey3KtFNQjrrLLm8vFYMg&usqp=CAU',
@@ -84,6 +90,7 @@ const jeansList = [
   {
     'categary': 'Sportswear',
     'productName': 'Jeans7',
+    'productPrice': '2499',
     'topcollection': 'Stripes',
     'productImage':
         'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRPUGoHEm7o1oTDBUSE2L3kFcrKjjkg-5kmiA&usqp=CAU',
@@ -98,6 +105,7 @@ const jeansList = [
   {
     'categary': 'Watches',
     'productName': 'Jeans8',
+    'productPrice': '750',
     'topcollection': 'Stripes',
     'productImage':
         'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQr3QFapFM8oJtrlfz3NlQQuLxvX3zXbmHZMQ&usqp=CAU',
@@ -112,6 +120,7 @@ const jeansList = [
   {
     'categary': 'Inner-wear',
     'productName': 'Jeans9',
+    'productPrice': '1500',
     'topcollection': 'Stripes',
     'productImage':
         'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTil8xgiLdLLDpihLxMbQSyEFfsHcP93mc2DayRpU7cXNclLANRRbVvBxIw-6DXnGGlq6g&usqp=CAU',
@@ -126,6 +135,7 @@ const jeansList = [
   {
     'categary': 'Accessories',
     'productName': 'Jeans10',
+    'productPrice': '2150',
     'topcollection': 'Stripes',
     'productImage':
         'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRQdW1Wt85L9CA1Cf4eOeO3SILNjk_xi6AI571WUD46VZhrwJUBvYydCMiHLzMhFcYwv0A&usqp=CAU',

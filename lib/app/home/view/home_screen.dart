@@ -70,11 +70,13 @@ class HomeScreen extends StatelessWidget {
           sizedBox20,
           Container(
             decoration: const BoxDecoration(
-                image: DecorationImage(
-                    image: NetworkImage(
-                      'https://thumbs.dreamstime.com/b/texture-blue-decorative-plaster-concrete-vignette-abstract-grunge-background-design-234969184.jpg',
-                    ),
-                    fit: BoxFit.cover)),
+              image: DecorationImage(
+                image: NetworkImage(
+                  'https://thumbs.dreamstime.com/b/texture-blue-decorative-plaster-concrete-vignette-abstract-grunge-background-design-234969184.jpg',
+                ),
+                fit: BoxFit.cover,
+              ),
+            ),
             child: Column(
               children: [
                 const HeaderWidget(
