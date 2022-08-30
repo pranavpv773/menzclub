@@ -1,8 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:menz_cart_app/app/global/view_model/global_provider.dart';
+import 'package:menz_cart_app/app/login/view_model/login_provider.dart';
 import 'package:menz_cart_app/app/products/view/product_screen.dart';
 import 'package:menz_cart_app/app/products/view_model/products_provider.dart';
+import 'package:menz_cart_app/app/sign_up/view_model/signup_provider.dart';
+import 'package:menz_cart_app/app/splash/view/splash_screen.dart';
+import 'package:menz_cart_app/app/splash/view_model/splash_screen.dart';
 import 'package:provider/provider.dart';
 import 'app/constants/colors.dart';
 import 'app/global/view/global_screen.dart';
@@ -19,6 +23,15 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MultiProvider(
       providers: [
+        ChangeNotifierProvider(
+          create: (crete) => SplashProvider(),
+        ),
+        ChangeNotifierProvider(
+          create: (crete) => LoginProvider(),
+        ),
+        ChangeNotifierProvider(
+          create: (crete) => SignUpProvider(),
+        ),
         ChangeNotifierProvider(
           create: (crete) => GlobalProvider(),
         ),
@@ -37,7 +50,7 @@ class MyApp extends StatelessWidget {
           fontFamily: GoogleFonts.mulish().fontFamily,
           primarySwatch: Colors.blue,
         ),
-        home: const GlobalScreen(),
+        home: const SplashScreen(),
       ),
     );
   }
