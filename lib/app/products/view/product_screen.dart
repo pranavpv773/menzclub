@@ -4,6 +4,7 @@ import 'package:menz_cart_app/app/filter/view/filter_screen.dart';
 import 'package:menz_cart_app/app/products/view/widgets/card_builder.dart';
 import 'package:menz_cart_app/app/utilities/view/appbar_widget.dart';
 import 'package:menz_cart_app/routes/routes.dart';
+import 'widgets/border_container.dart';
 import 'widgets/radio_btn.dart';
 
 class ProductsScreen extends StatelessWidget {
@@ -17,7 +18,9 @@ class ProductsScreen extends StatelessWidget {
     final height = MediaQuery.of(context).size.height;
     return Scaffold(
       appBar: PreferredSize(
-        preferredSize: Size.fromHeight(height / 15),
+        preferredSize: Size.fromHeight(
+          height / 15,
+        ),
         child: CommonAppBarWidget(
           section: title,
         ),
@@ -25,7 +28,11 @@ class ProductsScreen extends StatelessWidget {
       body: SingleChildScrollView(
         child: Column(
           children: [
-            ProductCardBuilder(height: height, list: list, width: width),
+            ProductCardBuilder(
+              height: height,
+              list: list,
+              width: width,
+            ),
           ],
         ),
       ),
@@ -46,13 +53,19 @@ class ProductsScreen extends StatelessWidget {
               width: width,
               child: GestureDetector(
                 onTap: () {
-                  RoutesProvider.nextScreen(screen: const FilterScreen());
+                  RoutesProvider.nextScreen(
+                    screen: const FilterScreen(),
+                  );
                 },
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.end,
                   children: const [
-                    Icon(Icons.filter_alt_outlined),
-                    Text('FILTER'),
+                    Icon(
+                      Icons.filter_alt_outlined,
+                    ),
+                    Text(
+                      'FILTER',
+                    ),
                   ],
                 ),
               ),
@@ -61,31 +74,6 @@ class ProductsScreen extends StatelessWidget {
         ),
       ),
     );
-  }
-}
-
-class BorderContainerWidget extends StatelessWidget {
-  const BorderContainerWidget({
-    Key? key,
-    required this.child,
-    required this.height,
-    required this.width,
-  }) : super(key: key);
-  final double width;
-  final double height;
-  final Widget child;
-  @override
-  Widget build(BuildContext context) {
-    return Container(
-        width: width / 2,
-        height: height / 10,
-        padding: const EdgeInsets.all(5),
-        decoration: BoxDecoration(
-            border: Border.all(
-          color: kWhite,
-          width: 2,
-        )),
-        child: child);
   }
 }
 

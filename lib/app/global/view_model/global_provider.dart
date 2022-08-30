@@ -16,11 +16,17 @@ class GlobalProvider with ChangeNotifier {
 
   onTabIndexChange(int number) {
     pageIndex = number;
+    if (pageIndex == 3) {
+      showAppbar = false;
+      notifyListeners();
+    } else {
+      showAppbar = true;
+      notifyListeners();
+    }
     notifyListeners();
   }
 
-  onTabAppbarCheck(bool check) {
-    showAppbar = check;
+  onTabAppbarCheck() {
     notifyListeners();
   }
 }
