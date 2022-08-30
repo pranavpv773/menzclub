@@ -44,7 +44,9 @@ class HomeScreen extends StatelessWidget {
                     ),
                     fit: BoxFit.cover)),
             child: Padding(
-              padding: const EdgeInsets.symmetric(vertical: 8.0),
+              padding: const EdgeInsets.symmetric(
+                vertical: 8.0,
+              ),
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
