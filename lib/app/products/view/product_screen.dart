@@ -91,36 +91,21 @@ class ExpansionTileWidget extends StatelessWidget {
       elevation: 10,
       shadowColor: primary,
       child: SizedBox(
-        width: width / 2.5,
+        width: width,
         child: const ExpansionTile(
           maintainState: true,
-          title: Text('SORT'),
+          title: Text('LOGIN / SINGN UP'),
           children: [
             ListTile(
                 leading: CircleAvatar(
                   backgroundColor: Colors.blue,
                 ),
-                title: Text('Blue')),
+                title: Text('LOGIN')),
             ListTile(
                 leading: CircleAvatar(
                   backgroundColor: Colors.red,
                 ),
-                title: Text('Red')),
-            ListTile(
-                leading: CircleAvatar(
-                  backgroundColor: Colors.amber,
-                ),
-                title: Text('Amber')),
-            ListTile(
-                leading: CircleAvatar(
-                  backgroundColor: Colors.pink,
-                ),
-                title: Text('Pink')),
-            ListTile(
-                leading: CircleAvatar(
-                  backgroundColor: Colors.green,
-                ),
-                title: Text('Green')),
+                title: Text('SIGN UP')),
           ],
         ),
       ),
