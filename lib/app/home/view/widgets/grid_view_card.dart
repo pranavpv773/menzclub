@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:menz_cart_app/app/constants/colors.dart';
 import 'package:menz_cart_app/app/home/view_model/shirts.dart';
 import 'package:menz_cart_app/app/products/view/product_screen.dart';
+import 'package:menz_cart_app/app/t_shirt/view/t_shirt_screen.dart';
 import 'package:menz_cart_app/routes/routes.dart';
 
 class GridViewCard extends StatelessWidget {
@@ -69,9 +70,7 @@ class GridViewCard extends StatelessWidget {
                           style: TextStyle(color: Colors.green),
                         ),
                         ShopNowButton(
-                          screen: ProductsScreen(
-                            title: 'Product Name',
-                          ),
+                          screen: TshirtScreen(),
                           textButton: 'SHOP NOW',
                         ),
                       ],

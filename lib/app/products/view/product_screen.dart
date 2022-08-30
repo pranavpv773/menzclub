@@ -1,12 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:menz_cart_app/app/constants/colors.dart';
-import 'package:menz_cart_app/app/home/view_model/shirts.dart';
 import 'package:menz_cart_app/app/shoes/view_model/shoes_map.dart';
 import 'package:menz_cart_app/app/utilities/view/appbar_widget.dart';
 
 class ProductsScreen extends StatelessWidget {
-  const ProductsScreen({Key? key, required this.title}) : super(key: key);
+  const ProductsScreen({Key? key, required this.title, required this.list})
+      : super(key: key);
   final String title;
+  final List list;
   @override
   Widget build(BuildContext context) {
     final width = MediaQuery.of(context).size.width;
@@ -32,7 +33,7 @@ class ProductsScreen extends StatelessWidget {
                 crossAxisSpacing: 5,
                 mainAxisSpacing: 20,
               ),
-              itemCount: 6,
+              itemCount: list.length,
               itemBuilder: (BuildContext ctx, index) {
                 return Padding(
                   padding: const EdgeInsets.all(
@@ -57,7 +58,7 @@ class ProductsScreen extends StatelessWidget {
                               borderRadius: BorderRadius.circular(5),
                               image: DecorationImage(
                                   image: NetworkImage(
-                                    shoesProducts[index].toString(),
+                                    list[index]['productImage'].toString(),
                                   ),
                                   fit: BoxFit.fill),
                             ),
@@ -69,7 +70,7 @@ class ProductsScreen extends StatelessWidget {
                             ),
                             child: Center(
                               child: Text(
-                                shoesMap[index]['categary'].toString(),
+                                list[index]['productName'].toString(),
                               ),
                             ),
                           ),

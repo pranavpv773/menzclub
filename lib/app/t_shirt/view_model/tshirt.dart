@@ -1,6 +1,9 @@
 const tShirtList = [
   {
     'categary': 'Round Necks',
+    'productName': 'T-Shirt1',
+    'productImage':
+        'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTf15HvUimxATOXK1w-xehA3s6viO0JGNqe3g&usqp=CAU',
     'topcollection': 'Check',
     'fit': 'Slim',
     'color': 'Red',
@@ -12,6 +15,9 @@ const tShirtList = [
   },
   {
     'categary': 'V-Necks',
+    'productName': 'T-Shirt2',
+    'productImage':
+        'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSa7IR4F8f0gsu4xTAxCxVu4i76U4i99o1v_gmcaWi189-2p6BESz59n2KQleqTEoXk-gU&usqp=CAU',
     'topcollection': 'Print',
     'fit': 'Regular',
     'color': 'Blue',
@@ -23,6 +29,9 @@ const tShirtList = [
   },
   {
     'categary': 'Polos',
+    'productName': 'T-Shirt3',
+    'productImage':
+        'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTzcVL5ETIw-1JNCRa0irUWtekzP5SJsOE3MU7jy22rmHs01f-UVWwEPCN9LSArml_i5TU&usqp=CAU',
     'topcollection': 'Solid',
     'fit': 'Tailors',
     'color': 'Black',
@@ -34,6 +43,9 @@ const tShirtList = [
   },
   {
     'categary': 'Full Sleeves',
+    'productName': 'T-Shirt4',
+    'productImage':
+        'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRWMeHIvVx8hcnorEdOx1rANURLxM4UnhAUyQ&usqp=CAU',
     'topcollection': 'Comfortable',
     'fit': 'Comfortable',
     'color': 'Green',
@@ -45,6 +57,9 @@ const tShirtList = [
   },
   {
     'categary': 'Short Sleeves',
+    'productName': 'T-Shirt5',
+    'productImage':
+        'https://prod-img.thesouledstore.com/public/theSoul/uploads/catalog/product/1660201481_5352235.jpg',
     'topcollection': 'Stripes',
     'fit': 'Fat',
     'color': 'Yellow',
@@ -55,6 +70,9 @@ const tShirtList = [
   },
   {
     'categary': 'Sleeveles',
+    'productName': 'T-Shirt6',
+    'productImage':
+        'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRTjNZa20MpWYqp0-ZcyWFXADJddHI2-AeWbg&usqp=CAU',
     'topcollection': 'Stripes',
     'fit': 'Slim',
     'color': 'White',
@@ -65,6 +83,9 @@ const tShirtList = [
   },
   {
     'categary': 'Sleeveles',
+    'productName': 'T-Shirt7',
+    'productImage':
+        'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTEHYOgqlzzNZtLMNNOLbt3USO8m-5ZXQyUdtjshsl1VYnD1Ds2wG6wwcGCNZvqtbDVhMg&usqp=CAU',
     'topcollection': 'Stripes',
     'fit': 'Slim',
     'color': 'red',
@@ -76,6 +97,9 @@ const tShirtList = [
   },
   {
     'categary': 'Sleeveles',
+    'productName': 'T-Shirt8',
+    'productImage':
+        'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRU3a-2DJ_sooZh5hBFExLsYWLs3eyi-u90aofbNKoO1QVq3h7lqqMHcj64FneS3n1rbS0&usqp=CAU',
     'topcollection': 'Stripes',
     'fit': 'Slim',
     'color': 'red',
@@ -86,6 +110,9 @@ const tShirtList = [
   },
   {
     'categary': 'Sleeveles',
+    'productName': 'T-Shirt9',
+    'productImage':
+        'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS_MvQUdNteWzOv_JNCVhezuAbEXFFSpZuPyg&usqp=CAU',
     'topcollection': 'Stripes',
     'fit': 'Slim',
     'color': 'red',
@@ -97,6 +124,9 @@ const tShirtList = [
   },
   {
     'categary': 'Sleeveles',
+    'productName': 'T-Shirt10',
+    'productImage':
+        'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRujT26IvwphNusg8Jv6yr-geMop6VXijfN_NyJbYiDVd9mZdYTzl9ZOf9QIPPf6Ko1i98&usqp=CAU',
     'topcollection': 'Stripes',
     'fit': 'Slim',
     'color': 'red',
