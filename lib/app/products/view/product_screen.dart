@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:menz_cart_app/app/constants/colors.dart';
+import 'package:menz_cart_app/app/filter/view/filter_screen.dart';
 import 'package:menz_cart_app/app/products/view/widgets/card_builder.dart';
 import 'package:menz_cart_app/app/utilities/view/appbar_widget.dart';
+import 'package:menz_cart_app/routes/routes.dart';
 import 'widgets/radio_btn.dart';
 
 class ProductsScreen extends StatelessWidget {
@@ -23,23 +25,67 @@ class ProductsScreen extends StatelessWidget {
       body: SingleChildScrollView(
         child: Column(
           children: [
-            Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: const [
-                MoreOptions(
-                  icon: Icons.filter_alt_outlined,
-                ),
-                MoreOptions(
-                  icon: Icons.sort,
-                ),
-              ],
-            ),
             ProductCardBuilder(height: height, list: list, width: width),
           ],
         ),
       ),
+      bottomNavigationBar: Container(
+        height: height / 15,
+        color: primary,
+        child: Row(
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            BorderContainerWidget(
+              height: height,
+              width: width,
+              child: const MoreOptions(),
+            ),
+            BorderContainerWidget(
+              height: height,
+              width: width,
+              child: GestureDetector(
+                onTap: () {
+                  RoutesProvider.nextScreen(screen: const FilterScreen());
+                },
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.end,
+                  children: const [
+                    Icon(Icons.filter_alt_outlined),
+                    Text('FILTER'),
+                  ],
+                ),
+              ),
+            ),
+          ],
+        ),
+      ),
     );
+  }
+}
+
+class BorderContainerWidget extends StatelessWidget {
+  const BorderContainerWidget({
+    Key? key,
+    required this.child,
+    required this.height,
+    required this.width,
+  }) : super(key: key);
+  final double width;
+  final double height;
+  final Widget child;
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+        width: width / 2,
+        height: height / 10,
+        padding: const EdgeInsets.all(5),
+        decoration: BoxDecoration(
+            border: Border.all(
+          color: kWhite,
+          width: 2,
+        )),
+        child: child);
   }
 }
 

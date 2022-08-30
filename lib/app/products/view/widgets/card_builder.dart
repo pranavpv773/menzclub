@@ -64,8 +64,14 @@ class ProductCardBuilder extends StatelessWidget {
                       children: [
                         Padding(
                           padding: const EdgeInsets.all(8.0),
-                          child: Text(
-                            list[index]['productName'].toString(),
+                          child: Row(
+                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                            children: [
+                              Text(
+                                list[index]['productName'].toString(),
+                              ),
+                              const Icon(Icons.favorite_border_outlined)
+                            ],
                           ),
                         ),
                         Padding(
@@ -74,7 +80,7 @@ class ProductCardBuilder extends StatelessWidget {
                             mainAxisAlignment: MainAxisAlignment.spaceBetween,
                             children: [
                               Text(
-                                '\$${list[index]['productPrice'].toString()}',
+                                '\$ ${list[index]['productPrice'].toString()}',
                                 style: const TextStyle(
                                     fontSize: 16, color: Colors.green),
                               ),

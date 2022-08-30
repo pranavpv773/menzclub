@@ -4,12 +4,11 @@ import 'package:menz_cart_app/app/products/view_model/products_provider.dart';
 import 'package:provider/provider.dart';
 
 class MoreOptions extends StatelessWidget {
-  const MoreOptions({Key? key, required this.icon}) : super(key: key);
-  final IconData icon;
+  const MoreOptions({Key? key}) : super(key: key);
+
   @override
   Widget build(BuildContext context) {
     return PopupMenuButton<int>(
-      icon: Icon(icon),
       color: kWhite,
       itemBuilder: (context) => [
         PopupMenuItem<int>(
@@ -58,6 +57,17 @@ class MoreOptions extends StatelessWidget {
       onSelected: (item) {
         // context.read<ServicesProvider>().selectedItem(context, item);
       },
+      child: Row(
+        children: const [
+          Padding(
+            padding: EdgeInsets.all(8.0),
+            child: Text('SORT'),
+          ),
+          Icon(
+            Icons.sort,
+          )
+        ],
+      ),
     );
   }
 }
