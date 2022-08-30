@@ -4,9 +4,11 @@ import 'package:menz_cart_app/app/home/view/widgets/carousel_banner.dart';
 import 'package:menz_cart_app/app/home/view/widgets/circle_dot.dart';
 import 'package:menz_cart_app/app/home/view/widgets/grid_view_card.dart';
 import 'package:menz_cart_app/app/home/view_model/shirts.dart';
+import 'package:menz_cart_app/app/products/view/product_screen.dart';
 import 'package:menz_cart_app/app/shirt/view/widgets/shirt_fit.dart';
 import 'package:menz_cart_app/app/utilities/view/appbar_widget.dart';
 import 'package:menz_cart_app/app/watches/view/widgets/watch_prize.dart';
+import 'package:menz_cart_app/app/watches/view_model/watch_map.dart';
 import 'widgets/ocassion_builder.dart';
 import 'widgets/watch_color_builder.dart';
 
@@ -58,6 +60,10 @@ class WatchesScreen extends StatelessWidget {
                 ),
                 sizedBox50,
                 const ShopNowButton(
+                  screen: ProductsScreen(
+                    list: watchMap,
+                    title: 'WATCHES',
+                  ),
                   textButton: 'SHOP ALL WATCHES',
                 ),
               ],

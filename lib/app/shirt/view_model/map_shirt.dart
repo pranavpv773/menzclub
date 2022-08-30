@@ -1,7 +1,10 @@
 const shirtList = [
   {
     'categary': 'Shirt',
+    'productName': 'Shirt1',
     'topcollection': 'Check',
+    'productImage':
+        'https://static-01.daraz.pk/p/9678045f1b0e0c64ae883f500bf28db6.jpg',
     'fit': 'Slim',
     'color': 'Red',
     'material': 'assets/material/polyster.png',
@@ -13,7 +16,10 @@ const shirtList = [
   },
   {
     'categary': 'T-shirt',
+    'productName': 'Shirt2',
     'topcollection': 'Print',
+    'productImage':
+        'https://image.dhgate.com/0x0s/f2-albu-g10-M01-84-35-rBVaWV4kEweAfu_TAAHDXD-w4xE522.jpg/mens-designer-shirts-fashion-wide-striped.jpg',
     'fit': 'Regular',
     'color': 'Blue',
     'material': 'assets/material/cotton.jpeg',
@@ -25,7 +31,10 @@ const shirtList = [
   },
   {
     'categary': 'Jeans',
+    'productName': 'Shirt3',
     'topcollection': 'Solid',
+    'productImage':
+        'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ95QDLYC_2ZYwBLFno_y7I-sZIic3YEhJhSoHKT2eVuMU4xF7K99q5Q60PYNUnjPk2WfY&usqp=CAU',
     'fit': 'Tailors',
     'color': 'Black',
     'material': 'assets/material/linen.jpeg',
@@ -37,7 +46,10 @@ const shirtList = [
   },
   {
     'categary': 'Trousers',
+    'productName': 'Shirt4',
     'topcollection': 'Comfortable',
+    'productImage':
+        'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQVhsHQVzNYY1ucTKPzh9QmhEPthskTY1Q8Ag&usqp=CAU',
     'fit': 'Comfortable',
     'color': 'Green',
     'material': 'assets/material/lycol.jpeg',
@@ -49,7 +61,10 @@ const shirtList = [
   },
   {
     'categary': 'Ethic-wear',
+    'productName': 'Shirt5',
     'topcollection': 'Stripes',
+    'productImage':
+        'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSxE_-kk-HkBTngEkbTRlJogWq3sRk7fNoA7g&usqp=CAU',
     'fit': 'Fat',
     'color': 'Yellow',
     'material': 'assets/material/polyster.png',
@@ -60,7 +75,10 @@ const shirtList = [
   },
   {
     'categary': 'Shoes',
+    'productName': 'Shirt6',
     'topcollection': 'Stripes',
+    'productImage':
+        'https://ae01.alicdn.com/kf/HTB1.jf1X6LuK1Rjy0Fhq6xpdFXaH/2019-Brushed-Cotton-Shirt-Men-Casual-Long-Sleeve-Mens-Navy-Blue-Dress-Shirts-With-Pocket-Solid.jpg_640x640.jpg',
     'fit': 'Slim',
     'color': 'White',
     'material': 'assets/material/polyster.png',
@@ -71,7 +89,10 @@ const shirtList = [
   },
   {
     'categary': 'Sportswear',
+    'productName': 'Shirt7',
     'topcollection': 'Stripes',
+    'productImage':
+        'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRx8vLxbJuw7g7SKlCLor224HCNiOw2G-r426JOd8JHS2steZuBwc1Lx0hGGDVhOe28_Hk&usqp=CAU',
     'fit': 'Slim',
     'color': 'red',
     'material': 'assets/material/polyster.png',
@@ -82,7 +103,10 @@ const shirtList = [
   },
   {
     'categary': 'Watches',
+    'productName': 'Shirt8',
     'topcollection': 'Stripes',
+    'productImage':
+        'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTHs3Osuhs_N3ywG1GjUF_9eubOtSx2ZslaaA&usqp=CAU',
     'fit': 'Slim',
     'color': 'red',
     'material': 'assets/material/polyster.png',
@@ -93,7 +117,10 @@ const shirtList = [
   },
   {
     'categary': 'Inner-wear',
+    'productName': 'Shirt9',
     'topcollection': 'Stripes',
+    'productImage':
+        'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTLhRgnYV2Gusz2drk6y5iMdisqf8kutHMgZC7XbqXGsUa677-bIMjL3SGjLcKkbdd0SUU&usqp=CAU',
     'fit': 'Slim',
     'color': 'red',
     'material': 'assets/material/polyster.png',
@@ -104,7 +131,10 @@ const shirtList = [
   },
   {
     'categary': 'Accessories',
+    'productName': 'Shirt10',
     'topcollection': 'Stripes',
+    'productImage':
+        'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQdEr6RU9iNPodYzJ8-iYV1H4zCypHqqGxSBd_MfALfKsBD_yPu57aKbsJpMOxeVD52jec&usqp=CAU',
     'fit': 'Slim',
     'color': 'red',
     'material': 'assets/material/polyster.png',

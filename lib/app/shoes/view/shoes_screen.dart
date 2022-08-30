@@ -4,10 +4,12 @@ import 'package:menz_cart_app/app/home/view/widgets/carousel_banner.dart';
 import 'package:menz_cart_app/app/home/view/widgets/circle_dot.dart';
 import 'package:menz_cart_app/app/home/view/widgets/grid_view_card.dart';
 import 'package:menz_cart_app/app/home/view_model/shirts.dart';
+import 'package:menz_cart_app/app/products/view/product_screen.dart';
 import 'package:menz_cart_app/app/shirt/view/widgets/shirt_fit.dart';
 import 'package:menz_cart_app/app/shoes/view/widgets/collections.dart';
 import 'package:menz_cart_app/app/shoes/view/widgets/shoes_color_builder.dart';
 import 'package:menz_cart_app/app/shoes/view/widgets/sort_by_size.dart';
+import 'package:menz_cart_app/app/shoes/view_model/shoes_map.dart';
 import 'package:menz_cart_app/app/utilities/view/appbar_widget.dart';
 import 'widgets/offer_by_prize.dart';
 
@@ -71,6 +73,10 @@ class ShoesScreen extends StatelessWidget {
                 ),
                 sizedBox50,
                 const ShopNowButton(
+                  screen: ProductsScreen(
+                    list: shoesMap,
+                    title: 'SHOES',
+                  ),
                   textButton: 'SHOP ALL SHOES',
                 ),
               ],

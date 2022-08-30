@@ -1,7 +1,10 @@
 const jeansList = [
   {
-    'categary': 'Shirt',
+    'categary': 'Jeans',
+    'productName': 'Jeans1',
     'topcollection': 'Check',
+    'productImage':
+        'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRZiS9szjLs6zY8FWSqDnVxnD6CxfEd6QpFHQ&usqp=CAU',
     'fit': 'Straight',
     'color': 'Black',
     'material': 'assets/material/polyster.png',
@@ -12,7 +15,10 @@ const jeansList = [
   },
   {
     'categary': 'T-shirt',
+    'productName': 'Jeans2',
     'topcollection': 'Print',
+    'productImage':
+        'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTkpm_nggRDrslgk-u2mdg7J7WV7reCX6Elww&usqp=CAU',
     'fit': 'Regular',
     'color': 'Blue',
     'material': 'assets/material/cotton.jpeg',
@@ -23,7 +29,10 @@ const jeansList = [
   },
   {
     'categary': 'Jeans',
+    'productName': 'Jeans3',
     'topcollection': 'Solid',
+    'productImage':
+        'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSrrGxvmbFm1LIhb0seb85pXp3LYJhibhdacQ&usqp=CAU',
     'fit': 'Loose',
     'color': 'Grey',
     'material': 'assets/material/linen.jpeg',
@@ -34,7 +43,10 @@ const jeansList = [
   },
   {
     'categary': 'Trousers',
+    'productName': 'Jeans4',
     'topcollection': 'Comfortable',
+    'productImage':
+        'https://rukminim1.flixcart.com/image/332/398/jvtujrk0/jean/s/s/f/32-2338117-wrogn-original-imafgmprytkwkcju.jpeg?q=50',
     'fit': 'Tapered',
     'color': 'White',
     'material': 'assets/material/lycol.jpeg',
@@ -45,7 +57,10 @@ const jeansList = [
   },
   {
     'categary': 'Ethic-wear',
+    'productName': 'Jeans5',
     'topcollection': 'Stripes',
+    'productImage':
+        'https://rukminim1.flixcart.com/image/332/398/km0x5zk0/jean/d/r/c/32-mss21jn713-metronaut-original-imagfyzz4zbekbb9.jpeg?q=50',
     'fit': 'Skinny',
     'color': 'Yellow',
     'material': 'assets/material/polyster.png',
@@ -55,7 +70,10 @@ const jeansList = [
   },
   {
     'categary': 'Shoes',
+    'productName': 'Jeans6',
     'topcollection': 'Stripes',
+    'productImage':
+        'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQldLDdeP5mtKCoj7Ey3KtFNQjrrLLm8vFYMg&usqp=CAU',
     'fit': 'Slim',
     'color': 'White',
     'material': 'assets/material/polyster.png',
@@ -65,7 +83,10 @@ const jeansList = [
   },
   {
     'categary': 'Sportswear',
+    'productName': 'Jeans7',
     'topcollection': 'Stripes',
+    'productImage':
+        'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRPUGoHEm7o1oTDBUSE2L3kFcrKjjkg-5kmiA&usqp=CAU',
     'fit': 'Straight',
     'color': 'red',
     'material': 'assets/material/polyster.png',
@@ -76,7 +97,10 @@ const jeansList = [
   },
   {
     'categary': 'Watches',
+    'productName': 'Jeans8',
     'topcollection': 'Stripes',
+    'productImage':
+        'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQr3QFapFM8oJtrlfz3NlQQuLxvX3zXbmHZMQ&usqp=CAU',
     'fit': 'Slim',
     'color': 'red',
     'material': 'assets/material/polyster.png',
@@ -87,7 +111,10 @@ const jeansList = [
   },
   {
     'categary': 'Inner-wear',
+    'productName': 'Jeans9',
     'topcollection': 'Stripes',
+    'productImage':
+        'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTil8xgiLdLLDpihLxMbQSyEFfsHcP93mc2DayRpU7cXNclLANRRbVvBxIw-6DXnGGlq6g&usqp=CAU',
     'fit': 'Slim',
     'color': 'red',
     'material': 'assets/material/polyster.png',
@@ -98,7 +125,10 @@ const jeansList = [
   },
   {
     'categary': 'Accessories',
+    'productName': 'Jeans10',
     'topcollection': 'Stripes',
+    'productImage':
+        'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRQdW1Wt85L9CA1Cf4eOeO3SILNjk_xi6AI571WUD46VZhrwJUBvYydCMiHLzMhFcYwv0A&usqp=CAU',
     'fit': 'Slim',
     'color': 'red',
     'material': 'assets/material/polyster.png',
