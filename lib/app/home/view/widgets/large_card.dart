@@ -61,7 +61,8 @@ class VerticalBulder extends StatelessWidget {
       decoration: const BoxDecoration(
         image: DecorationImage(
             image: NetworkImage(
-                'https://i.pinimg.com/736x/24/52/e8/2452e861c7e902c1fc2e184c56807fd6.jpg'),
+              'https://i.pinimg.com/736x/24/52/e8/2452e861c7e902c1fc2e184c56807fd6.jpg',
+            ),
             fit: BoxFit.fill),
       ),
       width: width,

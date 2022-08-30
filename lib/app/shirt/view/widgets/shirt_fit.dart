@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:menz_cart_app/app/constants/colors.dart';
+import 'package:menz_cart_app/app/products/view/product_screen.dart';
 import 'package:menz_cart_app/app/shirt/view_model/map_shirt.dart';
+import 'package:menz_cart_app/routes/routes.dart';
 
 class ShirtFitWidget extends StatelessWidget {
   const ShirtFitWidget(
@@ -54,27 +56,36 @@ class ShirtFitWidget extends StatelessWidget {
                 padding: const EdgeInsets.all(
                   8.0,
                 ),
-                child: Material(
-                  elevation: 10,
-                  shadowColor: Colors.black,
-                  child: Container(
-                    width: width / 2.5,
-                    height: height / 8,
-                    decoration: BoxDecoration(
-                      image: DecorationImage(
-                        image: AssetImage(
-                          image2,
+                child: GestureDetector(
+                  onTap: () {
+                    RoutesProvider.nextScreen(
+                      screen: ProductsScreen(
+                          title: shirtList[index]['fit'].toString(),
+                          list: shirtList),
+                    );
+                  },
+                  child: Material(
+                    elevation: 10,
+                    shadowColor: Colors.black,
+                    child: Container(
+                      width: width / 2.5,
+                      height: height / 8,
+                      decoration: BoxDecoration(
+                        image: DecorationImage(
+                          image: AssetImage(
+                            image2,
+                          ),
+                          fit: BoxFit.cover,
                         ),
-                        fit: BoxFit.cover,
                       ),
+                      child: Center(
+                          child: Text(
+                        shirtList[index]['fit'].toString(),
+                        style: TextStyle(
+                          color: kWhite,
+                        ),
+                      )),
                     ),
-                    child: Center(
-                        child: Text(
-                      shirtList[index]['fit'].toString(),
-                      style: TextStyle(
-                        color: kWhite,
-                      ),
-                    )),
                   ),
                 ),
               );
@@ -161,30 +172,38 @@ class ShirtBannerBuilder extends StatelessWidget {
           padding: const EdgeInsets.all(
             8.0,
           ),
-          child: Material(
-            borderRadius: BorderRadius.circular(10),
-            elevation: 10,
-            shadowColor: Colors.black,
-            child: Container(
-              decoration: BoxDecoration(
-                color: primary1,
-                borderRadius: BorderRadius.circular(10),
-              ),
-              child: Column(
-                children: [
-                  Padding(
-                    padding: const EdgeInsets.all(8.0),
-                    child: Container(
-                      width: width / 5,
-                      height: height / 8,
-                      decoration: BoxDecoration(
-                        color: colorList[index],
-                        borderRadius: BorderRadius.circular(5),
+          child: GestureDetector(
+            onTap: () {
+              RoutesProvider.nextScreen(
+                  screen: ProductsScreen(
+                      title: shirtList[index]['color'].toString(),
+                      list: shirtList));
+            },
+            child: Material(
+              borderRadius: BorderRadius.circular(10),
+              elevation: 10,
+              shadowColor: Colors.black,
+              child: Container(
+                decoration: BoxDecoration(
+                  color: primary1,
+                  borderRadius: BorderRadius.circular(10),
+                ),
+                child: Column(
+                  children: [
+                    Padding(
+                      padding: const EdgeInsets.all(8.0),
+                      child: Container(
+                        width: width / 5,
+                        height: height / 8,
+                        decoration: BoxDecoration(
+                          color: colorList[index],
+                          borderRadius: BorderRadius.circular(5),
+                        ),
                       ),
                     ),
-                  ),
-                  Text(shirtList[index]['color'].toString()),
-                ],
+                    Text(shirtList[index]['color'].toString()),
+                  ],
+                ),
               ),
             ),
           ),

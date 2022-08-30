@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:menz_cart_app/app/products/view/product_screen.dart';
+import 'package:menz_cart_app/app/shirt/view_model/map_shirt.dart';
 import 'package:menz_cart_app/app/utilities/view/container_network.dart';
+import 'package:menz_cart_app/routes/routes.dart';
 
 class ShirtCategoryCards extends StatelessWidget {
   const ShirtCategoryCards({
@@ -17,26 +20,47 @@ class ShirtCategoryCards extends StatelessWidget {
     return Row(
       mainAxisAlignment: MainAxisAlignment.spaceAround,
       children: [
-        ShirtCategories(
-          width: width,
-          height: height,
-          image:
-              'https://getketchadmin.getketch.com/product/8905040617459/660/HLSH011581_1.JPG',
-          caption: 'CASUAL',
+        GestureDetector(
+          onTap: () {
+            print('object');
+            RoutesProvider.nextScreen(
+                screen: const ProductsScreen(title: 'CASUAL', list: shirtList));
+          },
+          child: ShirtCategories(
+            width: width,
+            height: height,
+            image:
+                'https://getketchadmin.getketch.com/product/8905040617459/660/HLSH011581_1.JPG',
+            caption: 'CASUAL',
+          ),
         ),
-        ShirtCategories(
-          width: width,
-          height: height,
-          image:
-              'https://5.imimg.com/data5/IN/BF/MY-5837050/men-formal-shirt-1000x1000.jpg',
-          caption: 'FORMAL',
+        GestureDetector(
+          onTap: () {
+            print('object');
+            RoutesProvider.nextScreen(
+                screen: const ProductsScreen(title: 'FORMAL', list: shirtList));
+          },
+          child: ShirtCategories(
+            width: width,
+            height: height,
+            image:
+                'https://5.imimg.com/data5/IN/BF/MY-5837050/men-formal-shirt-1000x1000.jpg',
+            caption: 'FORMAL',
+          ),
         ),
-        ShirtCategories(
-          width: width,
-          height: height,
-          image:
-              'https://rukminim1.flixcart.com/image/612/612/kpodocw0/shirt/s/q/u/l-ronit-ap001-pushya-original-imag3uwarrta9bdy.jpeg?q=70',
-          caption: 'PARTY',
+        GestureDetector(
+          onTap: () {
+            print('object');
+            RoutesProvider.nextScreen(
+                screen: const ProductsScreen(title: 'PARTY', list: shirtList));
+          },
+          child: ShirtCategories(
+            width: width,
+            height: height,
+            image:
+                'https://rukminim1.flixcart.com/image/612/612/kpodocw0/shirt/s/q/u/l-ronit-ap001-pushya-original-imag3uwarrta9bdy.jpeg?q=70',
+            caption: 'PARTY',
+          ),
         ),
       ],
     );
