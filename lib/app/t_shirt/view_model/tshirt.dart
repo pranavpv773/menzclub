@@ -2,6 +2,7 @@ const tShirtList = [
   {
     'categary': 'Round Necks',
     'productName': 'T-Shirt1',
+    'productPrice': '2500',
     'productImage':
         'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTf15HvUimxATOXK1w-xehA3s6viO0JGNqe3g&usqp=CAU',
     'topcollection': 'Check',
@@ -16,6 +17,7 @@ const tShirtList = [
   {
     'categary': 'V-Necks',
     'productName': 'T-Shirt2',
+    'productPrice': '1500',
     'productImage':
         'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSa7IR4F8f0gsu4xTAxCxVu4i76U4i99o1v_gmcaWi189-2p6BESz59n2KQleqTEoXk-gU&usqp=CAU',
     'topcollection': 'Print',
@@ -30,6 +32,7 @@ const tShirtList = [
   {
     'categary': 'Polos',
     'productName': 'T-Shirt3',
+    'productPrice': '652',
     'productImage':
         'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTzcVL5ETIw-1JNCRa0irUWtekzP5SJsOE3MU7jy22rmHs01f-UVWwEPCN9LSArml_i5TU&usqp=CAU',
     'topcollection': 'Solid',
@@ -44,6 +47,7 @@ const tShirtList = [
   {
     'categary': 'Full Sleeves',
     'productName': 'T-Shirt4',
+    'productPrice': '498',
     'productImage':
         'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRWMeHIvVx8hcnorEdOx1rANURLxM4UnhAUyQ&usqp=CAU',
     'topcollection': 'Comfortable',
@@ -58,6 +62,7 @@ const tShirtList = [
   {
     'categary': 'Short Sleeves',
     'productName': 'T-Shirt5',
+    'productPrice': '999',
     'productImage':
         'https://prod-img.thesouledstore.com/public/theSoul/uploads/catalog/product/1660201481_5352235.jpg',
     'topcollection': 'Stripes',
@@ -71,6 +76,7 @@ const tShirtList = [
   {
     'categary': 'Sleeveles',
     'productName': 'T-Shirt6',
+    'productPrice': '581',
     'productImage':
         'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRTjNZa20MpWYqp0-ZcyWFXADJddHI2-AeWbg&usqp=CAU',
     'topcollection': 'Stripes',
@@ -84,6 +90,7 @@ const tShirtList = [
   {
     'categary': 'Sleeveles',
     'productName': 'T-Shirt7',
+    'productPrice': '599',
     'productImage':
         'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTEHYOgqlzzNZtLMNNOLbt3USO8m-5ZXQyUdtjshsl1VYnD1Ds2wG6wwcGCNZvqtbDVhMg&usqp=CAU',
     'topcollection': 'Stripes',
@@ -98,6 +105,7 @@ const tShirtList = [
   {
     'categary': 'Sleeveles',
     'productName': 'T-Shirt8',
+    'productPrice': '499',
     'productImage':
         'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRU3a-2DJ_sooZh5hBFExLsYWLs3eyi-u90aofbNKoO1QVq3h7lqqMHcj64FneS3n1rbS0&usqp=CAU',
     'topcollection': 'Stripes',
@@ -111,6 +119,7 @@ const tShirtList = [
   {
     'categary': 'Sleeveles',
     'productName': 'T-Shirt9',
+    'productPrice': '1299',
     'productImage':
         'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS_MvQUdNteWzOv_JNCVhezuAbEXFFSpZuPyg&usqp=CAU',
     'topcollection': 'Stripes',
@@ -125,6 +134,7 @@ const tShirtList = [
   {
     'categary': 'Sleeveles',
     'productName': 'T-Shirt10',
+    'productPrice': '1899',
     'productImage':
         'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRujT26IvwphNusg8Jv6yr-geMop6VXijfN_NyJbYiDVd9mZdYTzl9ZOf9QIPPf6Ko1i98&usqp=CAU',
     'topcollection': 'Stripes',

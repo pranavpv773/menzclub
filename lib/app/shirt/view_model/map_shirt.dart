@@ -2,6 +2,7 @@ const shirtList = [
   {
     'categary': 'Shirt',
     'productName': 'Shirt1',
+    'productPrice': '2500',
     'topcollection': 'Check',
     'productImage':
         'https://static-01.daraz.pk/p/9678045f1b0e0c64ae883f500bf28db6.jpg',
@@ -17,6 +18,7 @@ const shirtList = [
   {
     'categary': 'T-shirt',
     'productName': 'Shirt2',
+    'productPrice': '599',
     'topcollection': 'Print',
     'productImage':
         'https://image.dhgate.com/0x0s/f2-albu-g10-M01-84-35-rBVaWV4kEweAfu_TAAHDXD-w4xE522.jpg/mens-designer-shirts-fashion-wide-striped.jpg',
@@ -32,6 +34,7 @@ const shirtList = [
   {
     'categary': 'Jeans',
     'productName': 'Shirt3',
+    'productPrice': '1449',
     'topcollection': 'Solid',
     'productImage':
         'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ95QDLYC_2ZYwBLFno_y7I-sZIic3YEhJhSoHKT2eVuMU4xF7K99q5Q60PYNUnjPk2WfY&usqp=CAU',
@@ -47,6 +50,7 @@ const shirtList = [
   {
     'categary': 'Trousers',
     'productName': 'Shirt4',
+    'productPrice': '1250',
     'topcollection': 'Comfortable',
     'productImage':
         'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQVhsHQVzNYY1ucTKPzh9QmhEPthskTY1Q8Ag&usqp=CAU',
@@ -62,6 +66,7 @@ const shirtList = [
   {
     'categary': 'Ethic-wear',
     'productName': 'Shirt5',
+    'productPrice': '1300',
     'topcollection': 'Stripes',
     'productImage':
         'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSxE_-kk-HkBTngEkbTRlJogWq3sRk7fNoA7g&usqp=CAU',
@@ -76,6 +81,7 @@ const shirtList = [
   {
     'categary': 'Shoes',
     'productName': 'Shirt6',
+    'productPrice': '1100',
     'topcollection': 'Stripes',
     'productImage':
         'https://ae01.alicdn.com/kf/HTB1.jf1X6LuK1Rjy0Fhq6xpdFXaH/2019-Brushed-Cotton-Shirt-Men-Casual-Long-Sleeve-Mens-Navy-Blue-Dress-Shirts-With-Pocket-Solid.jpg_640x640.jpg',
@@ -90,6 +96,7 @@ const shirtList = [
   {
     'categary': 'Sportswear',
     'productName': 'Shirt7',
+    'productPrice': '899',
     'topcollection': 'Stripes',
     'productImage':
         'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRx8vLxbJuw7g7SKlCLor224HCNiOw2G-r426JOd8JHS2steZuBwc1Lx0hGGDVhOe28_Hk&usqp=CAU',
@@ -104,6 +111,7 @@ const shirtList = [
   {
     'categary': 'Watches',
     'productName': 'Shirt8',
+    'productPrice': '999',
     'topcollection': 'Stripes',
     'productImage':
         'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTHs3Osuhs_N3ywG1GjUF_9eubOtSx2ZslaaA&usqp=CAU',
@@ -118,6 +126,7 @@ const shirtList = [
   {
     'categary': 'Inner-wear',
     'productName': 'Shirt9',
+    'productPrice': '749',
     'topcollection': 'Stripes',
     'productImage':
         'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTLhRgnYV2Gusz2drk6y5iMdisqf8kutHMgZC7XbqXGsUa677-bIMjL3SGjLcKkbdd0SUU&usqp=CAU',
@@ -132,6 +141,7 @@ const shirtList = [
   {
     'categary': 'Accessories',
     'productName': 'Shirt10',
+    'productPrice': '1999',
     'topcollection': 'Stripes',
     'productImage':
         'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQdEr6RU9iNPodYzJ8-iYV1H4zCypHqqGxSBd_MfALfKsBD_yPu57aKbsJpMOxeVD52jec&usqp=CAU',
