@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:menz_cart_app/app/constants/colors.dart';
+import 'package:menz_cart_app/app/constants/widgets.dart';
+import 'package:menz_cart_app/app/home/view/widgets/grid_view_card.dart';
 import 'package:menz_cart_app/app/order_summary/view/widgets/button.dart';
-import 'package:menz_cart_app/app/utilities/view/appbar_widget.dart';
 
 class CartScreen extends StatelessWidget {
   const CartScreen({Key? key}) : super(key: key);
@@ -12,7 +13,7 @@ class CartScreen extends StatelessWidget {
     final height = MediaQuery.of(context).size.height;
     return Scaffold(
       body: SingleChildScrollView(
-        physics: ScrollPhysics(),
+        physics: const ScrollPhysics(),
         child: Column(
           children: [
             ProductCartCard(width: width),
@@ -20,6 +21,78 @@ class CartScreen extends StatelessWidget {
             ProductCartCard(width: width),
             DividerWidget(height: height),
             ProductCartCard(width: width),
+            DividerWidget(height: height),
+            Padding(
+              padding: const EdgeInsets.all(8.0),
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  const Text(
+                    'Price Details',
+                    style: TextStyle(
+                      overflow: TextOverflow.ellipsis,
+                      fontWeight: FontWeight.bold,
+                      fontSize: 20,
+                    ),
+                  ),
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: const [
+                      Text('Price(${2})'),
+                      Text('9,028'),
+                    ],
+                  ),
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: const [
+                      Text('Discount'),
+                      Text(
+                        '3,694',
+                        style: TextStyle(color: Colors.green),
+                      ),
+                    ],
+                  ),
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: const [
+                      Text('Delivery Charges'),
+                      Text(
+                        'Free Delivery',
+                        style: TextStyle(color: Colors.green),
+                      ),
+                    ],
+                  ),
+                  DividerWidget(
+                    height: height / 2,
+                    indent: 10,
+                    lastIndent: 10,
+                  ),
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: const [
+                      Text(
+                        'Total Amount',
+                        style: TextStyle(
+                          overflow: TextOverflow.ellipsis,
+                          fontWeight: FontWeight.bold,
+                          fontSize: 20,
+                        ),
+                      ),
+                      Text(
+                        '5,023',
+                        style: TextStyle(
+                          overflow: TextOverflow.ellipsis,
+                          fontWeight: FontWeight.bold,
+                          fontSize: 20,
+                        ),
+                      ),
+                    ],
+                  ),
+                  sizedBox50,
+                  const ShopNowButton(textButton: 'Place Order')
+                ],
+              ),
+            )
           ],
         ),
       ),
@@ -28,18 +101,23 @@ class CartScreen extends StatelessWidget {
 }
 
 class DividerWidget extends StatelessWidget {
-  const DividerWidget({
+  DividerWidget({
     Key? key,
     required this.height,
+    this.indent,
+    this.lastIndent,
   }) : super(key: key);
 
   final double height;
-
+  final double? indent;
+  final double? lastIndent;
   @override
   Widget build(BuildContext context) {
     return Divider(
       color: Color.fromARGB(182, 158, 158, 158),
       thickness: height / 100,
+      indent: indent ?? 0,
+      endIndent: lastIndent ?? 0,
     );
   }
 }
@@ -62,7 +140,7 @@ class ProductCartCard extends StatelessWidget {
           Row(
             children: [
               Image.asset(
-                'assets/shoes/casuals.png',
+                'assets/tshirt/tshirt1.png',
                 width: width / 3,
               ),
               Expanded(
