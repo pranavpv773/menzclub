@@ -3,6 +3,7 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:menz_cart_app/app/constants/colors.dart';
 import 'package:menz_cart_app/app/constants/widgets.dart';
 import 'package:menz_cart_app/app/home/view/widgets/grid_view_card.dart';
+import 'package:menz_cart_app/app/products/view/product_screen.dart';
 import 'package:menz_cart_app/app/shirt/view/widgets/shirt_fit.dart';
 import 'package:simple_gradient_text/simple_gradient_text.dart';
 import 't_shirt_by_color.dart';
@@ -68,6 +69,9 @@ class TshirtScreen extends StatelessWidget {
                 ],
               ),
               const ShopNowButton(
+                screen: ProductsScreen(
+                  title: 'T-Shirts',
+                ),
                 textButton: 'SHOP ALL T-SHIRTS',
               )
             ],

@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:menz_cart_app/app/constants/colors.dart';
 import 'package:menz_cart_app/app/home/view_model/shirts.dart';
+import 'package:menz_cart_app/app/products/view/product_screen.dart';
+import 'package:menz_cart_app/routes/routes.dart';
 
 class GridViewCard extends StatelessWidget {
   const GridViewCard({
@@ -67,6 +69,9 @@ class GridViewCard extends StatelessWidget {
                           style: TextStyle(color: Colors.green),
                         ),
                         ShopNowButton(
+                          screen: ProductsScreen(
+                            title: 'Product Name',
+                          ),
                           textButton: 'SHOP NOW',
                         ),
                       ],
@@ -83,9 +88,11 @@ class GridViewCard extends StatelessWidget {
 class ShopNowButton extends StatelessWidget {
   const ShopNowButton({
     Key? key,
+    required this.screen,
     required this.textButton,
   }) : super(key: key);
   final String textButton;
+  final dynamic screen;
   @override
   Widget build(BuildContext context) {
     return Padding(
@@ -96,7 +103,9 @@ class ShopNowButton extends StatelessWidget {
           style: ButtonStyle(
             backgroundColor: MaterialStateProperty.all(primary),
           ),
-          onPressed: () {},
+          onPressed: () {
+            RoutesProvider.nextScreen(screen: screen);
+          },
           child: Text(
             textButton,
             style: TextStyle(color: kWhite),

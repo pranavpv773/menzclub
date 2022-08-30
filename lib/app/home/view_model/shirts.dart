@@ -38,3 +38,14 @@ final List watchCollections = [
   'https://mir-s3-cdn-cf.behance.net/project_modules/max_1200/89670937352801.573d3df298ad9.jpg',
   'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSVxYBHWUunSOyp0OUqY3cZpTDCK25ePmEUUA&usqp=CAU',
 ];
+final List shoesProducts = [
+  'https://assets.myntassets.com/dpr_1.5,q_60,w_400,c_limit,fl_progressive/assets/images/17305046/2022/2/26/d3e17ae1-f482-42d1-bc3b-a46afb1a25c01645858426508KillerMenNavyBlueSlip-OnSneakers1.jpg',
+  'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQou4PbTi67ERxDvteba3MmMttQbMZluOZhJg&usqp=CAU',
+  'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRe_Yoe3_mRtjtl_FPjG9JSU0Wo31uUyx06ZErjFYT8kWoLd2V3ItUDf782Qd277s-24is&usqp=CAU',
+  'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQCpxwsQ26J4aZGSTCitPh8LHREQ6fJ_-EyIKwghSl6-gx3ABbv8AhGVIL37X_L2kZango&usqp=CAU',
+  'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTOIhHYH5m4A58g5e_KYAuJB5pn4P38tO67_w&usqp=CAU',
+  'https://rosesimstore.com/wp-content/uploads/2019/06/Summers-Men-Shoes-Men-Sneakers-Flat-Male-Casual-Shoes-Comfortable-Men-Footwear-Breathable-Mesh-Sport-Tzapatos-1.jpg',
+  'https://cdn.shopify.com/s/files/1/0016/0074/9623/files/Sneakers_600x650-1.jpg?v=1647844059',
+  'https://5.imimg.com/data5/SELLER/Default/2021/4/YW/LS/NI/109736629/6ff8f1e2-973e-4185-8a79-efeb3d3500f7-500x500.jpg',
+  'https://rukminim1.flixcart.com/image/332/398/l432ikw0/shoe/y/i/h/-original-imagf256sktkqegm.jpeg?q=50',
+];
