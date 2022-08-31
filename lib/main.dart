@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:menz_cart_app/app/get_started/view_model/liquid_provider.dart';
 import 'package:menz_cart_app/app/global/view_model/global_provider.dart';
 import 'package:menz_cart_app/app/login/view_model/login_provider.dart';
 import 'package:menz_cart_app/app/products/view/product_screen.dart';
@@ -25,6 +26,9 @@ class MyApp extends StatelessWidget {
       providers: [
         ChangeNotifierProvider(
           create: (crete) => SplashProvider(),
+        ),
+        ChangeNotifierProvider(
+          create: (crete) => LiquidProvider(),
         ),
         ChangeNotifierProvider(
           create: (crete) => LoginProvider(),

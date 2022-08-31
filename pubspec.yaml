@@ -40,6 +40,7 @@ dependencies:
   animated_text_kit: ^4.2.2
   simple_gradient_text: 1.2.3
   bottom_navy_bar: ^6.0.0
+  liquid_swipe: ^3.0.0
 dev_dependencies:
   flutter_test:
     sdk: flutter

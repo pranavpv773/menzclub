@@ -1,9 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/src/foundation/key.dart';
-import 'package:flutter/src/widgets/framework.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:menz_cart_app/app/get_started/view/third_screen.dart';
-import 'package:menz_cart_app/app/home/view/widgets/grid_view_card.dart';
 
 class SecondSdcreen extends StatelessWidget {
   const SecondSdcreen({Key? key}) : super(key: key);
@@ -17,7 +13,7 @@ class SecondSdcreen extends StatelessWidget {
         children: [
           Image.asset('assets/get_started/packing_process.gif'),
           Padding(
-            padding: EdgeInsets.symmetric(horizontal: 18.0),
+            padding: const EdgeInsets.symmetric(horizontal: 18.0),
             child: Text(
               'Lets Improve your experience',
               style: TextStyle(
@@ -36,11 +32,11 @@ class SecondSdcreen extends StatelessWidget {
                       fontFamily: GoogleFonts.rasa().fontFamily,
                     )),
           ),
-          const Padding(
-            padding: EdgeInsets.symmetric(horizontal: 30.0),
-            child:
-                ShopNowButton(screen: ThirdScreen(), textButton: 'Get Started'),
-          )
+          // const Padding(
+          //   padding: EdgeInsets.symmetric(horizontal: 30.0),
+          //   child:
+          //       ShopNowButton(screen: ThirdScreen(), textButton: 'Get Started'),
+          // )
         ],
       ),
     );
