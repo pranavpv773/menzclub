@@ -20,19 +20,19 @@ class JeansColorBuilder extends StatelessWidget {
         maxCrossAxisExtent: 200,
         mainAxisExtent: height / 5,
         childAspectRatio: 3 / 2,
-        crossAxisSpacing: 20,
-        mainAxisSpacing: 20,
+        crossAxisSpacing: 8,
+        mainAxisSpacing: 40,
       ),
       itemCount: 4,
       itemBuilder: (BuildContext ctx, index) {
         return Padding(
-          padding: const EdgeInsets.all(
-            8.0,
+          padding: const EdgeInsets.symmetric(
+            horizontal: 16.0,
           ),
           child: Material(
             borderRadius: BorderRadius.circular(10),
             elevation: 10,
-            shadowColor: Colors.black,
+            shadowColor: primary2,
             child: Container(
               decoration: BoxDecoration(
                 color: primary1,
@@ -46,11 +46,13 @@ class JeansColorBuilder extends StatelessWidget {
                       width: width / 5,
                       height: height / 8,
                       decoration: BoxDecoration(
-                          borderRadius: BorderRadius.circular(5),
-                          image: DecorationImage(
-                              image: AssetImage(jeansList[index]
-                                      ['colorpantImage']
-                                  .toString()))),
+                        borderRadius: BorderRadius.circular(5),
+                        image: DecorationImage(
+                            image: AssetImage(
+                              jeansList[index]['colorpantImage'].toString(),
+                            ),
+                            fit: BoxFit.contain),
+                      ),
                     ),
                   ),
                   Text(jeansList[index]['color'].toString()),
