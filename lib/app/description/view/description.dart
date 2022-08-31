@@ -1,7 +1,12 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_rating_bar/flutter_rating_bar.dart';
 import 'package:menz_cart_app/app/constants/colors.dart';
+import 'package:menz_cart_app/app/my_cart/view/widgets/price_details.dart';
 import 'package:menz_cart_app/app/utilities/view/appbar_widget.dart';
+import 'package:menz_cart_app/app/utilities/view/divider_widget.dart';
+import 'widgets/bottom.dart';
+import 'widgets/delivery.dart';
+import 'widgets/profile_card.dart';
+import 'widgets/profile_card_image.dart';
 
 class DescriptionScreen extends StatelessWidget {
   const DescriptionScreen(
@@ -31,83 +36,46 @@ class DescriptionScreen extends StatelessWidget {
             section: name,
           ),
         ),
-        body: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            Padding(
-              padding: const EdgeInsets.all(8.0),
-              child: Container(
-                width: width / 1,
-                height: height / 2,
-                decoration: BoxDecoration(
-                  image: DecorationImage(
-                    image: NetworkImage(image),
-                    fit: BoxFit.cover,
-                  ),
-                ),
+        body: SingleChildScrollView(
+          physics: ScrollPhysics(),
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              ProductImageWidget(width: width, height: height, image: image),
+              ProductDetailsCard(
+                name: name,
+                topcollection: topcollection,
+                star: star,
+                price: price,
               ),
-            ),
-            Expanded(
-              child: Padding(
-                padding: const EdgeInsets.all(8.0),
-                child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    Text(
-                      name,
-                      style: const TextStyle(
-                          overflow: TextOverflow.ellipsis,
-                          fontWeight: FontWeight.bold,
-                          fontSize: 20),
-                    ),
-                    Text(topcollection),
-                    RatingBarIndicator(
-                      rating: star,
-                      itemBuilder: (context, index) => const Icon(
-                        Icons.star,
-                        color: Colors.amber,
-                      ),
-                      itemCount: 5,
-                      itemSize: 20.0,
-                      direction: Axis.horizontal,
-                    ),
-                    Padding(
-                      padding: const EdgeInsets.all(8.0),
-                      child: RichText(
-                        text: TextSpan(
-                          children: <TextSpan>[
-                            TextSpan(
-                              text: '\$8.99',
-                              style: TextStyle(
-                                fontSize: 16,
-                                color: kRed,
-                                decoration: TextDecoration.lineThrough,
-                              ),
-                            ),
-                            TextSpan(
-                              text: ' \$ $price',
-                              style: TextStyle(
-                                  fontSize: 20,
-                                  color: kBlack,
-                                  fontWeight: FontWeight.bold),
-                            ),
-                          ],
-                        ),
-                      ),
-                    ),
-                    const Text(
-                      'Deliver in 2 Days,Fri',
-                      style: TextStyle(fontSize: 16),
-                    ),
-                    Text(
-                      'Free Delivery',
-                      style: TextStyle(fontSize: 16, color: kGreen),
-                    ),
-                  ],
-                ),
+              DividerWidget(height: height / 2),
+              const DeliveryAddress(),
+              DividerWidget(height: height / 2),
+              PriceDetails(
+                height: height,
               ),
-            )
-          ],
+              DividerWidget(height: height / 2),
+              const Text('Production Details')
+            ],
+          ),
+        ),
+        bottomNavigationBar: Padding(
+          padding: const EdgeInsets.all(5.0),
+          child: Row(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            children: [
+              BottomTab(
+                width: width,
+                name: 'BUY NOW',
+                color: primary,
+              ),
+              BottomTab(
+                width: width,
+                name: 'Add to cart',
+                color: primary2,
+              ),
+            ],
+          ),
         ),
       ),
     );
