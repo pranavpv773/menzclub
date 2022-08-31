@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_rating_bar/flutter_rating_bar.dart';
 import 'package:menz_cart_app/app/constants/colors.dart';
 import 'package:menz_cart_app/app/order_summary/view/widgets/button.dart';
 
@@ -38,12 +39,12 @@ class ProductCartCard extends StatelessWidget {
                       ),
                       const Text('Multi color'),
                       Row(
-                        children: const [
-                          IconStared(),
-                          IconStared(),
-                          IconStared(),
-                          Icon(Icons.star_border),
-                          Icon(Icons.star_border),
+                        children: [
+                          IconStared(
+                            width: width,
+                            star: 4,
+                            color: Color.fromARGB(255, 22, 91, 24),
+                          ),
                         ],
                       ),
                       Padding(
@@ -108,15 +109,23 @@ class ProductCartCard extends StatelessWidget {
 }
 
 class IconStared extends StatelessWidget {
-  const IconStared({
-    Key? key,
-  }) : super(key: key);
-
+  const IconStared(
+      {Key? key, required this.color, required this.star, required this.width})
+      : super(key: key);
+  final Color color;
+  final double star;
+  final double width;
   @override
   Widget build(BuildContext context) {
-    return const Icon(
-      Icons.star,
-      color: Color.fromARGB(255, 22, 91, 24),
+    return RatingBarIndicator(
+      rating: star,
+      itemBuilder: (context, index) => const Icon(
+        Icons.star,
+        color: Colors.amber,
+      ),
+      itemCount: 5,
+      itemSize: 20.0,
+      direction: Axis.horizontal,
     );
   }
 }

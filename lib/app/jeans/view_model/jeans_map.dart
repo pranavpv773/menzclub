@@ -1,6 +1,7 @@
 const jeansList = [
   {
     'categary': 'Jeans',
+    'star': '1',
     'productName': 'Jeans1',
     'productPrice': '2500',
     'topcollection': 'Check',
@@ -16,6 +17,7 @@ const jeansList = [
   },
   {
     'categary': 'T-shirt',
+    'star': '1',
     'productName': 'Jeans2',
     'productPrice': '2500',
     'topcollection': 'Print',
@@ -31,6 +33,7 @@ const jeansList = [
   },
   {
     'categary': 'Jeans',
+    'star': '1',
     'productName': 'Jeans3',
     'productPrice': '2500',
     'topcollection': 'Solid',
@@ -46,6 +49,7 @@ const jeansList = [
   },
   {
     'categary': 'Trousers',
+    'star': '1',
     'productName': 'Jeans4',
     'productPrice': '3299',
     'topcollection': 'Comfortable',
@@ -61,6 +65,7 @@ const jeansList = [
   },
   {
     'categary': 'Ethic-wear',
+    'star': '1',
     'productName': 'Jeans5',
     'productPrice': '699',
     'topcollection': 'Stripes',
@@ -75,6 +80,7 @@ const jeansList = [
   },
   {
     'categary': 'Shoes',
+    'star': '1',
     'productName': 'Jeans6',
     'productPrice': '1359',
     'topcollection': 'Stripes',
@@ -89,6 +95,7 @@ const jeansList = [
   },
   {
     'categary': 'Sportswear',
+    'star': '1',
     'productName': 'Jeans7',
     'productPrice': '2499',
     'topcollection': 'Stripes',
@@ -104,6 +111,7 @@ const jeansList = [
   },
   {
     'categary': 'Watches',
+    'star': '1',
     'productName': 'Jeans8',
     'productPrice': '750',
     'topcollection': 'Stripes',
@@ -119,6 +127,7 @@ const jeansList = [
   },
   {
     'categary': 'Inner-wear',
+    'star': '1',
     'productName': 'Jeans9',
     'productPrice': '1500',
     'topcollection': 'Stripes',
@@ -134,6 +143,7 @@ const jeansList = [
   },
   {
     'categary': 'Accessories',
+    'star': '1',
     'productName': 'Jeans10',
     'productPrice': '2150',
     'topcollection': 'Stripes',

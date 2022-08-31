@@ -1,6 +1,7 @@
 const tShirtList = [
   {
     'categary': 'Round Necks',
+    'star': '1',
     'productName': 'T-Shirt1',
     'productPrice': '2500',
     'productImage':
@@ -16,6 +17,7 @@ const tShirtList = [
   },
   {
     'categary': 'V-Necks',
+    'star': '1',
     'productName': 'T-Shirt2',
     'productPrice': '1500',
     'productImage':
@@ -31,6 +33,7 @@ const tShirtList = [
   },
   {
     'categary': 'Polos',
+    'star': '1',
     'productName': 'T-Shirt3',
     'productPrice': '652',
     'productImage':
@@ -46,6 +49,7 @@ const tShirtList = [
   },
   {
     'categary': 'Full Sleeves',
+    'star': '1',
     'productName': 'T-Shirt4',
     'productPrice': '498',
     'productImage':
@@ -62,6 +66,7 @@ const tShirtList = [
   {
     'categary': 'Short Sleeves',
     'productName': 'T-Shirt5',
+    'star': '1',
     'productPrice': '999',
     'productImage':
         'https://prod-img.thesouledstore.com/public/theSoul/uploads/catalog/product/1660201481_5352235.jpg',
@@ -75,6 +80,7 @@ const tShirtList = [
   },
   {
     'categary': 'Sleeveles',
+    'star': '1',
     'productName': 'T-Shirt6',
     'productPrice': '581',
     'productImage':
@@ -89,6 +95,7 @@ const tShirtList = [
   },
   {
     'categary': 'Sleeveles',
+    'star': '1',
     'productName': 'T-Shirt7',
     'productPrice': '599',
     'productImage':
@@ -104,6 +111,7 @@ const tShirtList = [
   },
   {
     'categary': 'Sleeveles',
+    'star': '1',
     'productName': 'T-Shirt8',
     'productPrice': '499',
     'productImage':
@@ -118,6 +126,7 @@ const tShirtList = [
   },
   {
     'categary': 'Sleeveles',
+    'star': '1',
     'productName': 'T-Shirt9',
     'productPrice': '1299',
     'productImage':
@@ -133,6 +142,7 @@ const tShirtList = [
   },
   {
     'categary': 'Sleeveles',
+    'star': '1',
     'productName': 'T-Shirt10',
     'productPrice': '1899',
     'productImage':

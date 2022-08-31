@@ -55,6 +55,7 @@ const shoesMap = [
     'categary': 'Sandals',
     'productName': 'Shoes5',
     'topcollection': 'Stripes',
+    'star': '1',
     'productImage':
         'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTOIhHYH5m4A58g5e_KYAuJB5pn4P38tO67_w&usqp=CAU',
     'fit': 'Skinny',
@@ -67,6 +68,7 @@ const shoesMap = [
     'categary': 'Loafers',
     'productName': 'Shoes6',
     'topcollection': 'Stripes',
+    'star': '1',
     'productImage':
         'https://rosesimstore.com/wp-content/uploads/2019/06/Summers-Men-Shoes-Men-Sneakers-Flat-Male-Casual-Shoes-Comfortable-Men-Footwear-Breathable-Mesh-Sport-Tzapatos-1.jpg',
     'fit': 'Slim',
@@ -79,6 +81,7 @@ const shoesMap = [
     'categary': 'Sportswear',
     'productName': 'Shoes7',
     'topcollection': 'Stripes',
+    'star': '1',
     'productImage':
         'https://cdn.shopify.com/s/files/1/0016/0074/9623/files/Sneakers_600x650-1.jpg?v=1647844059',
     'fit': 'Straight',
@@ -93,6 +96,7 @@ const shoesMap = [
     'categary': 'Watches',
     'productName': 'Shoes8',
     'topcollection': 'Stripes',
+    'star': '1',
     'productImage':
         'https://5.imimg.com/data5/SELLER/Default/2021/4/YW/LS/NI/109736629/6ff8f1e2-973e-4185-8a79-efeb3d3500f7-500x500.jpg',
     'fit': 'Slim',
@@ -107,6 +111,7 @@ const shoesMap = [
     'categary': 'Inner-wear',
     'productName': 'Shoes9',
     'topcollection': 'Stripes',
+    'star': '1',
     'productImage':
         'https://rukminim1.flixcart.com/image/332/398/l432ikw0/shoe/y/i/h/-original-imagf256sktkqegm.jpeg?q=50',
     'fit': 'Slim',
@@ -121,6 +126,7 @@ const shoesMap = [
     'categary': 'Accessories',
     'productName': 'Shoes10',
     'topcollection': 'Stripes',
+    'star': '1',
     'productImage':
         'https://assets.myntassets.com/dpr_1.5,q_60,w_400,c_limit,fl_progressive/assets/images/17755112/2022/4/4/3e291b2e-2e6a-4699-9f42-ea6d8d9512eb1649088875683ASIANMenWhiteSportsShoes1.jpg',
     'fit': 'Slim',
