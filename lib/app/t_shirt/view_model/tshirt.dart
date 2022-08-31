@@ -1,7 +1,9 @@
 const tShirtList = [
   {
     'categary': 'Round Necks',
+    'star': '1',
     'productName': 'T-Shirt1',
+    'WatchcolorImage': 'assets/tshirt/red.png',
     'productPrice': '2500',
     'productImage':
         'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTf15HvUimxATOXK1w-xehA3s6viO0JGNqe3g&usqp=CAU',
@@ -16,7 +18,9 @@ const tShirtList = [
   },
   {
     'categary': 'V-Necks',
+    'star': '1',
     'productName': 'T-Shirt2',
+    'WatchcolorImage': 'assets/tshirt/blue.png',
     'productPrice': '1500',
     'productImage':
         'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSa7IR4F8f0gsu4xTAxCxVu4i76U4i99o1v_gmcaWi189-2p6BESz59n2KQleqTEoXk-gU&usqp=CAU',
@@ -31,7 +35,9 @@ const tShirtList = [
   },
   {
     'categary': 'Polos',
+    'star': '1',
     'productName': 'T-Shirt3',
+    'WatchcolorImage': 'assets/tshirt/black.png',
     'productPrice': '652',
     'productImage':
         'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTzcVL5ETIw-1JNCRa0irUWtekzP5SJsOE3MU7jy22rmHs01f-UVWwEPCN9LSArml_i5TU&usqp=CAU',
@@ -46,7 +52,9 @@ const tShirtList = [
   },
   {
     'categary': 'Full Sleeves',
+    'star': '1',
     'productName': 'T-Shirt4',
+    'WatchcolorImage': 'assets/tshirt/green.png',
     'productPrice': '498',
     'productImage':
         'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRWMeHIvVx8hcnorEdOx1rANURLxM4UnhAUyQ&usqp=CAU',
@@ -62,6 +70,8 @@ const tShirtList = [
   {
     'categary': 'Short Sleeves',
     'productName': 'T-Shirt5',
+    'WatchcolorImage': 'assets/tshirt/yellow.png',
+    'star': '1',
     'productPrice': '999',
     'productImage':
         'https://prod-img.thesouledstore.com/public/theSoul/uploads/catalog/product/1660201481_5352235.jpg',
@@ -75,7 +85,9 @@ const tShirtList = [
   },
   {
     'categary': 'Sleeveles',
+    'star': '1',
     'productName': 'T-Shirt6',
+    'WatchcolorImage': 'assets/tshirt/white.png',
     'productPrice': '581',
     'productImage':
         'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRTjNZa20MpWYqp0-ZcyWFXADJddHI2-AeWbg&usqp=CAU',
@@ -89,7 +101,9 @@ const tShirtList = [
   },
   {
     'categary': 'Sleeveles',
+    'star': '1',
     'productName': 'T-Shirt7',
+    'WatchcolorImage': 'assets/watches/black.png',
     'productPrice': '599',
     'productImage':
         'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTEHYOgqlzzNZtLMNNOLbt3USO8m-5ZXQyUdtjshsl1VYnD1Ds2wG6wwcGCNZvqtbDVhMg&usqp=CAU',
@@ -104,7 +118,9 @@ const tShirtList = [
   },
   {
     'categary': 'Sleeveles',
+    'star': '1',
     'productName': 'T-Shirt8',
+    'WatchcolorImage': 'assets/watches/black.png',
     'productPrice': '499',
     'productImage':
         'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRU3a-2DJ_sooZh5hBFExLsYWLs3eyi-u90aofbNKoO1QVq3h7lqqMHcj64FneS3n1rbS0&usqp=CAU',
@@ -118,7 +134,9 @@ const tShirtList = [
   },
   {
     'categary': 'Sleeveles',
+    'star': '1',
     'productName': 'T-Shirt9',
+    'WatchcolorImage': 'assets/watches/black.png',
     'productPrice': '1299',
     'productImage':
         'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS_MvQUdNteWzOv_JNCVhezuAbEXFFSpZuPyg&usqp=CAU',
@@ -133,6 +151,8 @@ const tShirtList = [
   },
   {
     'categary': 'Sleeveles',
+    'WatchcolorImage': 'assets/watches/black.png',
+    'star': '1',
     'productName': 'T-Shirt10',
     'productPrice': '1899',
     'productImage':

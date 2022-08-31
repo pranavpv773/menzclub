@@ -3,7 +3,6 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:menz_cart_app/app/constants/colors.dart';
 import 'package:menz_cart_app/app/global/view/global_screen.dart';
 import 'package:menz_cart_app/app/login/view/login.dart';
-import 'package:menz_cart_app/app/order_summary/view/widgets/button.dart';
 import 'package:menz_cart_app/app/utilities/view/transparent_buttons.dart';
 
 class HomeModalBottom extends StatelessWidget {
@@ -17,7 +16,7 @@ class HomeModalBottom extends StatelessWidget {
     return Container(
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(10),
-        color: Colors.green,
+        color: Colors.amberAccent,
       ),
       height: height / 4,
       child: Column(

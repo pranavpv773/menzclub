@@ -1,9 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:menz_cart_app/app/constants/colors.dart';
-import 'package:menz_cart_app/app/shoes/view_model/shoes_map.dart';
+import 'package:menz_cart_app/app/t_shirt/view_model/tshirt.dart';
+import 'package:menz_cart_app/app/watches/view_model/watch_map.dart';
 
-class ShoesColorBuilder extends StatelessWidget {
-  const ShoesColorBuilder({
+class TshirtColorBuilder extends StatelessWidget {
+  const TshirtColorBuilder({
     Key? key,
     required this.width,
     required this.height,
@@ -17,11 +18,10 @@ class ShoesColorBuilder extends StatelessWidget {
       physics: const ScrollPhysics(),
       shrinkWrap: true,
       gridDelegate: SliverGridDelegateWithMaxCrossAxisExtent(
-        maxCrossAxisExtent: 200,
+        maxCrossAxisExtent: 130,
         mainAxisExtent: height / 5,
-        childAspectRatio: 3 / 2,
         crossAxisSpacing: 20,
-        mainAxisSpacing: 20,
+        mainAxisSpacing: height / 50,
       ),
       itemCount: 6,
       itemBuilder: (BuildContext ctx, index) {
@@ -34,28 +34,40 @@ class ShoesColorBuilder extends StatelessWidget {
             elevation: 10,
             shadowColor: Colors.black,
             child: Container(
+              width: width / 8,
               decoration: BoxDecoration(
                 color: primary1,
                 borderRadius: BorderRadius.circular(10),
               ),
               child: Column(
                 children: [
-                  Padding(
-                    padding: const EdgeInsets.all(8.0),
-                    child: Container(
-                      width: width / 2,
-                      height: height / 8,
-                      decoration: BoxDecoration(
-                        borderRadius: BorderRadius.circular(5),
-                        image: DecorationImage(
+                  Container(
+                    decoration: const BoxDecoration(
+                      image: DecorationImage(
+                        image: AssetImage('assets/tshirt/neon_border.png'),
+                        fit: BoxFit.cover,
+                      ),
+                    ),
+                    child: Padding(
+                      padding: const EdgeInsets.all(8.0),
+                      child: Container(
+                        width: width / 5,
+                        height: height / 8,
+                        decoration: BoxDecoration(
+                          borderRadius: BorderRadius.circular(5),
+                          image: DecorationImage(
                             image: AssetImage(
-                              shoesMap[index]['colorShoesImage'].toString(),
+                              tShirtList[index]['WatchcolorImage'].toString(),
                             ),
-                            fit: BoxFit.cover),
+                            fit: BoxFit.cover,
+                          ),
+                        ),
                       ),
                     ),
                   ),
-                  Text(shoesMap[index]['color'].toString()),
+                  Text(
+                    tShirtList[index]['color'].toString(),
+                  ),
                 ],
               ),
             ),

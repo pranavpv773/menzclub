@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:menz_cart_app/app/shirt/view/widgets/shirt_fit.dart';
 
+import 'widgets/t_shirt_builder.dart';
+
 class TshirtByColor extends StatelessWidget {
   const TshirtByColor({
     Key? key,
@@ -15,12 +17,14 @@ class TshirtByColor extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       width: width,
-      height: height / 1.2,
+      height: height / 1.3,
       decoration: const BoxDecoration(
-          image: DecorationImage(
-              image: NetworkImage(
-                  'https://img.freepik.com/free-vector/realistic-leaves-with-blue-neon-frame_52683-33597.jpg'),
-              fit: BoxFit.cover)),
+        image: DecorationImage(
+          image: NetworkImage(
+              'https://img.freepik.com/free-vector/realistic-leaves-with-blue-neon-frame_52683-33597.jpg'),
+          fit: BoxFit.cover,
+        ),
+      ),
       child: Column(
         children: [
           ShirtContentBanner(
@@ -32,7 +36,7 @@ class TshirtByColor extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.center,
             crossAxisAlignment: CrossAxisAlignment.start,
           ),
-          ShirtBannerBuilder(
+          TshirtColorBuilder(
             width: width,
             height: height,
           )

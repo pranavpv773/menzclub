@@ -1,6 +1,7 @@
 const shirtList = [
   {
     'categary': 'Shirt',
+    'star': '1',
     'productName': 'Shirt1',
     'productPrice': '2500',
     'topcollection': 'Check',
@@ -17,6 +18,7 @@ const shirtList = [
   },
   {
     'categary': 'T-shirt',
+    'star': '4',
     'productName': 'Shirt2',
     'productPrice': '599',
     'topcollection': 'Print',
@@ -33,6 +35,7 @@ const shirtList = [
   },
   {
     'categary': 'Jeans',
+    'star': '8',
     'productName': 'Shirt3',
     'productPrice': '1449',
     'topcollection': 'Solid',
@@ -49,6 +52,7 @@ const shirtList = [
   },
   {
     'categary': 'Trousers',
+    'star': '6',
     'productName': 'Shirt4',
     'productPrice': '1250',
     'topcollection': 'Comfortable',
@@ -65,6 +69,7 @@ const shirtList = [
   },
   {
     'categary': 'Ethic-wear',
+    'star': '4',
     'productName': 'Shirt5',
     'productPrice': '1300',
     'topcollection': 'Stripes',
@@ -80,6 +85,7 @@ const shirtList = [
   },
   {
     'categary': 'Shoes',
+    'star': '5',
     'productName': 'Shirt6',
     'productPrice': '1100',
     'topcollection': 'Stripes',
@@ -95,6 +101,7 @@ const shirtList = [
   },
   {
     'categary': 'Sportswear',
+    'star': '1',
     'productName': 'Shirt7',
     'productPrice': '899',
     'topcollection': 'Stripes',
@@ -110,6 +117,7 @@ const shirtList = [
   },
   {
     'categary': 'Watches',
+    'star': '3',
     'productName': 'Shirt8',
     'productPrice': '999',
     'topcollection': 'Stripes',
@@ -125,6 +133,7 @@ const shirtList = [
   },
   {
     'categary': 'Inner-wear',
+    'star': '5',
     'productName': 'Shirt9',
     'productPrice': '749',
     'topcollection': 'Stripes',
@@ -140,6 +149,7 @@ const shirtList = [
   },
   {
     'categary': 'Accessories',
+    'star': '2',
     'productName': 'Shirt10',
     'productPrice': '1999',
     'topcollection': 'Stripes',

@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:menz_cart_app/app/constants/colors.dart';
-import 'package:menz_cart_app/app/shoes/view_model/shoes_map.dart';
 import 'package:menz_cart_app/app/watches/view_model/watch_map.dart';
 
 class WatchColorBuilder extends StatelessWidget {
@@ -24,7 +23,7 @@ class WatchColorBuilder extends StatelessWidget {
         crossAxisSpacing: 20,
         mainAxisSpacing: 20,
       ),
-      itemCount: shoesMap.length,
+      itemCount: 6,
       itemBuilder: (BuildContext ctx, index) {
         return Padding(
           padding: const EdgeInsets.all(

@@ -104,7 +104,7 @@ class ServicesProvider with ChangeNotifier {
       ),
       context: context,
       builder: (BuildContext ctx) {
-        return HomeModalBottom();
+        return const HomeModalBottom();
       },
     );
   }
