@@ -61,21 +61,23 @@ class JeansScreen extends StatelessWidget {
                   height: height,
                 ),
                 JeansGrabOffers(height: height, width: width),
-                Column(children: [
-                  ShirtContentBanner(
-                    color: Colors.brown,
-                    width: width,
-                    height: height,
-                    image: 'assets/jeans/images.jpeg',
-                    topic: 'SHOP  BY COLOR',
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                  ),
-                  JeansColorBuilder(
-                    width: width,
-                    height: height,
-                  )
-                ]),
+                Column(
+                  children: [
+                    ShirtContentBanner(
+                      color: Colors.brown,
+                      width: width,
+                      height: height,
+                      image: 'assets/jeans/images.jpeg',
+                      topic: 'SHOP  BY COLOR',
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                    ),
+                    JeansColorBuilder(
+                      width: width,
+                      height: height,
+                    )
+                  ],
+                ),
                 sizedBox50,
                 const ShopNowButton(
                   screen: ProductsScreen(
