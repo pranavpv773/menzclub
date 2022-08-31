@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:provider/provider.dart';
 
 class LoginProvider with ChangeNotifier {
   final userName = TextEditingController();
@@ -14,10 +13,6 @@ class LoginProvider with ChangeNotifier {
       return 'sucess';
     }
   }
-
-  // Future<void> logOut(BuildContext context) async {
-  //   await AuthServices.auth.signOut();
-  // }
 
   bool isValidEmail(String input) {
     return RegExp(

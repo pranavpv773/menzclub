@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:menz_cart_app/app/constants/colors.dart';
 import 'package:menz_cart_app/app/login/view/login.dart';
-import 'package:menz_cart_app/app/products/view/widgets/radio_btn.dart';
 import 'package:menz_cart_app/routes/routes.dart';
 
 class ProfileCard extends StatelessWidget {
@@ -37,7 +36,9 @@ class ProfileCard extends StatelessWidget {
           right: 10,
           child: TextButton(
             onPressed: () {
-              RoutesProvider.nextScreen(screen: LoginScreen());
+              RoutesProvider.nextScreen(
+                screen: const LoginScreen(),
+              );
             },
             style: ButtonStyle(
               backgroundColor: MaterialStateProperty.all(primary),

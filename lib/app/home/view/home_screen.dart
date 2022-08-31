@@ -38,11 +38,13 @@ class HomeScreen extends StatelessWidget {
           sizedBox20,
           Container(
             decoration: const BoxDecoration(
-                image: DecorationImage(
-                    image: NetworkImage(
-                      'https://img.wallpapersafari.com/desktop/1280/1024/87/31/QG0FhB.jpg',
-                    ),
-                    fit: BoxFit.cover)),
+              image: DecorationImage(
+                image: NetworkImage(
+                  'https://img.wallpapersafari.com/desktop/1280/1024/87/31/QG0FhB.jpg',
+                ),
+                fit: BoxFit.cover,
+              ),
+            ),
             child: Padding(
               padding: const EdgeInsets.symmetric(
                 vertical: 8.0,
@@ -94,6 +96,10 @@ class HomeScreen extends StatelessWidget {
           NotImportant(
             heights: heights / 2,
             width: width,
+          ),
+          VerticalBulder(
+            width: width,
+            height: heights,
           )
         ],
       ),
