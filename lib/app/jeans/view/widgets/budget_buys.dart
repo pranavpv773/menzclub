@@ -76,8 +76,8 @@ class BudgetBuysCategories extends StatelessWidget {
       child: Column(
         children: [
           ContainerImageChild(
-            width: width,
-            height: height,
+            width: width / 4,
+            height: height / 6,
             image:
                 'https://png.pngtree.com/thumb_back/fh260/background/20190222/ourmid/pngtree-creative-jeans-paper-cut-wind-background-cut-wind-backgroundcropfashion-image_56520.jpg',
             widget: Center(

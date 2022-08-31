@@ -68,8 +68,8 @@ class ContainerImageChild extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      width: width / 4,
-      height: height / 6,
+      width: width,
+      height: height,
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(10),
         image: DecorationImage(

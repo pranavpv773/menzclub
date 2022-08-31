@@ -87,12 +87,13 @@ class VerticalBulder extends StatelessWidget {
                     borderRadius: BorderRadius.circular(10),
                   ),
                   child: Column(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
                       Padding(
                         padding: const EdgeInsets.all(8.0),
                         child: Container(
-                          width: width / 1.5,
-                          height: height / 3,
+                          width: width / 2,
+                          height: height / 2.5,
                           decoration: BoxDecoration(
                             borderRadius: BorderRadius.circular(5),
                             image: DecorationImage(
