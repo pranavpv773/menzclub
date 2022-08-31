@@ -44,7 +44,7 @@ class ShoesCollectionBuilder extends StatelessWidget {
                   Padding(
                     padding: const EdgeInsets.all(8.0),
                     child: Container(
-                      width: width / 5,
+                      width: width / 2,
                       height: height / 8,
                       decoration: BoxDecoration(
                         borderRadius: BorderRadius.circular(5),
@@ -52,6 +52,7 @@ class ShoesCollectionBuilder extends StatelessWidget {
                           image: AssetImage(
                             shoesMap[index]['collectionImage'].toString(),
                           ),
+                          fit: BoxFit.fill,
                         ),
                       ),
                     ),

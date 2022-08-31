@@ -43,14 +43,16 @@ class ShoesColorBuilder extends StatelessWidget {
                   Padding(
                     padding: const EdgeInsets.all(8.0),
                     child: Container(
-                      width: width / 5,
+                      width: width / 2,
                       height: height / 8,
                       decoration: BoxDecoration(
-                          borderRadius: BorderRadius.circular(5),
-                          image: DecorationImage(
-                              image: AssetImage(shoesMap[index]
-                                      ['colorShoesImage']
-                                  .toString()))),
+                        borderRadius: BorderRadius.circular(5),
+                        image: DecorationImage(
+                            image: AssetImage(
+                              shoesMap[index]['colorShoesImage'].toString(),
+                            ),
+                            fit: BoxFit.cover),
+                      ),
                     ),
                   ),
                   Text(shoesMap[index]['color'].toString()),
