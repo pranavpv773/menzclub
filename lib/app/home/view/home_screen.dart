@@ -30,7 +30,7 @@ class HomeScreen extends StatelessWidget {
           ),
           HomeCarouselBanners(
             width: width,
-            heights: heights,
+            heights: heights / 1.5,
             list: context.read<HomeProvider>().banners,
           ),
           const DotIndicator(),
@@ -94,7 +94,7 @@ class HomeScreen extends StatelessWidget {
             ),
           ),
           NotImportant(
-            heights: heights / 2,
+            heights: heights,
             width: width,
           ),
           VerticalBulder(
