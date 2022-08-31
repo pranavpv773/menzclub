@@ -1,9 +1,11 @@
+import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'package:menz_cart_app/app/jeans/view_model/jeans_map.dart';
 import 'package:menz_cart_app/app/products/view/product_screen.dart';
 import 'package:menz_cart_app/app/shirt/view_model/map_shirt.dart';
 import 'package:menz_cart_app/app/shoes/view_model/shoes_map.dart';
 import 'package:menz_cart_app/app/t_shirt/view_model/tshirt.dart';
+import 'package:menz_cart_app/app/utilities/view/bottom_model.dart';
 import 'package:menz_cart_app/app/watches/view_model/watch_map.dart';
 import 'package:menz_cart_app/routes/routes.dart';
 
@@ -91,5 +93,19 @@ class ServicesProvider with ChangeNotifier {
         );
         break;
     }
+  }
+
+  settingModalBottomSheet(
+    context,
+  ) {
+    showModalBottomSheet(
+      shape: RoundedRectangleBorder(
+        borderRadius: BorderRadius.circular(10.0),
+      ),
+      context: context,
+      builder: (BuildContext ctx) {
+        return HomeModalBottom();
+      },
+    );
   }
 }
