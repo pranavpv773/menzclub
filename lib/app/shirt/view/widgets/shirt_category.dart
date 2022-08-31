@@ -22,7 +22,6 @@ class ShirtCategoryCards extends StatelessWidget {
       children: [
         GestureDetector(
           onTap: () {
-            print('object');
             RoutesProvider.nextScreen(
                 screen: const ProductsScreen(title: 'CASUAL', list: shirtList));
           },
@@ -36,7 +35,6 @@ class ShirtCategoryCards extends StatelessWidget {
         ),
         GestureDetector(
           onTap: () {
-            print('object');
             RoutesProvider.nextScreen(
                 screen: const ProductsScreen(title: 'FORMAL', list: shirtList));
           },
@@ -50,7 +48,6 @@ class ShirtCategoryCards extends StatelessWidget {
         ),
         GestureDetector(
           onTap: () {
-            print('object');
             RoutesProvider.nextScreen(
                 screen: const ProductsScreen(title: 'PARTY', list: shirtList));
           },

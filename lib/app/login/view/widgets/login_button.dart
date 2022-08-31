@@ -10,7 +10,9 @@ class LoginTextButton extends StatelessWidget {
   Widget build(BuildContext context) {
     return TextButton(
       onPressed: () {
-        RoutesProvider.nextScreen(screen: SignUpScreen());
+        RoutesProvider.nextScreen(
+          screen: const SignUpScreen(),
+        );
       },
       child: Text(
         text,
