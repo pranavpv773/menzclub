@@ -12,7 +12,7 @@ class ThirdScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.green,
+      backgroundColor: Colors.amberAccent,
       body: Column(
         crossAxisAlignment: CrossAxisAlignment.center,
         mainAxisAlignment: MainAxisAlignment.spaceEvenly,
@@ -21,8 +21,9 @@ class ThirdScreen extends StatelessWidget {
           Padding(
             padding: const EdgeInsets.symmetric(horizontal: 18.0),
             child: Text(
-              'Lets Improve your experience',
+              'Lets get the fastest delivery experience',
               style: TextStyle(
+                color: primary2,
                 fontSize: 50,
                 fontWeight: FontWeight.bold,
                 fontFamily: GoogleFonts.rasa().fontFamily,
@@ -32,8 +33,9 @@ class ThirdScreen extends StatelessWidget {
           Padding(
             padding: const EdgeInsets.symmetric(horizontal: 18.0),
             child: Text(
-              'Find cool accessories to support your daily activities.',
+              'Find the cool accessories to support your daily activities.',
               style: TextStyle(
+                color: kWhite,
                 fontSize: 18,
                 fontWeight: FontWeight.bold,
                 fontFamily: GoogleFonts.rasa().fontFamily,
@@ -46,7 +48,7 @@ class ThirdScreen extends StatelessWidget {
               width: double.infinity,
               child: TextButton(
                 style: ButtonStyle(
-                  backgroundColor: MaterialStateProperty.all(primary),
+                  backgroundColor: MaterialStateProperty.all(kWhite),
                 ),
                 onPressed: () {
                   context
@@ -55,7 +57,7 @@ class ThirdScreen extends StatelessWidget {
                 },
                 child: Text(
                   'GET STARTED',
-                  style: TextStyle(color: kWhite),
+                  style: TextStyle(color: primary),
                 ),
               ),
             ),
