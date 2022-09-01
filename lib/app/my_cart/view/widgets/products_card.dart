@@ -43,7 +43,7 @@ class ProductCartCard extends StatelessWidget {
                           IconStared(
                             width: width,
                             star: 4,
-                            color: Color.fromARGB(255, 22, 91, 24),
+                            color: const Color.fromARGB(255, 22, 91, 24),
                           ),
                         ],
                       ),
