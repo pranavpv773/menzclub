@@ -74,7 +74,7 @@ class DescriptionScreen extends StatelessWidget {
                 index: 1,
                 width: width,
                 name: 'Add to cart',
-                color: primary2,
+                color: const Color.fromARGB(199, 220, 199, 13),
               ),
             ],
           ),

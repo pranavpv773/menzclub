@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:menz_cart_app/app/login/view/login.dart';
+import 'package:menz_cart_app/routes/routes.dart';
 
 class DescriptionProvider with ChangeNotifier {
   void selectedItem(BuildContext context, item) {
@@ -7,17 +9,10 @@ class DescriptionProvider with ChangeNotifier {
         showDialog(
             context: context,
             builder: (BuildContext context) {
-              return AlertDialog(
-                title: const Text('Alert'),
-                content: const Text('you have to login first'),
-                actions: <Widget>[
-                  TextButton(
-                    child: const Text('Ok'),
-                    onPressed: () {
-                      Navigator.pop(context);
-                    },
-                  ),
-                ],
+              return AlertboxWidget(
+                title: 'You have to login first',
+                btn: 'Cancel',
+                function: () => RoutesProvider.backScreen(),
               );
             });
         break;
@@ -51,5 +46,43 @@ class DescriptionProvider with ChangeNotifier {
         );
         break;
     }
+  }
+}
+
+class AlertboxWidget extends StatelessWidget {
+  const AlertboxWidget(
+      {Key? key,
+      required this.title,
+      required this.btn,
+      required this.function})
+      : super(key: key);
+  final String title;
+  final String btn;
+  final VoidCallback function;
+  @override
+  Widget build(BuildContext context) {
+    return AlertDialog(
+      title: Text(title),
+      content: Container(
+        width: 150,
+        height: 120,
+        decoration: const BoxDecoration(
+          image: DecorationImage(
+            image: AssetImage(
+              'assets/get_started/logi.gif',
+            ),
+          ),
+        ),
+      ),
+      actions: <Widget>[
+        TextButton(
+          child: const Text('Login'),
+          onPressed: () {
+            RoutesProvider.nextScreen(screen: LoginScreen());
+          },
+        ),
+        TextButton(onPressed: function, child: Text(btn)),
+      ],
+    );
   }
 }
