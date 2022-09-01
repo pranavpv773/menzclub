@@ -40,13 +40,13 @@ class HomeModalBottom extends StatelessWidget {
                   button: 'LOGIN',
                   buttonBgColor: kWhite,
                   buttonColor: primary,
-                  screen: LoginScreen()),
+                  screen: const LoginScreen()),
               GetTransparentButton(
                   index: 2,
                   button: 'CONTINUE',
                   buttonBgColor: kWhite,
                   buttonColor: primary,
-                  screen: GlobalScreen())
+                  screen: const GlobalScreen())
             ],
           )
         ],

@@ -13,6 +13,7 @@ class CircleAvatharTop extends StatelessWidget {
       width: width,
       height: 100,
       child: ListView(
+        physics: BouncingScrollPhysics(),
         scrollDirection: Axis.horizontal,
         children: List.generate(
           categoryList.length,

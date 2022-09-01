@@ -8,7 +8,7 @@ class FirstScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Color.fromARGB(255, 38, 153, 169),
+      backgroundColor: const Color.fromARGB(255, 38, 153, 169),
       body: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         mainAxisAlignment: MainAxisAlignment.spaceEvenly,
@@ -38,11 +38,6 @@ class FirstScreen extends StatelessWidget {
               ),
             ),
           ),
-          // const Padding(
-          //   padding: EdgeInsets.symmetric(horizontal: 30.0),
-          //   child: ShopNowButton(
-          //       screen: SecondSdcreen(), textButton: 'Get Started'),
-          // )
         ],
       ),
     );

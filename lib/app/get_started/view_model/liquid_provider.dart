@@ -14,6 +14,15 @@ class LiquidProvider with ChangeNotifier {
     const SecondSdcreen(),
     const ThirdScreen(),
   ];
+  iconFunction(index) {
+    if (page[2] == index) {
+      const Icon(Icons.arrow_back_ios);
+      notifyListeners();
+    } else {
+      SizedBox();
+      notifyListeners();
+    }
+  }
 
   screeFunction(BuildContext context) {
     showDialog(
