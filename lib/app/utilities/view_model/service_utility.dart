@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 import 'package:menz_cart_app/app/jeans/view_model/jeans_map.dart';
 import 'package:menz_cart_app/app/products/view/product_screen.dart';
 import 'package:menz_cart_app/app/shirt/view_model/map_shirt.dart';
