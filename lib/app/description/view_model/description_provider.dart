@@ -3,7 +3,10 @@ import 'package:menz_cart_app/app/login/view/login.dart';
 import 'package:menz_cart_app/routes/routes.dart';
 
 class DescriptionProvider with ChangeNotifier {
-  void selectedItem(BuildContext context, item) {
+  void selectedItem(
+    BuildContext context,
+    item,
+  ) {
     switch (item) {
       case 0:
         showDialog(
@@ -78,7 +81,7 @@ class AlertboxWidget extends StatelessWidget {
         TextButton(
           child: const Text('Login'),
           onPressed: () {
-            RoutesProvider.nextScreen(screen: LoginScreen());
+            RoutesProvider.nextScreen(screen: const LoginScreen());
           },
         ),
         TextButton(onPressed: function, child: Text(btn)),

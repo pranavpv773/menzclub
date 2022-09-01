@@ -1,9 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:menz_cart_app/app/constants/colors.dart';
-import 'package:menz_cart_app/app/global/view/global_screen.dart';
-import 'package:menz_cart_app/app/utilities/view_model/service_utility.dart';
-import 'package:menz_cart_app/routes/routes.dart';
+import 'package:menz_cart_app/app/description/view_model/description_provider.dart';
+import 'package:menz_cart_app/app/get_started/view_model/liquid_provider.dart';
 import 'package:provider/provider.dart';
 
 class ThirdScreen extends StatelessWidget {
@@ -51,9 +50,7 @@ class ThirdScreen extends StatelessWidget {
                   backgroundColor: MaterialStateProperty.all(kWhite),
                 ),
                 onPressed: () {
-                  context
-                      .read<ServicesProvider>()
-                      .settingModalBottomSheet(context);
+                  context.read<LiquidProvider>().screeFunction(context);
                 },
                 child: Text(
                   'GET STARTED',

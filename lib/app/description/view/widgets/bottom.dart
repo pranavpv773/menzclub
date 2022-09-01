@@ -23,7 +23,10 @@ class BottomTab extends StatelessWidget {
       color: color,
       child: TextButton(
         onPressed: () {
-          context.read<DescriptionProvider>().selectedItem(context, index);
+          context.read<DescriptionProvider>().selectedItem(
+                context,
+                index,
+              );
         },
         child: Text(
           name,

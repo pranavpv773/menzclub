@@ -93,10 +93,11 @@ class TshirtBanner extends StatelessWidget {
           height: 100,
           decoration: const BoxDecoration(
             image: DecorationImage(
-                image: AssetImage(
-                  'assets/banner4.webp',
-                ),
-                fit: BoxFit.contain),
+              image: AssetImage(
+                'assets/banner4.webp',
+              ),
+              fit: BoxFit.contain,
+            ),
           ),
         ),
       ),
