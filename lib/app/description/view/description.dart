@@ -37,7 +37,7 @@ class DescriptionScreen extends StatelessWidget {
           ),
         ),
         body: SingleChildScrollView(
-          physics: ScrollPhysics(),
+          physics: const ScrollPhysics(),
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
@@ -65,11 +65,13 @@ class DescriptionScreen extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
               BottomTab(
+                index: 0,
                 width: width,
                 name: 'BUY NOW',
                 color: primary,
               ),
               BottomTab(
+                index: 1,
                 width: width,
                 name: 'Add to cart',
                 color: primary2,
