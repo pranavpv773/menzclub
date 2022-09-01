@@ -11,12 +11,15 @@ class LiquidSwiperScreen extends StatelessWidget {
     return SafeArea(
       child: Scaffold(
         body: LiquidSwipe(
+          positionSlideIcon: 0.8,
+
+          slideIconWidget: const Icon(Icons.arrow_back_ios),
           pages: context.read<LiquidProvider>().page,
           enableLoop: false,
           fullTransitionValue: 600,
           enableSideReveal: true,
           waveType: WaveType.liquidReveal,
-          positionSlideIcon: 0.1,
+          // positionSlideIcon: 0.1,
         ),
       ),
     );
