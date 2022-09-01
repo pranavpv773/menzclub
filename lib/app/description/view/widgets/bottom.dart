@@ -27,7 +27,7 @@ class BottomTab extends StatelessWidget {
         },
         child: Text(
           name,
-          style: TextStyle(color: kBlack, fontSize: 20),
+          style: TextStyle(color: kWhite, fontSize: 20),
         ),
       ),
     );
