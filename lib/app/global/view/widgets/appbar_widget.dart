@@ -21,16 +21,17 @@ class ActiveApppbarWidget extends StatelessWidget {
           right: 20.0,
           child: AppBar(
             backgroundColor: kWhite,
-            leading: Icon(
-              Icons.menu,
-              color: primary,
+            leading: Image.asset(
+              'assets/mc.png',
             ),
             primary: false,
             title: const TextField(
-                decoration: InputDecoration(
-                    hintText: "Search",
-                    border: InputBorder.none,
-                    hintStyle: TextStyle(color: Colors.grey))),
+              decoration: InputDecoration(
+                hintText: "Search",
+                border: InputBorder.none,
+                hintStyle: TextStyle(color: Colors.grey),
+              ),
+            ),
             actions: <Widget>[
               IconButton(
                 icon: Icon(Icons.search, color: primary),
