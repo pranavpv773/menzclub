@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:menz_cart_app/app/constants/colors.dart';
-import 'package:menz_cart_app/app/description/view_model/description_provider.dart';
 import 'package:menz_cart_app/app/get_started/view_model/liquid_provider.dart';
 import 'package:provider/provider.dart';
 

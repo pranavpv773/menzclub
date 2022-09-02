@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:menz_cart_app/app/constants/colors.dart';
 import 'package:menz_cart_app/app/t_shirt/view_model/tshirt.dart';
-import 'package:menz_cart_app/app/watches/view_model/watch_map.dart';
 
 class TshirtColorBuilder extends StatelessWidget {
   const TshirtColorBuilder({

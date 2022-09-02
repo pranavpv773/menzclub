@@ -9,6 +9,7 @@ import 'package:menz_cart_app/app/sign_up/view_model/signup_provider.dart';
 import 'package:menz_cart_app/app/splash/view/splash_screen.dart';
 import 'package:menz_cart_app/app/splash/view_model/splash_screen.dart';
 import 'package:menz_cart_app/app/utilities/view_model/service_utility.dart';
+import 'package:menz_cart_app/services/view_model/http_services.dart';
 import 'package:provider/provider.dart';
 import 'app/constants/colors.dart';
 import 'app/home/view_model/home_provider.dart';
@@ -50,6 +51,9 @@ class MyApp extends StatelessWidget {
         ),
         ChangeNotifierProvider(
           create: (crete) => DescriptionProvider(),
+        ),
+        ChangeNotifierProvider(
+          create: (crete) => HttpServicere(),
         ),
       ],
       child: MaterialApp(
