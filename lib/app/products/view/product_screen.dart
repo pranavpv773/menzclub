@@ -2,8 +2,11 @@ import 'package:flutter/material.dart';
 import 'package:menz_cart_app/app/constants/colors.dart';
 import 'package:menz_cart_app/app/filter/view/filter_screen.dart';
 import 'package:menz_cart_app/app/products/view/widgets/card_builder.dart';
+import 'package:menz_cart_app/app/products/view_model/products_provider.dart';
 import 'package:menz_cart_app/app/utilities/view/appbar_widget.dart';
 import 'package:menz_cart_app/routes/routes.dart';
+import 'package:menz_cart_app/services/view_model/http_services.dart';
+import 'package:provider/provider.dart';
 import 'widgets/border_container.dart';
 import 'widgets/radio_btn.dart';
 
@@ -30,7 +33,6 @@ class ProductsScreen extends StatelessWidget {
           children: [
             ProductCardBuilder(
               height: height,
-              list: list,
               width: width,
             ),
           ],
