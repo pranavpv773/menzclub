@@ -32,7 +32,6 @@ class ProductDetailsCard extends StatelessWidget {
                   fontSize: 20),
             ),
           ),
-          Text(topcollection),
           RatingBarIndicator(
             rating: star,
             itemBuilder: (context, index) => const Icon(
