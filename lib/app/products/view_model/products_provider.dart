@@ -21,9 +21,7 @@ class ProductsProvider with ChangeNotifier {
       var products = await context.read<HttpServicere>().fetchProducts();
       if (products.isNotEmpty) {
         productList.addAll(products);
-      } else {
-        print('empty');
-      }
+      } else {}
     } finally {
       // isLoading = false;
     }
