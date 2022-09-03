@@ -55,7 +55,8 @@ class DescriptionScreen extends StatelessWidget {
                 height: height,
               ),
               DividerWidget(height: height / 2),
-              const Text('Production Details')
+              const Text('Production Details'),
+              Text(topcollection),
             ],
           ),
         ),
