@@ -31,7 +31,7 @@ class HomeCarouselBanners extends StatelessWidget {
                 image: NetworkImage(
                   list[index],
                 ),
-                fit: BoxFit.fill,
+                fit: BoxFit.cover,
               ),
             ),
           );

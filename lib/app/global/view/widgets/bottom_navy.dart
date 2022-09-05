@@ -12,16 +12,18 @@ class BottomNavyWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return BottomNavyBar(
+      curve: Curves.ease,
       selectedIndex: context.watch<GlobalProvider>().pageIndex,
       showElevation: true,
       onItemSelected: (index) =>
           context.read<GlobalProvider>().onTabIndexChange(index),
       items: [
         BottomNavyBarItem(
-            icon: const Icon(Icons.home_rounded),
-            title: const Text('Home'),
-            activeColor: Colors.red,
-            inactiveColor: primary),
+          icon: const Icon(Icons.home_rounded),
+          title: const Text('Home'),
+          activeColor: Colors.red,
+          inactiveColor: primary,
+        ),
         BottomNavyBarItem(
           icon: const Icon(Icons.widgets_rounded),
           title: const Text('Categories'),
@@ -35,10 +37,11 @@ class BottomNavyWidget extends StatelessWidget {
           inactiveColor: primary,
         ),
         BottomNavyBarItem(
-            icon: const Icon(Icons.person),
-            title: const Text('Account'),
-            activeColor: primary2,
-            inactiveColor: primary),
+          icon: const Icon(Icons.person),
+          title: const Text('Account'),
+          activeColor: primary2,
+          inactiveColor: primary,
+        ),
       ],
     );
   }
