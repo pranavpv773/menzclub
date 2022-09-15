@@ -34,11 +34,17 @@ class ActiveApppbarWidget extends StatelessWidget {
             ),
             actions: <Widget>[
               IconButton(
-                icon: Icon(Icons.search, color: primary),
+                icon: Icon(
+                  Icons.search,
+                  color: primary,
+                ),
                 onPressed: () {},
               ),
               IconButton(
-                icon: Icon(Icons.notifications, color: primary),
+                icon: Icon(
+                  Icons.notifications,
+                  color: primary,
+                ),
                 onPressed: () {},
               )
             ],
