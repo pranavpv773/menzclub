@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:menz_cart_app/app/constants/colors.dart';
 import 'package:menz_cart_app/app/global/view_model/global_provider.dart';
 import 'package:provider/provider.dart';
+import 'package:salomon_bottom_bar/salomon_bottom_bar.dart';
 
 class BottomNavyWidget extends StatelessWidget {
   const BottomNavyWidget({
@@ -11,36 +12,35 @@ class BottomNavyWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return BottomNavyBar(
+    return SalomonBottomBar(
       curve: Curves.ease,
-      selectedIndex: context.watch<GlobalProvider>().pageIndex,
-      showElevation: true,
-      onItemSelected: (index) =>
-          context.read<GlobalProvider>().onTabIndexChange(index),
+      currentIndex: context.watch<GlobalProvider>().pageIndex,
+      // showElevation: true,
+      onTap: (index) => context.read<GlobalProvider>().onTabIndexChange(index),
       items: [
-        BottomNavyBarItem(
+        SalomonBottomBarItem(
           icon: const Icon(Icons.home_rounded),
           title: const Text('Home'),
-          activeColor: Colors.red,
-          inactiveColor: primary,
+          selectedColor: Colors.red,
+          unselectedColor: primary,
         ),
-        BottomNavyBarItem(
+        SalomonBottomBarItem(
           icon: const Icon(Icons.widgets_rounded),
           title: const Text('Categories'),
-          activeColor: Colors.purpleAccent,
-          inactiveColor: primary,
+          selectedColor: Colors.purpleAccent,
+          unselectedColor: primary,
         ),
-        BottomNavyBarItem(
+        SalomonBottomBarItem(
           icon: const Icon(Icons.shopping_cart),
           title: const Text('Cart'),
-          activeColor: Colors.pink,
-          inactiveColor: primary,
+          selectedColor: Colors.pink,
+          unselectedColor: primary,
         ),
-        BottomNavyBarItem(
+        SalomonBottomBarItem(
           icon: const Icon(Icons.person),
           title: const Text('Account'),
-          activeColor: primary2,
-          inactiveColor: primary,
+          selectedColor: primary2,
+          unselectedColor: primary,
         ),
       ],
     );
