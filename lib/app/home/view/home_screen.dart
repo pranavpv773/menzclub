@@ -19,7 +19,6 @@ class HomeScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     final width = MediaQuery.of(context).size.width;
     final heights = MediaQuery.of(context).size.height;
-
     return SingleChildScrollView(
       physics: const BouncingScrollPhysics(),
       child: Column(
