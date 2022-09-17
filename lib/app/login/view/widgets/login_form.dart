@@ -153,10 +153,7 @@ class LoginTextforms extends StatelessWidget {
                     ),
                   ),
                   onPressed: (() async {
-                    context.read<LoginProvider>().onTabLoginFunction(
-                        context,
-                        context.read<LoginProvider>().email.text,
-                        context.read<LoginProvider>().password.text);
+                    context.read<LoginProvider>().onTabLoginFunction();
                   }),
                   child: const Text(
                     "LOGIN",

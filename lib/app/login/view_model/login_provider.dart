@@ -1,4 +1,10 @@
+import 'package:dio/dio.dart';
 import 'package:flutter/material.dart';
+import 'package:menz_cart_app/app/global/view/global_screen.dart';
+import 'package:menz_cart_app/app/home/view/home_screen.dart';
+import 'package:menz_cart_app/app/login/api_service/api_services.dart';
+import 'package:menz_cart_app/app/login/model/login_model.dart';
+import 'package:menz_cart_app/routes/routes.dart';
 
 class LoginProvider with ChangeNotifier {
   final userName = TextEditingController();
@@ -7,10 +13,18 @@ class LoginProvider with ChangeNotifier {
   final phoneNumber = TextEditingController();
   final formKey = GlobalKey<FormState>();
   final password = TextEditingController();
-  onTabLoginFunction(
-      BuildContext context, String emailFn, String passwordFn) async {
+  onTabLoginFunction() async {
     if (formKey.currentState!.validate()) {
-      return 'sucess';
+      final data = EmailSignin(
+          userMail: email.text.trim(), userPassword: password.text.trim());
+
+      EmailSigninResp resp = ApiService.login(data.toJson());
+
+      if (resp.status) {
+        RoutesProvider.removeScreenUntil(screen: const GlobalScreen());
+      } else {
+        print(resp.message);
+      }
     }
   }
 
