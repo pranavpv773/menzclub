@@ -16,7 +16,7 @@ class PaymentScreenProvider with ChangeNotifier {
   void openCheckout() async {
     var options = {
       'key': 'rzp_live_ILgsfZCZoFIKMb',
-      'amount': 268,
+      'amount': 268.00,
       'name': 'Acme Corp.',
       'description': 'Fine T-Shirt',
       'retry': {'enabled': true, 'max_count': 1},
