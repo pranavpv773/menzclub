@@ -73,7 +73,7 @@ class LoginTextforms extends StatelessWidget {
               validator: (value) {
                 if (value!.isEmpty) {
                   return " Please fill this field";
-                } else if (value.length < 6) {
+                } else if (value.length < 5) {
                   return " Password is less than six";
                 }
               },
