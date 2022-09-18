@@ -1,7 +1,5 @@
-import 'package:dio/dio.dart';
 import 'package:flutter/material.dart';
 import 'package:menz_cart_app/app/global/view/global_screen.dart';
-import 'package:menz_cart_app/app/home/view/home_screen.dart';
 import 'package:menz_cart_app/app/login/api_service/api_services.dart';
 import 'package:menz_cart_app/app/login/model/login_model.dart';
 import 'package:menz_cart_app/routes/routes.dart';
@@ -22,9 +20,7 @@ class LoginProvider with ChangeNotifier {
 
       if (resp.status) {
         RoutesProvider.removeScreenUntil(screen: const GlobalScreen());
-      } else {
-        print(resp.message);
-      }
+      } else {}
     }
   }
 
