@@ -1,8 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:menz_cart_app/app/constants/colors.dart';
-import 'package:menz_cart_app/app/payment/view/payment_screen.dart';
-import 'package:provider/provider.dart';
-import 'package:razorpay_flutter/razorpay_flutter.dart';
 import 'widgets/button.dart';
 
 class OrderSummary extends StatelessWidget {
