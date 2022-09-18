@@ -13,7 +13,7 @@ class LoginProvider with ChangeNotifier {
   final phoneNumber = TextEditingController();
   final formKey = GlobalKey<FormState>();
   final password = TextEditingController();
-  onTabLoginFunction() async {
+  Future<void> onTabLoginFunction() async {
     if (formKey.currentState!.validate()) {
       final data = EmailSignin(
           userMail: email.text.trim(), userPassword: password.text.trim());
