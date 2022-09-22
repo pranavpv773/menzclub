@@ -48,4 +48,4 @@ app.*.map.json
 
 
 #ignore folder
-lib/app
+lib/
