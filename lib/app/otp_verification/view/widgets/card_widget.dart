@@ -17,7 +17,7 @@ class CardWidget extends StatelessWidget {
       child: Column(
         children: [
           Container(
-            margin: const EdgeInsets.only(top: 40.0),
+            margin: const EdgeInsets.only(top: 25.0),
             padding: const EdgeInsets.all(20.0),
             child: RichText(
               textAlign: TextAlign.center,
@@ -32,7 +32,7 @@ class CardWidget extends StatelessWidget {
                     ),
                   ),
                   TextSpan(
-                    text: "Enter the OTP send to your mobile number",
+                    text: "Enter the OTP send to your Email",
                     style: TextStyle(
                       fontWeight: FontWeight.normal,
                       color: Color(0xFF373A40),

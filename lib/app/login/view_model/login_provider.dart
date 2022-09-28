@@ -1,5 +1,7 @@
 // ignore_for_file: depend_on_referenced_packages
 
+import 'dart:developer';
+
 import 'package:flutter/material.dart';
 import 'package:menz_cart_app/app/global/view/global_screen.dart';
 import 'package:menz_cart_app/app/login/api_service/api_services.dart';
@@ -17,6 +19,7 @@ class LoginProvider with ChangeNotifier {
 
   Future<void> onTabLoginFunction() async {
     if (formKey.currentState!.validate()) {
+      log('reached');
       final data = EmailSignin(
         userMail: email.text.trim(),
         userPassword: password.text.trim(),

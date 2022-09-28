@@ -29,22 +29,22 @@ class SignUpResponse {
   SignUpResponse({
     required this.status,
     required this.message,
-    this.token,
+    this.id,
   });
 
   bool status;
   String message;
-  String? token;
+  String? id;
 
   factory SignUpResponse.fromJson(Map<String, dynamic> json) => SignUpResponse(
         status: json["status"] ?? "",
         message: json["message"] ?? "",
-        token: json["token"] ?? "",
+        id: json["id"] ?? "",
       );
 
   Map<String, dynamic> toJson() => {
         "status": status,
         "message": message,
-        "token": token,
+        "id": id,
       };
 }

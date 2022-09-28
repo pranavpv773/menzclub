@@ -27,13 +27,15 @@ class PinCodeFieldWidget extends StatelessWidget {
               length: 4,
               obscureText: true,
               obscuringCharacter: '👕',
-              // obscuringWidget: const FlutterLogo(
-              //   size: 24,
+              // obscuringWidget: Image.asset(
+              //   'assets/mc.png',
+              //   width: 150,
+              //   height: 100,
               // ),
               blinkWhenObscuring: true,
               animationType: AnimationType.fade,
               validator: (v) {
-                if (v!.length < 4) {
+                if (v!.length < 1) {
                   return "please fill all fields";
                 } else {
                   return null;
@@ -60,9 +62,7 @@ class PinCodeFieldWidget extends StatelessWidget {
                   blurRadius: 10,
                 )
               ],
-              onCompleted: (v) {
-                context.read<OtpVerifyProvider>().otpController.clear();
-              },
+              onCompleted: (v) {},
               // onTap: () {
               //   print("Pressed");
               // },
