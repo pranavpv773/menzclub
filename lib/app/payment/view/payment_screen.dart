@@ -18,7 +18,7 @@ class PaymentScreenProvider with ChangeNotifier {
     var options = {
       'key': 'rzp_live_ILgsfZCZoFIKMb',
       'amount': 268.00,
-      'name': 'Acme Corp.',
+      'name': 'MenzClub',
       'description': 'Fine T-Shirt',
       'retry': {'enabled': true, 'max_count': 1},
       'send_sms_hash': true,
@@ -31,7 +31,7 @@ class PaymentScreenProvider with ChangeNotifier {
     try {
       razorpay.open(options);
     } catch (e) {
-      debugPrint(e.toString());
+      debugPrint(Razorpay.UNKNOWN_ERROR.toString());
     }
   }
 
