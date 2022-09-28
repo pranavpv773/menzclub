@@ -1,3 +1,5 @@
+// ignore_for_file: depend_on_referenced_packages
+
 import 'package:flutter/material.dart';
 import 'package:menz_cart_app/app/global/view/global_screen.dart';
 import 'package:menz_cart_app/app/login/api_service/api_services.dart';

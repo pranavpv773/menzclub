@@ -76,11 +76,6 @@ class SignupForm extends StatelessWidget {
                   onPressed: () {
                     context.read<SignUpProvider>().signUp(
                           context,
-                          context.read<SignUpProvider>().email.text,
-                          context.read<SignUpProvider>().password.text,
-                          context.read<SignUpProvider>().userName.text,
-                          context.read<SignUpProvider>().phoneNumber.text,
-                          context.read<SignUpProvider>().confirmPassword.text,
                         );
                   },
                   child: const Text(
