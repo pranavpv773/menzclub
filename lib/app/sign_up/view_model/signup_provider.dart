@@ -1,4 +1,11 @@
+import 'dart:developer';
+
 import 'package:flutter/material.dart';
+import 'package:menz_cart_app/app/otp_verification/view/otp_screen.dart';
+import 'package:menz_cart_app/app/sign_up/api_services/api_services.dart';
+import 'package:menz_cart_app/app/sign_up/model/sign_up_model.dart';
+import 'package:fluttertoast/fluttertoast.dart';
+import 'package:menz_cart_app/routes/routes.dart';
 
 class SignUpProvider with ChangeNotifier {
   final signUpKey = GlobalKey<FormState>();
@@ -7,16 +14,45 @@ class SignUpProvider with ChangeNotifier {
   final confirmPassword = TextEditingController();
   final email = TextEditingController();
   final phoneNumber = TextEditingController();
+  static String otpToken = '';
   void signUp(
     BuildContext context,
-    String email,
-    String password,
-    String name,
-    String phone,
-    String confirmPass,
   ) async {
+    log('Reached');
     if (signUpKey.currentState!.validate()) {
-      if (password != confirmPass) {}
+      log('get in to form');
+      log(password.text);
+      log(confirmPassword.text);
+      if (password.text == confirmPassword.text) {
+        log('get in to password');
+        final data = SignUpModel(
+          userMail: email.text,
+          userPassword: password.text,
+          userName: userName.text,
+          phoneNumber: int.parse(phoneNumber.text),
+        );
+
+        SignUpResponse resp = await SignupApiService.signUp(data);
+
+        if (resp.status) {
+          log(resp.token.toString());
+          otpToken = resp.token!;
+          log('otp:$otpToken');
+          Fluttertoast.showToast(
+            msg: resp.message,
+            toastLength: Toast.LENGTH_LONG,
+          );
+          RoutesProvider.nextScreen(
+            screen: const OtpVerificationScreen(),
+          );
+          disposeControll();
+        } else {
+          Fluttertoast.showToast(
+            msg: resp.message,
+            toastLength: Toast.LENGTH_LONG,
+          );
+        }
+      }
     }
   }
 

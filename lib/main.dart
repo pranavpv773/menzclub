@@ -4,6 +4,7 @@ import 'package:menz_cart_app/app/description/view_model/description_provider.da
 import 'package:menz_cart_app/app/get_started/view_model/liquid_provider.dart';
 import 'package:menz_cart_app/app/global/view_model/global_provider.dart';
 import 'package:menz_cart_app/app/login/view_model/login_provider.dart';
+import 'package:menz_cart_app/app/otp_verification/view_model/otp_provider.dart';
 import 'package:menz_cart_app/app/payment/view/payment_screen.dart';
 import 'package:menz_cart_app/app/products/view_model/products_provider.dart';
 import 'package:menz_cart_app/app/sign_up/view_model/signup_provider.dart';
@@ -58,6 +59,9 @@ class MyApp extends StatelessWidget {
         ),
         ChangeNotifierProvider(
           create: (crete) => PaymentScreenProvider(),
+        ),
+        ChangeNotifierProvider(
+          create: (crete) => OtpVerifyProvider(),
         ),
       ],
       child: MaterialApp(

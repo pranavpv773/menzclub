@@ -2,13 +2,14 @@ import 'dart:developer';
 
 import 'package:dio/dio.dart';
 import 'package:menz_cart_app/app/login/model/login_model.dart';
+import 'package:menz_cart_app/app/otp_verification/model/otp_model.dart';
 import 'package:menz_cart_app/services/api_endpoints.dart';
 
-class ApiService {
-  static login(EmailSignin data) async {
+class OtpApiService {
+  static otpVerified(OtpModel data) async {
     try {
       Response response =
-          await Dio().post(ApiEndPoints.loginAPI, data: data.toJson());
+          await Dio().post(ApiEndPoints.otpVerifyAPI, data: data.toJson());
       if (response.statusCode == 200) {
         log(response.data.toString());
         return EmailSigninResp.fromJson(response.data);
