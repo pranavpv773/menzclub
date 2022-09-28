@@ -15,7 +15,7 @@ class SignUpProvider with ChangeNotifier {
   final email = TextEditingController();
   final phoneNumber = TextEditingController();
   static String otpToken = '';
-  void signUp(
+  signUp(
     BuildContext context,
   ) async {
     log('Reached');
@@ -32,12 +32,9 @@ class SignUpProvider with ChangeNotifier {
           phoneNumber: int.parse(phoneNumber.text),
         );
 
-        SignUpResponse resp = await SignupApiService.signUp(data);
-
-        if (resp.status) {
-          log(resp.token.toString());
-          otpToken = resp.token!;
-          log('otp:$otpToken');
+        SignUpResponse? resp = await SignupApiService().signUp(data);
+        log('get in to second');
+        if (resp!.status) {
           Fluttertoast.showToast(
             msg: resp.message,
             toastLength: Toast.LENGTH_LONG,

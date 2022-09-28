@@ -14,19 +14,16 @@ import 'package:fluttertoast/fluttertoast.dart';
 
 class OtpVerifyProvider with ChangeNotifier {
   final otpController = TextEditingController();
-  void otpVerifing(
+  otpVerifing(
     BuildContext context,
   ) async {
     log('Reached');
-
-    log('get in to form');
+    final otp = otpController.text;
     log(otpController.text);
 
-    log('get in to password');
-    final data =
-        OtpModel(id: SignUpProvider.otpToken, userOtp: otpController.text);
+    final data = OtpModel(id: SignUpProvider.otpToken, userOtp: otp);
     log(data.id);
-    EmailSigninResp resp = await OtpApiService.otpVerified(data);
+    OtpVerifyResponse resp = await OtpApiService().otpVerified(data);
 
     if (resp.status) {
       Fluttertoast.showToast(

@@ -1,26 +1,27 @@
 import 'dart:developer';
 
 import 'package:dio/dio.dart';
-import 'package:menz_cart_app/app/login/model/login_model.dart';
 import 'package:menz_cart_app/app/otp_verification/model/otp_model.dart';
 import 'package:menz_cart_app/services/api_endpoints.dart';
 
 class OtpApiService {
-  static otpVerified(OtpModel data) async {
+  Future<OtpVerifyResponse> otpVerified(OtpModel data) async {
+    log(data.userOtp.toString());
     try {
       Response response =
           await Dio().post(ApiEndPoints.otpVerifyAPI, data: data.toJson());
-      if (response.statusCode == 200) {
-        log(response.data.toString());
-        return EmailSigninResp.fromJson(response.data);
+      if (response.statusCode! >= 200 && response.statusCode! <= 299) {
+        log(response.data..toString());
+        return OtpVerifyResponse.fromJson(response.data);
       } else {
-        return EmailSigninResp.fromJson(response.data);
+        log('2executed');
+        return OtpVerifyResponse.fromJson(response.data);
       }
     } on DioError catch (e) {
-      return EmailSigninResp.fromJson(e.response!.data);
+      return OtpVerifyResponse(status: false, message: e.message);
     } catch (e) {
       print(e.toString());
-      return EmailSigninResp(status: false, message: e.toString());
+      return OtpVerifyResponse(status: false, message: e.toString());
     }
   }
 }
