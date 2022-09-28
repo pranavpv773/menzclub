@@ -1,16 +1,26 @@
+import 'dart:developer';
+
 import 'package:dio/dio.dart';
 import 'package:menz_cart_app/app/login/model/login_model.dart';
 import 'package:menz_cart_app/app/services/dio_service.dart';
+import 'package:menz_cart_app/services/api_endpoints.dart';
 
 class ApiService {
-  static login(data) async {
-    Response response = await DioService.postMethod(
-        url: 'http://10.0.2.2:7000/account/login', data: data);
-
-    if (response.statusCode == 200) {
-      return EmailSigninResp.fromJson(response.data);
-    } else {
-      return EmailSigninResp.fromJson(response.data);
+  static login(EmailSignin data) async {
+    try {
+      Response response =
+          await Dio().post(ApiEndPoints.loginAPI, data: data.toJson());
+      if (response.statusCode == 200) {
+        log(response.data.toString());
+        return EmailSigninResp.fromJson(response.data);
+      } else {
+        return EmailSigninResp.fromJson(response.data);
+      }
+    } on DioError catch (e) {
+      return EmailSigninResp.fromJson(e.response!.data);
+    } catch (e) {
+      print(e.toString());
+      return EmailSigninResp(status: false, message: e.toString());
     }
   }
 }
