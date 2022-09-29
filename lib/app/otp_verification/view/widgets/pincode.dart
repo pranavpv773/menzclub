@@ -19,6 +19,7 @@ class PinCodeFieldWidget extends StatelessWidget {
         child: Padding(
             padding: const EdgeInsets.symmetric(vertical: 8.0, horizontal: 30),
             child: PinCodeTextField(
+              autoDisposeControllers: false,
               appContext: context,
               pastedTextStyle: TextStyle(
                 color: primary,

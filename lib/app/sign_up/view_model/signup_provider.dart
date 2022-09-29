@@ -35,6 +35,7 @@ class SignUpProvider with ChangeNotifier {
         SignUpResponse? resp = await SignupApiService().signUp(data);
         log('get in to second');
         if (resp!.status) {
+          otpToken = resp.id!;
           Fluttertoast.showToast(
             msg: resp.message,
             toastLength: Toast.LENGTH_LONG,
