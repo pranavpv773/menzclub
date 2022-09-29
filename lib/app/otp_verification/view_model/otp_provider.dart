@@ -18,6 +18,7 @@ class OtpVerifyProvider with ChangeNotifier {
     BuildContext context,
   ) async {
     log('Reached');
+    log(SignUpProvider.otpToken);
     final otp = otpController.text;
     log(otpController.text);
 
