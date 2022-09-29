@@ -6,8 +6,6 @@ import 'package:razorpay_flutter/razorpay_flutter.dart';
 class PaymentScreenProvider with ChangeNotifier {
   late Razorpay razorpay;
 
-  void initState() {}
-
   @override
   void dispose() {
     super.dispose();
@@ -17,7 +15,7 @@ class PaymentScreenProvider with ChangeNotifier {
   void openCheckout() async {
     var options = {
       'key': 'rzp_live_ILgsfZCZoFIKMb',
-      'amount': 268.00,
+      'amount': 26800,
       'name': 'MenzClub',
       'description': 'Fine T-Shirt',
       'retry': {'enabled': true, 'max_count': 1},
