@@ -42,7 +42,7 @@ class SignUpProvider with ChangeNotifier {
           RoutesProvider.nextScreen(
             screen: const OtpVerificationScreen(),
           );
-          disposeControll();
+          // disposeControll();
         } else {
           Fluttertoast.showToast(
             msg: resp.message,

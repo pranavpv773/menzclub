@@ -16,12 +16,10 @@ class SignupApiService {
       } else {
         return SignUpResponse.fromJson(response.data);
       }
-    }
-    //  on DioError catch (e) {
-    //   log('message');
-    //   return SignUpResponse.fromJson(e.response!.data);
-    // }
-    catch (e) {
+    } on DioError catch (e) {
+      log('message');
+      return SignUpResponse.fromJson(e.response!.data);
+    } catch (e) {
       log(e.toString());
       return SignUpResponse(status: false, message: e.toString());
     }

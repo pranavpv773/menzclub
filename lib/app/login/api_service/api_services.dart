@@ -11,22 +11,19 @@ class ApiService {
     try {
       Response response =
           await Dio().post(ApiEndPoints.loginAPI, data: data.toJson());
-      if (response.statusCode! >= 200 && response.statusCode! <= 299) {
+      if (response.statusCode! >= 200) {
         log('reached Dio');
         log(response.data.toString());
         return EmailSigninResp.fromJson(response.data);
       } else {
         return EmailSigninResp.fromJson(response.data);
       }
+    } on DioError catch (e) {
+      log('message');
+      return EmailSigninResp.fromJson(e.response!.data);
     } catch (e) {
-      return Fluttertoast.showToast(
-        msg: e.toString(),
-        toastLength: Toast.LENGTH_LONG,
-      );
+      print(e.toString());
+      return EmailSigninResp(status: false, message: e.toString());
     }
-    // } catch (e) {
-    //   print(e.toString());
-    //   return EmailSigninResp(status: false, message: e.toString());
-    // }
   }
 }
