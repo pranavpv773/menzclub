@@ -30,6 +30,9 @@ class AccountScreen extends StatelessWidget {
                 AcountTexWidgget(
                   text: 'TERMS OF USE',
                 ),
+                AcountTexWidgget(
+                  text: 'Logout',
+                ),
               ],
             ),
           )
@@ -43,12 +46,15 @@ class AcountTexWidgget extends StatelessWidget {
   const AcountTexWidgget({
     Key? key,
     required this.text,
+    this.onTab,
   }) : super(key: key);
   final String text;
+  final VoidCallback? onTab;
   @override
   Widget build(BuildContext context) {
     return ListTile(
       leading: const SizedBox(),
+      onTap: onTab ?? () {},
       title: Text(
         text,
         style: const TextStyle(
