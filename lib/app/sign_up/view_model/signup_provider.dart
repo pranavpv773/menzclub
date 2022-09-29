@@ -1,5 +1,5 @@
+// ignore_for_file: depend_on_referenced_packages
 import 'dart:developer';
-
 import 'package:flutter/material.dart';
 import 'package:menz_cart_app/app/otp_verification/view/otp_screen.dart';
 import 'package:menz_cart_app/app/sign_up/api_services/api_services.dart';
