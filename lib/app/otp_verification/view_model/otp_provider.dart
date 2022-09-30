@@ -1,13 +1,9 @@
 // ignore_for_file: depend_on_referenced_packages
-
 import 'dart:developer';
-
 import 'package:flutter/widgets.dart';
 import 'package:menz_cart_app/app/global/view/global_screen.dart';
-import 'package:menz_cart_app/app/login/model/login_model.dart';
 import 'package:menz_cart_app/app/otp_verification/api_services/api_services.dart';
 import 'package:menz_cart_app/app/otp_verification/model/otp_model.dart';
-import 'package:menz_cart_app/app/sign_up/api_services/api_services.dart';
 import 'package:menz_cart_app/app/sign_up/view_model/signup_provider.dart';
 import 'package:menz_cart_app/routes/routes.dart';
 import 'package:fluttertoast/fluttertoast.dart';
