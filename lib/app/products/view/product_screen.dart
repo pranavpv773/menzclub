@@ -29,6 +29,7 @@ class ProductsScreen extends StatelessWidget {
         child: Column(
           children: [
             ProductCardBuilder(
+              list: list,
               height: height,
               width: width,
             ),
