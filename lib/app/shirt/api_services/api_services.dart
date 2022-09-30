@@ -6,14 +6,11 @@ import 'package:dio/dio.dart';
 import 'package:flutter/widgets.dart';
 import 'package:menz_cart_app/app/login/model/login_model.dart';
 import 'package:menz_cart_app/app/shirt/model/shirt_model.dart';
-import 'package:menz_cart_app/app/shirt/view_model/shit_provider.dart';
 import 'package:menz_cart_app/services/api_endpoints.dart';
-import 'package:provider/provider.dart';
 
 class ShirtApiServices {
   static fetchProducts(BuildContext context) async {
-    context.read<ShirtProvider>().shirtMapList.clear();
-    log('reached Login');
+    log('reached shirt');
     try {
       Response response = await Dio().get(ApiEndPoints.getShirts);
       if (response.statusCode == 200) {

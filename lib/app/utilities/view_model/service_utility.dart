@@ -1,8 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:menz_cart_app/app/products/view/product_screen.dart';
-import 'package:menz_cart_app/app/shirt/api_services/api_services.dart';
-import 'package:menz_cart_app/app/shirt/view_model/shit_provider.dart';
-import 'package:menz_cart_app/app/t_shirt/api_services/api_services.dart';
+import 'package:menz_cart_app/app/shirt/view_model/shirt_provider.dart';
+import 'package:menz_cart_app/app/t_shirt/view_model/t_shirt_provider.dart';
 import 'package:menz_cart_app/app/utilities/view/bottom_model.dart';
 import 'package:menz_cart_app/routes/routes.dart';
 import 'package:provider/provider.dart';
@@ -21,7 +20,8 @@ class ServicesProvider with ChangeNotifier {
       case 1:
         RoutesProvider.nextScreen(
           screen: ProductsScreen(
-            function: TShirtApiServices.fetchTshirts(context),
+            function:
+                context.read<TshirtProvider>().fetchTShirtFuction(context),
             title: 'T-SHIRT',
           ),
         );
@@ -29,7 +29,8 @@ class ServicesProvider with ChangeNotifier {
       case 2:
         RoutesProvider.nextScreen(
           screen: ProductsScreen(
-            function: TShirtApiServices.fetchTshirts(context),
+            function:
+                context.read<TshirtProvider>().fetchTShirtFuction(context),
             title: 'JEANS',
           ),
         );
@@ -61,7 +62,8 @@ class ServicesProvider with ChangeNotifier {
       case 6:
         RoutesProvider.nextScreen(
           screen: ProductsScreen(
-            function: TShirtApiServices.fetchTshirts(context),
+            function:
+                context.read<TshirtProvider>().fetchTShirtFuction(context),
             title: 'SHOES',
           ),
         );
@@ -69,7 +71,8 @@ class ServicesProvider with ChangeNotifier {
       case 7:
         RoutesProvider.nextScreen(
           screen: ProductsScreen(
-            function: TShirtApiServices.fetchTshirts(context),
+            function:
+                context.read<TshirtProvider>().fetchTShirtFuction(context),
             title: 'WATCHES',
           ),
         );
@@ -77,7 +80,8 @@ class ServicesProvider with ChangeNotifier {
       case 8:
         RoutesProvider.nextScreen(
           screen: ProductsScreen(
-            function: TShirtApiServices.fetchTshirts(context),
+            function:
+                context.read<TshirtProvider>().fetchTShirtFuction(context),
             title: 'SHOES',
           ),
         );
@@ -85,7 +89,8 @@ class ServicesProvider with ChangeNotifier {
       case 9:
         RoutesProvider.nextScreen(
           screen: ProductsScreen(
-            function: TShirtApiServices.fetchTshirts(context),
+            function:
+                context.read<TshirtProvider>().fetchTShirtFuction(context),
             title: 'SHOES',
           ),
         );

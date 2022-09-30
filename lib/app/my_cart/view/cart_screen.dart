@@ -3,8 +3,6 @@ import 'package:menz_cart_app/app/constants/widgets.dart';
 import 'package:menz_cart_app/app/home/view/widgets/grid_view_card.dart';
 import 'package:menz_cart_app/app/order_summary/view/order.dart';
 import 'package:menz_cart_app/app/utilities/view/divider_widget.dart';
-
-import 'widgets/price_details.dart';
 import 'widgets/products_card.dart';
 
 class CartScreen extends StatelessWidget {

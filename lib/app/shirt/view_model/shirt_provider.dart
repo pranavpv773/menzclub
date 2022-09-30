@@ -9,15 +9,12 @@ class ShirtProvider with ChangeNotifier {
     BuildContext context,
   ) async {
     log('Reached');
-
-    log('get in to password');
+    shirtMapList.clear();
 
     List<ShirtModel> resp = await ShirtApiServices.fetchProducts(context);
-    log('get in to second');
     if (resp.isNotEmpty) {
       shirtMapList.addAll(resp);
       notifyListeners();
-      // disposeControll();
     } else {}
   }
 }

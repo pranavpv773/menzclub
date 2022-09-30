@@ -1,10 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:menz_cart_app/app/constants/colors.dart';
 import 'package:menz_cart_app/app/home/view_model/shirts.dart';
-import 'package:menz_cart_app/app/products/view/product_screen.dart';
 import 'package:menz_cart_app/app/shirt/view_model/map_shirt.dart';
-import 'package:menz_cart_app/routes/routes.dart';
-import 'package:menz_cart_app/services/api_endpoints.dart';
 
 class TopCollectionsWidget extends StatelessWidget {
   const TopCollectionsWidget({
