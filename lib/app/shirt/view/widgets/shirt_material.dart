@@ -3,6 +3,7 @@ import 'package:menz_cart_app/app/constants/colors.dart';
 import 'package:menz_cart_app/app/products/view/product_screen.dart';
 import 'package:menz_cart_app/app/shirt/view_model/map_shirt.dart';
 import 'package:menz_cart_app/routes/routes.dart';
+import 'package:menz_cart_app/services/api_endpoints.dart';
 
 class ShirtMaterialWidget extends StatelessWidget {
   const ShirtMaterialWidget({Key? key, required this.height}) : super(key: key);
@@ -39,11 +40,12 @@ class ShirtMaterialWidget extends StatelessWidget {
                     padding: const EdgeInsets.all(8.0),
                     child: GestureDetector(
                       onTap: () {
-                        RoutesProvider.nextScreen(
-                            screen: ProductsScreen(
-                                title:
-                                    shirtList[index]['materialname'].toString(),
-                                list: shirtList));
+                        // RoutesProvider.nextScreen(
+                        //     screen: ProductsScreen(
+                        //         endPoints: ApiEndPoints.getShirts,
+                        //         title:
+                        //             shirtList[index]['materialname'].toString(),
+                        //         list: shirtList));
                       },
                       child: Container(
                         height: height / 12,
