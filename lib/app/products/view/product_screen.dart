@@ -8,10 +8,14 @@ import 'widgets/border_container.dart';
 import 'widgets/radio_btn.dart';
 
 class ProductsScreen extends StatelessWidget {
-  const ProductsScreen({Key? key, required this.title, required this.list})
-      : super(key: key);
+  const ProductsScreen({
+    Key? key,
+    required this.title,
+    required this.function,
+  }) : super(key: key);
   final String title;
-  final List list;
+
+  final dynamic function;
   @override
   Widget build(BuildContext context) {
     final width = MediaQuery.of(context).size.width;
@@ -29,7 +33,7 @@ class ProductsScreen extends StatelessWidget {
         child: Column(
           children: [
             ProductCardBuilder(
-              list: list,
+              function: function,
               height: height,
               width: width,
             ),

@@ -4,6 +4,7 @@ import 'package:menz_cart_app/app/constants/colors.dart';
 import 'package:menz_cart_app/app/products/view/product_screen.dart';
 import 'package:menz_cart_app/app/shirt/view_model/map_shirt.dart';
 import 'package:menz_cart_app/routes/routes.dart';
+import 'package:menz_cart_app/services/api_endpoints.dart';
 
 class ShirtFitWidget extends StatelessWidget {
   const ShirtFitWidget(
@@ -58,11 +59,12 @@ class ShirtFitWidget extends StatelessWidget {
                 ),
                 child: GestureDetector(
                   onTap: () {
-                    RoutesProvider.nextScreen(
-                      screen: ProductsScreen(
-                          title: shirtList[index]['fit'].toString(),
-                          list: shirtList),
-                    );
+                    // RoutesProvider.nextScreen(
+                    //   screen: ProductsScreen(
+                    //       endPoints: ApiEndPoints.getShirts,
+                    //       title: shirtList[index]['fit'].toString(),
+                    //       list: shirtList),
+                    // );
                   },
                   child: Material(
                     elevation: 10,
@@ -174,10 +176,11 @@ class ShirtBannerBuilder extends StatelessWidget {
           ),
           child: GestureDetector(
             onTap: () {
-              RoutesProvider.nextScreen(
-                  screen: ProductsScreen(
-                      title: shirtList[index]['color'].toString(),
-                      list: shirtList));
+              // RoutesProvider.nextScreen(
+              //     screen: ProductsScreen(
+              //         endPoints: ApiEndPoints.getShirts,
+              //         title: shirtList[index]['color'].toString(),
+              //         list: shirtList));
             },
             child: Material(
               borderRadius: BorderRadius.circular(10),

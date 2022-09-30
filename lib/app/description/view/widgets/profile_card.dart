@@ -6,11 +6,12 @@ class ProductDetailsCard extends StatelessWidget {
   const ProductDetailsCard({
     Key? key,
     required this.name,
+    required this.discount,
     required this.topcollection,
     required this.star,
     required this.price,
   }) : super(key: key);
-
+  final String discount;
   final String name;
   final String topcollection;
   final double star;
@@ -48,7 +49,7 @@ class ProductDetailsCard extends StatelessWidget {
               text: TextSpan(
                 children: <TextSpan>[
                   TextSpan(
-                    text: '\$8.99',
+                    text: '\$$price',
                     style: TextStyle(
                       fontSize: 16,
                       color: kRed,
@@ -56,7 +57,7 @@ class ProductDetailsCard extends StatelessWidget {
                     ),
                   ),
                   TextSpan(
-                    text: ' \$ $price',
+                    text: ' \$ ${int.parse(price) - int.parse(discount)}',
                     style: TextStyle(
                         fontSize: 20,
                         color: kBlack,

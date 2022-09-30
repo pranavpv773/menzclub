@@ -4,6 +4,7 @@ import 'package:menz_cart_app/app/home/view_model/shirts.dart';
 import 'package:menz_cart_app/app/products/view/product_screen.dart';
 import 'package:menz_cart_app/app/shirt/view_model/map_shirt.dart';
 import 'package:menz_cart_app/routes/routes.dart';
+import 'package:menz_cart_app/services/api_endpoints.dart';
 
 class TopCollectionsWidget extends StatelessWidget {
   const TopCollectionsWidget({
@@ -37,10 +38,11 @@ class TopCollectionsWidget extends StatelessWidget {
               itemBuilder: (BuildContext ctx, index) {
                 return GestureDetector(
                   onTap: () {
-                    RoutesProvider.nextScreen(
-                        screen: ProductsScreen(
-                            title: shirtList[index]['topcollection'].toString(),
-                            list: shirtList));
+                    // RoutesProvider.nextScreen(
+                    //     screen: ProductsScreen(
+                    //         endPoints: ApiEndPoints.getShirts,
+                    //         title: shirtList[index]['topcollection'].toString(),
+                    //         list: shirtList));
                   },
                   child: Material(
                     elevation: 10,

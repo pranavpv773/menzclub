@@ -12,12 +12,16 @@ class DescriptionScreen extends StatelessWidget {
   const DescriptionScreen({
     Key? key,
     required this.image,
+    required this.amount,
+    required this.discout,
     required this.name,
     required this.topcollection,
     required this.price,
     // required this.star,
   }) : super(key: key);
   final String image;
+  final String amount;
+  final String discout;
   final String name;
   final String topcollection;
   final String price;
@@ -47,16 +51,27 @@ class DescriptionScreen extends StatelessWidget {
                 topcollection: topcollection,
                 star: 5,
                 price: price,
+                discount: discout,
               ),
               DividerWidget(height: height / 2),
               const DeliveryAddress(),
               DividerWidget(height: height / 2),
               PriceDetails(
+                amount: amount,
+                discout: discout,
                 height: height,
               ),
-              DividerWidget(height: height / 2),
-              const Text('Production Details'),
-              Text(topcollection),
+              const DividerWidget(height: 20),
+              Padding(
+                padding: const EdgeInsets.only(left: 16.0, bottom: 16),
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    const Text('Production Details'),
+                    Text(topcollection),
+                  ],
+                ),
+              ),
             ],
           ),
         ),
