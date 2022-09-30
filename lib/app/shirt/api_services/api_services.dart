@@ -7,14 +7,14 @@ import 'package:menz_cart_app/services/api_endpoints.dart';
 
 class ShirtApiServices {
   static fetchProducts() async {
-    ShirtProvider.shirtList.clear();
+    ShirtProvider.shirtMapList.clear();
     log('reached Login');
     try {
       Response response = await Dio().get(ApiEndPoints.getShits);
       if (response.statusCode == 200) {
         final jsonData = response.data as List;
         final newList = jsonData.map((e) => ShirtModel.fromJson(e)).toList();
-        ShirtProvider.shirtList.addAll(newList);
+        ShirtProvider.shirtMapList.addAll(newList);
       } else {
         return EmailSigninResp.fromJson(response.data);
       }

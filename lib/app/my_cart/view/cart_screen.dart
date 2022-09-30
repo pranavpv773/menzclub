@@ -8,8 +8,13 @@ import 'widgets/price_details.dart';
 import 'widgets/products_card.dart';
 
 class CartScreen extends StatelessWidget {
-  const CartScreen({Key? key}) : super(key: key);
-
+  const CartScreen({
+    Key? key,
+    // required this.amount,
+    // required this.discount,
+  }) : super(key: key);
+  // final String amount;
+  // final String discount;
   @override
   Widget build(BuildContext context) {
     final width = MediaQuery.of(context).size.width;
@@ -37,9 +42,11 @@ class CartScreen extends StatelessWidget {
             DividerWidget(
               height: height,
             ),
-            PriceDetails(
-              height: height,
-            ),
+            // PriceDetails(
+            //   height: height,
+            //   amount: amount,
+            //   discout: discount,
+            // ),
             sizedBox50,
             const ShopNowButton(
               textButton: 'Place Order',

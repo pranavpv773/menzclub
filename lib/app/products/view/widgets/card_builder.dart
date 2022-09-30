@@ -3,11 +3,10 @@ import 'package:menz_cart_app/app/constants/colors.dart';
 import 'package:menz_cart_app/app/description/view/description.dart';
 import 'package:menz_cart_app/app/home/view/widgets/grid_view_card.dart';
 import 'package:menz_cart_app/app/shirt/api_services/api_services.dart';
+import 'package:menz_cart_app/app/shirt/view_model/map_shirt.dart';
 import 'package:menz_cart_app/app/shirt/view_model/shit_provider.dart';
 import 'package:menz_cart_app/app/t_shirt/view/t_shirt_screen.dart';
 import 'package:menz_cart_app/routes/routes.dart';
-import 'package:menz_cart_app/services/view_model/http_services.dart';
-import 'package:provider/provider.dart';
 
 class ProductCardBuilder extends StatelessWidget {
   const ProductCardBuilder(
@@ -50,10 +49,12 @@ class ProductCardBuilder extends StatelessWidget {
                 onTap: () {
                   RoutesProvider.nextScreen(
                     screen: DescriptionScreen(
+                      amount: list[index].price.toString(),
+                      discout: list[index].offer.toString(),
                       // star: list[index].rating!.rate!.toDouble(),
                       price: list[index].price.toString(),
                       topcollection: list[index].description.toString(),
-                      image: list[index].image.toString(),
+                      image: list[index].images[0].toString(),
                       name: list[index].name.toString(),
                     ),
                   );

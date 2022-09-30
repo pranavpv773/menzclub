@@ -4,12 +4,15 @@ import 'package:menz_cart_app/app/my_cart/view/cart_screen.dart';
 import 'package:menz_cart_app/app/utilities/view/divider_widget.dart';
 
 class PriceDetails extends StatelessWidget {
-  const PriceDetails({
-    Key? key,
-    required this.height,
-  }) : super(key: key);
+  const PriceDetails(
+      {Key? key,
+      required this.height,
+      required this.discout,
+      required this.amount})
+      : super(key: key);
   final double height;
-
+  final String amount;
+  final String discout;
   @override
   Widget build(BuildContext context) {
     return Padding(
@@ -22,9 +25,9 @@ class PriceDetails extends StatelessWidget {
           ),
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
-            children: const [
-              Text('Price(${2})'),
-              Text('9,028'),
+            children: [
+              const Text('Price'),
+              Text(amount),
             ],
           ),
           Row(
@@ -32,7 +35,7 @@ class PriceDetails extends StatelessWidget {
             children: [
               const Text('Discount'),
               Text(
-                '3,694',
+                discout,
                 style: TextStyle(color: kGreen),
               ),
             ],
@@ -54,12 +57,12 @@ class PriceDetails extends StatelessWidget {
           ),
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
-            children: const [
-              TextStyleWidget(
+            children: [
+              const TextStyleWidget(
                 text: 'Total Amount',
               ),
               TextStyleWidget(
-                text: '5,023',
+                text: '${int.parse(amount) - int.parse(discout)}',
               ),
             ],
           ),

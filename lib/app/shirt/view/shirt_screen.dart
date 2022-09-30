@@ -83,7 +83,7 @@ class ShirtScreen extends StatelessWidget {
                 ),
                 ShopNowButton(
                   screen: ProductsScreen(
-                    list: ShirtProvider.shirtList,
+                    list: ShirtProvider.shirtMapList,
                     title: 'SHIRTS',
                   ),
                   textButton: 'SHOP ALL SHIRTS',
