@@ -9,6 +9,7 @@ import 'package:menz_cart_app/app/products/view/product_screen.dart';
 import 'package:menz_cart_app/app/shirt/view/widgets/shirt_fit.dart';
 import 'package:menz_cart_app/app/shirt/view/widgets/shirt_material.dart';
 import 'package:menz_cart_app/app/shirt/view_model/map_shirt.dart';
+import 'package:menz_cart_app/app/shirt/view_model/shit_provider.dart';
 
 import 'widgets/shirt_category.dart';
 import 'widgets/top_collecton.dart';
@@ -80,9 +81,9 @@ class ShirtScreen extends StatelessWidget {
                     sizedBox50,
                   ],
                 ),
-                const ShopNowButton(
+                ShopNowButton(
                   screen: ProductsScreen(
-                    list: shirtList,
+                    list: ShirtProvider.shirtList,
                     title: 'SHIRTS',
                   ),
                   textButton: 'SHOP ALL SHIRTS',
