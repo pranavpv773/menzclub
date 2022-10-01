@@ -49,4 +49,4 @@ app.*.map.json
 
 #ignore folder
 test
-assets
+/assets
