@@ -1,13 +1,12 @@
 import 'dart:developer';
 import 'package:flutter/widgets.dart';
-import 'package:menz_cart_app/app/shirt/model/shirt_model.dart';
 import 'package:menz_cart_app/app/shirt/view_model/shirt_provider.dart';
 import 'package:menz_cart_app/app/t_shirt/api_services/api_services.dart';
 import 'package:menz_cart_app/app/t_shirt/model/tshirt_model.dart';
 import 'package:provider/provider.dart';
 
 class TshirtProvider with ChangeNotifier {
-  fetchTShirtFuction(
+  Future<void> fetchTShirtFuction(
     BuildContext context,
   ) async {
     log('Reached');

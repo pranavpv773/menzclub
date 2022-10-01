@@ -37,11 +37,11 @@ class ShirtCategoryCards extends StatelessWidget {
         ),
         GestureDetector(
           onTap: () {
-            RoutesProvider.nextScreen(
-                screen: ProductsScreen(
-              title: 'FORMAL',
-              function: () {},
-            ));
+            // RoutesProvider.nextScreen(
+            //     screen: ProductsScreen(
+            //   title: 'FORMAL',
+            //   function: () {},
+            // ));
           },
           child: ShirtCategories(
             width: width,

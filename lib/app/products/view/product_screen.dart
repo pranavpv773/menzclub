@@ -15,7 +15,7 @@ class ProductsScreen extends StatelessWidget {
   }) : super(key: key);
   final String title;
 
-  final dynamic function;
+  final Future<void> function;
   @override
   Widget build(BuildContext context) {
     final width = MediaQuery.of(context).size.width;
