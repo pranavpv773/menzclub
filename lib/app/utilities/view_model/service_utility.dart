@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:menz_cart_app/app/jeans/view_model/jeans_provider.dart';
 import 'package:menz_cart_app/app/products/view/product_screen.dart';
 import 'package:menz_cart_app/app/shirt/view_model/shirt_provider.dart';
+import 'package:menz_cart_app/app/shoes/view_model/shoes_provider.dart';
 import 'package:menz_cart_app/app/t_shirt/view_model/t_shirt_provider.dart';
 import 'package:menz_cart_app/app/utilities/view/bottom_model.dart';
 import 'package:menz_cart_app/routes/routes.dart';
@@ -54,7 +55,7 @@ class ServicesProvider with ChangeNotifier {
       case 5:
         RoutesProvider.nextScreen(
           screen: ProductsScreen(
-            function: context.read<ShirtProvider>().fetchShirtFuction(context),
+            function: context.read<ShoesProvider>().fetchShoes(context),
             title: 'SHOES',
           ),
         );

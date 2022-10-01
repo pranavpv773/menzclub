@@ -9,6 +9,7 @@ import 'package:menz_cart_app/app/otp_verification/view_model/otp_provider.dart'
 import 'package:menz_cart_app/app/payment/view/payment_screen.dart';
 import 'package:menz_cart_app/app/products/view_model/products_provider.dart';
 import 'package:menz_cart_app/app/shirt/view_model/shirt_provider.dart';
+import 'package:menz_cart_app/app/shoes/view_model/shoes_provider.dart';
 import 'package:menz_cart_app/app/sign_up/view_model/signup_provider.dart';
 import 'package:menz_cart_app/app/splash/view/splash_screen.dart';
 import 'package:menz_cart_app/app/splash/view_model/splash_screen.dart';
@@ -73,7 +74,7 @@ class MyApp extends StatelessWidget {
           create: (crete) => TshirtProvider(),
         ),
         ChangeNotifierProvider(
-          create: (crete) => JeansProvider(),
+          create: (crete) => ShoesProvider(),
         ),
       ],
       child: MaterialApp(
