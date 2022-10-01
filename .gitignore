@@ -50,3 +50,5 @@ app.*.map.json
 #ignore folder
 test
 /assets
+#ignore file
+/lib/main.dart

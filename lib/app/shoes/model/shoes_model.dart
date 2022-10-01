@@ -23,7 +23,7 @@ class ShoesModel {
       );
 
   Map<String, dynamic> toJson() => {
-        "jeans": List<dynamic>.from(shoes.map((x) => x.toJson())),
+        "shoes": List<dynamic>.from(shoes.map((x) => x.toJson())),
         "status": status,
         "message": message,
       };
