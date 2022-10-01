@@ -16,7 +16,7 @@ class ProductCardBuilder extends StatelessWidget {
   }) : super(key: key);
   final double height;
   final double width;
-  final dynamic function;
+  final Future<void> function;
   @override
   Widget build(BuildContext context) {
     WidgetsBinding.instance.addPostFrameCallback((timeStamp) async {
