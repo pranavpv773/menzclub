@@ -20,7 +20,7 @@ class JeansApiService {
       log('message');
       return JeansModel.fromJson(e.response!.data);
     } catch (e) {
-      print(e.toString());
+      log(e.toString());
       return JeansModel(status: false, message: e.toString(), jeans: []);
     }
   }

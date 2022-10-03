@@ -1,7 +1,6 @@
 import 'dart:developer';
 import 'package:dio/dio.dart';
 import 'package:flutter/material.dart';
-import 'package:menz_cart_app/app/jeans/model/jean_model.dart';
 import 'package:menz_cart_app/app/shoes/model/shoes_model.dart';
 import 'package:menz_cart_app/services/api_endpoints.dart';
 
@@ -21,7 +20,7 @@ class ShoesApiService {
       log('message');
       return ShoesModel.fromJson(e.response!.data);
     } catch (e) {
-      print(e.toString());
+      log(e.toString());
       return ShoesModel(status: false, message: e.toString(), shoes: []);
     }
   }

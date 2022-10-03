@@ -10,8 +10,6 @@ import 'package:menz_cart_app/app/jeans/view/widgets/grab_offers.dart';
 import 'package:menz_cart_app/app/jeans/view_model/jeans_provider.dart';
 import 'package:menz_cart_app/app/products/view/product_screen.dart';
 import 'package:menz_cart_app/app/shirt/view/widgets/shirt_fit.dart';
-import 'package:menz_cart_app/app/t_shirt/api_services/api_services.dart';
-import 'package:menz_cart_app/app/t_shirt/view_model/t_shirt_provider.dart';
 import 'package:menz_cart_app/app/utilities/view/appbar_widget.dart';
 import 'package:provider/provider.dart';
 

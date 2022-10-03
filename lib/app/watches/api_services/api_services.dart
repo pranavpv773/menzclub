@@ -20,7 +20,7 @@ class WatchApiService {
       log('message');
       return WatchModel.fromJson(e.response!.data);
     } catch (e) {
-      print(e.toString());
+      log(e.toString());
       return WatchModel(status: false, message: e.toString(), watch: []);
     }
   }

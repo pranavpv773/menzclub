@@ -5,7 +5,6 @@ import 'package:menz_cart_app/app/constants/widgets.dart';
 import 'package:menz_cart_app/app/home/view/widgets/grid_view_card.dart';
 import 'package:menz_cart_app/app/products/view/product_screen.dart';
 import 'package:menz_cart_app/app/shirt/view/widgets/shirt_fit.dart';
-import 'package:menz_cart_app/app/t_shirt/api_services/api_services.dart';
 import 'package:menz_cart_app/app/t_shirt/view_model/t_shirt_provider.dart';
 import 'package:provider/provider.dart';
 import 'package:simple_gradient_text/simple_gradient_text.dart';
