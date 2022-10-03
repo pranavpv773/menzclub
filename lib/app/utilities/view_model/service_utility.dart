@@ -5,6 +5,7 @@ import 'package:menz_cart_app/app/shirt/view_model/shirt_provider.dart';
 import 'package:menz_cart_app/app/shoes/view_model/shoes_provider.dart';
 import 'package:menz_cart_app/app/t_shirt/view_model/t_shirt_provider.dart';
 import 'package:menz_cart_app/app/utilities/view/bottom_model.dart';
+import 'package:menz_cart_app/app/watches/view_model/watch_provider.dart';
 import 'package:menz_cart_app/routes/routes.dart';
 import 'package:provider/provider.dart';
 
@@ -73,7 +74,7 @@ class ServicesProvider with ChangeNotifier {
         RoutesProvider.nextScreen(
           screen: ProductsScreen(
             function:
-                context.read<TshirtProvider>().fetchTShirtFuction(context),
+                context.read<WatchProvider>().fetchWatchesfromApi(context),
             title: 'WATCHES',
           ),
         );
@@ -81,8 +82,7 @@ class ServicesProvider with ChangeNotifier {
       case 8:
         RoutesProvider.nextScreen(
           screen: ProductsScreen(
-            function:
-                context.read<TshirtProvider>().fetchTShirtFuction(context),
+            function: context.read<ShoesProvider>().fetchShoes(context),
             title: 'SHOES',
           ),
         );

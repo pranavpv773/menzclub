@@ -80,6 +80,9 @@ class MyApp extends StatelessWidget {
         ChangeNotifierProvider(
           create: (crete) => WatchProvider(),
         ),
+        ChangeNotifierProvider(
+          create: (crete) => JeansProvider(),
+        ),
       ],
       child: MaterialApp(
         navigatorKey: RoutesProvider.navigatorKey,
