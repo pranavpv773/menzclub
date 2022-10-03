@@ -14,6 +14,7 @@ class TshirtProvider with ChangeNotifier {
 
     List<TshirtModel> resp = await TShirtApiServices.fetchApiTshirts(context);
     if (resp.isNotEmpty) {
+      // ignore: use_build_context_synchronously
       context.read<ShirtProvider>().shirtMapList.addAll(resp);
 
       notifyListeners();

@@ -1,8 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:menz_cart_app/app/products/view/product_screen.dart';
 import 'package:menz_cart_app/app/utilities/view/container_network.dart';
-import 'package:menz_cart_app/routes/routes.dart';
 
 class ShirtCategoryCards extends StatelessWidget {
   const ShirtCategoryCards({

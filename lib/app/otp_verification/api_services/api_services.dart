@@ -21,7 +21,7 @@ class OtpApiService {
       // log('message');
       return OtpVerifyResponse.fromJson(e.response!.data);
     } catch (e) {
-      print(e.toString());
+      log(e.toString());
       return OtpVerifyResponse(status: false, message: e.toString());
     }
   }

@@ -13,7 +13,7 @@ class JeansProvider with ChangeNotifier {
 
     if (resp.status && resp.jeans.isNotEmpty) {
       context.read<ShirtProvider>().shirtMapList.clear();
-      final jsonData = resp.jeans;
+      // final jsonData = resp.jeans;
 
       // final newList = jsonData.jeans((e) => Jeans.fromJson(e));
       log(resp.toString());
