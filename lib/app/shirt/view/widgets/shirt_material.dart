@@ -1,6 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:menz_cart_app/app/constants/colors.dart';
+import 'package:menz_cart_app/app/products/view/product_screen.dart';
 import 'package:menz_cart_app/app/shirt/view_model/map_shirt.dart';
+import 'package:menz_cart_app/app/shirt/view_model/shirt_provider.dart';
+import 'package:menz_cart_app/routes/routes.dart';
+import 'package:provider/provider.dart';
 
 class ShirtMaterialWidget extends StatelessWidget {
   const ShirtMaterialWidget({Key? key, required this.height}) : super(key: key);
@@ -36,13 +40,16 @@ class ShirtMaterialWidget extends StatelessWidget {
                   return Padding(
                     padding: const EdgeInsets.all(8.0),
                     child: GestureDetector(
-                      onTap: () {
-                        // RoutesProvider.nextScreen(
-                        //     screen: ProductsScreen(
-                        //         endPoints: ApiEndPoints.getShirts,
-                        //         title:
-                        //             shirtList[index]['materialname'].toString(),
-                        //         list: shirtList));
+                      onTap: () async {
+                        await context.read<ShirtProvider>().fetchShirtMaterial(
+                            shirtList[index]['materialname'].toString());
+                        RoutesProvider.nextScreen(
+                            screen: ProductsScreen(
+                                title:
+                                    shirtList[index]['materialname'].toString(),
+                                list: context
+                                    .read<ShirtProvider>()
+                                    .shirtMaterial));
                       },
                       child: Container(
                         height: height / 12,

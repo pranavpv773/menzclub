@@ -25,13 +25,13 @@ class ProductsScreen extends StatelessWidget {
   final List list;
   @override
   Widget build(BuildContext context) {
-    WidgetsBinding.instance.addPostFrameCallback((timeStamp) async {
-      await context.read<ShirtProvider>().fetchShirtFuction();
-      await context.read<TshirtProvider>().fetchTShirtFuction();
-      await context.read<JeansProvider>().fetchJeans();
-      await context.read<WatchProvider>().fetchWatchesfromApi();
-      await context.read<ShoesProvider>().fetchShoes();
-    });
+    // WidgetsBinding.instance.addPostFrameCallback((timeStamp) async {
+    //   await context.read<ShirtProvider>().fetchShirtFuction();
+    //   await context.read<TshirtProvider>().fetchTShirtFuction();
+    //   await context.read<JeansProvider>().fetchJeans();
+    //   await context.read<WatchProvider>().fetchWatchesfromApi();
+    //   await context.read<ShoesProvider>().fetchShoes();
+    // });
     final width = MediaQuery.of(context).size.width;
     final height = MediaQuery.of(context).size.height;
     return Scaffold(

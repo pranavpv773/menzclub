@@ -18,14 +18,7 @@ class TshirtProvider with ChangeNotifier {
       tShirtList.clear();
       log(resp.toString());
       tShirtList.addAll(resp.tShirt);
-      log('message');
-      log(tShirtList.toString());
-
       notifyListeners();
-      Fluttertoast.showToast(
-        msg: resp.message,
-        toastLength: Toast.LENGTH_LONG,
-      );
     } else {
       Fluttertoast.showToast(
         msg: resp.message,
