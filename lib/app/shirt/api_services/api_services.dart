@@ -25,7 +25,10 @@ class ShirtApiServices {
       return EmailSigninResp.fromJson(e.response!.data);
     } catch (e) {
       log(e.toString());
-      return EmailSigninResp(status: false, message: e.toString());
+      return EmailSigninResp(
+        status: false,
+        message: e.toString(),
+      );
     }
   }
 }

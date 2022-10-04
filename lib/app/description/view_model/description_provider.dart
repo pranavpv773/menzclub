@@ -54,7 +54,7 @@ class DescriptionProvider with ChangeNotifier {
 }
 
 class AlertboxWidget extends StatelessWidget {
-  AlertboxWidget(
+  const AlertboxWidget(
       {Key? key,
       required this.title,
       required this.btn,
