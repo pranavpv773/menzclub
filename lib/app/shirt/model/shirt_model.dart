@@ -1,17 +1,36 @@
-// To parse this JSON data, do
-//
-//     final shirtModel = shirtModelFromJson(jsonString);
-
 import 'dart:convert';
 
-List<ShirtModel> shirtModelFromJson(String str) =>
-    List<ShirtModel>.from(json.decode(str).map((x) => ShirtModel.fromJson(x)));
+ShirtModel shirtModelFromJson(String str) =>
+    ShirtModel.fromJson(json.decode(str));
 
-String shirtModelToJson(List<ShirtModel> data) =>
-    json.encode(List<dynamic>.from(data.map((x) => x.toJson())));
+String shirtModelToJson(ShirtModel data) => json.encode(data.toJson());
 
 class ShirtModel {
   ShirtModel({
+    required this.shirt,
+    required this.status,
+    required this.message,
+  });
+
+  List<Shirt> shirt;
+  bool status;
+  String message;
+
+  factory ShirtModel.fromJson(Map<String, dynamic> json) => ShirtModel(
+        shirt: List<Shirt>.from(json["shirt"].map((x) => Shirt.fromJson(x))),
+        status: json["status"],
+        message: json["message"],
+      );
+
+  Map<String, dynamic> toJson() => {
+        "shirt": List<dynamic>.from(shirt.map((x) => x.toJson())),
+        "status": status,
+        "message": message,
+      };
+}
+
+class Shirt {
+  Shirt({
     this.id,
     required this.name,
     required this.description,
@@ -41,8 +60,8 @@ class ShirtModel {
   int size;
   String material;
 
-  factory ShirtModel.fromJson(Map<String, dynamic> json) => ShirtModel(
-        id: json["_id"] ?? "",
+  factory Shirt.fromJson(Map<String, dynamic> json) => Shirt(
+        id: json["_id"],
         name: json["shirt_name"],
         description: json["shirt_description"],
         images: List<String>.from(json["images"].map((x) => x)),
@@ -58,7 +77,7 @@ class ShirtModel {
       );
 
   Map<String, dynamic> toJson() => {
-        "_id": id ?? "",
+        "_id": id,
         "shirt_name": name,
         "shirt_description": description,
         "images": List<dynamic>.from(images.map((x) => x)),

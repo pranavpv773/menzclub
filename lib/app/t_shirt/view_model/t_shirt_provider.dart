@@ -1,25 +1,38 @@
 import 'dart:developer';
 import 'package:flutter/widgets.dart';
-import 'package:menz_cart_app/app/shirt/view_model/shirt_provider.dart';
 import 'package:menz_cart_app/app/t_shirt/api_services/api_services.dart';
 import 'package:menz_cart_app/app/t_shirt/model/tshirt_model.dart';
-import 'package:provider/provider.dart';
+// ignore: depend_on_referenced_packages
+import 'package:fluttertoast/fluttertoast.dart';
 
 class TshirtProvider with ChangeNotifier {
+  List<TShirt> tShirtList = [];
   Future<void> fetchTShirtFuction(
     BuildContext context,
   ) async {
     log('Reached');
-    context.read<ShirtProvider>().shirtMapList.clear();
+    TshirtModel resp = await TShirtApiServices().fetchApiTshirts(context);
 
-    List<TshirtModel> resp = await TShirtApiServices.fetchApiTshirts(context);
-    if (resp.isNotEmpty) {
-      // ignore: use_build_context_synchronously
-      context.read<ShirtProvider>().shirtMapList.addAll(resp);
+    if (resp.status && resp.tShirt.isNotEmpty) {
+      tShirtList.clear();
+      //  final jsonData = resp.shoes;
+
+      // final newList = jsonData.jeans((e) => Jeans.fromJson(e));
+      log(resp.toString());
+      tShirtList.addAll(resp.tShirt);
+      log('message');
+      log(tShirtList.toString());
 
       notifyListeners();
-    } else {}
-
-    notifyListeners();
+      Fluttertoast.showToast(
+        msg: resp.message,
+        toastLength: Toast.LENGTH_LONG,
+      );
+    } else {
+      Fluttertoast.showToast(
+        msg: resp.message,
+        toastLength: Toast.LENGTH_LONG,
+      );
+    }
   }
 }

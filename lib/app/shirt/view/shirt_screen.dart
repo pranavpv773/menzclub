@@ -6,10 +6,10 @@ import 'package:menz_cart_app/app/home/view/widgets/circle_dot.dart';
 import 'package:menz_cart_app/app/home/view/widgets/grid_view_card.dart';
 import 'package:menz_cart_app/app/home/view_model/shirts.dart';
 import 'package:menz_cart_app/app/products/view/product_screen.dart';
-import 'package:menz_cart_app/app/shirt/api_services/api_services.dart';
 import 'package:menz_cart_app/app/shirt/view/widgets/shirt_fit.dart';
 import 'package:menz_cart_app/app/shirt/view/widgets/shirt_material.dart';
-
+import 'package:menz_cart_app/app/shirt/view_model/shirt_provider.dart';
+import 'package:provider/provider.dart';
 import 'widgets/shirt_category.dart';
 import 'widgets/top_collecton.dart';
 
@@ -82,7 +82,9 @@ class ShirtScreen extends StatelessWidget {
                 ),
                 ShopNowButton(
                   screen: ProductsScreen(
-                    function: ShirtApiServices.fetchProducts(context),
+                    function: context
+                        .read<ShirtProvider>()
+                        .fetchShirtFuction(context),
                     title: 'SHIRTS',
                   ),
                   textButton: 'SHOP ALL SHIRTS',

@@ -1,5 +1,37 @@
+import 'dart:convert';
+
+TshirtModel tshirtModelFromJson(String str) =>
+    TshirtModel.fromJson(json.decode(str));
+
+String tshirtModelToJson(TshirtModel data) => json.encode(data.toJson());
+
 class TshirtModel {
   TshirtModel({
+    required this.tShirt,
+    required this.status,
+    required this.message,
+  });
+
+  List<TShirt> tShirt;
+  bool status;
+  String message;
+
+  factory TshirtModel.fromJson(Map<String, dynamic> json) => TshirtModel(
+        tShirt:
+            List<TShirt>.from(json["tShirt"].map((x) => TShirt.fromJson(x))),
+        status: json["status"],
+        message: json["message"],
+      );
+
+  Map<String, dynamic> toJson() => {
+        "tShirt": List<dynamic>.from(tShirt.map((x) => x.toJson())),
+        "status": status,
+        "message": message,
+      };
+}
+
+class TShirt {
+  TShirt({
     this.id,
     required this.name,
     required this.description,
@@ -29,7 +61,7 @@ class TshirtModel {
   int size;
   String material;
 
-  factory TshirtModel.fromJson(Map<String, dynamic> json) => TshirtModel(
+  factory TShirt.fromJson(Map<String, dynamic> json) => TShirt(
         id: json["_id"],
         name: json["tShirt_name"],
         description: json["tShirt_description"],
