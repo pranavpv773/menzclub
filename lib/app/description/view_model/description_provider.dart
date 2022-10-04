@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:menz_cart_app/app/login/view/login.dart';
 import 'package:menz_cart_app/routes/routes.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 
 class DescriptionProvider with ChangeNotifier {
   void selectedItem(
@@ -53,7 +54,7 @@ class DescriptionProvider with ChangeNotifier {
 }
 
 class AlertboxWidget extends StatelessWidget {
-  const AlertboxWidget(
+  AlertboxWidget(
       {Key? key,
       required this.title,
       required this.btn,
@@ -62,6 +63,7 @@ class AlertboxWidget extends StatelessWidget {
   final String title;
   final String btn;
   final VoidCallback function;
+
   @override
   Widget build(BuildContext context) {
     return AlertDialog(
@@ -79,12 +81,21 @@ class AlertboxWidget extends StatelessWidget {
       ),
       actions: <Widget>[
         TextButton(
-          child: const Text('Login'),
-          onPressed: () {
-            RoutesProvider.nextScreen(screen: const LoginScreen());
+          child: const Text(
+            'Login',
+          ),
+          onPressed: () async {
+            final shared = await SharedPreferences.getInstance();
+            shared.setBool('get_started', true);
+            RoutesProvider.nextScreen(
+              screen: const LoginScreen(),
+            );
           },
         ),
-        TextButton(onPressed: function, child: Text(btn)),
+        TextButton(
+          onPressed: function,
+          child: Text(btn),
+        ),
       ],
     );
   }
