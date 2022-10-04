@@ -7,8 +7,8 @@ import 'package:fluttertoast/fluttertoast.dart';
 
 class JeansProvider with ChangeNotifier {
   List<Jeans> jeansList = [];
-  Future<void> fetchJeans(BuildContext context) async {
-    JeansModel resp = await JeansApiService().fetchProducts(context);
+  Future<void> fetchJeans() async {
+    JeansModel resp = await JeansApiService().fetchProducts();
 
     if (resp.status && resp.jeans.isNotEmpty) {
       jeansList.clear();

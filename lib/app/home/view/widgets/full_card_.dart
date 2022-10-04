@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:menz_cart_app/app/constants/colors.dart';
 import 'package:menz_cart_app/app/home/view_model/shirts.dart';
+import 'package:menz_cart_app/app/jeans/view_model/jeans_provider.dart';
+import 'package:provider/provider.dart';
 
 class NotImportant extends StatelessWidget {
   const NotImportant({
@@ -44,6 +46,7 @@ class NotImportant extends StatelessWidget {
               shrinkWrap: true,
               itemCount: 5,
               itemBuilder: (context, index) {
+                final data = context.read<JeansProvider>().jeansList;
                 return Padding(
                   padding:
                       const EdgeInsets.symmetric(horizontal: 10, vertical: 10),
@@ -70,7 +73,7 @@ class NotImportant extends StatelessWidget {
                               ),
                               image: DecorationImage(
                                 image: NetworkImage(
-                                  shirts[index],
+                                  data[index].images[0],
                                 ),
                                 fit: BoxFit.cover,
                               ),

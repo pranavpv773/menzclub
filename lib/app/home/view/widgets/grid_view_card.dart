@@ -2,7 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:menz_cart_app/app/constants/colors.dart';
 import 'package:menz_cart_app/app/home/view_model/shirts.dart';
 import 'package:menz_cart_app/app/t_shirt/view/t_shirt_screen.dart';
+import 'package:menz_cart_app/app/t_shirt/view_model/t_shirt_provider.dart';
 import 'package:menz_cart_app/routes/routes.dart';
+import 'package:provider/provider.dart';
 
 class GridViewCard extends StatelessWidget {
   const GridViewCard({
@@ -28,8 +30,9 @@ class GridViewCard extends StatelessWidget {
             childAspectRatio: 3 / 2,
             crossAxisSpacing: 20,
             mainAxisSpacing: 20),
-        itemCount: tShirts.length,
+        itemCount: 4,
         itemBuilder: (BuildContext ctx, index) {
+          final data = context.read<TshirtProvider>().tShirtList;
           return Material(
             elevation: 10,
             shadowColor: Colors.black,
@@ -53,22 +56,22 @@ class GridViewCard extends StatelessWidget {
                     height: heights / 4,
                     decoration: BoxDecoration(
                       image: DecorationImage(
-                        image: NetworkImage(tShirts[index]),
-                        fit: BoxFit.cover,
+                        image: NetworkImage(data[index].images[0]),
+                        fit: BoxFit.fill,
                       ),
                     ),
                   ),
                   Column(
-                    children: const [
+                    children: [
                       Padding(
-                        padding: EdgeInsets.all(8.0),
-                        child: Text('Product Name'),
+                        padding: const EdgeInsets.all(8.0),
+                        child: Text(data[index].name),
                       ),
                       Text(
-                        '60-80% Off',
-                        style: TextStyle(color: Colors.green),
+                        '${data[index].offer} Off',
+                        style: const TextStyle(color: Colors.green),
                       ),
-                      ShopNowButton(
+                      const ShopNowButton(
                         screen: TshirtScreen(),
                         textButton: 'SHOP NOW',
                       ),

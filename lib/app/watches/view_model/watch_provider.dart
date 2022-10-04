@@ -7,8 +7,8 @@ import 'package:menz_cart_app/app/watches/model/watch_model.dart';
 
 class WatchProvider with ChangeNotifier {
   List<Watch> watchList = [];
-  Future<void> fetchWatchesfromApi(BuildContext context) async {
-    WatchModel resp = await WatchApiService().fetchWatch(context);
+  Future<void> fetchWatchesfromApi() async {
+    WatchModel resp = await WatchApiService().fetchWatch();
 
     if (resp.status && resp.watch.isNotEmpty) {
       watchList.clear();

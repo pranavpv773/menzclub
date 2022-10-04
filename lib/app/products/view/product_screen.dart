@@ -1,9 +1,17 @@
+// ignore_for_file: use_build_context_synchronously
+
 import 'package:flutter/material.dart';
 import 'package:menz_cart_app/app/constants/colors.dart';
 import 'package:menz_cart_app/app/filter/view/filter_screen.dart';
+import 'package:menz_cart_app/app/jeans/view_model/jeans_provider.dart';
 import 'package:menz_cart_app/app/products/view/widgets/card_builder.dart';
+import 'package:menz_cart_app/app/shirt/view_model/shirt_provider.dart';
+import 'package:menz_cart_app/app/shoes/view_model/shoes_provider.dart';
+import 'package:menz_cart_app/app/t_shirt/view_model/t_shirt_provider.dart';
 import 'package:menz_cart_app/app/utilities/view/appbar_widget.dart';
+import 'package:menz_cart_app/app/watches/view_model/watch_provider.dart';
 import 'package:menz_cart_app/routes/routes.dart';
+import 'package:provider/provider.dart';
 import 'widgets/border_container.dart';
 import 'widgets/radio_btn.dart';
 
@@ -17,6 +25,13 @@ class ProductsScreen extends StatelessWidget {
   final List list;
   @override
   Widget build(BuildContext context) {
+    WidgetsBinding.instance.addPostFrameCallback((timeStamp) async {
+      await context.read<ShirtProvider>().fetchShirtFuction();
+      await context.read<TshirtProvider>().fetchTShirtFuction();
+      await context.read<JeansProvider>().fetchJeans();
+      await context.read<WatchProvider>().fetchWatchesfromApi();
+      await context.read<ShoesProvider>().fetchShoes();
+    });
     final width = MediaQuery.of(context).size.width;
     final height = MediaQuery.of(context).size.height;
     return Scaffold(

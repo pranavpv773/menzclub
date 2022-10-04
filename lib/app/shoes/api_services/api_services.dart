@@ -1,17 +1,14 @@
 import 'dart:developer';
 import 'package:dio/dio.dart';
-import 'package:flutter/material.dart';
 import 'package:menz_cart_app/app/shoes/model/shoes_model.dart';
 import 'package:menz_cart_app/services/api_endpoints.dart';
 
 class ShoesApiService {
-  Future<ShoesModel> fetchProducts(BuildContext context) async {
+  Future<ShoesModel> fetchProducts() async {
     log('reached shirt');
     try {
       Response response = await Dio().get(ApiEndPoints.getshoes);
       if (response.statusCode == 200) {
-        // final jsonData = response.data as List;
-        // final newList = jsonData.map((e) => ShirtModel.fromJson(e)).toList();
         return ShoesModel.fromJson(response.data);
       } else {
         return ShoesModel.fromJson(response.data);
