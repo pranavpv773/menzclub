@@ -32,4 +32,25 @@ class ShirtApiServices {
       );
     }
   }
+
+  Future<ShirtModel> fetchShirtColor() async {
+    try {
+      Response response = await Dio().get(ApiEndPoints.getShirts);
+      if (response.statusCode == 200) {
+        return ShirtModel.fromJson(response.data);
+      } else {
+        return ShirtModel.fromJson(response.data);
+      }
+    } on DioError catch (e) {
+      log('message');
+      return ShirtModel.fromJson(e.response!.data);
+    } catch (e) {
+      log(e.toString());
+      return ShirtModel(
+        shirt: [],
+        status: false,
+        message: e.toString(),
+      );
+    }
+  }
 }
