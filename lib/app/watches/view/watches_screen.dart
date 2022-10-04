@@ -62,9 +62,7 @@ class WatchesScreen extends StatelessWidget {
                 sizedBox50,
                 ShopNowButton(
                   screen: ProductsScreen(
-                    function: context
-                        .read<WatchProvider>()
-                        .fetchWatchesfromApi(context),
+                    list: context.read<WatchProvider>().watchList,
                     title: 'WATCHES',
                   ),
                   textButton: 'SHOP ALL WATCHES',

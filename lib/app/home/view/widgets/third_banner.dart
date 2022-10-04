@@ -27,7 +27,7 @@ class ThirdBanner extends StatelessWidget {
             decoration: const BoxDecoration(
               image: DecorationImage(
                   image: NetworkImage(
-                    'https://scontent-bom1-1.xx.fbcdn.net/v/t1.6435-9/39132368_10156660247218221_880685569485570048_n.jpg?stp=dst-jpg_p180x540&_nc_cat=101&ccb=1-7&_nc_sid=e3f864&_nc_ohc=a5Do2QIJHMkAX99Q7QM&_nc_ht=scontent-bom1-1.xx&oh=00_AT-EO-AeNI4u_HUZ5oQpZixb77JweMnlkX1mM9TG-menbQ&oe=632C7FEE',
+                    'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR8OzJEOFMrqSrHluYAfPjHHLEmsK5TGb5XlsfVw9dJEOSQBqyGw64poa7vPYlPIIp0ROA&usqp=CAU',
                   ),
                   fit: BoxFit.fill),
             ),

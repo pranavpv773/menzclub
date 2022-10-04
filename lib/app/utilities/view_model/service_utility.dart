@@ -15,7 +15,7 @@ class ServicesProvider with ChangeNotifier {
       case 0:
         RoutesProvider.nextScreen(
           screen: ProductsScreen(
-            function: context.read<ShirtProvider>().fetchShirtFuction(context),
+            list: context.read<ShirtProvider>().shirtMapList,
             title: 'SHIRT',
           ),
         );
@@ -23,8 +23,7 @@ class ServicesProvider with ChangeNotifier {
       case 1:
         RoutesProvider.nextScreen(
           screen: ProductsScreen(
-            function:
-                context.read<TshirtProvider>().fetchTShirtFuction(context),
+            list: context.read<TshirtProvider>().tShirtList,
             title: 'T-SHIRT',
           ),
         );
@@ -32,7 +31,7 @@ class ServicesProvider with ChangeNotifier {
       case 2:
         RoutesProvider.nextScreen(
           screen: ProductsScreen(
-            function: context.read<JeansProvider>().fetchJeans(context),
+            list: context.read<JeansProvider>().jeansList,
             title: 'JEANS',
           ),
         );
@@ -40,7 +39,7 @@ class ServicesProvider with ChangeNotifier {
       case 3:
         RoutesProvider.nextScreen(
           screen: ProductsScreen(
-            function: context.read<ShirtProvider>().fetchShirtFuction(context),
+            list: context.read<ShirtProvider>().fetchShirtFuction(),
             title: 'TROUSERS',
           ),
         );
@@ -48,7 +47,7 @@ class ServicesProvider with ChangeNotifier {
       case 4:
         RoutesProvider.nextScreen(
           screen: ProductsScreen(
-            function: context.read<ShirtProvider>().fetchShirtFuction(context),
+            list: context.read<ShirtProvider>().fetchShirtFuction(),
             title: 'ETHIC-WEAR',
           ),
         );
@@ -56,7 +55,7 @@ class ServicesProvider with ChangeNotifier {
       case 5:
         RoutesProvider.nextScreen(
           screen: ProductsScreen(
-            function: context.read<ShoesProvider>().fetchShoes(context),
+            list: context.read<ShoesProvider>().shoesList,
             title: 'SHOES',
           ),
         );
@@ -64,8 +63,7 @@ class ServicesProvider with ChangeNotifier {
       case 6:
         RoutesProvider.nextScreen(
           screen: ProductsScreen(
-            function:
-                context.read<TshirtProvider>().fetchTShirtFuction(context),
+            list: context.read<TshirtProvider>().tShirtList,
             title: 'SHOES',
           ),
         );
@@ -73,8 +71,7 @@ class ServicesProvider with ChangeNotifier {
       case 7:
         RoutesProvider.nextScreen(
           screen: ProductsScreen(
-            function:
-                context.read<WatchProvider>().fetchWatchesfromApi(context),
+            list: context.read<WatchProvider>().watchList,
             title: 'WATCHES',
           ),
         );
@@ -82,7 +79,7 @@ class ServicesProvider with ChangeNotifier {
       case 8:
         RoutesProvider.nextScreen(
           screen: ProductsScreen(
-            function: context.read<ShoesProvider>().fetchShoes(context),
+            list: context.read<ShoesProvider>().shoesList,
             title: 'SHOES',
           ),
         );
@@ -90,8 +87,7 @@ class ServicesProvider with ChangeNotifier {
       case 9:
         RoutesProvider.nextScreen(
           screen: ProductsScreen(
-            function:
-                context.read<TshirtProvider>().fetchTShirtFuction(context),
+            list: context.read<TshirtProvider>().tShirtList,
             title: 'SHOES',
           ),
         );

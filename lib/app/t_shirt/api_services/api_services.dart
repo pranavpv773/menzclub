@@ -2,12 +2,11 @@
 
 import 'dart:developer';
 import 'package:dio/dio.dart';
-import 'package:flutter/widgets.dart';
 import 'package:menz_cart_app/app/t_shirt/model/tshirt_model.dart';
 import 'package:menz_cart_app/services/api_endpoints.dart';
 
 class TShirtApiServices {
-  Future<TshirtModel> fetchApiTshirts(BuildContext context) async {
+  Future<TshirtModel> fetchApiTshirts() async {
     log('reached Tshirt');
     try {
       Response response = await Dio().get(ApiEndPoints.getTshits);
