@@ -2,19 +2,36 @@ import 'dart:developer';
 import 'package:flutter/widgets.dart';
 import 'package:menz_cart_app/app/shirt/api_services/api_services.dart';
 import 'package:menz_cart_app/app/shirt/model/shirt_model.dart';
+// ignore: depend_on_referenced_packages
+import 'package:fluttertoast/fluttertoast.dart';
 
 class ShirtProvider with ChangeNotifier {
   List shirtMapList = [];
   fetchShirtFuction(
     BuildContext context,
   ) async {
-    log('Reached');
-    shirtMapList.clear();
+    ShirtModel resp = await ShirtApiServices().fetchProducts(context);
 
-    List<ShirtModel> resp = await ShirtApiServices.fetchProducts(context);
-    if (resp.isNotEmpty) {
-      shirtMapList.addAll(resp);
+    if (resp.status && resp.shirt.isNotEmpty) {
+      shirtMapList.clear();
+      //  final jsonData = resp.shoes;
+
+      // final newList = jsonData.jeans((e) => Jeans.fromJson(e));
+      log(resp.toString());
+      shirtMapList.addAll(resp.shirt);
+      log('message');
+      log(shirtMapList.toString());
+
       notifyListeners();
-    } else {}
+      Fluttertoast.showToast(
+        msg: resp.message,
+        toastLength: Toast.LENGTH_LONG,
+      );
+    } else {
+      Fluttertoast.showToast(
+        msg: resp.message,
+        toastLength: Toast.LENGTH_LONG,
+      );
+    }
   }
 }
