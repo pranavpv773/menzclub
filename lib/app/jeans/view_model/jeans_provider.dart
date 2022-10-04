@@ -14,14 +14,7 @@ class JeansProvider with ChangeNotifier {
       jeansList.clear();
       log(resp.toString());
       jeansList.addAll(resp.jeans);
-      log('message');
-      log(jeansList.toString());
-
       notifyListeners();
-      Fluttertoast.showToast(
-        msg: resp.message,
-        toastLength: Toast.LENGTH_LONG,
-      );
     } else {
       Fluttertoast.showToast(
         msg: resp.message,

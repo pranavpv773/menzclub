@@ -14,14 +14,9 @@ class ShirtProvider with ChangeNotifier {
       shirtMapList.clear();
       log(resp.toString());
       shirtMapList.addAll(resp.shirt);
-      log('message');
       log(shirtMapList.toString());
 
       notifyListeners();
-      Fluttertoast.showToast(
-        msg: resp.message,
-        toastLength: Toast.LENGTH_LONG,
-      );
     } else {
       Fluttertoast.showToast(
         msg: resp.message,

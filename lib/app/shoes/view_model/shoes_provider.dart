@@ -16,14 +16,10 @@ class ShoesProvider with ChangeNotifier {
       shoesList.clear();
       log(resp.toString());
       shoesList.addAll(resp.shoes);
-      log('message');
+
       log(shoesList.toString());
 
       notifyListeners();
-      Fluttertoast.showToast(
-        msg: resp.message,
-        toastLength: Toast.LENGTH_LONG,
-      );
     } else {
       Fluttertoast.showToast(
         msg: resp.message,

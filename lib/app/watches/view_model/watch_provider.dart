@@ -14,14 +14,7 @@ class WatchProvider with ChangeNotifier {
       watchList.clear();
       log(resp.toString());
       watchList.addAll(resp.watch);
-      log('message');
-      log(watchList.toString());
-
       notifyListeners();
-      Fluttertoast.showToast(
-        msg: resp.message,
-        toastLength: Toast.LENGTH_LONG,
-      );
     } else {
       Fluttertoast.showToast(
         msg: resp.message,
