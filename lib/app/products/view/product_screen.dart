@@ -11,11 +11,10 @@ class ProductsScreen extends StatelessWidget {
   const ProductsScreen({
     Key? key,
     required this.title,
-    required this.function,
+    required this.list,
   }) : super(key: key);
   final String title;
-
-  final Future<void> function;
+  final List list;
   @override
   Widget build(BuildContext context) {
     final width = MediaQuery.of(context).size.width;
@@ -33,7 +32,7 @@ class ProductsScreen extends StatelessWidget {
         child: Column(
           children: [
             ProductCardBuilder(
-              function: function,
+              list: list,
               height: height,
               width: width,
             ),

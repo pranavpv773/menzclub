@@ -9,7 +9,7 @@ import 'package:menz_cart_app/app/shirt/model/shirt_model.dart';
 import 'package:menz_cart_app/services/api_endpoints.dart';
 
 class ShirtApiServices {
-  Future<ShirtModel> fetchProducts(BuildContext context) async {
+  Future<ShirtModel> fetchProducts() async {
     log('reached shirt');
     try {
       Response response = await Dio().get(ApiEndPoints.getShirts);

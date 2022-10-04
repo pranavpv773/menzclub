@@ -3,23 +3,19 @@ import 'dart:developer';
 import 'package:flutter/material.dart';
 import 'package:menz_cart_app/app/jeans/api_services/api_services.dart';
 import 'package:menz_cart_app/app/jeans/model/jean_model.dart';
-import 'package:menz_cart_app/app/shirt/view_model/shirt_provider.dart';
 import 'package:fluttertoast/fluttertoast.dart';
-import 'package:provider/provider.dart';
 
 class JeansProvider with ChangeNotifier {
+  List<Jeans> jeansList = [];
   Future<void> fetchJeans(BuildContext context) async {
     JeansModel resp = await JeansApiService().fetchProducts(context);
 
     if (resp.status && resp.jeans.isNotEmpty) {
-      context.read<ShirtProvider>().shirtMapList.clear();
-      // final jsonData = resp.jeans;
-
-      // final newList = jsonData.jeans((e) => Jeans.fromJson(e));
+      jeansList.clear();
       log(resp.toString());
-      context.read<ShirtProvider>().shirtMapList.addAll(resp.jeans);
+      jeansList.addAll(resp.jeans);
       log('message');
-      log(context.read<ShirtProvider>().shirtMapList.toString());
+      log(jeansList.toString());
 
       notifyListeners();
       Fluttertoast.showToast(

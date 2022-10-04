@@ -6,17 +6,12 @@ import 'package:menz_cart_app/app/shirt/model/shirt_model.dart';
 import 'package:fluttertoast/fluttertoast.dart';
 
 class ShirtProvider with ChangeNotifier {
-  List shirtMapList = [];
-  fetchShirtFuction(
-    BuildContext context,
-  ) async {
-    ShirtModel resp = await ShirtApiServices().fetchProducts(context);
+  List<Shirt> shirtMapList = [];
+  fetchShirtFuction() async {
+    ShirtModel resp = await ShirtApiServices().fetchProducts();
 
     if (resp.status && resp.shirt.isNotEmpty) {
       shirtMapList.clear();
-      //  final jsonData = resp.shoes;
-
-      // final newList = jsonData.jeans((e) => Jeans.fromJson(e));
       log(resp.toString());
       shirtMapList.addAll(resp.shirt);
       log('message');

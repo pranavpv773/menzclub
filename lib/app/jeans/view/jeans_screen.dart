@@ -82,7 +82,7 @@ class JeansScreen extends StatelessWidget {
                 sizedBox50,
                 ShopNowButton(
                   screen: ProductsScreen(
-                    function: context.read<JeansProvider>().fetchJeans(context),
+                    list: context.read<JeansProvider>().jeansList,
                     title: 'JEANS',
                   ),
                   textButton: 'SHOP ALL JEANS',

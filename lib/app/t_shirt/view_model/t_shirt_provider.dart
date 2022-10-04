@@ -6,18 +6,16 @@ import 'package:menz_cart_app/app/t_shirt/model/tshirt_model.dart';
 import 'package:fluttertoast/fluttertoast.dart';
 
 class TshirtProvider with ChangeNotifier {
+  TshirtProvider() {
+    fetchTShirtFuction();
+  }
   List<TShirt> tShirtList = [];
-  Future<void> fetchTShirtFuction(
-    BuildContext context,
-  ) async {
+  Future<void> fetchTShirtFuction() async {
     log('Reached');
-    TshirtModel resp = await TShirtApiServices().fetchApiTshirts(context);
+    TshirtModel resp = await TShirtApiServices().fetchApiTshirts();
 
     if (resp.status && resp.tShirt.isNotEmpty) {
       tShirtList.clear();
-      //  final jsonData = resp.shoes;
-
-      // final newList = jsonData.jeans((e) => Jeans.fromJson(e));
       log(resp.toString());
       tShirtList.addAll(resp.tShirt);
       log('message');

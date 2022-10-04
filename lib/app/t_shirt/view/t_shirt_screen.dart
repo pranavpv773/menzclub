@@ -72,9 +72,7 @@ class TshirtScreen extends StatelessWidget {
               ShopNowButton(
                 screen: ProductsScreen(
                   title: 'T-Shirts',
-                  function: context
-                      .read<TshirtProvider>()
-                      .fetchTShirtFuction(context),
+                  list: context.read<TshirtProvider>().tShirtList,
                 ),
                 textButton: 'SHOP ALL T-SHIRTS',
               )

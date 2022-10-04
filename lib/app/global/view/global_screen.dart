@@ -1,5 +1,12 @@
+// ignore_for_file: use_build_context_synchronously
+
 import 'package:flutter/material.dart';
 import 'package:menz_cart_app/app/global/view_model/global_provider.dart';
+import 'package:menz_cart_app/app/jeans/view_model/jeans_provider.dart';
+import 'package:menz_cart_app/app/shirt/view_model/shirt_provider.dart';
+import 'package:menz_cart_app/app/shoes/view_model/shoes_provider.dart';
+import 'package:menz_cart_app/app/t_shirt/view_model/t_shirt_provider.dart';
+import 'package:menz_cart_app/app/watches/view_model/watch_provider.dart';
 import 'package:provider/provider.dart';
 import 'widgets/appbar_widget.dart';
 import 'widgets/bottom_navy.dart';
@@ -9,6 +16,13 @@ class GlobalScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    WidgetsBinding.instance.addPostFrameCallback((timeStamp) async {
+      await context.read<ShirtProvider>().fetchShirtFuction();
+      await context.read<TshirtProvider>().fetchTShirtFuction();
+      await context.read<JeansProvider>().fetchJeans(context);
+      await context.read<WatchProvider>().fetchWatchesfromApi(context);
+      await context.read<ShoesProvider>().fetchShoes(context);
+    });
     return SafeArea(
       child: Scaffold(
         appBar: context.watch<GlobalProvider>().showAppbar == true
