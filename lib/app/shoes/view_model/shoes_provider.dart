@@ -9,8 +9,8 @@ import 'package:provider/provider.dart';
 
 class ShoesProvider with ChangeNotifier {
   List<Shoes> shoesList = [];
-  Future<void> fetchShoes(BuildContext context) async {
-    ShoesModel resp = await ShoesApiService().fetchProducts(context);
+  Future<void> fetchShoes() async {
+    ShoesModel resp = await ShoesApiService().fetchProducts();
 
     if (resp.status && resp.shoes.isNotEmpty) {
       shoesList.clear();

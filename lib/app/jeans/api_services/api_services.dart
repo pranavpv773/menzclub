@@ -1,11 +1,10 @@
 import 'dart:developer';
 import 'package:dio/dio.dart';
-import 'package:flutter/material.dart';
 import 'package:menz_cart_app/app/jeans/model/jean_model.dart';
 import 'package:menz_cart_app/services/api_endpoints.dart';
 
 class JeansApiService {
-  Future<JeansModel> fetchProducts(BuildContext context) async {
+  Future<JeansModel> fetchProducts() async {
     log('reached shirt');
     try {
       Response response = await Dio().get(ApiEndPoints.getJeans);

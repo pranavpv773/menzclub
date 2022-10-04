@@ -3,6 +3,7 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:menz_cart_app/app/constants/widgets.dart';
 import 'package:menz_cart_app/app/home/view_model/home_provider.dart';
 import 'package:menz_cart_app/app/home/view_model/shirts.dart';
+import 'package:menz_cart_app/app/shirt/view_model/shirt_provider.dart';
 import 'package:provider/provider.dart';
 import 'widgets/carousel_banner.dart';
 import 'widgets/circle_dot.dart';
@@ -57,7 +58,7 @@ class HomeScreen extends StatelessWidget {
                   LargeCardsWidget(
                     width: width,
                     heights: heights,
-                    list: shirts,
+                    list: context.read<ShirtProvider>().shirtMapList,
                   ),
                 ],
               ),

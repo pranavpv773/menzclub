@@ -16,13 +16,6 @@ class GlobalScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    WidgetsBinding.instance.addPostFrameCallback((timeStamp) async {
-      await context.read<ShirtProvider>().fetchShirtFuction();
-      await context.read<TshirtProvider>().fetchTShirtFuction();
-      await context.read<JeansProvider>().fetchJeans(context);
-      await context.read<WatchProvider>().fetchWatchesfromApi(context);
-      await context.read<ShoesProvider>().fetchShoes(context);
-    });
     return SafeArea(
       child: Scaffold(
         appBar: context.watch<GlobalProvider>().showAppbar == true

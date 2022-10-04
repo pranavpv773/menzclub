@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:menz_cart_app/app/constants/colors.dart';
 import 'package:menz_cart_app/app/home/view_model/shirts.dart';
 import 'package:menz_cart_app/app/shoes/view_model/shoes_map.dart';
+import 'package:menz_cart_app/app/shoes/view_model/shoes_provider.dart';
+import 'package:provider/provider.dart';
 
 class LargeCardsWidget extends StatelessWidget {
   const LargeCardsWidget({
@@ -33,7 +35,7 @@ class LargeCardsWidget extends StatelessWidget {
                   decoration: BoxDecoration(
                     borderRadius: BorderRadius.circular(15),
                     image: DecorationImage(
-                      image: NetworkImage(list[index]),
+                      image: NetworkImage(list[index].images[0]),
                       fit: BoxFit.cover,
                     ),
                   ),
@@ -70,7 +72,7 @@ class VerticalBulder extends StatelessWidget {
       child: ListView(
         scrollDirection: Axis.horizontal,
         children: List.generate(
-          shoesCollections.length,
+          context.read<ShoesProvider>().shoesList.length,
           (index) => Padding(
             padding: const EdgeInsets.all(8.0),
             child: Padding(
@@ -98,13 +100,18 @@ class VerticalBulder extends StatelessWidget {
                             borderRadius: BorderRadius.circular(5),
                             image: DecorationImage(
                                 image: NetworkImage(
-                                  shoesCollections[index],
+                                  context
+                                      .read<ShoesProvider>()
+                                      .shoesList[index]
+                                      .images[0],
                                 ),
                                 fit: BoxFit.fill),
                           ),
                         ),
                       ),
-                      Text(shoesMap[index]['color'].toString()),
+                      Text(
+                        context.read<ShoesProvider>().shoesList[index].color,
+                      ),
                     ],
                   ),
                 ),
