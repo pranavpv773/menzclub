@@ -15,9 +15,6 @@ class TshirtProvider with ChangeNotifier {
 
     if (resp.status && resp.tShirt.isNotEmpty) {
       tShirtList.clear();
-      //  final jsonData = resp.shoes;
-
-      // final newList = jsonData.jeans((e) => Jeans.fromJson(e));
       log(resp.toString());
       tShirtList.addAll(resp.tShirt);
       log('message');

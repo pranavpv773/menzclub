@@ -14,9 +14,6 @@ class ShirtProvider with ChangeNotifier {
 
     if (resp.status && resp.shirt.isNotEmpty) {
       shirtMapList.clear();
-      //  final jsonData = resp.shoes;
-
-      // final newList = jsonData.jeans((e) => Jeans.fromJson(e));
       log(resp.toString());
       shirtMapList.addAll(resp.shirt);
       log('message');
