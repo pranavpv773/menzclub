@@ -1,7 +1,13 @@
+import 'dart:developer';
+
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:menz_cart_app/app/constants/colors.dart';
+import 'package:menz_cart_app/app/products/view/product_screen.dart';
 import 'package:menz_cart_app/app/shirt/view_model/map_shirt.dart';
+import 'package:menz_cart_app/app/shirt/view_model/shirt_provider.dart';
+import 'package:menz_cart_app/routes/routes.dart';
+import 'package:provider/provider.dart';
 
 class ShirtFitWidget extends StatelessWidget {
   const ShirtFitWidget(
@@ -55,13 +61,18 @@ class ShirtFitWidget extends StatelessWidget {
                   8.0,
                 ),
                 child: GestureDetector(
-                  onTap: () {
-                    // RoutesProvider.nextScreen(
-                    //   screen: ProductsScreen(
-                    //       endPoints: ApiEndPoints.getShirts,
-                    //       title: shirtList[index]['fit'].toString(),
-                    //       list: shirtList),
-                    // );
+                  onTap: () async {
+                    log(shirtFitList[index].toString());
+                    await context
+                        .read<ShirtProvider>()
+                        .fetchShirtFit(shirtFitList[index].toString());
+                    RoutesProvider.nextScreen(
+                      screen: ProductsScreen(
+                        title: shirtFitList[index].toString(),
+                        // ignore: use_build_context_synchronously
+                        list: context.read<ShirtProvider>().shirtFit,
+                      ),
+                    );
                   },
                   child: Material(
                     elevation: 10,
@@ -79,7 +90,7 @@ class ShirtFitWidget extends StatelessWidget {
                       ),
                       child: Center(
                           child: Text(
-                        shirtList[index]['fit'].toString(),
+                        shirtFitList[index].toString(),
                         style: TextStyle(
                           color: kWhite,
                         ),
@@ -176,8 +187,8 @@ class ShirtBannerBuilder extends StatelessWidget {
               // RoutesProvider.nextScreen(
               //     screen: ProductsScreen(
               //         endPoints: ApiEndPoints.getShirts,
-              //         title: shirtList[index]['color'].toString(),
-              //         list: shirtList));
+              //         title: shirtFitList[index]['color'].toString(),
+              //         list: shirtFitList));
             },
             child: Material(
               borderRadius: BorderRadius.circular(10),

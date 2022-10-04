@@ -1,5 +1,6 @@
 // ignore_for_file: use_build_context_synchronously
 
+import 'dart:convert';
 import 'dart:developer';
 
 import 'package:dio/dio.dart';
@@ -31,7 +32,7 @@ class ShirtCategoryApiServices {
   Future<ShirtModel> fetchShirtMaterial(String material) async {
     try {
       Response response = await Dio().get(
-          "http://10.0.2.2:3000//api/menzclub/material?shirt_material=$material");
+          "http://10.0.2.2:3000/api/menzclub/material?shirt_material=$material");
       if (response.statusCode == 200) {
         return ShirtModel.fromJson(response.data);
       } else {
@@ -73,10 +74,14 @@ class ShirtCategoryApiServices {
   }
 
   Future<ShirtModel> fetchShirtfit(String fit) async {
+    log(fit);
     try {
       Response response = await Dio()
-          .get("http://10.0.2.2:3000//api/menzclub/fit?shirt_fit=$fit");
+          .get("http://10.0.2.2:3000/api/menzclub/fit?shirt_fit=$fit");
       if (response.statusCode == 200) {
+        log('response.data');
+        log(response.statusCode.toString());
+
         return ShirtModel.fromJson(response.data);
       } else {
         return ShirtModel.fromJson(response.data);
