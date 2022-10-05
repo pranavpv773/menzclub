@@ -46,6 +46,7 @@ class JeansScreen extends StatelessWidget {
                   child: Container(
                     color: const Color.fromARGB(231, 23, 23, 42),
                     child: ShirtFitWidget(
+                      list: [],
                       topic: 'SHOP JEANS BY FIT',
                       color: kWhite,
                       mainAxisAlignment: MainAxisAlignment.center,

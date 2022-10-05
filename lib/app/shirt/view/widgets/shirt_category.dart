@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:menz_cart_app/app/products/view/product_screen.dart';
 import 'package:menz_cart_app/app/shirt/view_model/map_shirt.dart';
-import 'package:menz_cart_app/app/shirt/view_model/shirt_provider.dart';
 import 'package:menz_cart_app/app/shirt/view_model/shirt_provider_two.dart';
 import 'package:menz_cart_app/app/utilities/view/container_network.dart';
 import 'package:menz_cart_app/routes/routes.dart';
