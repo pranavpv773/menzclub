@@ -165,3 +165,20 @@ const shirtList = [
   },
 ];
 const shirtFitList = ['Slim', 'Regular', 'Tailors', 'comfortable'];
+const shirtCategoryList = [
+  {
+    'category': 'Casual',
+    'image':
+        'https://getketchadmin.getketch.com/product/8905040617459/660/HLSH011581_1.JPG',
+  },
+  {
+    'category': 'Formal',
+    'image':
+        'https://5.imimg.com/data5/IN/BF/MY-5837050/men-formal-shirt-1000x1000.jpg',
+  },
+  {
+    'category': 'Party',
+    'image':
+        'https://rukminim1.flixcart.com/image/612/612/kpodocw0/shirt/s/q/u/l-ronit-ap001-pushya-original-imag3uwarrta9bdy.jpeg?q=70',
+  },
+];

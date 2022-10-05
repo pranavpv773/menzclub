@@ -1,6 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:menz_cart_app/app/products/view/product_screen.dart';
+import 'package:menz_cart_app/app/shirt/view_model/map_shirt.dart';
+import 'package:menz_cart_app/app/shirt/view_model/shirt_provider.dart';
+import 'package:menz_cart_app/app/shirt/view_model/shirt_provider_two.dart';
 import 'package:menz_cart_app/app/utilities/view/container_network.dart';
+import 'package:menz_cart_app/routes/routes.dart';
+import 'package:provider/provider.dart';
 
 class ShirtCategoryCards extends StatelessWidget {
   const ShirtCategoryCards({
@@ -14,59 +20,42 @@ class ShirtCategoryCards extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Row(
-      mainAxisAlignment: MainAxisAlignment.spaceAround,
-      children: [
-        GestureDetector(
-          onTap: () {
-            // RoutesProvider.nextScreen(
-            //     screen: ProductsScreen(
-            //   title: 'CASUAL',
-            //   list: shirtList,
-            // ));
-          },
-          child: ShirtCategories(
-            width: width,
-            height: height,
-            image:
-                'https://getketchadmin.getketch.com/product/8905040617459/660/HLSH011581_1.JPG',
-            caption: 'CASUAL',
-          ),
+    return GridView.builder(
+        padding: const EdgeInsets.symmetric(vertical: 16.0),
+        physics: const ScrollPhysics(),
+        shrinkWrap: true,
+        gridDelegate: SliverGridDelegateWithMaxCrossAxisExtent(
+          maxCrossAxisExtent: 100,
+          mainAxisExtent: height / 5.3,
+          childAspectRatio: 1.0,
+          crossAxisSpacing: 50,
+          mainAxisSpacing: 0,
         ),
-        GestureDetector(
-          onTap: () {
-            // RoutesProvider.nextScreen(
-            //     screen: ProductsScreen(
-            //   title: 'FORMAL',
-            //   function: () {},
-            // ));
-          },
-          child: ShirtCategories(
-            width: width,
-            height: height,
-            image:
-                'https://5.imimg.com/data5/IN/BF/MY-5837050/men-formal-shirt-1000x1000.jpg',
-            caption: 'FORMAL',
-          ),
-        ),
-        GestureDetector(
-          onTap: () {
-            // RoutesProvider.nextScreen(
-            //     screen: ProductsScreen(
-            //   title: 'PARTY',
-            //   list: shirtList,
-            // ));
-          },
-          child: ShirtCategories(
-            width: width,
-            height: height,
-            image:
-                'https://rukminim1.flixcart.com/image/612/612/kpodocw0/shirt/s/q/u/l-ronit-ap001-pushya-original-imag3uwarrta9bdy.jpeg?q=70',
-            caption: 'PARTY',
-          ),
-        ),
-      ],
-    );
+        itemCount: 3,
+        itemBuilder: (BuildContext ctx, index) {
+          return GestureDetector(
+            onTap: () async {
+              final String category =
+                  shirtCategoryList[index]['category'].toString();
+              await context.read<ShirtProviderTwo>().fetchShirtCategory(
+                    category,
+                  );
+              RoutesProvider.nextScreen(
+                screen: ProductsScreen(
+                  title: shirtCategoryList[index]['category'].toString(),
+                  // ignore: use_build_context_synchronously
+                  list: context.read<ShirtProviderTwo>().shirtCategory,
+                ),
+              );
+            },
+            child: ShirtCategories(
+              width: width,
+              height: height,
+              image: shirtCategoryList[index]['image'].toString(),
+              caption: shirtCategoryList[index]['category'].toString(),
+            ),
+          );
+        });
   }
 }
 
