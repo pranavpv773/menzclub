@@ -16,7 +16,8 @@ class ShirtProviderTwo with ChangeNotifier {
 
   fetchShirtColor(String color) async {
     shirtcolor.clear();
-    ShirtModel resp = await ShirtColorApiServices().fetchShirtfit(color);
+    ShirtModel resp =
+        await ShirtColorApiServices().fetchShirtColor(color.toLowerCase());
 
     if (resp.status && resp.shirt.isNotEmpty) {
       shirtcolor.clear();
