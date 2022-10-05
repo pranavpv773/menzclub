@@ -7,8 +7,8 @@ class TshirtColorApiServices {
   Future<TshirtModel> fetchShirtColor(String color) async {
     log(color);
     try {
-      Response response = await Dio()
-          .get("http://10.0.2.2:3000/api/menzclub/color?shirt_color=$color");
+      Response response = await Dio().get(
+          "http://10.0.2.2:3000/api/menzclub/t-shirt/color?tShirt_color=$color");
       if (response.statusCode == 200) {
         log('response.data');
         log(response.statusCode.toString());
