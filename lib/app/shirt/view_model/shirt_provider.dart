@@ -1,7 +1,8 @@
 import 'dart:developer';
 import 'package:flutter/widgets.dart';
 import 'package:menz_cart_app/app/shirt/api_services/api_services.dart';
-import 'package:menz_cart_app/app/shirt/api_services/categories_api_services.dart';
+import 'package:menz_cart_app/app/shirt/api_services/fit_categories.dart';
+import 'package:menz_cart_app/app/shirt/api_services/material_api.dart';
 import 'package:menz_cart_app/app/shirt/model/shirt_model.dart';
 // ignore: depend_on_referenced_packages
 import 'package:fluttertoast/fluttertoast.dart';
@@ -10,6 +11,7 @@ class ShirtProvider with ChangeNotifier {
   List<Shirt> shirtMapList = [];
   List<Shirt> shirtFit = [];
   List<Shirt> shirtMaterial = [];
+  // List<Shirt> shirtCategoryList = [];
   fetchShirtFuction() async {
     ShirtModel resp = await ShirtApiServices().fetchProducts();
 
@@ -31,7 +33,7 @@ class ShirtProvider with ChangeNotifier {
   fetchShirtFit(String fit) async {
     shirtFit.clear();
     log('first');
-    ShirtModel resp = await ShirtCategoryApiServices().fetchShirtfit(fit);
+    ShirtModel resp = await ShirtFitApiServices().fetchShirtfit(fit);
 
     if (resp.status && resp.shirt.isNotEmpty) {
       shirtFit.clear();
@@ -51,7 +53,7 @@ class ShirtProvider with ChangeNotifier {
   fetchShirtMaterial(String material) async {
     shirtFit.clear();
     log('first');
-    ShirtModel resp = await ShirtCategoryApiServices()
+    ShirtModel resp = await ShirtMaterialApiServices()
         .fetchShirtMaterial(material.toLowerCase());
     log(material);
     if (resp.status && resp.shirt.isNotEmpty) {
@@ -68,4 +70,16 @@ class ShirtProvider with ChangeNotifier {
       );
     }
   }
+
+  // fetchCategoryList() {
+  //   for (int i = 0; i <= shirtMapList.length; i++) {
+  //     shirtCategoryList.clear();
+  //     for (int j = 1 + 1; j < shirtMapList.length - 1; j++) {
+  //       if (shirtMapList[i].category != shirtMapList[j].category) {
+  //         shirtCategoryList.add(shirtMapList[i]);
+  //       }
+  //     }
+  //     log(shirtCategoryList[i].category);
+  //   }
+  // }
 }

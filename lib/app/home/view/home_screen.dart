@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:menz_cart_app/app/constants/widgets.dart';
 import 'package:menz_cart_app/app/home/view_model/home_provider.dart';
-import 'package:menz_cart_app/app/home/view_model/shirts.dart';
+import 'package:animate_do/animate_do.dart';
 import 'package:menz_cart_app/app/shirt/view_model/shirt_provider.dart';
 import 'package:provider/provider.dart';
 import 'widgets/carousel_banner.dart';
@@ -25,16 +25,20 @@ class HomeScreen extends StatelessWidget {
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          CircleAvatharTop(
-            width: width,
+          FadeInUp(
+            child: CircleAvatharTop(
+              width: width,
+            ),
           ),
-          HomeCarouselBanners(
-            width: width,
-            heights: heights / 1.5,
-            list: context.read<HomeProvider>().banners,
+          FadeInLeft(
+            child: HomeCarouselBanners(
+              width: width,
+              heights: heights / 1.5,
+              list: context.read<HomeProvider>().banners,
+            ),
           ),
-          const DotIndicator(),
-          const ThirdBanner(),
+          FadeInRight(child: const DotIndicator()),
+          FadeInDown(child: const ThirdBanner()),
           sizedBox20,
           Container(
             decoration: const BoxDecoration(

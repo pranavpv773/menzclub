@@ -1,3 +1,4 @@
+import 'package:animate_do/animate_do.dart';
 import 'package:flutter/material.dart';
 import 'package:menz_cart_app/app/categories/view_model/map.dart';
 import 'package:menz_cart_app/app/jeans/view/jeans_screen.dart';
@@ -14,19 +15,61 @@ class CategoriesScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return ListView(
       physics: const BouncingScrollPhysics(),
-      children: const [
-        CategoryCards(
-          index: 0,
-          screen: ShirtScreen(string: 'Shirts'),
+      children: [
+        FadeInUp(
+          child: const CategoryCards(
+            index: 0,
+            screen: ShirtScreen(string: 'Shirts'),
+          ),
         ),
-        CategoryCards(index: 1, screen: TshirtScreen()),
-        CategoryCards(index: 2, screen: JeansScreen()),
-        CategoryCards(index: 3, screen: CategoriesScreen()),
-        CategoryCards(index: 4, screen: CategoriesScreen()),
-        CategoryCards(index: 5, screen: ShoesScreen()),
-        CategoryCards(index: 6, screen: CategoriesScreen()),
-        CategoryCards(index: 7, screen: WatchesScreen()),
-        CategoryCards(index: 8, screen: CategoriesScreen()),
+        FadeInLeft(
+          child: const CategoryCards(
+            index: 1,
+            screen: TshirtScreen(),
+          ),
+        ),
+        FadeInDown(
+          child: const CategoryCards(
+            index: 2,
+            screen: JeansScreen(),
+          ),
+        ),
+        FadeInRight(
+          child: const CategoryCards(
+            index: 3,
+            screen: CategoriesScreen(),
+          ),
+        ),
+        FadeInLeft(
+          child: const CategoryCards(
+            index: 4,
+            screen: CategoriesScreen(),
+          ),
+        ),
+        FadeInUp(
+          child: const CategoryCards(
+            index: 5,
+            screen: ShoesScreen(),
+          ),
+        ),
+        FadeInDown(
+          child: const CategoryCards(
+            index: 6,
+            screen: CategoriesScreen(),
+          ),
+        ),
+        FadeInDownBig(
+          child: const CategoryCards(
+            index: 7,
+            screen: WatchesScreen(),
+          ),
+        ),
+        FadeInRight(
+          child: const CategoryCards(
+            index: 8,
+            screen: CategoriesScreen(),
+          ),
+        ),
       ],
     );
   }
