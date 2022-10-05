@@ -36,9 +36,11 @@ class ShirtProviderTwo with ChangeNotifier {
     shirtCollection.clear();
     ShirtModel resp = await ShirtCollectionApiServices()
         .fetchShirtCollection(collection.toLowerCase());
+    log('message');
     if (resp.status && resp.shirt.isNotEmpty) {
       shirtCollection.clear();
       shirtCollection.addAll(resp.shirt);
+      log(shirtCollection.length.toString());
 
       notifyListeners();
     } else {
