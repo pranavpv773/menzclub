@@ -4,7 +4,7 @@ import 'package:dio/dio.dart';
 import 'package:menz_cart_app/app/shirt/model/shirt_model.dart';
 
 class ShirtColorApiServices {
-  Future<ShirtModel> fetchShirtfit(String color) async {
+  Future<ShirtModel> fetchShirtColor(String color) async {
     log(color);
     try {
       Response response = await Dio()

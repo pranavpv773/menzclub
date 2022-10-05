@@ -164,7 +164,7 @@ const shirtList = [
         'https://thumbs.dreamstime.com/b/set-mobile-covid-passport-urban-holiday-accessories-background-232565286.jpg',
   },
 ];
-const shirtFitList = ['Slim', 'Regular', 'Tailors', 'comfortable'];
+const shirtFitListMap = ['Slim', 'Regular', 'Tailors', 'comfortable'];
 const shirtCategoryList = [
   {
     'category': 'Casual',
