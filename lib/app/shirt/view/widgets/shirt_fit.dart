@@ -19,6 +19,7 @@ class ShirtFitWidget extends StatelessWidget {
       required this.image2,
       required this.color,
       required this.topic,
+      // required this.function,
       required this.crossAxisAlignment,
       required this.mainAxisAlignment})
       : super(key: key);
@@ -27,7 +28,7 @@ class ShirtFitWidget extends StatelessWidget {
   final String image;
   final String image2;
   final String topic;
-
+  // final VoidCallback function;
   final Color color;
   final MainAxisAlignment mainAxisAlignment;
   final CrossAxisAlignment crossAxisAlignment;

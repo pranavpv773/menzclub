@@ -17,7 +17,7 @@ const tShirtList = [
         'https://www.vitruvien.com/images/homepage-banner-casuals.jpg',
   },
   {
-    'categary': 'V-Necks',
+    'categary': 'V-Neck',
     'star': '1',
     'productName': 'T-Shirt2',
     'WatchcolorImage': 'assets/tshirt/blue.png',
@@ -84,7 +84,7 @@ const tShirtList = [
         'https://www.mohanlalsons.com/image/cache/catalog/indowest-1000x370.jpg',
   },
   {
-    'categary': 'Sleeveles',
+    'categary': 'Sleeveless',
     'star': '1',
     'productName': 'T-Shirt6',
     'WatchcolorImage': 'assets/tshirt/white.png',

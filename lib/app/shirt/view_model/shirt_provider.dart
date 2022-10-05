@@ -43,7 +43,6 @@ class ShirtProvider with ChangeNotifier {
 
       notifyListeners();
     } else {
-      log('error');
       Fluttertoast.showToast(
         msg: resp.message,
         toastLength: Toast.LENGTH_LONG,
