@@ -1,7 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:menz_cart_app/app/constants/colors.dart';
+import 'package:menz_cart_app/app/products/view/product_screen.dart';
 import 'package:menz_cart_app/app/t_shirt/view_model/tshirt.dart';
+import 'package:menz_cart_app/app/t_shirt/view_model/tshirt_provider_two.dart';
+import 'package:menz_cart_app/routes/routes.dart';
+import 'package:provider/provider.dart';
 import 'package:simple_gradient_text/simple_gradient_text.dart';
 
 class TshirtCategoryBuilderWidget extends StatelessWidget {
@@ -27,40 +31,52 @@ class TshirtCategoryBuilderWidget extends StatelessWidget {
       ),
       itemCount: 6,
       itemBuilder: (BuildContext ctx, index) {
-        return Column(
-          children: [
-            Container(
-              decoration: const BoxDecoration(
-                // color: primary,
-                image: DecorationImage(
-                    image: AssetImage('assets/frames/neon2.png'),
-                    fit: BoxFit.cover),
-              ),
-              child: Padding(
-                padding: const EdgeInsets.only(bottom: 10.0),
-                child: Container(
-                  width: width / 4.5,
-                  height: height / 9,
-                  decoration: const BoxDecoration(
-                      // color: Color.fromARGB(101, 158, 158, 158),
-                      ),
-                  child: Image.asset(
-                    tShirtList[index]['categoryImage'].toString(),
-                    width: width / 3,
-                    height: height / 8,
+        return GestureDetector(
+          onTap: () async {
+            await context.read<TshirtProviderTwo>().fetchShirtCategory(
+                  tShirtList[index]['categary'].toString(),
+                );
+            RoutesProvider.nextScreen(
+                screen: ProductsScreen(
+              title: tShirtList[index]['categary'].toString(),
+              list: context.read<TshirtProviderTwo>().tShirtCategory,
+            ));
+          },
+          child: Column(
+            children: [
+              Container(
+                decoration: const BoxDecoration(
+                  // color: primary,
+                  image: DecorationImage(
+                      image: AssetImage('assets/frames/neon2.png'),
+                      fit: BoxFit.cover),
+                ),
+                child: Padding(
+                  padding: const EdgeInsets.only(bottom: 10.0),
+                  child: Container(
+                    width: width / 4.5,
+                    height: height / 9,
+                    decoration: const BoxDecoration(
+                        // color: Color.fromARGB(101, 158, 158, 158),
+                        ),
+                    child: Image.asset(
+                      tShirtList[index]['categoryImage'].toString(),
+                      width: width / 3,
+                      height: height / 8,
+                    ),
                   ),
                 ),
               ),
-            ),
-            Padding(
-              padding: const EdgeInsets.only(top: 5.0),
-              child: Text(
-                tShirtList[index]['categary'].toString(),
-                style: TextStyle(
-                    fontSize: 15, fontFamily: GoogleFonts.benne().fontFamily),
-              ),
-            )
-          ],
+              Padding(
+                padding: const EdgeInsets.only(top: 5.0),
+                child: Text(
+                  tShirtList[index]['categary'].toString(),
+                  style: TextStyle(
+                      fontSize: 15, fontFamily: GoogleFonts.benne().fontFamily),
+                ),
+              )
+            ],
+          ),
         );
       },
     );
