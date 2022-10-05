@@ -58,7 +58,7 @@ class CategoriesScreen extends StatelessWidget {
             screen: CategoriesScreen(),
           ),
         ),
-        FadeInDownBig(
+        FadeInUp(
           child: const CategoryCards(
             index: 7,
             screen: WatchesScreen(),

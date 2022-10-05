@@ -55,6 +55,8 @@ class TshirtScreen extends StatelessWidget {
                   ),
                   TshirtofferCard(width: width, height: height),
                   ShirtFitWidget(
+                    type: ActionType.tshirt,
+                    list: context.read<TshirtProvider>().tShirtFitList,
                     topic: 'SHOP T-SHIRT BY FIT',
                     color: Colors.black,
                     mainAxisAlignment: MainAxisAlignment.center,

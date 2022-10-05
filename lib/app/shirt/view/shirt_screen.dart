@@ -57,6 +57,8 @@ class ShirtScreen extends StatelessWidget {
                       image2: 'assets/banners/shirt2.jpeg',
                       height: height,
                       width: width,
+                      type: ActionType.shirt,
+                      list: context.read<ShirtProvider>().shirtFit,
                     ),
                     Column(
                       children: [

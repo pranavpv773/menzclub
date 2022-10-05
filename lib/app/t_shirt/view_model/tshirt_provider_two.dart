@@ -1,10 +1,6 @@
 import 'dart:developer';
 
 import 'package:flutter/widgets.dart';
-import 'package:menz_cart_app/app/shirt/api_services/categories_api_services.dart';
-import 'package:menz_cart_app/app/shirt/api_services/collection_api.dart';
-import 'package:menz_cart_app/app/shirt/api_services/color_api.dart';
-import 'package:menz_cart_app/app/shirt/model/shirt_model.dart';
 // ignore: depend_on_referenced_packages
 import 'package:fluttertoast/fluttertoast.dart';
 import 'package:menz_cart_app/app/t_shirt/api_services/categories_api_services.dart';
@@ -39,7 +35,7 @@ class TshirtProviderTwo with ChangeNotifier {
   fetchShirtCollection(String collection) async {
     tShirtCollection.clear();
     TshirtModel resp = await TshirtCollectionApiServices()
-        .fetchShirtCollection(collection.toLowerCase());
+        .fetchTshirtCollection(collection.toLowerCase());
     log('message');
     if (resp.status && resp.tShirt.isNotEmpty) {
       tShirtCollection.clear();

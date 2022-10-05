@@ -7,8 +7,11 @@ import 'package:menz_cart_app/app/products/view/product_screen.dart';
 import 'package:menz_cart_app/app/shirt/view_model/map_shirt.dart';
 import 'package:menz_cart_app/app/shirt/view_model/shirt_provider.dart';
 import 'package:menz_cart_app/app/shirt/view_model/shirt_provider_two.dart';
+import 'package:menz_cart_app/app/t_shirt/view_model/t_shirt_provider.dart';
 import 'package:menz_cart_app/routes/routes.dart';
 import 'package:provider/provider.dart';
+
+enum ActionType { shirt, jeans, tshirt }
 
 class ShirtFitWidget extends StatelessWidget {
   const ShirtFitWidget(
@@ -19,7 +22,8 @@ class ShirtFitWidget extends StatelessWidget {
       required this.image2,
       required this.color,
       required this.topic,
-      // required this.function,
+      required this.list,
+      this.type,
       required this.crossAxisAlignment,
       required this.mainAxisAlignment})
       : super(key: key);
@@ -28,7 +32,8 @@ class ShirtFitWidget extends StatelessWidget {
   final String image;
   final String image2;
   final String topic;
-  // final VoidCallback function;
+  final List list;
+  final ActionType? type;
   final Color color;
   final MainAxisAlignment mainAxisAlignment;
   final CrossAxisAlignment crossAxisAlignment;
@@ -64,15 +69,30 @@ class ShirtFitWidget extends StatelessWidget {
                 ),
                 child: GestureDetector(
                   onTap: () async {
+                    switch (type) {
+                      case ActionType.shirt:
+                        await context
+                            .read<ShirtProvider>()
+                            .fetchShirtFit(shirtFitListMap[index].toString());
+                        break;
+                      case ActionType.jeans:
+                        // TODO: Handle this case.
+                        break;
+                      case ActionType.tshirt:
+                        await context
+                            .read<TshirtProvider>()
+                            .fetchTshirtFit(shirtFitListMap[index].toString());
+                        break;
+                      default:
+                        break;
+                    }
                     log(shirtFitListMap[index].toString());
-                    await context
-                        .read<ShirtProvider>()
-                        .fetchShirtFit(shirtFitListMap[index].toString());
+
                     RoutesProvider.nextScreen(
                       screen: ProductsScreen(
                         title: shirtFitListMap[index].toString(),
                         // ignore: use_build_context_synchronously
-                        list: context.read<ShirtProvider>().shirtFit,
+                        list: list,
                       ),
                     );
                   },

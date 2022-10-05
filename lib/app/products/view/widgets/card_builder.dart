@@ -2,10 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:menz_cart_app/app/constants/colors.dart';
 import 'package:menz_cart_app/app/description/view/description.dart';
 import 'package:menz_cart_app/app/home/view/widgets/grid_view_card.dart';
-import 'package:menz_cart_app/app/shirt/view_model/shirt_provider.dart';
 import 'package:menz_cart_app/app/t_shirt/view/t_shirt_screen.dart';
 import 'package:menz_cart_app/routes/routes.dart';
-import 'package:provider/provider.dart';
 
 class ProductCardBuilder extends StatelessWidget {
   const ProductCardBuilder({

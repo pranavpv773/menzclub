@@ -3,8 +3,6 @@
 import 'dart:developer';
 
 import 'package:dio/dio.dart';
-import 'package:flutter/widgets.dart';
-import 'package:menz_cart_app/app/login/model/login_model.dart';
 import 'package:menz_cart_app/app/shirt/model/shirt_model.dart';
 import 'package:menz_cart_app/services/api_endpoints.dart';
 
