@@ -33,7 +33,8 @@ class ShirtProvider with ChangeNotifier {
   fetchShirtFit(String fit) async {
     shirtFit.clear();
     log('first');
-    ShirtModel resp = await ShirtFitApiServices().fetchShirtfit(fit);
+    ShirtModel resp =
+        await ShirtFitApiServices().fetchShirtfit(fit.toLowerCase());
 
     if (resp.status && resp.shirt.isNotEmpty) {
       shirtFit.clear();

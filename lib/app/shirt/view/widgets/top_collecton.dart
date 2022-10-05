@@ -1,7 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:menz_cart_app/app/constants/colors.dart';
 import 'package:menz_cart_app/app/home/view_model/shirts.dart';
+import 'package:menz_cart_app/app/products/view/product_screen.dart';
 import 'package:menz_cart_app/app/shirt/view_model/map_shirt.dart';
+import 'package:menz_cart_app/app/shirt/view_model/shirt_provider_two.dart';
+import 'package:menz_cart_app/routes/routes.dart';
+import 'package:provider/provider.dart';
 
 class TopCollectionsWidget extends StatelessWidget {
   const TopCollectionsWidget({
@@ -34,12 +38,15 @@ class TopCollectionsWidget extends StatelessWidget {
               itemCount: 4,
               itemBuilder: (BuildContext ctx, index) {
                 return GestureDetector(
-                  onTap: () {
-                    // RoutesProvider.nextScreen(
-                    //     screen: ProductsScreen(
-                    //         endPoints: ApiEndPoints.getShirts,
-                    //         title: shirtList[index]['topcollection'].toString(),
-                    //         list: shirtList));
+                  onTap: () async {
+                    await context.read<ShirtProviderTwo>().fetchShirtCollection(
+                          shirtList[index]['topcollection'].toString(),
+                        );
+                    RoutesProvider.nextScreen(
+                        screen: ProductsScreen(
+                      title: shirtList[index]['topcollection'].toString(),
+                      list: context.read<ShirtProviderTwo>().shirtCollection,
+                    ));
                   },
                   child: Material(
                     elevation: 10,
