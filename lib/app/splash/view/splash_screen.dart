@@ -20,34 +20,36 @@ class SplashScreen extends StatelessWidget {
         width: width,
         height: height,
         color: primary1,
-        child: FadeInLeft(
-          child: Stack(
-            // mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-              Padding(
-                padding: const EdgeInsets.all(8.0),
-                child: Center(
+        child: Stack(
+          // mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            Padding(
+              padding: EdgeInsets.all(8.0),
+              child: Center(
+                child: FadeInDown(
                   child: Image.asset(
                     'assets/mc.png',
                   ),
                 ),
               ),
-              Positioned(
-                bottom: height / 2.5,
-                left: 0,
-                right: 0,
-                child: Center(
-                    child: Text(
+            ),
+            Positioned(
+              bottom: height / 2.5,
+              left: 0,
+              right: 0,
+              child: Center(
+                  child: FadeInLeft(
+                child: Text(
                   'MENZCLUB',
                   style: TextStyle(
                     fontSize: 20,
                     fontFamily: GoogleFonts.cousine().fontFamily,
                     color: const Color.fromARGB(255, 195, 143, 10),
                   ),
-                )),
-              )
-            ],
-          ),
+                ),
+              )),
+            )
+          ],
         ),
       ),
     );

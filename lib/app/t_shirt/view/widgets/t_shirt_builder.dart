@@ -1,6 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:menz_cart_app/app/constants/colors.dart';
+import 'package:menz_cart_app/app/products/view/product_screen.dart';
 import 'package:menz_cart_app/app/t_shirt/view_model/tshirt.dart';
+import 'package:menz_cart_app/app/t_shirt/view_model/tshirt_provider_two.dart';
+import 'package:menz_cart_app/routes/routes.dart';
+import 'package:provider/provider.dart';
 
 class TshirtColorBuilder extends StatelessWidget {
   const TshirtColorBuilder({
@@ -24,50 +28,62 @@ class TshirtColorBuilder extends StatelessWidget {
       ),
       itemCount: 6,
       itemBuilder: (BuildContext ctx, index) {
-        return Padding(
-          padding: const EdgeInsets.all(
-            8.0,
-          ),
-          child: Material(
-            borderRadius: BorderRadius.circular(10),
-            elevation: 10,
-            shadowColor: Colors.black,
-            child: Container(
-              width: width / 8,
-              decoration: BoxDecoration(
-                color: primary1,
-                borderRadius: BorderRadius.circular(10),
-              ),
-              child: Column(
-                children: [
-                  Container(
-                    decoration: const BoxDecoration(
-                      image: DecorationImage(
-                        image: AssetImage('assets/tshirt/neon_border.png'),
-                        fit: BoxFit.cover,
+        return GestureDetector(
+          onTap: () async {
+            await context.read<TshirtProviderTwo>().fetchShirtColor(
+                  tShirtList[index]['color'].toString(),
+                );
+            RoutesProvider.nextScreen(
+                screen: ProductsScreen(
+              title: tShirtList[index]['color'].toString(),
+              list: context.read<TshirtProviderTwo>().tShirtcolor,
+            ));
+          },
+          child: Padding(
+            padding: const EdgeInsets.all(
+              8.0,
+            ),
+            child: Material(
+              borderRadius: BorderRadius.circular(10),
+              elevation: 10,
+              shadowColor: Colors.black,
+              child: Container(
+                width: width / 8,
+                decoration: BoxDecoration(
+                  color: primary1,
+                  borderRadius: BorderRadius.circular(10),
+                ),
+                child: Column(
+                  children: [
+                    Container(
+                      decoration: const BoxDecoration(
+                        image: DecorationImage(
+                          image: AssetImage('assets/tshirt/neon_border.png'),
+                          fit: BoxFit.cover,
+                        ),
                       ),
-                    ),
-                    child: Padding(
-                      padding: const EdgeInsets.all(8.0),
-                      child: Container(
-                        width: width / 5,
-                        height: height / 8,
-                        decoration: BoxDecoration(
-                          borderRadius: BorderRadius.circular(5),
-                          image: DecorationImage(
-                            image: AssetImage(
-                              tShirtList[index]['WatchcolorImage'].toString(),
+                      child: Padding(
+                        padding: const EdgeInsets.all(8.0),
+                        child: Container(
+                          width: width / 5,
+                          height: height / 8,
+                          decoration: BoxDecoration(
+                            borderRadius: BorderRadius.circular(5),
+                            image: DecorationImage(
+                              image: AssetImage(
+                                tShirtList[index]['WatchcolorImage'].toString(),
+                              ),
+                              fit: BoxFit.cover,
                             ),
-                            fit: BoxFit.cover,
                           ),
                         ),
                       ),
                     ),
-                  ),
-                  Text(
-                    tShirtList[index]['color'].toString(),
-                  ),
-                ],
+                    Text(
+                      tShirtList[index]['color'].toString(),
+                    ),
+                  ],
+                ),
               ),
             ),
           ),
