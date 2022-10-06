@@ -24,13 +24,14 @@ class SecondSdcreen extends StatelessWidget {
           ),
           Padding(
             padding: const EdgeInsets.symmetric(horizontal: 18.0),
-            child:
-                Text('Find cool accessories to support your daily activities.',
-                    style: TextStyle(
-                      fontSize: 18,
-                      fontWeight: FontWeight.bold,
-                      fontFamily: GoogleFonts.rasa().fontFamily,
-                    )),
+            child: Text(
+              'Find cool accessories to support your daily activities.',
+              style: TextStyle(
+                fontSize: 18,
+                fontWeight: FontWeight.bold,
+                fontFamily: GoogleFonts.rasa().fontFamily,
+              ),
+            ),
           ),
           // const Padding(
           //   padding: EdgeInsets.symmetric(horizontal: 30.0),

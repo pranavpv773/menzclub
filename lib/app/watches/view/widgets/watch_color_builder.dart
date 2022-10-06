@@ -1,6 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:menz_cart_app/app/constants/colors.dart';
+import 'package:menz_cart_app/app/products/view/product_screen.dart';
 import 'package:menz_cart_app/app/watches/view_model/watch_map.dart';
+import 'package:menz_cart_app/app/watches/view_model/watch_provider_two.dart';
+import 'package:menz_cart_app/routes/routes.dart';
+import 'package:provider/provider.dart';
 
 class WatchColorBuilder extends StatelessWidget {
   const WatchColorBuilder({
@@ -29,35 +33,47 @@ class WatchColorBuilder extends StatelessWidget {
           padding: const EdgeInsets.all(
             8.0,
           ),
-          child: Material(
-            borderRadius: BorderRadius.circular(10),
-            elevation: 10,
-            shadowColor: Colors.black,
-            child: Container(
-              decoration: BoxDecoration(
-                color: primary1,
-                borderRadius: BorderRadius.circular(10),
-              ),
-              child: Column(
-                children: [
-                  Padding(
-                    padding: const EdgeInsets.all(8.0),
-                    child: Container(
-                      width: width / 2,
-                      height: height / 8,
-                      decoration: BoxDecoration(
-                        borderRadius: BorderRadius.circular(5),
-                        image: DecorationImage(
-                          image: AssetImage(
-                            watchMap[index]['WatchcolorImage'].toString(),
+          child: GestureDetector(
+            onTap: () async {
+              await context.read<WatchProviderTwo>().fetchWatchColor(
+                    watchMap[index]['color'].toString(),
+                  );
+              RoutesProvider.nextScreen(
+                  screen: ProductsScreen(
+                title: watchMap[index]['color'].toString(),
+                list: context.read<WatchProviderTwo>().watchcolor,
+              ));
+            },
+            child: Material(
+              borderRadius: BorderRadius.circular(10),
+              elevation: 10,
+              shadowColor: Colors.black,
+              child: Container(
+                decoration: BoxDecoration(
+                  color: primary1,
+                  borderRadius: BorderRadius.circular(10),
+                ),
+                child: Column(
+                  children: [
+                    Padding(
+                      padding: const EdgeInsets.all(8.0),
+                      child: Container(
+                        width: width / 2,
+                        height: height / 8,
+                        decoration: BoxDecoration(
+                          borderRadius: BorderRadius.circular(5),
+                          image: DecorationImage(
+                            image: AssetImage(
+                              watchMap[index]['WatchcolorImage'].toString(),
+                            ),
+                            fit: BoxFit.contain,
                           ),
-                          fit: BoxFit.contain,
                         ),
                       ),
                     ),
-                  ),
-                  Text(watchMap[index]['color'].toString()),
-                ],
+                    Text(watchMap[index]['color'].toString()),
+                  ],
+                ),
               ),
             ),
           ),

@@ -1,12 +1,12 @@
 import 'dart:convert';
 
-WatchModel watchModelFromJson(String str) =>
-    WatchModel.fromJson(json.decode(str));
+WatchModels watchModelFromJson(String str) =>
+    WatchModels.fromJson(json.decode(str));
 
-String watchModelToJson(WatchModel data) => json.encode(data.toJson());
+String watchModelsToJson(WatchModels data) => json.encode(data.toJson());
 
-class WatchModel {
-  WatchModel({
+class WatchModels {
+  WatchModels({
     required this.watch,
     required this.status,
     required this.message,
@@ -16,7 +16,7 @@ class WatchModel {
   bool status;
   String message;
 
-  factory WatchModel.fromJson(Map<String, dynamic> json) => WatchModel(
+  factory WatchModels.fromJson(Map<String, dynamic> json) => WatchModels(
         watch: List<Watch>.from(json["watch"].map((x) => Watch.fromJson(x))),
         status: json["status"],
         message: json["message"],
