@@ -24,6 +24,7 @@ import 'package:provider/provider.dart';
 import 'app/constants/colors.dart';
 import 'app/home/view_model/home_provider.dart';
 import 'app/shoes/view_model/shoes_provider_two.dart';
+import 'app/watches/view_model/watch_provider_two.dart';
 import 'routes/routes.dart';
 
 void main() {
@@ -98,6 +99,9 @@ class MyApp extends StatelessWidget {
         ),
         ChangeNotifierProvider(
           create: (crete) => ShoesProviderTwo(),
+        ),
+        ChangeNotifierProvider(
+          create: (crete) => WatchProviderTwo(),
         ),
       ],
       child: MaterialApp(

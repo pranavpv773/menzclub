@@ -1,4 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:menz_cart_app/app/products/view/product_screen.dart';
+import 'package:menz_cart_app/app/watches/view_model/watch_map.dart';
+import 'package:menz_cart_app/app/watches/view_model/watch_provider_two.dart';
+import 'package:menz_cart_app/routes/routes.dart';
+import 'package:provider/provider.dart';
 
 import 'ocasion_double.dart';
 
@@ -33,14 +38,26 @@ class OcassionBuilder extends StatelessWidget {
           itemBuilder: (context, index) {
             return Padding(
               padding: const EdgeInsets.all(8.0),
-              child: Container(
-                height: height / 7,
-                color: const Color.fromARGB(59, 158, 158, 158),
-                child: index % 2 == 0
-                    ? OcassionOddWidget(
-                        index: index, height: height, width: width)
-                    : OcassionEvenWidget(
-                        index: index, height: height, width: width),
+              child: GestureDetector(
+                onTap: () async {
+                  await context.read<WatchProviderTwo>().fetchWatchCollection(
+                        watchMap[index]['categary'].toString(),
+                      );
+                  RoutesProvider.nextScreen(
+                      screen: ProductsScreen(
+                    title: watchMap[index]['categary'].toString(),
+                    list: context.read<WatchProviderTwo>().watchCollection,
+                  ));
+                },
+                child: Container(
+                  height: height / 7,
+                  color: const Color.fromARGB(59, 158, 158, 158),
+                  child: index % 2 == 0
+                      ? OcassionOddWidget(
+                          index: index, height: height, width: width)
+                      : OcassionEvenWidget(
+                          index: index, height: height, width: width),
+                ),
               ),
             );
           },

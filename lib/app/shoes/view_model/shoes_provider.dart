@@ -50,12 +50,10 @@ class ShoesProvider with ChangeNotifier {
     }
   }
 
-  fetchShirtSize(String size) async {
+  fetchShirtSize(int size) async {
     shoesSizeList.clear();
     log('first');
-    ShoesModel resp =
-        await ShoesSizeApiServices().fetchShoesSize(size.toLowerCase());
-    log(size);
+    ShoesModel resp = await ShoesSizeApiServices().fetchShoesSize(size.toInt());
     if (resp.status && resp.shoes.isNotEmpty) {
       shoesSizeList.clear();
       log(resp.toString());
@@ -65,7 +63,7 @@ class ShoesProvider with ChangeNotifier {
     } else {
       log('error');
       Fluttertoast.showToast(
-        msg: resp.message,
+        msg: 'Sorry List is empty',
         toastLength: Toast.LENGTH_LONG,
       );
     }

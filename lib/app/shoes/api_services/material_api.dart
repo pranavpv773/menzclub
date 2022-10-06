@@ -3,7 +3,7 @@ import 'package:dio/dio.dart';
 import 'package:menz_cart_app/app/shoes/model/shoes_model.dart';
 
 class ShoesSizeApiServices {
-  Future<ShoesModel> fetchShoesSize(String size) async {
+  Future<ShoesModel> fetchShoesSize(int size) async {
     try {
       Response response = await Dio()
           .get("http://10.0.2.2:3000/api/menzclub/shoes/size?shoes_size=$size");

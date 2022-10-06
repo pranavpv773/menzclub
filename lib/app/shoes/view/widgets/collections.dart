@@ -41,6 +41,7 @@ class ShoesCollectionBuilder extends StatelessWidget {
               RoutesProvider.nextScreen(
                   screen: ProductsScreen(
                 title: shoesMap[index]['categary'].toString(),
+                // ignore: use_build_context_synchronously
                 list: context.read<ShoesProviderTwo>().shoesCollection,
               ));
             },
