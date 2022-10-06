@@ -1,6 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:menz_cart_app/app/constants/colors.dart';
+import 'package:menz_cart_app/app/products/view/product_screen.dart';
+import 'package:menz_cart_app/app/shoes/view_model/shoes_provider.dart';
+import 'package:menz_cart_app/app/shoes/view_model/shoes_provider_two.dart';
+import 'package:menz_cart_app/routes/routes.dart';
+import 'package:provider/provider.dart';
 
 class SortBySize extends StatelessWidget {
   const SortBySize({
@@ -50,35 +55,48 @@ class SortBySize extends StatelessWidget {
                   ),
                   itemCount: 8,
                   itemBuilder: (BuildContext ctx, index) {
-                    return Column(
-                      children: [
-                        Container(
-                          color: kWhite,
-                          child: Container(
-                            width: width / 3,
-                            height: height / 15,
-                            decoration: const BoxDecoration(
-                              image: DecorationImage(
-                                image: NetworkImage(
-                                  'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSRFw7k2JngskIKJ0jfZlHCq0uWjvvXFLFkEZaMLVm9SKN9zr2IFWEXAnEThXmJ9-25ZrM&usqp=CAU',
+                    return GestureDetector(
+                      onTap: () async {
+                        await context.read<ShoesProvider>().fetchShirtSize(
+                              index + 6,
+                            );
+                        RoutesProvider.nextScreen(
+                            screen: ProductsScreen(
+                          title: 'UK${index + 6}',
+                          // ignore: use_build_context_synchronously
+                          list: context.read<ShoesProvider>().shoesSizeList,
+                        ));
+                      },
+                      child: Column(
+                        children: [
+                          Container(
+                            color: kWhite,
+                            child: Container(
+                              width: width / 3,
+                              height: height / 15,
+                              decoration: const BoxDecoration(
+                                image: DecorationImage(
+                                  image: NetworkImage(
+                                    'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSRFw7k2JngskIKJ0jfZlHCq0uWjvvXFLFkEZaMLVm9SKN9zr2IFWEXAnEThXmJ9-25ZrM&usqp=CAU',
+                                  ),
+                                  fit: BoxFit.fill,
                                 ),
-                                fit: BoxFit.fill,
                               ),
-                            ),
-                            child: Center(
-                              child: Text(
-                                'UK${6 + index}',
-                                style: TextStyle(
-                                    color: Colors.black,
-                                    fontSize: 20,
-                                    fontWeight: FontWeight.bold,
-                                    fontFamily:
-                                        GoogleFonts.aBeeZee().fontFamily),
+                              child: Center(
+                                child: Text(
+                                  'UK${6 + index}',
+                                  style: TextStyle(
+                                      color: Colors.black,
+                                      fontSize: 20,
+                                      fontWeight: FontWeight.bold,
+                                      fontFamily:
+                                          GoogleFonts.aBeeZee().fontFamily),
+                                ),
                               ),
                             ),
                           ),
-                        ),
-                      ],
+                        ],
+                      ),
                     );
                   }),
             ],
