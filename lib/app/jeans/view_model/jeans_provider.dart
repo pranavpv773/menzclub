@@ -25,7 +25,7 @@ class JeansProvider with ChangeNotifier {
     }
   }
 
-  fetchTshirtFit(String fit) async {
+  fetchJeansFit(String fit) async {
     jeansFitList.clear();
     log('first');
     JeansModel resp =

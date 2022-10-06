@@ -8,6 +8,7 @@ import 'package:menz_cart_app/app/home/view_model/shirts.dart';
 import 'package:menz_cart_app/app/jeans/view/widgets/budget_buys.dart';
 import 'package:menz_cart_app/app/jeans/view/widgets/grab_offers.dart';
 import 'package:menz_cart_app/app/jeans/view_model/jeans_provider.dart';
+import 'package:menz_cart_app/app/jeans/view_model/jeans_provider_two.dart';
 import 'package:menz_cart_app/app/products/view/product_screen.dart';
 import 'package:menz_cart_app/app/shirt/view/widgets/shirt_fit.dart';
 import 'package:menz_cart_app/app/utilities/view/appbar_widget.dart';
@@ -46,7 +47,8 @@ class JeansScreen extends StatelessWidget {
                   child: Container(
                     color: const Color.fromARGB(231, 23, 23, 42),
                     child: ShirtFitWidget(
-                      list: [],
+                      type: ActionType.jeans,
+                      list: context.read<JeansProvider>().jeansFitList,
                       topic: 'SHOP JEANS BY FIT',
                       color: kWhite,
                       mainAxisAlignment: MainAxisAlignment.center,
