@@ -29,7 +29,7 @@ class FirstScreen extends StatelessWidget {
           Padding(
             padding: const EdgeInsets.symmetric(horizontal: 18.0),
             child: Text(
-              'Find cool accessories to support your daily activities.',
+              'Menswear Founded on Fit, Built on Service, and Focused on Style. However You Fit, Menzclub Fits You.',
               style: TextStyle(
                 fontSize: 18,
                 fontWeight: FontWeight.bold,

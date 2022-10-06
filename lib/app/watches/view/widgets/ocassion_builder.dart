@@ -33,14 +33,16 @@ class OcassionBuilder extends StatelessWidget {
           itemBuilder: (context, index) {
             return Padding(
               padding: const EdgeInsets.all(8.0),
-              child: Container(
-                height: height / 7,
-                color: const Color.fromARGB(59, 158, 158, 158),
-                child: index % 2 == 0
-                    ? OcassionOddWidget(
-                        index: index, height: height, width: width)
-                    : OcassionEvenWidget(
-                        index: index, height: height, width: width),
+              child: GestureDetector(
+                child: Container(
+                  height: height / 7,
+                  color: const Color.fromARGB(59, 158, 158, 158),
+                  child: index % 2 == 0
+                      ? OcassionOddWidget(
+                          index: index, height: height, width: width)
+                      : OcassionEvenWidget(
+                          index: index, height: height, width: width),
+                ),
               ),
             );
           },

@@ -15,7 +15,7 @@ class SecondSdcreen extends StatelessWidget {
           Padding(
             padding: const EdgeInsets.symmetric(horizontal: 18.0),
             child: Text(
-              'Lets Improve your experience',
+              'Lets make your progress fast',
               style: TextStyle(
                   fontSize: 50,
                   fontWeight: FontWeight.bold,
