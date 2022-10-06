@@ -3,6 +3,7 @@ import 'dart:developer';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:menz_cart_app/app/constants/colors.dart';
+import 'package:menz_cart_app/app/jeans/view_model/jeans_provider.dart';
 import 'package:menz_cart_app/app/products/view/product_screen.dart';
 import 'package:menz_cart_app/app/shirt/view_model/map_shirt.dart';
 import 'package:menz_cart_app/app/shirt/view_model/shirt_provider.dart';
@@ -76,7 +77,9 @@ class ShirtFitWidget extends StatelessWidget {
                             .fetchShirtFit(shirtFitListMap[index].toString());
                         break;
                       case ActionType.jeans:
-                        // TODO: Handle this case.
+                        await context
+                            .read<JeansProvider>()
+                            .fetchJeansFit(shirtFitListMap[index].toString());
                         break;
                       case ActionType.tshirt:
                         await context
