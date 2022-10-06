@@ -1,6 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:menz_cart_app/app/constants/colors.dart';
 import 'package:menz_cart_app/app/jeans/view_model/jeans_map.dart';
+import 'package:menz_cart_app/app/jeans/view_model/jeans_provider_two.dart';
+import 'package:menz_cart_app/app/products/view/product_screen.dart';
+import 'package:menz_cart_app/routes/routes.dart';
+import 'package:provider/provider.dart';
 
 class JeansColorBuilder extends StatelessWidget {
   const JeansColorBuilder({
@@ -25,38 +29,52 @@ class JeansColorBuilder extends StatelessWidget {
       ),
       itemCount: 4,
       itemBuilder: (BuildContext ctx, index) {
-        return Padding(
-          padding: const EdgeInsets.symmetric(
-            horizontal: 16.0,
-          ),
-          child: Material(
-            borderRadius: BorderRadius.circular(10),
-            elevation: 10,
-            shadowColor: primary2,
-            child: Container(
-              decoration: BoxDecoration(
-                color: primary1,
-                borderRadius: BorderRadius.circular(10),
+        return GestureDetector(
+          onTap: () async {
+            await context
+                .read<JeansProviderTwo>()
+                .fetchjeansColor(jeansList[index]['color'].toString());
+            RoutesProvider.nextScreen(
+              screen: ProductsScreen(
+                title: jeansList[index]['color'].toString(),
+                // ignore: use_build_context_synchronously
+                list: context.read<JeansProviderTwo>().jeanscolor,
               ),
-              child: Column(
-                children: [
-                  Padding(
-                    padding: const EdgeInsets.all(8.0),
-                    child: Container(
-                      width: width / 5,
-                      height: height / 8,
-                      decoration: BoxDecoration(
-                        borderRadius: BorderRadius.circular(5),
-                        image: DecorationImage(
-                            image: AssetImage(
-                              jeansList[index]['colorpantImage'].toString(),
-                            ),
-                            fit: BoxFit.contain),
+            );
+          },
+          child: Padding(
+            padding: const EdgeInsets.symmetric(
+              horizontal: 16.0,
+            ),
+            child: Material(
+              borderRadius: BorderRadius.circular(10),
+              elevation: 10,
+              shadowColor: primary2,
+              child: Container(
+                decoration: BoxDecoration(
+                  color: primary1,
+                  borderRadius: BorderRadius.circular(10),
+                ),
+                child: Column(
+                  children: [
+                    Padding(
+                      padding: const EdgeInsets.all(8.0),
+                      child: Container(
+                        width: width / 5,
+                        height: height / 8,
+                        decoration: BoxDecoration(
+                          borderRadius: BorderRadius.circular(5),
+                          image: DecorationImage(
+                              image: AssetImage(
+                                jeansList[index]['colorpantImage'].toString(),
+                              ),
+                              fit: BoxFit.contain),
+                        ),
                       ),
                     ),
-                  ),
-                  Text(jeansList[index]['color'].toString()),
-                ],
+                    Text(jeansList[index]['color'].toString()),
+                  ],
+                ),
               ),
             ),
           ),
