@@ -4,66 +4,82 @@
 
 import 'dart:convert';
 
-UserMainModel userMainModelFromJson(String str) =>
-    UserMainModel.fromJson(json.decode(str));
+import 'package:menz_cart_app/app/user/model/prodout_model.dart';
 
-String userMainModelToJson(UserMainModel data) => json.encode(data.toJson());
+UserModel userModelFromJson(String str) => UserModel.fromJson(json.decode(str));
 
-class UserMainModel {
-  UserMainModel({
-    required this.userModel,
+String userModelToJson(UserModel data) => json.encode(data.toJson());
+
+class UserModel {
+  UserModel({
+    required this.user,
     required this.status,
     required this.message,
   });
 
-  List<UserModel> userModel;
+  List<User> user;
   bool status;
   String message;
 
-  factory UserMainModel.fromJson(Map<String, dynamic> json) => UserMainModel(
-        userModel: List<UserModel>.from(
-            json["tShirt"].map((x) => UserModel.fromJson(x))),
+  factory UserModel.fromJson(Map<String, dynamic> json) => UserModel(
+        user: List<User>.from(json["user"].map((x) => User.fromJson(x))),
         status: json["status"],
         message: json["message"],
       );
 
   Map<String, dynamic> toJson() => {
-        "userModel": List<dynamic>.from(userModel.map((x) => x.toJson())),
+        "user": List<dynamic>.from(user.map((x) => x.toJson())),
         "status": status,
         "message": message,
       };
 }
 
-class UserModel {
-  UserModel({
+class User {
+  User({
+    this.id,
     required this.userMail,
-    required this.userPassword,
     required this.userName,
     required this.userNumber,
-    required this.userCart,
+    required this.userPassword,
+    required this.userIsVerified,
+    required this.userDate,
+    required this.address,
+    this.userCart,
   });
 
+  String? id;
   String userMail;
-  String userPassword;
   String userName;
   int userNumber;
-  List<UserCart> userCart;
+  String userPassword;
+  bool userIsVerified;
+  DateTime userDate;
+  String address;
+  List<UserCart>? userCart;
 
-  factory UserModel.fromJson(Map<String, dynamic> json) => UserModel(
+  factory User.fromJson(Map<String, dynamic> json) => User(
+        id: json["_id"],
         userMail: json["user_mail"],
-        userPassword: json["user_password"],
         userName: json["user_name"],
         userNumber: json["user_number"],
+        userPassword: json["user_password"],
+        userIsVerified: json["user_isVerified"],
+        userDate: DateTime.parse(json["user_date"]),
+        address: json["address"],
         userCart: List<UserCart>.from(
             json["user_cart"].map((x) => UserCart.fromJson(x))),
       );
 
   Map<String, dynamic> toJson() => {
+        "_id": id,
         "user_mail": userMail,
-        "user_password": userPassword,
         "user_name": userName,
         "user_number": userNumber,
-        "user_cart": List<dynamic>.from(userCart.map((x) => x.toJson())),
+        "user_password": userPassword,
+        "user_isVerified": userIsVerified,
+        "user_date": userDate.toIso8601String(),
+        "address": address,
+        "user_cart": List<dynamic>.from(userCart!.map((x) => x.toJson())),
       };
 }
 
@@ -74,71 +90,16 @@ class UserCart {
   });
 
   int quantity;
-  Product product;
+
+  List<Product> product;
 
   factory UserCart.fromJson(Map<String, dynamic> json) => UserCart(
         quantity: json["quantity"],
-        product: Product.fromJson(json["Product"]),
+        product: List<Product>.from(json["product"].map((x) => x)),
       );
 
   Map<String, dynamic> toJson() => {
         "quantity": quantity,
-        "Product": product.toJson(),
-      };
-}
-
-class Product {
-  Product({
-    required this.id,
-    required this.productName,
-    required this.productDescription,
-    required this.images,
-    required this.productPrice,
-    required this.productOffer,
-    required this.productCategory,
-    required this.productColor,
-    required this.productBrand,
-    required this.productSize,
-    required this.productMaterial,
-  });
-
-  String id;
-  String productName;
-  String productDescription;
-  List<String> images;
-  int productPrice;
-  int productOffer;
-  String productCategory;
-  String productColor;
-  String productBrand;
-  int productSize;
-  String productMaterial;
-
-  factory Product.fromJson(Map<String, dynamic> json) => Product(
-        id: json["_id"],
-        productName: json["product_name"],
-        productDescription: json["product_description"],
-        images: List<String>.from(json["images"].map((x) => x)),
-        productPrice: json["product_price"],
-        productOffer: json["product_offer"],
-        productCategory: json["product_category"],
-        productColor: json["product_color"],
-        productBrand: json["product_brand"],
-        productSize: json["product_size"],
-        productMaterial: json["product_material"],
-      );
-
-  Map<String, dynamic> toJson() => {
-        "_id": id,
-        "product_name": productName,
-        "product_description": productDescription,
-        "images": List<dynamic>.from(images.map((x) => x)),
-        "product_price": productPrice,
-        "product_offer": productOffer,
-        "product_category": productCategory,
-        "product_color": productColor,
-        "product_brand": productBrand,
-        "product_size": productSize,
-        "product_material": productMaterial,
+        "product": List<dynamic>.from(product.map((x) => x)),
       };
 }
