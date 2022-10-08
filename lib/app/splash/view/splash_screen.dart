@@ -24,7 +24,7 @@ class SplashScreen extends StatelessWidget {
           // mainAxisAlignment: MainAxisAlignment.center,
           children: [
             Padding(
-              padding: EdgeInsets.all(8.0),
+              padding: const EdgeInsets.all(8.0),
               child: Center(
                 child: FadeInDown(
                   child: Image.asset(
