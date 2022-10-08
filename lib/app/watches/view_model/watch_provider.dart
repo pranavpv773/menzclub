@@ -2,6 +2,7 @@
 import 'dart:developer';
 import 'package:flutter/material.dart';
 import 'package:fluttertoast/fluttertoast.dart';
+import 'package:menz_cart_app/app/shirt/view_model/shirt_provider.dart';
 import 'package:menz_cart_app/app/watches/api_services/api_services.dart';
 import 'package:menz_cart_app/app/watches/api_services/offer_api_services.dart';
 import 'package:menz_cart_app/app/watches/model/watch_model.dart';
@@ -16,6 +17,8 @@ class WatchProvider with ChangeNotifier {
       watchList.clear();
       log(resp.toString());
       watchList.addAll(resp.watch);
+      allProducts.addAll(watchList);
+      log(allProducts.length.toString());
       notifyListeners();
     } else {
       Fluttertoast.showToast(

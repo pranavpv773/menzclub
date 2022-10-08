@@ -7,10 +7,13 @@ import 'package:menz_cart_app/app/shirt/model/shirt_model.dart';
 // ignore: depend_on_referenced_packages
 import 'package:fluttertoast/fluttertoast.dart';
 
+List allProducts = [];
+
 class ShirtProvider with ChangeNotifier {
   List<Shirt> shirtMapList = [];
   List<Shirt> shirtFit = [];
   List<Shirt> shirtMaterial = [];
+
   // List<Shirt> shirtCategoryList = [];
   fetchShirtFuction() async {
     ShirtModel resp = await ShirtApiServices().fetchProducts();
@@ -19,6 +22,8 @@ class ShirtProvider with ChangeNotifier {
       shirtMapList.clear();
       log(resp.toString());
       shirtMapList.addAll(resp.shirt);
+      allProducts.addAll(shirtMapList);
+      log(allProducts.length.toString());
       log(shirtMapList.toString());
 
       notifyListeners();

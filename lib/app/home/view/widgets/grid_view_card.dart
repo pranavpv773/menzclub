@@ -1,20 +1,19 @@
 import 'package:flutter/material.dart';
 import 'package:menz_cart_app/app/constants/colors.dart';
 import 'package:menz_cart_app/app/t_shirt/view/t_shirt_screen.dart';
-import 'package:menz_cart_app/app/t_shirt/view_model/t_shirt_provider.dart';
 import 'package:menz_cart_app/routes/routes.dart';
-import 'package:provider/provider.dart';
 
 class GridViewCard extends StatelessWidget {
   const GridViewCard({
     Key? key,
     required this.heights,
     required this.width,
+    required this.list,
   }) : super(key: key);
 
   final double heights;
   final double width;
-
+  final List list;
   @override
   Widget build(BuildContext context) {
     return Padding(
@@ -31,7 +30,7 @@ class GridViewCard extends StatelessWidget {
             mainAxisSpacing: 20),
         itemCount: 4,
         itemBuilder: (BuildContext ctx, index) {
-          final data = context.read<TshirtProvider>().tShirtList;
+          final data = list;
           return Material(
             elevation: 10,
             shadowColor: Colors.black,

@@ -52,16 +52,20 @@ class VerticalBulder extends StatelessWidget {
     Key? key,
     required this.width,
     required this.height,
+    required this.image,
+    required this.list,
   }) : super(key: key);
   final double width;
   final double height;
+  final List list;
+  final String image;
   @override
   Widget build(BuildContext context) {
     return Container(
-      decoration: const BoxDecoration(
+      decoration: BoxDecoration(
         image: DecorationImage(
             image: NetworkImage(
-              'https://i.pinimg.com/736x/24/52/e8/2452e861c7e902c1fc2e184c56807fd6.jpg',
+              image,
             ),
             fit: BoxFit.fill),
       ),
@@ -70,7 +74,7 @@ class VerticalBulder extends StatelessWidget {
       child: ListView(
         scrollDirection: Axis.horizontal,
         children: List.generate(
-          context.read<ShoesProvider>().shoesList.length,
+          list.length,
           (index) => Padding(
             padding: const EdgeInsets.all(8.0),
             child: Padding(
@@ -98,17 +102,14 @@ class VerticalBulder extends StatelessWidget {
                             borderRadius: BorderRadius.circular(5),
                             image: DecorationImage(
                                 image: NetworkImage(
-                                  context
-                                      .read<ShoesProvider>()
-                                      .shoesList[index]
-                                      .images[0],
+                                  list[index].images[0],
                                 ),
                                 fit: BoxFit.fill),
                           ),
                         ),
                       ),
                       Text(
-                        context.read<ShoesProvider>().shoesList[index].color,
+                        list[index].color,
                       ),
                     ],
                   ),

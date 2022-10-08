@@ -4,6 +4,9 @@ import 'package:menz_cart_app/app/constants/widgets.dart';
 import 'package:menz_cart_app/app/home/view_model/home_provider.dart';
 import 'package:animate_do/animate_do.dart';
 import 'package:menz_cart_app/app/shirt/view_model/shirt_provider.dart';
+import 'package:menz_cart_app/app/shoes/view_model/shoes_provider.dart';
+import 'package:menz_cart_app/app/t_shirt/view_model/t_shirt_provider.dart';
+import 'package:menz_cart_app/app/watches/view_model/watch_provider.dart';
 import 'package:provider/provider.dart';
 import 'widgets/carousel_banner.dart';
 import 'widgets/circle_dot.dart';
@@ -44,7 +47,7 @@ class HomeScreen extends StatelessWidget {
             decoration: const BoxDecoration(
               image: DecorationImage(
                 image: NetworkImage(
-                  'https://img.wallpapersafari.com/desktop/1280/1024/87/31/QG0FhB.jpg',
+                  'https://png.pngtree.com/thumb_back/fh260/background/20190221/ourmid/pngtree-new-force-week-blue-gradient-geometric-new-in-autumn-image_14190.jpg',
                 ),
                 fit: BoxFit.cover,
               ),
@@ -76,35 +79,84 @@ class HomeScreen extends StatelessWidget {
             child: TshirtBanner(),
           ),
           sizedBox20,
-          Container(
-            decoration: const BoxDecoration(
-              image: DecorationImage(
-                image: NetworkImage(
-                  'https://thumbs.dreamstime.com/b/texture-blue-decorative-plaster-concrete-vignette-abstract-grunge-background-design-234969184.jpg',
-                ),
-                fit: BoxFit.cover,
-              ),
-            ),
-            child: Column(
-              children: [
-                const HeaderWidget(
-                  text: 'T-Shirts',
-                ),
-                GridViewCard(
-                  heights: heights,
-                  width: width,
-                ),
-              ],
-            ),
+          ContainerCardGrid(
+            heights: heights,
+            width: width,
+            image:
+                'https://thumbs.dreamstime.com/b/texture-blue-decorative-plaster-concrete-vignette-abstract-grunge-background-design-234969184.jpg',
+            name: 'T-Shirts',
+            list: context.read<TshirtProvider>().tShirtList,
           ),
           NotImportant(
             heights: heights,
             width: width,
           ),
           VerticalBulder(
+            list: context.read<ShoesProvider>().shoesList,
+            image:
+                'https://i.pinimg.com/736x/24/52/e8/2452e861c7e902c1fc2e184c56807fd6.jpg',
             width: width,
             height: heights,
-          )
+          ),
+          sizedBox20,
+          ContainerCardGrid(
+            heights: heights,
+            width: width,
+            image:
+                'https://st4.depositphotos.com/3503231/22048/v/450/depositphotos_220485076-stock-illustration-blue-square-grid-mosaic-background.jpg',
+            name: 'T-Shirts',
+            list: context.read<WatchProvider>().watchList,
+          ),
+          sizedBox20,
+          VerticalBulder(
+            list: context.read<ShirtProvider>().shirtMapList,
+            image:
+                'https://static.vecteezy.com/system/resources/previews/000/627/162/non_2x/vector-red-square-grid-mosaic-background-creative-design-templates.jpg',
+            width: width,
+            height: heights,
+          ),
+        ],
+      ),
+    );
+  }
+}
+
+class ContainerCardGrid extends StatelessWidget {
+  const ContainerCardGrid({
+    Key? key,
+    required this.heights,
+    required this.width,
+    required this.image,
+    required this.name,
+    required this.list,
+  }) : super(key: key);
+
+  final double heights;
+  final double width;
+  final String image;
+  final String name;
+  final List list;
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      decoration: BoxDecoration(
+        image: DecorationImage(
+          image: NetworkImage(
+            image,
+          ),
+          fit: BoxFit.cover,
+        ),
+      ),
+      child: Column(
+        children: [
+          HeaderWidget(
+            text: name,
+          ),
+          GridViewCard(
+            list: list,
+            heights: heights,
+            width: width,
+          ),
         ],
       ),
     );

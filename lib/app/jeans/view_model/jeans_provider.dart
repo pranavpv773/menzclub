@@ -5,6 +5,7 @@ import 'package:menz_cart_app/app/jeans/api_services/api_services.dart';
 import 'package:menz_cart_app/app/jeans/api_services/fit_categories.dart';
 import 'package:menz_cart_app/app/jeans/model/jean_model.dart';
 import 'package:fluttertoast/fluttertoast.dart';
+import 'package:menz_cart_app/app/shirt/view_model/shirt_provider.dart';
 
 class JeansProvider with ChangeNotifier {
   List<Jeans> jeansList = [];
@@ -16,6 +17,8 @@ class JeansProvider with ChangeNotifier {
       jeansList.clear();
       log(resp.toString());
       jeansList.addAll(resp.jeans);
+      allProducts.addAll(jeansList);
+      log(allProducts.length.toString());
       notifyListeners();
     } else {
       Fluttertoast.showToast(
