@@ -5,12 +5,14 @@ import 'package:fluttertoast/fluttertoast.dart';
 import 'package:menz_cart_app/app/shoes/api_services/api_services.dart';
 import 'package:menz_cart_app/app/shoes/api_services/fit_categories.dart';
 import 'package:menz_cart_app/app/shoes/api_services/material_api.dart';
+import 'package:menz_cart_app/app/shoes/api_services/offer_api_services.dart';
 import 'package:menz_cart_app/app/shoes/model/shoes_model.dart';
 
 class ShoesProvider with ChangeNotifier {
   List<Shoes> shoesList = [];
   List<Shoes> shoesFitList = [];
   List<Shoes> shoesSizeList = [];
+  List<Shoes> shoesPriceList = [];
   Future<void> fetchShoes() async {
     ShoesModel resp = await ShoesApiService().fetchProducts();
 
@@ -58,6 +60,26 @@ class ShoesProvider with ChangeNotifier {
       shoesSizeList.clear();
       log(resp.toString());
       shoesSizeList.addAll(resp.shoes);
+
+      notifyListeners();
+    } else {
+      log('error');
+      Fluttertoast.showToast(
+        msg: 'Sorry List is empty',
+        toastLength: Toast.LENGTH_LONG,
+      );
+    }
+  }
+
+  fetchShirtOffer(int price) async {
+    shoesPriceList.clear();
+    log('first');
+    ShoesModel resp =
+        await ShoesOfferApiServices().fetchShoesoffer(price.toInt());
+    if (resp.status && resp.shoes.isNotEmpty) {
+      shoesPriceList.clear();
+      log(resp.toString());
+      shoesPriceList.addAll(resp.shoes);
 
       notifyListeners();
     } else {

@@ -1,6 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:menz_cart_app/app/constants/colors.dart';
+import 'package:menz_cart_app/app/products/view/product_screen.dart';
+import 'package:menz_cart_app/app/shoes/view_model/shoes_provider.dart';
+import 'package:menz_cart_app/routes/routes.dart';
+import 'package:provider/provider.dart';
 
 class OfferByPrize extends StatelessWidget {
   const OfferByPrize({
@@ -32,17 +36,56 @@ class OfferByPrize extends StatelessWidget {
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
             children: [
-              CircleAvatharOffer(
-                width: width,
-                offer: '1500',
+              GestureDetector(
+                onTap: () async {
+                  await context.read<ShoesProvider>().fetchShirtOffer(
+                        1500,
+                      );
+                  RoutesProvider.nextScreen(
+                      screen: ProductsScreen(
+                    title: 'Offer Under${1500}',
+                    // ignore: use_build_context_synchronously
+                    list: context.read<ShoesProvider>().shoesPriceList,
+                  ));
+                },
+                child: CircleAvatharOffer(
+                  width: width,
+                  offer: '1500',
+                ),
               ),
-              CircleAvatharOffer(
-                width: width,
-                offer: '3000',
+              GestureDetector(
+                onTap: () async {
+                  await context.read<ShoesProvider>().fetchShirtOffer(
+                        3000,
+                      );
+                  RoutesProvider.nextScreen(
+                      screen: ProductsScreen(
+                    title: 'Offer Under${3000}',
+                    // ignore: use_build_context_synchronously
+                    list: context.read<ShoesProvider>().shoesPriceList,
+                  ));
+                },
+                child: CircleAvatharOffer(
+                  width: width,
+                  offer: '3000',
+                ),
               ),
-              CircleAvatharOffer(
-                width: width,
-                offer: '5000',
+              GestureDetector(
+                onTap: () async {
+                  await context.read<ShoesProvider>().fetchShirtOffer(
+                        5000,
+                      );
+                  RoutesProvider.nextScreen(
+                      screen: ProductsScreen(
+                    title: 'Offer Under${5000}',
+                    // ignore: use_build_context_synchronously
+                    list: context.read<ShoesProvider>().shoesPriceList,
+                  ));
+                },
+                child: CircleAvatharOffer(
+                  width: width,
+                  offer: '5000',
+                ),
               ),
             ],
           ),
