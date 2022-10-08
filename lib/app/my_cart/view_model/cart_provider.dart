@@ -8,9 +8,9 @@ import 'package:fluttertoast/fluttertoast.dart';
 class CartProvider with ChangeNotifier {
   List<UserModel> cartList = [];
   fetchShirtColor(BuildContext context) async {
-    UserMainModel resp = await CartApiServices().addToCart();
+    UserModel resp = await CartApiServices().addToCart();
 
-    if (resp.status && resp.userModel.isNotEmpty) {
+    if (resp.status && resp.user.isNotEmpty) {
       Fluttertoast.showToast(
         msg: resp.message,
         toastLength: Toast.LENGTH_LONG,

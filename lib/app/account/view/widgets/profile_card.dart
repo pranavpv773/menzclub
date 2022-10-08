@@ -1,7 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:menz_cart_app/app/constants/colors.dart';
 import 'package:menz_cart_app/app/login/view/login.dart';
+import 'package:menz_cart_app/app/login/view_model/login_provider.dart';
+import 'package:menz_cart_app/app/user/view_model/user_provider.dart';
 import 'package:menz_cart_app/routes/routes.dart';
+import 'package:provider/provider.dart';
 
 class ProfileCard extends StatelessWidget {
   const ProfileCard({
@@ -10,6 +13,7 @@ class ProfileCard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final data = context.read<UserProvider>().UserList;
     return Stack(
       children: [
         Container(
@@ -31,29 +35,39 @@ class ProfileCard extends StatelessWidget {
             ),
           ),
         ),
-        Positioned(
-          bottom: 40,
-          right: 10,
-          child: TextButton(
-            onPressed: () {
-              RoutesProvider.nextScreen(
-                screen: const LoginScreen(),
-              );
-            },
-            style: ButtonStyle(
-              backgroundColor: MaterialStateProperty.all(primary),
-              padding: MaterialStateProperty.all(
-                const EdgeInsets.symmetric(
-                  horizontal: 70,
+        context.watch<LoginProvider>().isLogged
+            ? Positioned(
+                // bottom: 0,
+                // left: 0,
+                top: 80,
+                right: 50,
+                child: Text(
+                  "Hello, ${data.length}",
                 ),
-              ),
-            ),
-            child: Text(
-              'LOGIN / SIGN UP',
-              style: TextStyle(color: kWhite),
-            ),
-          ),
-        )
+              )
+            : Positioned(
+                bottom: 40,
+                right: 10,
+                child: TextButton(
+                  onPressed: () {
+                    RoutesProvider.nextScreen(
+                      screen: const LoginScreen(),
+                    );
+                  },
+                  style: ButtonStyle(
+                    backgroundColor: MaterialStateProperty.all(primary),
+                    padding: MaterialStateProperty.all(
+                      const EdgeInsets.symmetric(
+                        horizontal: 70,
+                      ),
+                    ),
+                  ),
+                  child: Text(
+                    'LOGIN / SIGN UP',
+                    style: TextStyle(color: kWhite),
+                  ),
+                ),
+              )
       ],
     );
   }

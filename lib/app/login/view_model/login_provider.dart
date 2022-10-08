@@ -1,11 +1,13 @@
-// ignore_for_file: depend_on_referenced_packages
+// ignore_for_file: depend_on_referenced_packages, use_build_context_synchronously
 import 'dart:developer';
 import 'package:flutter/material.dart';
 import 'package:menz_cart_app/app/global/view/global_screen.dart';
 import 'package:menz_cart_app/app/login/api_service/api_services.dart';
 import 'package:menz_cart_app/app/login/model/login_model.dart';
+import 'package:menz_cart_app/app/user/view_model/user_provider.dart';
 import 'package:menz_cart_app/routes/routes.dart';
 import 'package:fluttertoast/fluttertoast.dart';
+import 'package:provider/provider.dart';
 
 class LoginProvider with ChangeNotifier {
   final userName = TextEditingController();
@@ -14,8 +16,8 @@ class LoginProvider with ChangeNotifier {
   final phoneNumber = TextEditingController();
   final formKey = GlobalKey<FormState>();
   final password = TextEditingController();
-
-  Future<void> onTabLoginFunction() async {
+  bool isLogged = false;
+  Future<void> onTabLoginFunction(BuildContext context) async {
     if (formKey.currentState!.validate()) {
       log('login');
       final data = EmailSignin(
@@ -26,14 +28,21 @@ class LoginProvider with ChangeNotifier {
       EmailSigninResp resp = await ApiService.login(data);
 
       if (resp.status) {
-        Fluttertoast.showToast(
-          msg: resp.message,
-          toastLength: Toast.LENGTH_LONG,
-        );
-        RoutesProvider.removeScreenUntil(
-          screen: const GlobalScreen(),
-        );
+        context
+            .read<UserProvider>()
+            .onTabGetUser(email.text)
+            .then((value) async {
+          isLogged = true;
+          Fluttertoast.showToast(
+            msg: resp.message,
+            toastLength: Toast.LENGTH_LONG,
+          );
+          RoutesProvider.removeScreenUntil(
+            screen: const GlobalScreen(),
+          );
+        });
       } else {
+        isLogged = false;
         Fluttertoast.showToast(
           msg: resp.message,
           toastLength: Toast.LENGTH_LONG,
