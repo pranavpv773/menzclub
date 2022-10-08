@@ -24,8 +24,16 @@ class ProductCardBuilder extends StatelessWidget {
               height: height,
               decoration: const BoxDecoration(
                 image: DecorationImage(
-                  image: AssetImage('assets/get_started/man_runnig.gif'),
+                  image: AssetImage('assets/lottee/emptyCart1.gif'),
                 ),
+              ),
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.start,
+                children: const [
+                  Text(
+                    'Nothing found',
+                  ),
+                ],
               ),
             ),
           )

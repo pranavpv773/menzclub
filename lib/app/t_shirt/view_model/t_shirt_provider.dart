@@ -1,5 +1,6 @@
 import 'dart:developer';
 import 'package:flutter/widgets.dart';
+import 'package:menz_cart_app/app/shirt/view_model/shirt_provider.dart';
 import 'package:menz_cart_app/app/t_shirt/api_services/api_services.dart';
 import 'package:menz_cart_app/app/t_shirt/api_services/fit_categories.dart';
 import 'package:menz_cart_app/app/t_shirt/model/tshirt_model.dart';
@@ -20,6 +21,8 @@ class TshirtProvider with ChangeNotifier {
       tShirtList.clear();
       log(resp.toString());
       tShirtList.addAll(resp.tShirt);
+      allProducts.addAll(tShirtList);
+      log(allProducts.length.toString());
       notifyListeners();
     } else {
       Fluttertoast.showToast(
