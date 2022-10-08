@@ -42,7 +42,7 @@ class ProfileCard extends StatelessWidget {
                 top: 80,
                 right: 50,
                 child: Text(
-                  "Hello, ${data.length}",
+                  "Hello, ${data[0].userName}",
                 ),
               )
             : Positioned(
