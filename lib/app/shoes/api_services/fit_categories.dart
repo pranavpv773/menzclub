@@ -1,6 +1,5 @@
 import 'dart:developer';
 import 'package:dio/dio.dart';
-import 'package:menz_cart_app/app/shirt/model/shirt_model.dart';
 import 'package:menz_cart_app/app/shoes/model/shoes_model.dart';
 
 class ShoesFitApiServices {

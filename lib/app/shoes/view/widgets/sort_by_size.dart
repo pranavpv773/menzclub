@@ -3,7 +3,6 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:menz_cart_app/app/constants/colors.dart';
 import 'package:menz_cart_app/app/products/view/product_screen.dart';
 import 'package:menz_cart_app/app/shoes/view_model/shoes_provider.dart';
-import 'package:menz_cart_app/app/shoes/view_model/shoes_provider_two.dart';
 import 'package:menz_cart_app/routes/routes.dart';
 import 'package:provider/provider.dart';
 

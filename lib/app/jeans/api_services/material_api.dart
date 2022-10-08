@@ -1,7 +1,6 @@
 import 'dart:developer';
 import 'package:dio/dio.dart';
 import 'package:menz_cart_app/app/jeans/model/jean_model.dart';
-import 'package:menz_cart_app/app/shirt/model/shirt_model.dart';
 
 class JeansMaterialApiServices {
   Future<JeansModel> fetchShirtMaterial(String material) async {

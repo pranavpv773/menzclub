@@ -2,7 +2,6 @@ import 'dart:developer';
 
 import 'package:dio/dio.dart';
 import 'package:menz_cart_app/app/jeans/model/jean_model.dart';
-import 'package:menz_cart_app/app/t_shirt/model/tshirt_model.dart';
 
 class JeansColorApiServices {
   Future<JeansModel> fetchJeansColor(String color) async {
