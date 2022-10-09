@@ -1,12 +1,13 @@
 import 'dart:developer';
 import 'package:dio/dio.dart';
 import 'package:menz_cart_app/app/jeans/model/jean_model.dart';
+import 'package:menz_cart_app/services/api_endpoints.dart';
 
 class JeansMaterialApiServices {
   Future<JeansModel> fetchShirtMaterial(String material) async {
     try {
       Response response = await Dio().get(
-          "http://10.0.2.2:3000/api/menzclub/jeans/material?jeans_material=$material");
+          "${ApiEndPoints.baseUrl}/api/menzclub/jeans/material?jeans_material=$material");
       if (response.statusCode == 200) {
         return JeansModel.fromJson(response.data);
       } else {

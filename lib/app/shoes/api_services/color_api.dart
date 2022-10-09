@@ -2,13 +2,14 @@ import 'dart:developer';
 
 import 'package:dio/dio.dart';
 import 'package:menz_cart_app/app/shoes/model/shoes_model.dart';
+import 'package:menz_cart_app/services/api_endpoints.dart';
 
 class ShoesColorApiServices {
   Future<ShoesModel> fetchShoesColor(String color) async {
     log(color);
     try {
       Response response = await Dio().get(
-          "http://10.0.2.2:3000/api/menzclub/shoes/color?shoes_color=$color");
+          "${ApiEndPoints.baseUrl}/api/menzclub/shoes/color?shoes_color=$color");
       if (response.statusCode == 200) {
         log('response.data');
         log(response.statusCode.toString());

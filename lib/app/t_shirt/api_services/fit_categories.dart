@@ -1,13 +1,14 @@
 import 'dart:developer';
 import 'package:dio/dio.dart';
 import 'package:menz_cart_app/app/t_shirt/model/tshirt_model.dart';
+import 'package:menz_cart_app/services/api_endpoints.dart';
 
 class TshirtFitApiServices {
   Future<TshirtModel> fetchShirtfit(String fit) async {
     log(fit);
     try {
-      Response response = await Dio()
-          .get("http://10.0.2.2:3000/api/menzclub/t-shirt/fit?tShirt_fit=$fit");
+      Response response = await Dio().get(
+          "${ApiEndPoints.baseUrl}/api/menzclub/t-shirt/fit?tShirt_fit=$fit");
       if (response.statusCode == 200) {
         log('response.data');
         log(response.statusCode.toString());

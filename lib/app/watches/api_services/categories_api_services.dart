@@ -2,12 +2,13 @@
 import 'dart:developer';
 import 'package:dio/dio.dart';
 import 'package:menz_cart_app/app/watches/model/watch_model.dart';
+import 'package:menz_cart_app/services/api_endpoints.dart';
 
 class WatchCategoryApiServices {
   Future<WatchModels> fetchWatchCategory(String category) async {
     try {
       Response response = await Dio().get(
-          "http://10.0.2.2:3000/api/menzclub/watch?twatch_category=$category");
+          "${ApiEndPoints.baseUrl}/api/menzclub/watch?twatch_category=$category");
       if (response.statusCode == 200) {
         return WatchModels.fromJson(response.data);
       } else {
