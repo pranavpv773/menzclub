@@ -13,7 +13,7 @@ class ProfileCard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final data = context.read<UserProvider>().UserList;
+    final data = context.read<UserProvider>().userList;
     return Stack(
       children: [
         Container(

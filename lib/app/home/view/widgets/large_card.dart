@@ -1,7 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:menz_cart_app/app/constants/colors.dart';
-import 'package:menz_cart_app/app/shoes/view_model/shoes_provider.dart';
-import 'package:provider/provider.dart';
 
 class LargeCardsWidget extends StatelessWidget {
   const LargeCardsWidget({

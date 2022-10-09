@@ -8,13 +8,13 @@ import 'package:menz_cart_app/app/user/model/user_model.dart';
 import 'package:fluttertoast/fluttertoast.dart';
 
 class UserProvider extends ChangeNotifier {
-  List<User> UserList = [];
+  List<User> userList = [];
   final securedStorage = const FlutterSecureStorage();
   Future<void> onTabGetUser(String mail) async {
     UserModel resp = await UserApiService().getUserData(mail);
 
     if (resp.status) {
-      UserList.addAll(resp.user);
+      userList.addAll(resp.user);
       // log("${UserList}");
       log("get user");
       Fluttertoast.showToast(
