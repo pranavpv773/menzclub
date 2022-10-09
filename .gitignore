@@ -50,5 +50,7 @@ app.*.map.json
 #ignore folder
 test
 /assets
+lib/services/api_endpoints.dart
 #ignore file
+
 /lib/main.dart
