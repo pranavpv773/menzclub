@@ -53,3 +53,4 @@ test
 lib/services/api_endpoints.dart
 #ignore file
 
+/lib/main.dart
