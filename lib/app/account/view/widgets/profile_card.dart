@@ -13,7 +13,7 @@ class ProfileCard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final data = context.read<UserProvider>().UserList;
+    final data = context.read<UserProvider>().userList;
     return Stack(
       children: [
         Container(
@@ -42,7 +42,7 @@ class ProfileCard extends StatelessWidget {
                 top: 80,
                 right: 50,
                 child: Text(
-                  "Hello, ${data.length}",
+                  "Hello, ${data[0].userName}",
                 ),
               )
             : Positioned(
