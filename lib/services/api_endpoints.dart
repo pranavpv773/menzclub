@@ -1,10 +1,11 @@
 class ApiEndPoints {
-  static String loginAPI = 'http://10.0.2.2:3000/account/login';
-  static String signUpAPI = 'http://10.0.2.2:3000/account/signup';
-  static String otpVerifyAPI = 'http://10.0.2.2:3000/account/otp';
-  static String getShirts = 'http://10.0.2.2:3000/api/menzclub/get-shirt';
-  static String getTshits = 'http://10.0.2.2:3000/api/menzclub/get-Tshirt';
-  static String getJeans = 'http://10.0.2.2:3000/api/menzclub/get-jeans';
-  static String getshoes = 'http://10.0.2.2:3000/api/menzclub/get-shoes';
-  static String getWatches = 'http://10.0.2.2:3000/api/menzclub/get-watches';
+  static String baseUrl = 'https://menzclub.herokuapp.com';
+  static String loginAPI = '$baseUrl/account/login';
+  static String signUpAPI = '$baseUrl/account/signup';
+  static String otpVerifyAPI = '$baseUrl/account/otp';
+  static String getShirts = '$baseUrl/api/menzclub/get-shirt';
+  static String getTshits = '$baseUrl/api/menzclub/get-Tshirt';
+  static String getJeans = '$baseUrl/api/menzclub/get-jeans';
+  static String getshoes = '$baseUrl/api/menzclub/get-shoes';
+  static String getWatches = '$baseUrl/api/menzclub/get-watches';
 }
