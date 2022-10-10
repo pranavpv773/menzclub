@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:menz_cart_app/app/app_style/color_style.dart';
 import 'package:menz_cart_app/app/constants/colors.dart';
 import 'package:menz_cart_app/app/description/view/description.dart';
 import 'package:menz_cart_app/app/home/view/widgets/grid_view_card.dart';
@@ -74,7 +75,7 @@ class ProductCardBuilder extends StatelessWidget {
                     shadowColor: Colors.black,
                     child: Container(
                       decoration: BoxDecoration(
-                        color: primary1,
+                        color: AppColor.primary1,
                         borderRadius: BorderRadius.circular(10),
                       ),
                       child: Column(

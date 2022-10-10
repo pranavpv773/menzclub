@@ -1,6 +1,7 @@
 // ignore_for_file: use_build_context_synchronously
 
 import 'package:flutter/material.dart';
+import 'package:menz_cart_app/app/app_style/color_style.dart';
 import 'package:menz_cart_app/app/constants/colors.dart';
 import 'package:menz_cart_app/app/products/view/product_screen.dart';
 import 'package:menz_cart_app/app/shirt/view_model/map_shirt.dart';
@@ -28,7 +29,7 @@ class ShirtMaterialWidget extends StatelessWidget {
               "SHOP BY Material".toUpperCase(),
               style: TextStyle(
                 fontSize: 20,
-                color: kWhite,
+                color: AppColor.kWhite,
                 fontWeight: FontWeight.bold,
               ),
             ),
@@ -68,7 +69,7 @@ class ShirtMaterialWidget extends StatelessWidget {
                             shirtList[index]['materialname'].toString(),
                             style: TextStyle(
                               fontSize: 20,
-                              color: kWhite,
+                              color: AppColor.kWhite,
                               fontWeight: FontWeight.bold,
                             ),
                           ),

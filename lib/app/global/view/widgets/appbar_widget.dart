@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:menz_cart_app/app/app_style/color_style.dart';
 import 'package:menz_cart_app/app/constants/colors.dart';
 
 class ActiveApppbarWidget extends StatelessWidget {
@@ -11,7 +12,7 @@ class ActiveApppbarWidget extends StatelessWidget {
     return Stack(
       children: <Widget>[
         Container(
-          color: primary1,
+          color: AppColor.primary1,
           height: MediaQuery.of(context).size.height * 0.12,
           width: MediaQuery.of(context).size.width,
         ),
@@ -20,7 +21,7 @@ class ActiveApppbarWidget extends StatelessWidget {
           left: 20.0,
           right: 20.0,
           child: AppBar(
-            backgroundColor: kWhite,
+            backgroundColor: AppColor.kWhite,
             leading: Image.asset(
               'assets/mc.png',
             ),
@@ -36,14 +37,14 @@ class ActiveApppbarWidget extends StatelessWidget {
               IconButton(
                 icon: Icon(
                   Icons.search,
-                  color: primary,
+                  color: AppColor.primary,
                 ),
                 onPressed: () {},
               ),
               IconButton(
                 icon: Icon(
                   Icons.notifications,
-                  color: primary,
+                  color: AppColor.primary,
                 ),
                 onPressed: () {},
               )

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:menz_cart_app/app/app_style/color_style.dart';
 import 'package:menz_cart_app/app/constants/colors.dart';
 import 'package:menz_cart_app/app/get_started/view_model/liquid_provider.dart';
 import 'package:provider/provider.dart';
@@ -21,7 +22,7 @@ class ThirdScreen extends StatelessWidget {
             child: Text(
               'Lets get the fastest delivery experience',
               style: TextStyle(
-                color: primary2,
+                color: AppColor.primary2,
                 fontSize: 50,
                 fontWeight: FontWeight.bold,
                 fontFamily: GoogleFonts.rasa().fontFamily,
@@ -33,7 +34,7 @@ class ThirdScreen extends StatelessWidget {
             child: Text(
               'Find the cool accessories to support your daily activities.',
               style: TextStyle(
-                color: kWhite,
+                color: AppColor.kWhite,
                 fontSize: 18,
                 fontWeight: FontWeight.bold,
                 fontFamily: GoogleFonts.rasa().fontFamily,
@@ -46,14 +47,14 @@ class ThirdScreen extends StatelessWidget {
               width: double.infinity,
               child: TextButton(
                 style: ButtonStyle(
-                  backgroundColor: MaterialStateProperty.all(kWhite),
+                  backgroundColor: MaterialStateProperty.all(AppColor.kWhite),
                 ),
                 onPressed: () {
                   context.read<LiquidProvider>().screeFunction(context);
                 },
                 child: Text(
                   'GET STARTED',
-                  style: TextStyle(color: primary),
+                  style: TextStyle(color: AppColor.primary),
                 ),
               ),
             ),

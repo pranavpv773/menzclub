@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:menz_cart_app/app/app_style/color_style.dart';
 import 'package:menz_cart_app/app/constants/colors.dart';
 import 'package:menz_cart_app/app/constants/widgets.dart';
 import 'package:menz_cart_app/app/home/view/widgets/carousel_banner.dart';
@@ -23,7 +24,7 @@ class ShirtScreen extends StatelessWidget {
     return SafeArea(
       child: Scaffold(
         appBar: AppBar(
-          backgroundColor: primary,
+          backgroundColor: AppColor.primary,
           title: Text(string.toUpperCase()),
         ),
         body: Padding(

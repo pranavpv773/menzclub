@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:menz_cart_app/app/app_style/color_style.dart';
 import 'package:menz_cart_app/app/constants/colors.dart';
 import 'package:menz_cart_app/app/constants/widgets.dart';
 import 'package:menz_cart_app/app/home/view/widgets/grid_view_card.dart';
@@ -24,7 +25,7 @@ class TshirtScreen extends StatelessWidget {
     return SafeArea(
       child: Scaffold(
         appBar: AppBar(
-          backgroundColor: primary,
+          backgroundColor: AppColor.primary,
           title: GradientText(
             'T-SHIRT',
             style: TextStyle(
@@ -32,7 +33,7 @@ class TshirtScreen extends StatelessWidget {
                 fontWeight: FontWeight.bold,
                 fontFamily: GoogleFonts.alumniSans().fontFamily),
             colors: [
-              kWhite,
+              AppColor.kWhite,
               const Color.fromARGB(255, 235, 194, 238),
               const Color.fromARGB(255, 186, 122, 199),
             ],

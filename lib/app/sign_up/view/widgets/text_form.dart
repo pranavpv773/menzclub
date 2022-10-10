@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:menz_cart_app/app/app_style/color_style.dart';
 import 'package:menz_cart_app/app/constants/colors.dart';
 
 class SignUpTextforms extends StatelessWidget {
@@ -29,18 +30,18 @@ class SignUpTextforms extends StatelessWidget {
         },
         controller: controller,
         style: TextStyle(
-          color: kGrey,
+          color: AppColor.kGrey,
           fontSize: 18,
         ),
         obscureText: obscureText,
         decoration: InputDecoration(
-          fillColor: kWhite,
+          fillColor: AppColor.kWhite,
           filled: true,
           prefixIcon: Padding(
             padding: const EdgeInsets.symmetric(horizontal: 5.0),
             child: Icon(
               icon,
-              color: primary,
+              color: AppColor.primary,
             ),
           ),
           enabledBorder: OutlineInputBorder(
@@ -67,7 +68,7 @@ class SignUpTextforms extends StatelessWidget {
           hintText: text,
           hintStyle: TextStyle(
             fontSize: 15,
-            color: kGrey,
+            color: AppColor.kGrey,
           ),
         ),
       ),

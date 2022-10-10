@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:menz_cart_app/app/app_style/color_style.dart';
 import 'package:menz_cart_app/app/constants/colors.dart';
 import 'package:menz_cart_app/app/products/view/product_screen.dart';
 import 'package:menz_cart_app/app/shoes/view_model/shoes_provider.dart';
@@ -111,7 +112,7 @@ class CircleAvatharOffer extends StatelessWidget {
       backgroundColor: Colors.black,
       child: CircleAvatar(
         minRadius: width / 7,
-        backgroundColor: kWhite,
+        backgroundColor: AppColor.kWhite,
         child: Center(
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:menz_cart_app/app/app_style/color_style.dart';
 import 'package:menz_cart_app/app/constants/colors.dart';
 import 'package:menz_cart_app/app/global/view_model/global_provider.dart';
 import 'package:provider/provider.dart';
@@ -21,25 +22,25 @@ class BottomNavyWidget extends StatelessWidget {
           icon: const Icon(Icons.home_rounded),
           title: const Text('Home'),
           selectedColor: Colors.red,
-          unselectedColor: primary,
+          unselectedColor: AppColor.primary,
         ),
         SalomonBottomBarItem(
           icon: const Icon(Icons.widgets_rounded),
           title: const Text('Categories'),
           selectedColor: Colors.purpleAccent,
-          unselectedColor: primary,
+          unselectedColor: AppColor.primary,
         ),
         SalomonBottomBarItem(
           icon: const Icon(Icons.shopping_cart),
           title: const Text('Cart'),
           selectedColor: Colors.pink,
-          unselectedColor: primary,
+          unselectedColor: AppColor.primary,
         ),
         SalomonBottomBarItem(
           icon: const Icon(Icons.person),
           title: const Text('Account'),
-          selectedColor: primary2,
-          unselectedColor: primary,
+          selectedColor: AppColor.primary2,
+          unselectedColor: AppColor.primary,
         ),
       ],
     );

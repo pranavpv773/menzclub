@@ -1,5 +1,6 @@
 import 'package:flutter/widgets.dart';
 import 'package:menz_cart_app/app/account/view/account_screen.dart';
+import 'package:menz_cart_app/app/app_style/color_style.dart';
 import 'package:menz_cart_app/app/categories/view/category_screen.dart';
 import 'package:menz_cart_app/app/constants/colors.dart';
 import 'package:menz_cart_app/app/home/view/home_screen.dart';
@@ -29,10 +30,10 @@ class GlobalProvider with ChangeNotifier {
 
   onTabIndexColor(index) {
     if (pageIndex == index) {
-      primary2;
+      AppColor.primary2;
       notifyListeners();
     } else {
-      primary;
+      AppColor.primary;
       notifyListeners();
     }
     notifyListeners();

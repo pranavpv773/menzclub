@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:menz_cart_app/app/app_style/color_style.dart';
 import 'package:menz_cart_app/app/constants/colors.dart';
 
 class BorderContainerWidget extends StatelessWidget {
@@ -19,7 +20,7 @@ class BorderContainerWidget extends StatelessWidget {
         padding: const EdgeInsets.all(5),
         decoration: BoxDecoration(
             border: Border.all(
-          color: kWhite,
+          color: AppColor.kWhite,
           width: 2,
         )),
         child: child);

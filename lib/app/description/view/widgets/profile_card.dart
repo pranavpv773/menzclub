@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_rating_bar/flutter_rating_bar.dart';
+import 'package:menz_cart_app/app/app_style/color_style.dart';
 import 'package:menz_cart_app/app/constants/colors.dart';
 
 class ProductDetailsCard extends StatelessWidget {
@@ -52,7 +53,7 @@ class ProductDetailsCard extends StatelessWidget {
                     text: '\$$price',
                     style: TextStyle(
                       fontSize: 16,
-                      color: kRed,
+                      color: AppColor.kRed,
                       decoration: TextDecoration.lineThrough,
                     ),
                   ),
@@ -60,7 +61,7 @@ class ProductDetailsCard extends StatelessWidget {
                     text: ' \$ ${int.parse(price) - int.parse(discount)}',
                     style: TextStyle(
                         fontSize: 20,
-                        color: kBlack,
+                        color: AppColor.kBlack,
                         fontWeight: FontWeight.bold),
                   ),
                 ],
@@ -73,7 +74,7 @@ class ProductDetailsCard extends StatelessWidget {
           ),
           Text(
             'Free Delivery',
-            style: TextStyle(fontSize: 16, color: kGreen),
+            style: TextStyle(fontSize: 16, color: AppColor.kGreen),
           ),
         ],
       ),

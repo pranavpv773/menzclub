@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:menz_cart_app/app/app_style/color_style.dart';
 import 'package:menz_cart_app/app/constants/colors.dart';
 import 'package:menz_cart_app/app/constants/widgets.dart';
 
@@ -30,7 +31,7 @@ class JeansGrabOffers extends StatelessWidget {
               Text(
                 "Grab by Offers",
                 style: TextStyle(
-                    color: kWhite,
+                    color: AppColor.kWhite,
                     fontSize: 30,
                     fontFamily: GoogleFonts.abel().fontFamily),
               ),
@@ -51,7 +52,7 @@ class JeansGrabOffers extends StatelessWidget {
                       elevation: 10,
                       shadowColor: const Color.fromARGB(255, 33, 150, 243),
                       child: Container(
-                        color: kWhite,
+                        color: AppColor.kWhite,
                         child: Padding(
                           padding: const EdgeInsets.all(10.0),
                           child: Column(
@@ -71,7 +72,7 @@ class JeansGrabOffers extends StatelessWidget {
                                   child: Text(
                                     '${offerList[index]}% OFF',
                                     style: TextStyle(
-                                        color: kWhite,
+                                        color: AppColor.kWhite,
                                         fontSize: 30,
                                         fontFamily:
                                             GoogleFonts.abel().fontFamily),

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:menz_cart_app/app/app_style/color_style.dart';
 import 'package:menz_cart_app/app/constants/colors.dart';
 
 class DotIndicator extends StatelessWidget {
@@ -35,7 +36,7 @@ class CircleDots extends StatelessWidget {
       child: Container(
         width: 10,
         height: 10,
-        color: primary,
+        color: AppColor.primary,
       ),
     );
   }

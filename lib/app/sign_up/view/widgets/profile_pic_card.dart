@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:menz_cart_app/app/app_style/color_style.dart';
 import 'package:menz_cart_app/app/constants/colors.dart';
 
 class AvatharCard extends StatelessWidget {
@@ -11,12 +12,12 @@ class AvatharCard extends StatelessWidget {
     return Stack(
       children: [
         Container(
-          color: primary,
+          color: AppColor.primary,
           height: 200,
         ),
         Container(
           height: 100,
-          color: primary1,
+          color: AppColor.primary1,
         ),
         Positioned(
           bottom: 40,

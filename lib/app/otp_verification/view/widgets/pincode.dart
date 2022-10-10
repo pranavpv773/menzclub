@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:menz_cart_app/app/app_style/color_style.dart';
 import 'package:menz_cart_app/app/constants/colors.dart';
 import 'package:menz_cart_app/app/otp_verification/view_model/otp_provider.dart';
 import 'package:pin_code_fields/pin_code_fields.dart';
@@ -22,7 +23,7 @@ class PinCodeFieldWidget extends StatelessWidget {
               autoDisposeControllers: false,
               appContext: context,
               pastedTextStyle: TextStyle(
-                color: primary,
+                color: AppColor.primary,
                 fontWeight: FontWeight.bold,
               ),
               length: 4,

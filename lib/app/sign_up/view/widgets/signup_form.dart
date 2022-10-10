@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:menz_cart_app/app/app_style/color_style.dart';
 import 'package:menz_cart_app/app/constants/colors.dart';
 import 'package:menz_cart_app/app/sign_up/view/widgets/password_form.dart';
 import 'package:menz_cart_app/app/sign_up/view_model/signup_provider.dart';
@@ -65,7 +66,7 @@ class SignupForm extends StatelessWidget {
                       horizontal: 120,
                       vertical: 15,
                     ),
-                    primary: primary,
+                    primary: AppColor.primary,
                     elevation: 10,
                     shape: RoundedRectangleBorder(
                       borderRadius: BorderRadius.circular(

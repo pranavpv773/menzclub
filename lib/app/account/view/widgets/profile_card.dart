@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:menz_cart_app/app/app_style/color_style.dart';
 import 'package:menz_cart_app/app/constants/colors.dart';
 import 'package:menz_cart_app/app/login/view/login.dart';
 import 'package:menz_cart_app/app/login/view_model/login_provider.dart';
@@ -55,7 +56,8 @@ class ProfileCard extends StatelessWidget {
                     );
                   },
                   style: ButtonStyle(
-                    backgroundColor: MaterialStateProperty.all(primary),
+                    backgroundColor:
+                        MaterialStateProperty.all(AppColor.primary),
                     padding: MaterialStateProperty.all(
                       const EdgeInsets.symmetric(
                         horizontal: 70,
@@ -64,7 +66,7 @@ class ProfileCard extends StatelessWidget {
                   ),
                   child: Text(
                     'LOGIN / SIGN UP',
-                    style: TextStyle(color: kWhite),
+                    style: TextStyle(color: AppColor.kWhite),
                   ),
                 ),
               )

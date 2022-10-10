@@ -1,6 +1,7 @@
 // ignore_for_file: body_might_complete_normally_nullable
 
 import 'package:flutter/material.dart';
+import 'package:menz_cart_app/app/app_style/color_style.dart';
 import 'package:menz_cart_app/app/constants/colors.dart';
 
 class PasswordTextforms extends StatelessWidget {
@@ -31,24 +32,24 @@ class PasswordTextforms extends StatelessWidget {
         keyboardType: TextInputType.visiblePassword,
         controller: controller,
         style: TextStyle(
-          color: kGrey,
+          color: AppColor.kGrey,
           fontSize: 16,
         ),
         obscureText: obscureText,
         decoration: InputDecoration(
-          fillColor: kWhite,
+          fillColor: AppColor.kWhite,
           filled: true,
           prefixIcon: Padding(
             padding: const EdgeInsets.symmetric(horizontal: 20.0),
             child: Icon(
               icon,
-              color: primary,
+              color: AppColor.primary,
             ),
           ),
           enabledBorder: OutlineInputBorder(
             borderRadius: BorderRadius.circular(10),
             borderSide: BorderSide(
-              color: kGrey,
+              color: AppColor.kGrey,
               width: 2.0,
             ),
           ),
@@ -62,14 +63,14 @@ class PasswordTextforms extends StatelessWidget {
           border: OutlineInputBorder(
             borderRadius: BorderRadius.circular(10),
             borderSide: BorderSide(
-              color: kGrey,
+              color: AppColor.kGrey,
               width: 2.0,
             ),
           ),
           hintText: text,
           hintStyle: TextStyle(
             fontSize: 15,
-            color: kGrey,
+            color: AppColor.kGrey,
           ),
         ),
       ),

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:menz_cart_app/app/app_style/color_style.dart';
 import 'package:menz_cart_app/app/constants/colors.dart';
 import 'package:menz_cart_app/app/utilities/view/container_network.dart';
 
@@ -84,7 +85,7 @@ class BudgetBuysCategories extends StatelessWidget {
               child: Text(
                 caption,
                 style: TextStyle(
-                  color: kWhite,
+                  color: AppColor.kWhite,
                   fontWeight: FontWeight.bold,
                   fontSize: 20,
                   fontFamily: GoogleFonts.abhayaLibre().fontFamily,

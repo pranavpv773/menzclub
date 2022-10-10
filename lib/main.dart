@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:menz_cart_app/app/app_style/color_style.dart';
 import 'package:menz_cart_app/app/description/view_model/description_provider.dart';
 import 'package:menz_cart_app/app/get_started/view_model/liquid_provider.dart';
 import 'package:menz_cart_app/app/global/view_model/global_provider.dart';
@@ -22,7 +23,6 @@ import 'package:menz_cart_app/app/utilities/view_model/service_utility.dart';
 import 'package:menz_cart_app/app/watches/view_model/watch_provider.dart';
 import 'package:menz_cart_app/services/view_model/http_services.dart';
 import 'package:provider/provider.dart';
-import 'app/constants/colors.dart';
 import 'app/home/view_model/home_provider.dart';
 import 'app/shoes/view_model/shoes_provider_two.dart';
 import 'app/watches/view_model/watch_provider_two.dart';
@@ -112,7 +112,7 @@ class MyApp extends StatelessWidget {
         navigatorKey: RoutesProvider.navigatorKey,
         debugShowCheckedModeBanner: false,
         theme: ThemeData(
-          scaffoldBackgroundColor: kWhite,
+          scaffoldBackgroundColor: AppColor.kWhite,
           fontFamily: GoogleFonts.mulish().fontFamily,
           primarySwatch: Colors.blue,
         ),

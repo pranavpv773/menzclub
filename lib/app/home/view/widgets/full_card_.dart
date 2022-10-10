@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:menz_cart_app/app/app_style/color_style.dart';
 import 'package:menz_cart_app/app/constants/colors.dart';
 import 'package:menz_cart_app/app/jeans/view_model/jeans_provider.dart';
 import 'package:provider/provider.dart';
@@ -83,7 +84,7 @@ class NotImportant extends StatelessWidget {
                             bottom: 0,
                             child: Container(
                               decoration: BoxDecoration(
-                                color: kWhite,
+                                color: AppColor.kWhite,
                                 borderRadius: const BorderRadius.only(
                                     bottomLeft: Radius.circular(20),
                                     bottomRight: Radius.circular(20)),

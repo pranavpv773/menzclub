@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:menz_cart_app/app/constants/colors.dart';
+import 'package:menz_cart_app/app/app_style/color_style.dart';
 import 'package:menz_cart_app/routes/routes.dart';
 
 class GetTransparentButton extends StatelessWidget {
@@ -26,7 +26,9 @@ class GetTransparentButton extends StatelessWidget {
       child: RaisedButton(
         shape: RoundedRectangleBorder(
           borderRadius: BorderRadius.circular(10),
-          side: BorderSide(color: primary),
+          side: BorderSide(
+            color: AppColor.primary,
+          ),
         ),
         onPressed: () {
           if (index == 1) {
@@ -41,9 +43,10 @@ class GetTransparentButton extends StatelessWidget {
         child: Text(
           button,
           style: TextStyle(
-              fontSize: 15,
-              fontFamily: GoogleFonts.alice().fontFamily,
-              fontWeight: FontWeight.bold),
+            fontSize: 15,
+            fontFamily: GoogleFonts.alice().fontFamily,
+            fontWeight: FontWeight.bold,
+          ),
         ),
       ),
     );

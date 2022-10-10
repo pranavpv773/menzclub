@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:menz_cart_app/app/app_style/color_style.dart';
 import 'package:menz_cart_app/app/constants/colors.dart';
 
 import 'widgets/login_button.dart';
@@ -16,7 +17,7 @@ class LoginScreen extends StatelessWidget {
       appBar: AppBar(
         automaticallyImplyLeading: false,
         elevation: 0,
-        backgroundColor: primary,
+        backgroundColor: AppColor.primary,
         toolbarHeight: MediaQuery.of(context).size.height / 3.5,
         shape: const RoundedRectangleBorder(
           borderRadius: BorderRadius.only(
@@ -42,7 +43,7 @@ class LoginScreen extends StatelessWidget {
                 Text(
                   "Don't have an account?",
                   style: TextStyle(
-                    color: kGrey,
+                    color: AppColor.kGrey,
                     fontSize: 15,
                   ),
                 ),

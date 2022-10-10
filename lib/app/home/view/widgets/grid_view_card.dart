@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:menz_cart_app/app/app_style/color_style.dart';
 import 'package:menz_cart_app/app/constants/colors.dart';
 import 'package:menz_cart_app/app/t_shirt/view/t_shirt_screen.dart';
 import 'package:menz_cart_app/routes/routes.dart';
@@ -35,7 +36,7 @@ class GridViewCard extends StatelessWidget {
             elevation: 10,
             shadowColor: Colors.black,
             child: Container(
-              color: kWhite,
+              color: AppColor.kWhite,
               child: Column(
                 children: [
                   Padding(
@@ -101,14 +102,14 @@ class ShopNowButton extends StatelessWidget {
         width: double.infinity,
         child: TextButton(
           style: ButtonStyle(
-            backgroundColor: MaterialStateProperty.all(primary),
+            backgroundColor: MaterialStateProperty.all(AppColor.primary),
           ),
           onPressed: () {
             RoutesProvider.nextScreen(screen: screen);
           },
           child: Text(
             textButton,
-            style: TextStyle(color: kWhite),
+            style: TextStyle(color: AppColor.kWhite),
           ),
         ),
       ),

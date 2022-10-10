@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:menz_cart_app/app/constants/colors.dart';
+import 'package:menz_cart_app/app/app_style/color_style.dart';
 
 class DividerWidget extends StatelessWidget {
   const DividerWidget({
@@ -15,7 +15,7 @@ class DividerWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Divider(
-      color: kGrey,
+      color: AppColor.kGrey,
       thickness: height / 100,
       indent: indent ?? 0,
       endIndent: lastIndent ?? 0,

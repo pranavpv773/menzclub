@@ -1,6 +1,7 @@
 import 'package:animate_do/animate_do.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:menz_cart_app/app/app_style/color_style.dart';
 import 'package:menz_cart_app/app/constants/colors.dart';
 import 'package:menz_cart_app/app/splash/view_model/splash_screen.dart';
 import 'package:provider/provider.dart';
@@ -19,7 +20,7 @@ class SplashScreen extends StatelessWidget {
       body: Container(
         width: width,
         height: height,
-        color: primary1,
+        color: AppColor.primary1,
         child: Stack(
           // mainAxisAlignment: MainAxisAlignment.center,
           children: [

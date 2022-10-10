@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:menz_cart_app/app/app_style/color_style.dart';
 import 'package:menz_cart_app/app/constants/colors.dart';
 import 'package:menz_cart_app/app/payment/view/payment_screen.dart';
 import 'package:provider/provider.dart';
@@ -37,7 +38,7 @@ class ShopTransparentButton extends StatelessWidget {
         child: RaisedButton(
           shape: RoundedRectangleBorder(
             borderRadius: BorderRadius.circular(0),
-            side: BorderSide(color: primary),
+            side: BorderSide(color: AppColor.primary),
           ),
           onPressed: () {
             value.openCheckout();
