@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:menz_cart_app/app/constants/colors.dart';
+import 'package:menz_cart_app/app/app_style/color_style.dart';
 import 'package:menz_cart_app/app/constants/widgets.dart';
 import 'package:menz_cart_app/app/home/view/widgets/carousel_banner.dart';
 import 'package:menz_cart_app/app/home/view/widgets/circle_dot.dart';
@@ -49,7 +49,7 @@ class JeansScreen extends StatelessWidget {
                       type: ActionType.jeans,
                       list: context.read<JeansProvider>().jeansFitList,
                       topic: 'SHOP JEANS BY FIT',
-                      color: kWhite,
+                      color: AppColor.kWhite,
                       mainAxisAlignment: MainAxisAlignment.center,
                       crossAxisAlignment: CrossAxisAlignment.end,
                       image: 'assets/jeans/banner2.jpg',

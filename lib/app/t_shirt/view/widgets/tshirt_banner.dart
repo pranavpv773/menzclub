@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:menz_cart_app/app/constants/colors.dart';
+import 'package:menz_cart_app/app/app_style/color_style.dart';
 import 'package:menz_cart_app/app/constants/widgets.dart';
 import 'package:menz_cart_app/app/home/view_model/shirts.dart';
 
@@ -58,7 +58,7 @@ class TshirtofferCard extends StatelessWidget {
                           child: Center(
                             child: Text(
                               'Upto ${offerList[index]}%',
-                              style: TextStyle(color: kWhite),
+                              style: TextStyle(color: AppColor.kWhite),
                             ),
                           ),
                         )),

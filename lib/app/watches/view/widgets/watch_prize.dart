@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:menz_cart_app/app/constants/colors.dart';
+import 'package:menz_cart_app/app/app_style/color_style.dart';
 import 'package:menz_cart_app/app/products/view/product_screen.dart';
 import 'package:menz_cart_app/app/watches/view_model/watch_provider.dart';
 import 'package:menz_cart_app/routes/routes.dart';
@@ -28,7 +28,7 @@ class WatchShopByPrize extends StatelessWidget {
           Text(
             "OFFER BY PRIZE",
             style: TextStyle(
-              color: kWhite,
+              color: AppColor.kWhite,
               fontSize: 20,
               fontFamily: GoogleFonts.notoSerif().fontFamily,
             ),
@@ -124,12 +124,12 @@ class CircleAvatharOffer extends StatelessWidget {
           children: [
             Text(
               "UNDER",
-              style: TextStyle(color: kWhite),
+              style: TextStyle(color: AppColor.kWhite),
             ),
             Text(
               offer,
               style: TextStyle(
-                color: kWhite,
+                color: AppColor.kWhite,
                 fontWeight: FontWeight.bold,
                 fontSize: 24,
               ),

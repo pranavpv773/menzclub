@@ -1,7 +1,7 @@
 // ignore_for_file: use_build_context_synchronously
 
 import 'package:flutter/material.dart';
-import 'package:menz_cart_app/app/constants/colors.dart';
+import 'package:menz_cart_app/app/app_style/color_style.dart';
 import 'package:menz_cart_app/app/products/view/product_screen.dart';
 import 'package:menz_cart_app/app/t_shirt/view_model/tshirt.dart';
 import 'package:menz_cart_app/app/t_shirt/view_model/tshirt_provider_two.dart';
@@ -52,7 +52,7 @@ class TshirtColorBuilder extends StatelessWidget {
               child: Container(
                 width: width / 8,
                 decoration: BoxDecoration(
-                  color: primary1,
+                  color: AppColor.primary1,
                   borderRadius: BorderRadius.circular(10),
                 ),
                 child: Column(

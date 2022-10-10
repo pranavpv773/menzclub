@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:menz_cart_app/app/constants/colors.dart';
+import 'package:menz_cart_app/app/app_style/color_style.dart';
 import 'package:menz_cart_app/app/order_summary/view/widgets/button.dart';
 
 class MyWishListScreen extends StatelessWidget {
@@ -10,7 +10,7 @@ class MyWishListScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        backgroundColor: primary,
+        backgroundColor: AppColor.primary,
         title: const Text('Wishlist'),
       ),
       body: Container(
@@ -20,8 +20,8 @@ class MyWishListScreen extends StatelessWidget {
           image: DecorationImage(
             image: const AssetImage('assets/lottee/wishlistbg.jpg'),
             fit: BoxFit.fill,
-            colorFilter:
-                ColorFilter.mode(primary.withOpacity(0.36), BlendMode.dstATop),
+            colorFilter: ColorFilter.mode(
+                AppColor.primary.withOpacity(0.36), BlendMode.dstATop),
           ),
         ),
         child: Column(
@@ -56,7 +56,7 @@ class MyWishListScreen extends StatelessWidget {
             ShopTransparentButton(
               button: 'SHOP NOW',
               buttonBgColor: Colors.transparent.withOpacity(0.1),
-              buttonColor: primary,
+              buttonColor: AppColor.primary,
             )
           ],
         ),

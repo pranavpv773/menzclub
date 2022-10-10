@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:menz_cart_app/app/constants/colors.dart';
+import 'package:menz_cart_app/app/app_style/color_style.dart';
 
 class FirstScreen extends StatelessWidget {
   const FirstScreen({Key? key}) : super(key: key);
@@ -19,7 +19,7 @@ class FirstScreen extends StatelessWidget {
             child: Text(
               'Lets Improve your experience',
               style: TextStyle(
-                color: kWhite,
+                color: AppColor.kWhite,
                 fontSize: 40,
                 fontWeight: FontWeight.bold,
                 fontFamily: GoogleFonts.b612().fontFamily,

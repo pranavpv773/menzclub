@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:menz_cart_app/app/constants/colors.dart';
+import 'package:menz_cart_app/app/app_style/color_style.dart';
 import 'package:menz_cart_app/app/jeans/view_model/jeans_map.dart';
 import 'package:menz_cart_app/app/jeans/view_model/jeans_provider_two.dart';
 import 'package:menz_cart_app/app/products/view/product_screen.dart';
@@ -49,10 +49,10 @@ class JeansColorBuilder extends StatelessWidget {
             child: Material(
               borderRadius: BorderRadius.circular(10),
               elevation: 10,
-              shadowColor: primary2,
+              shadowColor: AppColor.primary2,
               child: Container(
                 decoration: BoxDecoration(
-                  color: primary1,
+                  color: AppColor.primary1,
                   borderRadius: BorderRadius.circular(10),
                 ),
                 child: Column(

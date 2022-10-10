@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:menz_cart_app/app/constants/colors.dart';
+import 'package:menz_cart_app/app/app_style/color_style.dart';
 import 'package:menz_cart_app/app/description/view_model/description_provider.dart';
 import 'package:provider/provider.dart';
 
@@ -30,7 +30,7 @@ class BottomTab extends StatelessWidget {
         },
         child: Text(
           name,
-          style: TextStyle(color: kWhite, fontSize: 20),
+          style: TextStyle(color: AppColor.kWhite, fontSize: 20),
         ),
       ),
     );

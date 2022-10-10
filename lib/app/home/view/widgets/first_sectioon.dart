@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:menz_cart_app/app/app_style/color_style.dart';
 import 'package:menz_cart_app/app/categories/view_model/map.dart';
-import 'package:menz_cart_app/app/constants/colors.dart';
 import 'package:menz_cart_app/app/utilities/view_model/service_utility.dart';
 import 'package:provider/provider.dart';
 
@@ -30,7 +30,7 @@ class CircleAvatharTop extends StatelessWidget {
                     backgroundImage:
                         const AssetImage('assets/round_frame2.png'),
                     child: CircleAvatar(
-                      backgroundColor: kWhite,
+                      backgroundColor: AppColor.kWhite,
                       radius: 25,
                       backgroundImage: NetworkImage(
                         categoryList[index]['circleAvatharImg'].toString(),

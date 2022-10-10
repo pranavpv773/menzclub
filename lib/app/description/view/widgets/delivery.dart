@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:menz_cart_app/app/constants/colors.dart';
+import 'package:menz_cart_app/app/app_style/color_style.dart';
 
 class DeliveryAddress extends StatelessWidget {
   const DeliveryAddress({
@@ -24,7 +24,7 @@ class DeliveryAddress extends StatelessWidget {
               TextButton(
                 onPressed: () {},
                 style: TextButton.styleFrom(
-                  primary: primary2,
+                  primary: AppColor.primary2,
                 ),
                 child: const Text('Change'),
               )

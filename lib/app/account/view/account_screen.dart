@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:menz_cart_app/app/constants/colors.dart';
+import 'package:menz_cart_app/app/app_style/color_style.dart';
 import 'widgets/account_listtile.dart';
 import 'widgets/profile_card.dart';
 
@@ -9,7 +9,7 @@ class AccountScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: secondary,
+      backgroundColor: AppColor.secondary,
       body: ListView(
         children: [
           const ProfileCard(),
@@ -18,7 +18,7 @@ class AccountScreen extends StatelessWidget {
             child: AcountUserSection(),
           ),
           ColoredBox(
-            color: kWhite,
+            color: AppColor.kWhite,
             child: Column(
               children: const [
                 AcountTexWidgget(

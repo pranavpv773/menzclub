@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:menz_cart_app/app/constants/colors.dart';
+import 'package:menz_cart_app/app/app_style/color_style.dart';
 import 'widgets/button.dart';
 
 class OrderSummary extends StatelessWidget {
@@ -9,7 +9,7 @@ class OrderSummary extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        backgroundColor: primary,
+        backgroundColor: AppColor.primary,
         elevation: 0,
         title: const Text('Order Summary'),
       ),
@@ -35,7 +35,7 @@ class OrderSummary extends StatelessWidget {
             ),
             ShopTransparentButton(
               buttonBgColor: Colors.transparent.withOpacity(0.1),
-              buttonColor: primary,
+              buttonColor: AppColor.primary,
               button: "START SHOPPING",
             ),
           ],

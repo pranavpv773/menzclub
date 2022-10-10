@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:menz_cart_app/app/constants/colors.dart';
+import 'package:menz_cart_app/app/app_style/color_style.dart';
 import 'package:menz_cart_app/app/sign_up/view/widgets/profile_pic_card.dart';
 import 'package:menz_cart_app/app/sign_up/view_model/signup_provider.dart';
 import 'package:provider/provider.dart';
@@ -17,7 +17,7 @@ class SignUpScreen extends StatelessWidget {
         body: SingleChildScrollView(
           physics: const ScrollPhysics(),
           child: Container(
-            color: primary1,
+            color: AppColor.primary1,
             child: Column(
               mainAxisAlignment: MainAxisAlignment.center,
               children: const [

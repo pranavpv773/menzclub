@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:menz_cart_app/app/constants/colors.dart';
+import 'package:menz_cart_app/app/app_style/color_style.dart';
 import 'package:menz_cart_app/app/my_cart/view/cart_screen.dart';
 import 'package:menz_cart_app/app/utilities/view/divider_widget.dart';
 
@@ -36,7 +36,7 @@ class PriceDetails extends StatelessWidget {
               const Text('Discount'),
               Text(
                 discout,
-                style: TextStyle(color: kGreen),
+                style: TextStyle(color: AppColor.kGreen),
               ),
             ],
           ),
@@ -46,7 +46,7 @@ class PriceDetails extends StatelessWidget {
               const Text('Delivery Charges'),
               Text(
                 'Free Delivery',
-                style: TextStyle(color: kGreen),
+                style: TextStyle(color: AppColor.kGreen),
               ),
             ],
           ),

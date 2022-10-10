@@ -1,7 +1,7 @@
 // ignore_for_file: body_might_complete_normally_nullable
 
 import 'package:flutter/material.dart';
-import 'package:menz_cart_app/app/constants/colors.dart';
+import 'package:menz_cart_app/app/app_style/color_style.dart';
 import 'package:menz_cart_app/app/login/view_model/login_provider.dart';
 import 'package:provider/provider.dart';
 
@@ -26,17 +26,17 @@ class LoginTextforms extends StatelessWidget {
               keyboardType: TextInputType.emailAddress,
               controller: context.read<LoginProvider>().email,
               style: TextStyle(
-                color: kGrey,
+                color: AppColor.kGrey,
                 fontSize: 18,
               ),
               decoration: InputDecoration(
-                fillColor: kWhite,
+                fillColor: AppColor.kWhite,
                 filled: true,
                 prefixIcon: Padding(
                   padding: const EdgeInsets.symmetric(horizontal: 20.0),
                   child: Icon(
                     Icons.mail,
-                    color: primary,
+                    color: AppColor.primary,
                   ),
                 ),
                 enabledBorder: OutlineInputBorder(
@@ -49,7 +49,7 @@ class LoginTextforms extends StatelessWidget {
                 focusedBorder: OutlineInputBorder(
                   borderRadius: BorderRadius.circular(10),
                   borderSide: BorderSide(
-                    color: primary,
+                    color: AppColor.primary,
                     width: 2.0,
                   ),
                 ),
@@ -62,7 +62,7 @@ class LoginTextforms extends StatelessWidget {
                 hintText: "Email",
                 hintStyle: TextStyle(
                   fontSize: 15,
-                  color: kGrey,
+                  color: AppColor.kGrey,
                 ),
               ),
             ),
@@ -79,19 +79,19 @@ class LoginTextforms extends StatelessWidget {
               },
               controller: context.read<LoginProvider>().password,
               style: TextStyle(
-                color: kGrey,
+                color: AppColor.kGrey,
                 fontSize: 18,
               ),
               obscuringCharacter: '*',
               obscureText: true,
               decoration: InputDecoration(
-                fillColor: kWhite,
+                fillColor: AppColor.kWhite,
                 filled: true,
                 prefixIcon: Padding(
                   padding: const EdgeInsets.symmetric(horizontal: 20.0),
                   child: Icon(
                     Icons.key,
-                    color: primary,
+                    color: AppColor.primary,
                   ),
                 ),
                 enabledBorder: OutlineInputBorder(
@@ -104,7 +104,7 @@ class LoginTextforms extends StatelessWidget {
                 focusedBorder: OutlineInputBorder(
                   borderRadius: BorderRadius.circular(10),
                   borderSide: BorderSide(
-                    color: primary,
+                    color: AppColor.primary,
                     width: 2.0,
                   ),
                 ),
@@ -117,7 +117,7 @@ class LoginTextforms extends StatelessWidget {
                 hintText: "password",
                 hintStyle: TextStyle(
                   fontSize: 15,
-                  color: kGrey,
+                  color: AppColor.kGrey,
                 ),
               ),
             ),
@@ -144,7 +144,7 @@ class LoginTextforms extends StatelessWidget {
                       horizontal: 150,
                       vertical: 15,
                     ),
-                    primary: primary,
+                    primary: AppColor.primary,
                     elevation: 10,
                     shape: RoundedRectangleBorder(
                       borderRadius: BorderRadius.circular(

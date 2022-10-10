@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:menz_cart_app/app/constants/colors.dart';
+import 'package:menz_cart_app/app/app_style/color_style.dart';
 import 'package:menz_cart_app/app/utilities/view/container_network.dart';
 import 'package:menz_cart_app/app/watches/view_model/watch_map.dart';
 
@@ -26,7 +26,7 @@ class OcassionOddWidget extends StatelessWidget {
           padding: const EdgeInsets.symmetric(vertical: 18.0, horizontal: 5),
           child: Container(
             width: width / 1.5,
-            color: kWhite,
+            color: AppColor.kWhite,
             child: Column(
               mainAxisAlignment: MainAxisAlignment.center,
               crossAxisAlignment: CrossAxisAlignment.start,
@@ -74,7 +74,7 @@ class OcassionEvenWidget extends StatelessWidget {
           ),
           child: Container(
             width: width / 1.5,
-            color: kWhite,
+            color: AppColor.kWhite,
             child: Column(
               mainAxisAlignment: MainAxisAlignment.center,
               crossAxisAlignment: CrossAxisAlignment.end,

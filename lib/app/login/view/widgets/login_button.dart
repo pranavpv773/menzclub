@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:menz_cart_app/app/constants/colors.dart';
+import 'package:menz_cart_app/app/app_style/color_style.dart';
 import 'package:menz_cart_app/app/sign_up/view/sign_up.dart';
 import 'package:menz_cart_app/routes/routes.dart';
 
@@ -17,7 +17,7 @@ class LoginTextButton extends StatelessWidget {
       child: Text(
         text,
         style: TextStyle(
-          color: primary,
+          color: AppColor.primary,
           fontSize: 15,
         ),
       ),

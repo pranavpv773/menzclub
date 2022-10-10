@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:menz_cart_app/app/constants/colors.dart';
+import 'package:menz_cart_app/app/app_style/color_style.dart';
 import 'package:menz_cart_app/app/my_cart/view/widgets/price_details.dart';
 import 'package:menz_cart_app/app/utilities/view/appbar_widget.dart';
 import 'package:menz_cart_app/app/utilities/view/divider_widget.dart';
@@ -84,7 +84,7 @@ class DescriptionScreen extends StatelessWidget {
                 index: 0,
                 width: width,
                 name: 'BUY NOW',
-                color: primary,
+                color: AppColor.primary,
               ),
               BottomTab(
                 index: 1,

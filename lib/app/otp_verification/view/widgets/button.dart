@@ -1,7 +1,7 @@
 // ignore_for_file: deprecated_member_use
 
 import 'package:flutter/material.dart';
-import 'package:menz_cart_app/app/constants/colors.dart';
+import 'package:menz_cart_app/app/app_style/color_style.dart';
 import 'package:menz_cart_app/app/otp_verification/view_model/otp_provider.dart';
 import 'package:provider/provider.dart';
 
@@ -27,7 +27,7 @@ class Button extends StatelessWidget {
           height: 50.0,
           child: RaisedButton(
             elevation: 10.0,
-            color: primary,
+            color: AppColor.primary,
             shape: RoundedRectangleBorder(
               borderRadius: BorderRadius.circular(100.0),
             ),
@@ -45,7 +45,7 @@ class Button extends StatelessWidget {
                   ),
                 ),
                 Card(
-                  color: kWhite,
+                  color: AppColor.kWhite,
                   shape: RoundedRectangleBorder(
                     borderRadius: BorderRadius.circular(
                       35.0,
@@ -56,7 +56,7 @@ class Button extends StatelessWidget {
                     height: 35.0,
                     child: Icon(
                       Icons.chevron_right,
-                      color: primary,
+                      color: AppColor.primary,
                     ),
                   ),
                 ),
