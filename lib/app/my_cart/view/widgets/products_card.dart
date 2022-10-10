@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_rating_bar/flutter_rating_bar.dart';
 import 'package:menz_cart_app/app/app_style/color_style.dart';
-import 'package:menz_cart_app/app/constants/colors.dart';
 import 'package:menz_cart_app/app/order_summary/view/widgets/button.dart';
 
 class ProductCartCard extends StatelessWidget {
