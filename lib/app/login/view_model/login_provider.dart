@@ -17,8 +17,11 @@ class LoginProvider with ChangeNotifier {
   final formKey = GlobalKey<FormState>();
   final password = TextEditingController();
   bool isLogged = false;
+  bool onLoad = false;
   Future<void> onTabLoginFunction(BuildContext context) async {
     if (formKey.currentState!.validate()) {
+      onLoad = true;
+      notifyListeners();
       log('login');
       final data = EmailSignin(
         userMail: email.text.trim(),
@@ -42,6 +45,8 @@ class LoginProvider with ChangeNotifier {
           );
         });
       } else {
+        onLoad = false;
+        notifyListeners();
         isLogged = false;
         Fluttertoast.showToast(
           msg: resp.message,

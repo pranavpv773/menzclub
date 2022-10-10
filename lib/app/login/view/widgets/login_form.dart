@@ -1,5 +1,4 @@
 // ignore_for_file: body_might_complete_normally_nullable
-
 import 'package:flutter/material.dart';
 import 'package:menz_cart_app/app/app_style/color_style.dart';
 import 'package:menz_cart_app/app/login/view_model/login_provider.dart';
@@ -133,61 +132,31 @@ class LoginTextforms extends StatelessWidget {
               ],
             ),
           ),
-          Column(
-            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-            children: [
-              Padding(
-                padding: const EdgeInsets.only(top: 28.0),
-                child: ElevatedButton(
-                  style: ElevatedButton.styleFrom(
-                    padding: const EdgeInsets.symmetric(
-                      horizontal: 150,
-                      vertical: 15,
-                    ),
-                    primary: AppColor.primary,
-                    elevation: 10,
-                    shape: RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(
-                        10,
-                      ),
-                    ),
-                  ),
-                  onPressed: (() async {
-                    context.read<LoginProvider>().onTabLoginFunction(context);
-                  }),
-                  child: const Text(
-                    "LOGIN",
+          Padding(
+            padding: const EdgeInsets.only(top: 28.0),
+            child: ElevatedButton(
+              style: ElevatedButton.styleFrom(
+                padding: const EdgeInsets.symmetric(
+                  horizontal: 150,
+                  vertical: 15,
+                ),
+                primary: AppColor.primary,
+                elevation: 10,
+                shape: RoundedRectangleBorder(
+                  borderRadius: BorderRadius.circular(
+                    10,
                   ),
                 ),
               ),
-              // const Padding(
-              //   padding: EdgeInsets.only(top: 18.0),
-              //   child: Center(
-              //     child: Text(
-              //       "OR",
-              //     ),
-              //   ),
-              // ),
-              // Row(
-              //   mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-              //   children: const [
-              //     Padding(
-              //       padding: EdgeInsets.only(top: 13.0),
-              //       child: SocialIcons(
-              //         primary: Colors.blue,
-              //         text: ' GOOGLE',
-              //       ),
-              //     ),
-              //     Padding(
-              //       padding: EdgeInsets.only(top: 13.0),
-              //       child: SocialIcons(
-              //         primary: Colors.black,
-              //         text: ' TWITTER',
-              //       ),
-              //     ),
-              //   ],
-              // ),
-            ],
+              onPressed: (() async {
+                context.read<LoginProvider>().onTabLoginFunction(context);
+              }),
+              child: context.watch<LoginProvider>().onLoad
+                  ? const Text("loading......")
+                  : const Text(
+                      "LOGIN",
+                    ),
+            ),
           ),
           const SizedBox(
             height: 20,
