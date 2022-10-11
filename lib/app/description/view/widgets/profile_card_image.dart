@@ -15,13 +15,17 @@ class ProductImageWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.all(8.0),
+      padding: const EdgeInsets.all(
+        8.0,
+      ),
       child: Container(
         width: width / 1,
         height: height / 2,
         decoration: BoxDecoration(
           image: DecorationImage(
-            image: NetworkImage(image),
+            image: NetworkImage(
+              image,
+            ),
             fit: BoxFit.cover,
           ),
         ),

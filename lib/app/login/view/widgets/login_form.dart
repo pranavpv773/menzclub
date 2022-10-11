@@ -16,7 +16,11 @@ class LoginTextforms extends StatelessWidget {
       child: Column(
         children: [
           Padding(
-            padding: const EdgeInsets.only(top: 20, right: 40, left: 40),
+            padding: const EdgeInsets.only(
+              top: 20,
+              right: 40,
+              left: 40,
+            ),
             child: TextFormField(
               validator: (input) =>
                   context.read<LoginProvider>().isValidEmail(input!)
@@ -32,28 +36,36 @@ class LoginTextforms extends StatelessWidget {
                 fillColor: AppColor.kWhite,
                 filled: true,
                 prefixIcon: Padding(
-                  padding: const EdgeInsets.symmetric(horizontal: 20.0),
+                  padding: const EdgeInsets.symmetric(
+                    horizontal: 20.0,
+                  ),
                   child: Icon(
                     Icons.mail,
                     color: AppColor.primary,
                   ),
                 ),
                 enabledBorder: OutlineInputBorder(
-                  borderRadius: BorderRadius.circular(10),
+                  borderRadius: BorderRadius.circular(
+                    10,
+                  ),
                   borderSide: const BorderSide(
                     color: Colors.grey,
                     width: 2.0,
                   ),
                 ),
                 focusedBorder: OutlineInputBorder(
-                  borderRadius: BorderRadius.circular(10),
+                  borderRadius: BorderRadius.circular(
+                    10,
+                  ),
                   borderSide: BorderSide(
                     color: AppColor.primary,
                     width: 2.0,
                   ),
                 ),
                 border: OutlineInputBorder(
-                  borderRadius: BorderRadius.circular(10),
+                  borderRadius: BorderRadius.circular(
+                    10,
+                  ),
                   borderSide: const BorderSide(
                     width: 2.0,
                   ),
@@ -67,7 +79,11 @@ class LoginTextforms extends StatelessWidget {
             ),
           ),
           Padding(
-            padding: const EdgeInsets.only(top: 20, right: 40, left: 40),
+            padding: const EdgeInsets.only(
+              top: 20,
+              right: 40,
+              left: 40,
+            ),
             child: TextFormField(
               validator: (value) {
                 if (value!.isEmpty) {
@@ -87,28 +103,36 @@ class LoginTextforms extends StatelessWidget {
                 fillColor: AppColor.kWhite,
                 filled: true,
                 prefixIcon: Padding(
-                  padding: const EdgeInsets.symmetric(horizontal: 20.0),
+                  padding: const EdgeInsets.symmetric(
+                    horizontal: 20.0,
+                  ),
                   child: Icon(
                     Icons.key,
                     color: AppColor.primary,
                   ),
                 ),
                 enabledBorder: OutlineInputBorder(
-                  borderRadius: BorderRadius.circular(10),
+                  borderRadius: BorderRadius.circular(
+                    10,
+                  ),
                   borderSide: const BorderSide(
                     color: Colors.grey,
                     width: 2.0,
                   ),
                 ),
                 focusedBorder: OutlineInputBorder(
-                  borderRadius: BorderRadius.circular(10),
+                  borderRadius: BorderRadius.circular(
+                    10,
+                  ),
                   borderSide: BorderSide(
                     color: AppColor.primary,
                     width: 2.0,
                   ),
                 ),
                 border: OutlineInputBorder(
-                  borderRadius: BorderRadius.circular(10),
+                  borderRadius: BorderRadius.circular(
+                    10,
+                  ),
                   borderSide: const BorderSide(
                     width: 2.0,
                   ),
@@ -122,7 +146,9 @@ class LoginTextforms extends StatelessWidget {
             ),
           ),
           Padding(
-            padding: const EdgeInsets.only(right: 40.0),
+            padding: const EdgeInsets.only(
+              right: 40.0,
+            ),
             child: Row(
               mainAxisAlignment: MainAxisAlignment.end,
               children: const [
@@ -133,7 +159,9 @@ class LoginTextforms extends StatelessWidget {
             ),
           ),
           Padding(
-            padding: const EdgeInsets.only(top: 28.0),
+            padding: const EdgeInsets.only(
+              top: 28.0,
+            ),
             child: ElevatedButton(
               style: ElevatedButton.styleFrom(
                 padding: const EdgeInsets.symmetric(

@@ -19,15 +19,18 @@ class GridViewCard extends StatelessWidget {
     return Padding(
       padding: const EdgeInsets.all(16.0),
       child: GridView.builder(
-        padding: const EdgeInsets.symmetric(vertical: 16.0),
+        padding: const EdgeInsets.symmetric(
+          vertical: 16.0,
+        ),
         physics: const ScrollPhysics(),
         shrinkWrap: true,
         gridDelegate: SliverGridDelegateWithMaxCrossAxisExtent(
-            maxCrossAxisExtent: 200,
-            mainAxisExtent: heights / 2.3,
-            childAspectRatio: 3 / 2,
-            crossAxisSpacing: 20,
-            mainAxisSpacing: 20),
+          maxCrossAxisExtent: 200,
+          mainAxisExtent: heights / 2.3,
+          childAspectRatio: 3 / 2,
+          crossAxisSpacing: 20,
+          mainAxisSpacing: 20,
+        ),
         itemCount: 4,
         itemBuilder: (BuildContext ctx, index) {
           final data = list;
@@ -39,7 +42,9 @@ class GridViewCard extends StatelessWidget {
               child: Column(
                 children: [
                   Padding(
-                    padding: const EdgeInsets.all(8.0),
+                    padding: const EdgeInsets.all(
+                      8.0,
+                    ),
                     child: Row(
                       mainAxisAlignment: MainAxisAlignment.end,
                       children: const [
@@ -63,11 +68,15 @@ class GridViewCard extends StatelessWidget {
                     children: [
                       Padding(
                         padding: const EdgeInsets.all(8.0),
-                        child: Text(data[index].name),
+                        child: Text(
+                          data[index].name,
+                        ),
                       ),
                       Text(
                         '${data[index].offer} Off',
-                        style: const TextStyle(color: Colors.green),
+                        style: const TextStyle(
+                          color: Colors.green,
+                        ),
                       ),
                       const ShopNowButton(
                         screen: TshirtScreen(),

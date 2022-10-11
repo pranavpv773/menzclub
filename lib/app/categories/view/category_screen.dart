@@ -83,19 +83,27 @@ class CategoryCards extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.all(16.0),
+      padding: const EdgeInsets.all(
+        16.0,
+      ),
       child: GestureDetector(
         onTap: () {
-          RoutesProvider.nextScreen(screen: screen);
+          RoutesProvider.nextScreen(
+            screen: screen,
+          );
         },
         child: Material(
-          borderRadius: BorderRadius.circular(8),
+          borderRadius: BorderRadius.circular(
+            8,
+          ),
           elevation: 10,
           shadowColor: Colors.black,
           child: Container(
             height: 150,
             decoration: BoxDecoration(
-              borderRadius: BorderRadius.circular(8),
+              borderRadius: BorderRadius.circular(
+                8,
+              ),
               image: DecorationImage(
                 image: NetworkImage(
                   categoryList[index]['backgroundImg'].toString(),
@@ -108,14 +116,20 @@ class CategoryCards extends StatelessWidget {
                 subtitle: Text(
                   categoryList[index]['subTitle'].toString(),
                   style: const TextStyle(
-                      fontSize: 16,
-                      fontStyle: FontStyle.normal,
-                      fontWeight: FontWeight.bold),
+                    fontSize: 16,
+                    fontStyle: FontStyle.normal,
+                    fontWeight: FontWeight.bold,
+                  ),
                 ),
                 title: Text(
                   categoryList[index]['categary'].toString(),
                   style: const TextStyle(
-                    color: Color.fromARGB(252, 78, 78, 99),
+                    color: Color.fromARGB(
+                      252,
+                      78,
+                      78,
+                      99,
+                    ),
                     fontSize: 25,
                     fontStyle: FontStyle.italic,
                     fontWeight: FontWeight.bold,

@@ -13,17 +13,22 @@ class SecondSdcreen extends StatelessWidget {
         children: [
           Image.asset('assets/get_started/packing_process.gif'),
           Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 18.0),
+            padding: const EdgeInsets.symmetric(
+              horizontal: 18.0,
+            ),
             child: Text(
               'Lets make your progress fast',
               style: TextStyle(
-                  fontSize: 50,
-                  fontWeight: FontWeight.bold,
-                  fontFamily: GoogleFonts.rasa().fontFamily),
+                fontSize: 50,
+                fontWeight: FontWeight.bold,
+                fontFamily: GoogleFonts.rasa().fontFamily,
+              ),
             ),
           ),
           Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 18.0),
+            padding: const EdgeInsets.symmetric(
+              horizontal: 18.0,
+            ),
             child: Text(
               'Find cool accessories to support your daily activities.',
               style: TextStyle(

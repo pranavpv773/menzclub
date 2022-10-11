@@ -40,8 +40,12 @@ class HomeScreen extends StatelessWidget {
               list: context.read<HomeProvider>().banners,
             ),
           ),
-          FadeInRight(child: const DotIndicator()),
-          FadeInDown(child: const ThirdBanner()),
+          FadeInRight(
+            child: const DotIndicator(),
+          ),
+          FadeInDown(
+            child: const ThirdBanner(),
+          ),
           sizedBox20,
           Container(
             decoration: const BoxDecoration(

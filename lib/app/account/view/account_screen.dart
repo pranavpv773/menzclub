@@ -14,7 +14,10 @@ class AccountScreen extends StatelessWidget {
         children: [
           const ProfileCard(),
           const Padding(
-            padding: EdgeInsets.only(top: 10.0, bottom: 10),
+            padding: EdgeInsets.only(
+              top: 10.0,
+              bottom: 10,
+            ),
             child: AcountUserSection(),
           ),
           ColoredBox(
@@ -77,19 +80,26 @@ class ExpandCard extends StatelessWidget {
       child: ExpansionTile(
         title: Text(
           "LOGIN/SIGN UP",
-          style: TextStyle(fontSize: 16.0, fontWeight: FontWeight.w500),
+          style: TextStyle(
+            fontSize: 16.0,
+            fontWeight: FontWeight.w500,
+          ),
         ),
         children: <Widget>[
           ListTile(
             title: Text(
               'LOGIN',
-              style: TextStyle(fontWeight: FontWeight.w700),
+              style: TextStyle(
+                fontWeight: FontWeight.w700,
+              ),
             ),
           ),
           ListTile(
             title: Text(
               'SIGN UP',
-              style: TextStyle(fontWeight: FontWeight.w700),
+              style: TextStyle(
+                fontWeight: FontWeight.w700,
+              ),
             ),
           )
         ],

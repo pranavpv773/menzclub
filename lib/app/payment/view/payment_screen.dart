@@ -29,24 +29,30 @@ class PaymentScreenProvider with ChangeNotifier {
     try {
       razorpay.open(options);
     } catch (e) {
-      debugPrint(Razorpay.UNKNOWN_ERROR.toString());
+      debugPrint(
+        Razorpay.UNKNOWN_ERROR.toString(),
+      );
     }
   }
 
   void handlePaymentSuccess(PaymentSuccessResponse response) {
     Fluttertoast.showToast(
-        msg: "SUCCESS: ${response.paymentId!}",
-        toastLength: Toast.LENGTH_SHORT);
+      msg: "SUCCESS: ${response.paymentId!}",
+      toastLength: Toast.LENGTH_SHORT,
+    );
   }
 
   void handlePaymentError(PaymentFailureResponse response) {
     Fluttertoast.showToast(
-        msg: " ${response.message!}", toastLength: Toast.LENGTH_SHORT);
+      msg: " ${response.message!}",
+      toastLength: Toast.LENGTH_SHORT,
+    );
   }
 
   void handleExternalWallet(ExternalWalletResponse response) {
     Fluttertoast.showToast(
-        msg: "EXTERNAL_WALLET: ${response.walletName!}",
-        toastLength: Toast.LENGTH_SHORT);
+      msg: "EXTERNAL_WALLET: ${response.walletName!}",
+      toastLength: Toast.LENGTH_SHORT,
+    );
   }
 }

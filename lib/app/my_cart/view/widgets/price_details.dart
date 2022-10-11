@@ -4,12 +4,12 @@ import 'package:menz_cart_app/app/my_cart/view/cart_screen.dart';
 import 'package:menz_cart_app/app/utilities/view/divider_widget.dart';
 
 class PriceDetails extends StatelessWidget {
-  const PriceDetails(
-      {Key? key,
-      required this.height,
-      required this.discout,
-      required this.amount})
-      : super(key: key);
+  const PriceDetails({
+    Key? key,
+    required this.height,
+    required this.discout,
+    required this.amount,
+  }) : super(key: key);
   final double height;
   final String amount;
   final String discout;
@@ -33,10 +33,14 @@ class PriceDetails extends StatelessWidget {
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
-              const Text('Discount'),
+              const Text(
+                'Discount',
+              ),
               Text(
                 discout,
-                style: TextStyle(color: AppColor.kGreen),
+                style: TextStyle(
+                  color: AppColor.kGreen,
+                ),
               ),
             ],
           ),
@@ -46,7 +50,9 @@ class PriceDetails extends StatelessWidget {
               const Text('Delivery Charges'),
               Text(
                 'Free Delivery',
-                style: TextStyle(color: AppColor.kGreen),
+                style: TextStyle(
+                  color: AppColor.kGreen,
+                ),
               ),
             ],
           ),

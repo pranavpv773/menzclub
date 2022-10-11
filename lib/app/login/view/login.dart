@@ -19,8 +19,12 @@ class LoginScreen extends StatelessWidget {
         toolbarHeight: MediaQuery.of(context).size.height / 3.5,
         shape: const RoundedRectangleBorder(
           borderRadius: BorderRadius.only(
-            bottomRight: Radius.circular(0),
-            bottomLeft: Radius.circular(100),
+            bottomRight: Radius.circular(
+              0,
+            ),
+            bottomLeft: Radius.circular(
+              100,
+            ),
           ),
         ),
         title: Image.asset(
@@ -34,7 +38,9 @@ class LoginScreen extends StatelessWidget {
         children: [
           const LoginTextforms(),
           Padding(
-            padding: const EdgeInsets.symmetric(vertical: 5.0),
+            padding: const EdgeInsets.symmetric(
+              vertical: 5.0,
+            ),
             child: Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [

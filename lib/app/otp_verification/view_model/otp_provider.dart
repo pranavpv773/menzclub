@@ -18,9 +18,14 @@ class OtpVerifyProvider with ChangeNotifier {
     final otp = otpController.text;
     log(otpController.text);
 
-    final data = OtpModel(id: SignUpProvider.otpToken, userOtp: otp);
+    final data = OtpModel(
+      id: SignUpProvider.otpToken,
+      userOtp: otp,
+    );
     log(data.id);
-    OtpVerifyResponse resp = await OtpApiService().otpVerified(data);
+    OtpVerifyResponse resp = await OtpApiService().otpVerified(
+      data,
+    );
 
     if (resp.status) {
       Fluttertoast.showToast(

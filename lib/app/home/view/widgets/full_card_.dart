@@ -16,13 +16,16 @@ class NotImportant extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.all(8.0),
+      padding: const EdgeInsets.all(
+        8.0,
+      ),
       // ignore: avoid_unnecessary_containers
       child: Container(
         decoration: const BoxDecoration(
             image: DecorationImage(
                 image: NetworkImage(
-                    'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQrJYjSx9X2GB_j2Xy1sXrlkLRGZZFepIONMCh0Qa_U-LDbNmsJA3pCfP8Lo3PJ0UZBd0o&usqp=CAU'),
+                  'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQrJYjSx9X2GB_j2Xy1sXrlkLRGZZFepIONMCh0Qa_U-LDbNmsJA3pCfP8Lo3PJ0UZBd0o&usqp=CAU',
+                ),
                 fit: BoxFit.cover)),
         child: Column(
           children: [
@@ -47,8 +50,10 @@ class NotImportant extends StatelessWidget {
               itemBuilder: (context, index) {
                 final data = context.read<JeansProvider>().jeansList;
                 return Padding(
-                  padding:
-                      const EdgeInsets.symmetric(horizontal: 10, vertical: 10),
+                  padding: const EdgeInsets.symmetric(
+                    horizontal: 10,
+                    vertical: 10,
+                  ),
                   child: Container(
                     decoration: BoxDecoration(
                       gradient: LinearGradient(colors: [
@@ -56,10 +61,14 @@ class NotImportant extends StatelessWidget {
                         Colors.orange,
                         Colors.red
                       ]),
-                      borderRadius: BorderRadius.circular(20),
+                      borderRadius: BorderRadius.circular(
+                        20,
+                      ),
                     ),
                     child: Padding(
-                      padding: const EdgeInsets.all(1.0),
+                      padding: const EdgeInsets.all(
+                        1.0,
+                      ),
                       child: Column(
                         children: [
                           Container(
@@ -67,8 +76,12 @@ class NotImportant extends StatelessWidget {
                             width: width / 1,
                             decoration: BoxDecoration(
                               borderRadius: const BorderRadius.only(
-                                topLeft: Radius.circular(20),
-                                topRight: Radius.circular(20),
+                                topLeft: Radius.circular(
+                                  20,
+                                ),
+                                topRight: Radius.circular(
+                                  20,
+                                ),
                               ),
                               image: DecorationImage(
                                 image: NetworkImage(
@@ -85,8 +98,13 @@ class NotImportant extends StatelessWidget {
                               decoration: BoxDecoration(
                                 color: AppColor.kWhite,
                                 borderRadius: const BorderRadius.only(
-                                    bottomLeft: Radius.circular(20),
-                                    bottomRight: Radius.circular(20)),
+                                  bottomLeft: Radius.circular(
+                                    20,
+                                  ),
+                                  bottomRight: Radius.circular(
+                                    20,
+                                  ),
+                                ),
                               ),
                               width: width,
                               height: 80,

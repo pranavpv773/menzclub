@@ -9,7 +9,9 @@ class DeliveryAddress extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.all(8.0),
+      padding: const EdgeInsets.all(
+        8.0,
+      ),
       child: Column(
         children: [
           Row(
@@ -17,8 +19,12 @@ class DeliveryAddress extends StatelessWidget {
             children: [
               Column(
                 children: const [
-                  Text('Deliver to:Pranav'),
-                  Text('ADDRESS'),
+                  Text(
+                    'Deliver to:Pranav',
+                  ),
+                  Text(
+                    'ADDRESS',
+                  ),
                 ],
               ),
               TextButton(
@@ -26,7 +32,9 @@ class DeliveryAddress extends StatelessWidget {
                 style: TextButton.styleFrom(
                   primary: AppColor.primary2,
                 ),
-                child: const Text('Change'),
+                child: const Text(
+                  'Change',
+                ),
               )
             ],
           ),

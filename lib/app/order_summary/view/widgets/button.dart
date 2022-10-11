@@ -20,14 +20,17 @@ class ShopTransparentButton extends StatelessWidget {
     WidgetsBinding.instance.addPostFrameCallback((_) {
       context.read<PaymentScreenProvider>().razorpay = Razorpay();
       context.read<PaymentScreenProvider>().razorpay.on(
-          Razorpay.EVENT_PAYMENT_SUCCESS,
-          context.read<PaymentScreenProvider>().handlePaymentSuccess);
+            Razorpay.EVENT_PAYMENT_SUCCESS,
+            context.read<PaymentScreenProvider>().handlePaymentSuccess,
+          );
       context.read<PaymentScreenProvider>().razorpay.on(
-          Razorpay.EVENT_PAYMENT_ERROR,
-          context.read<PaymentScreenProvider>().handlePaymentError);
+            Razorpay.EVENT_PAYMENT_ERROR,
+            context.read<PaymentScreenProvider>().handlePaymentError,
+          );
       context.read<PaymentScreenProvider>().razorpay.on(
-          Razorpay.EVENT_EXTERNAL_WALLET,
-          context.read<PaymentScreenProvider>().handleExternalWallet);
+            Razorpay.EVENT_EXTERNAL_WALLET,
+            context.read<PaymentScreenProvider>().handleExternalWallet,
+          );
     });
     return Consumer<PaymentScreenProvider>(builder: (context, value, _) {
       return Container(

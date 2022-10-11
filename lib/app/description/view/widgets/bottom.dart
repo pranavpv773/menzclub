@@ -30,7 +30,10 @@ class BottomTab extends StatelessWidget {
         },
         child: Text(
           name,
-          style: TextStyle(color: AppColor.kWhite, fontSize: 20),
+          style: TextStyle(
+            color: AppColor.kWhite,
+            fontSize: 20,
+          ),
         ),
       ),
     );

@@ -45,7 +45,11 @@ class DescriptionScreen extends StatelessWidget {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              ProductImageWidget(width: width, height: height, image: image),
+              ProductImageWidget(
+                width: width,
+                height: height,
+                image: image,
+              ),
               ProductDetailsCard(
                 name: name,
                 topcollection: topcollection,
@@ -53,21 +57,32 @@ class DescriptionScreen extends StatelessWidget {
                 price: price,
                 discount: discout,
               ),
-              DividerWidget(height: height / 2),
+              DividerWidget(
+                height: height / 2,
+              ),
               const DeliveryAddress(),
-              DividerWidget(height: height / 2),
+              DividerWidget(
+                height: height / 2,
+              ),
               PriceDetails(
                 amount: amount,
                 discout: discout,
                 height: height,
               ),
-              const DividerWidget(height: 20),
+              const DividerWidget(
+                height: 20,
+              ),
               Padding(
-                padding: const EdgeInsets.only(left: 16.0, bottom: 16),
+                padding: const EdgeInsets.only(
+                  left: 16.0,
+                  bottom: 16,
+                ),
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    const Text('Production Details'),
+                    const Text(
+                      'Production Details',
+                    ),
                     Text(topcollection),
                   ],
                 ),
@@ -76,7 +91,9 @@ class DescriptionScreen extends StatelessWidget {
           ),
         ),
         bottomNavigationBar: Padding(
-          padding: const EdgeInsets.all(5.0),
+          padding: const EdgeInsets.all(
+            5.0,
+          ),
           child: Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
@@ -90,7 +107,12 @@ class DescriptionScreen extends StatelessWidget {
                 index: 1,
                 width: width,
                 name: 'Add to cart',
-                color: const Color.fromARGB(199, 220, 199, 13),
+                color: const Color.fromARGB(
+                  199,
+                  220,
+                  199,
+                  13,
+                ),
               ),
             ],
           ),
