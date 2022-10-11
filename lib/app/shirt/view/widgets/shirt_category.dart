@@ -20,7 +20,9 @@ class ShirtCategoryCards extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return GridView.builder(
-        padding: const EdgeInsets.symmetric(vertical: 16.0),
+        padding: const EdgeInsets.symmetric(
+          vertical: 16.0,
+        ),
         physics: const ScrollPhysics(),
         shrinkWrap: true,
         gridDelegate: SliverGridDelegateWithMaxCrossAxisExtent(

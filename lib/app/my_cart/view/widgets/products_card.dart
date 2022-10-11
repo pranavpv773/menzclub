@@ -14,7 +14,9 @@ class ProductCartCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.all(8.0),
+      padding: const EdgeInsets.all(
+        8.0,
+      ),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
@@ -26,18 +28,22 @@ class ProductCartCard extends StatelessWidget {
               ),
               Expanded(
                 child: Padding(
-                  padding: const EdgeInsets.all(8.0),
+                  padding: const EdgeInsets.all(
+                    8.0,
+                  ),
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
                       const Text(
-                        'Sports Shoes 131 upto djfkjjfdjk',
+                        'Sports Shoes 131 upto ######',
                         style: TextStyle(
                             overflow: TextOverflow.ellipsis,
                             fontWeight: FontWeight.bold,
                             fontSize: 20),
                       ),
-                      const Text('Multi color'),
+                      const Text(
+                        'Multi color',
+                      ),
                       Row(
                         children: [
                           IconStared(
@@ -48,7 +54,9 @@ class ProductCartCard extends StatelessWidget {
                         ],
                       ),
                       Padding(
-                        padding: const EdgeInsets.all(8.0),
+                        padding: const EdgeInsets.all(
+                          8.0,
+                        ),
                         child: RichText(
                           text: TextSpan(
                             children: <TextSpan>[
@@ -72,11 +80,16 @@ class ProductCartCard extends StatelessWidget {
                       ),
                       const Text(
                         'Deliver in 2 Days,Fri',
-                        style: TextStyle(fontSize: 16),
+                        style: TextStyle(
+                          fontSize: 16,
+                        ),
                       ),
                       Text(
                         'Free Delivery',
-                        style: TextStyle(fontSize: 16, color: AppColor.kGreen),
+                        style: TextStyle(
+                          fontSize: 16,
+                          color: AppColor.kGreen,
+                        ),
                       ),
                     ],
                   ),
@@ -85,7 +98,9 @@ class ProductCartCard extends StatelessWidget {
             ],
           ),
           Padding(
-            padding: const EdgeInsets.all(8.0),
+            padding: const EdgeInsets.all(
+              8.0,
+            ),
             child: Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [

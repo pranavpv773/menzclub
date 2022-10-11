@@ -24,7 +24,9 @@ class ProductCardBuilder extends StatelessWidget {
               height: height,
               decoration: const BoxDecoration(
                 image: DecorationImage(
-                  image: AssetImage('assets/lottee/emptyCart1.gif'),
+                  image: AssetImage(
+                    'assets/lottee/emptyCart1.gif',
+                  ),
                 ),
               ),
               child: Column(
@@ -38,7 +40,9 @@ class ProductCardBuilder extends StatelessWidget {
             ),
           )
         : GridView.builder(
-            padding: const EdgeInsets.symmetric(vertical: 16.0),
+            padding: const EdgeInsets.symmetric(
+              vertical: 16.0,
+            ),
             physics: const ScrollPhysics(),
             shrinkWrap: true,
             gridDelegate: SliverGridDelegateWithMaxCrossAxisExtent(
@@ -69,13 +73,17 @@ class ProductCardBuilder extends StatelessWidget {
                     8.0,
                   ),
                   child: Material(
-                    borderRadius: BorderRadius.circular(10),
+                    borderRadius: BorderRadius.circular(
+                      10,
+                    ),
                     elevation: 10,
                     shadowColor: Colors.black,
                     child: Container(
                       decoration: BoxDecoration(
                         color: AppColor.primary1,
-                        borderRadius: BorderRadius.circular(10),
+                        borderRadius: BorderRadius.circular(
+                          10,
+                        ),
                       ),
                       child: Column(
                         mainAxisAlignment: MainAxisAlignment.start,
@@ -84,10 +92,13 @@ class ProductCardBuilder extends StatelessWidget {
                             width: width,
                             height: height / 3,
                             decoration: BoxDecoration(
-                              borderRadius: BorderRadius.circular(5),
+                              borderRadius: BorderRadius.circular(
+                                5,
+                              ),
                               image: DecorationImage(
                                 image: NetworkImage(
-                                    list[index].images[0].toString()),
+                                  list[index].images[0].toString(),
+                                ),
                                 fit: BoxFit.fill,
                               ),
                             ),
@@ -102,7 +113,9 @@ class ProductCardBuilder extends StatelessWidget {
                               mainAxisAlignment: MainAxisAlignment.spaceBetween,
                               children: [
                                 Padding(
-                                  padding: const EdgeInsets.all(8.0),
+                                  padding: const EdgeInsets.all(
+                                    8.0,
+                                  ),
                                   child: Row(
                                     mainAxisAlignment:
                                         MainAxisAlignment.spaceBetween,
@@ -111,16 +124,20 @@ class ProductCardBuilder extends StatelessWidget {
                                         child: Text(
                                           list[index].name.toString(),
                                           style: const TextStyle(
-                                              overflow: TextOverflow.ellipsis),
+                                            overflow: TextOverflow.ellipsis,
+                                          ),
                                         ),
                                       ),
-                                      const Icon(Icons.favorite_border_outlined)
+                                      const Icon(
+                                        Icons.favorite_border_outlined,
+                                      )
                                     ],
                                   ),
                                 ),
                                 Padding(
                                   padding: const EdgeInsets.symmetric(
-                                      horizontal: 0.0),
+                                    horizontal: 0.0,
+                                  ),
                                   child: Row(
                                     mainAxisAlignment:
                                         MainAxisAlignment.spaceBetween,
@@ -128,11 +145,15 @@ class ProductCardBuilder extends StatelessWidget {
                                       Text(
                                         '\$ ${list[index].price.toString()}',
                                         style: const TextStyle(
-                                            fontSize: 16, color: Colors.green),
+                                          fontSize: 16,
+                                          color: Colors.green,
+                                        ),
                                       ),
                                       const Text(
                                         '60-80% Off',
-                                        style: TextStyle(color: Colors.green),
+                                        style: TextStyle(
+                                          color: Colors.green,
+                                        ),
                                       ),
                                     ],
                                   ),

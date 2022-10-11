@@ -24,11 +24,14 @@ class CircleAvatharTop extends StatelessWidget {
             child: Column(
               children: [
                 Padding(
-                  padding: const EdgeInsets.all(8.0),
+                  padding: const EdgeInsets.all(
+                    8.0,
+                  ),
                   child: CircleAvatar(
                     radius: 30,
-                    backgroundImage:
-                        const AssetImage('assets/round_frame2.png'),
+                    backgroundImage: const AssetImage(
+                      'assets/round_frame2.png',
+                    ),
                     child: CircleAvatar(
                       backgroundColor: AppColor.kWhite,
                       radius: 25,

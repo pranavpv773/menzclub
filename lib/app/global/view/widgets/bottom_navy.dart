@@ -18,25 +18,33 @@ class BottomNavyWidget extends StatelessWidget {
       onTap: (index) => context.read<GlobalProvider>().onTabIndexChange(index),
       items: [
         SalomonBottomBarItem(
-          icon: const Icon(Icons.home_rounded),
+          icon: const Icon(
+            Icons.home_rounded,
+          ),
           title: const Text('Home'),
           selectedColor: Colors.red,
           unselectedColor: AppColor.primary,
         ),
         SalomonBottomBarItem(
-          icon: const Icon(Icons.widgets_rounded),
+          icon: const Icon(
+            Icons.widgets_rounded,
+          ),
           title: const Text('Categories'),
           selectedColor: Colors.purpleAccent,
           unselectedColor: AppColor.primary,
         ),
         SalomonBottomBarItem(
-          icon: const Icon(Icons.shopping_cart),
+          icon: const Icon(
+            Icons.shopping_cart,
+          ),
           title: const Text('Cart'),
           selectedColor: Colors.pink,
           unselectedColor: AppColor.primary,
         ),
         SalomonBottomBarItem(
-          icon: const Icon(Icons.person),
+          icon: const Icon(
+            Icons.person,
+          ),
           title: const Text('Account'),
           selectedColor: AppColor.primary2,
           unselectedColor: AppColor.primary,

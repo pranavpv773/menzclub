@@ -44,7 +44,9 @@ class ProductDetailsCard extends StatelessWidget {
             direction: Axis.horizontal,
           ),
           Padding(
-            padding: const EdgeInsets.all(8.0),
+            padding: const EdgeInsets.all(
+              8.0,
+            ),
             child: RichText(
               text: TextSpan(
                 children: <TextSpan>[
@@ -59,9 +61,10 @@ class ProductDetailsCard extends StatelessWidget {
                   TextSpan(
                     text: ' \$ ${int.parse(price) - int.parse(discount)}',
                     style: TextStyle(
-                        fontSize: 20,
-                        color: AppColor.kBlack,
-                        fontWeight: FontWeight.bold),
+                      fontSize: 20,
+                      color: AppColor.kBlack,
+                      fontWeight: FontWeight.bold,
+                    ),
                   ),
                 ],
               ),
@@ -69,11 +72,16 @@ class ProductDetailsCard extends StatelessWidget {
           ),
           const Text(
             'Deliver in 2 Days,Fri',
-            style: TextStyle(fontSize: 16),
+            style: TextStyle(
+              fontSize: 16,
+            ),
           ),
           Text(
             'Free Delivery',
-            style: TextStyle(fontSize: 16, color: AppColor.kGreen),
+            style: TextStyle(
+              fontSize: 16,
+              color: AppColor.kGreen,
+            ),
           ),
         ],
       ),

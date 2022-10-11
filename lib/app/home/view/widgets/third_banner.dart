@@ -8,7 +8,9 @@ class ThirdBanner extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.all(8.0),
+      padding: const EdgeInsets.all(
+        8.0,
+      ),
       child: Container(
         width: MediaQuery.of(context).size.width,
         height: 300,
@@ -20,16 +22,19 @@ class ThirdBanner extends StatelessWidget {
               fit: BoxFit.fill),
         ),
         child: Padding(
-          padding: const EdgeInsets.all(8.0),
+          padding: const EdgeInsets.all(
+            8.0,
+          ),
           child: Container(
             width: 400,
             height: 200,
             decoration: const BoxDecoration(
               image: DecorationImage(
-                  image: NetworkImage(
-                    'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR8OzJEOFMrqSrHluYAfPjHHLEmsK5TGb5XlsfVw9dJEOSQBqyGw64poa7vPYlPIIp0ROA&usqp=CAU',
-                  ),
-                  fit: BoxFit.fill),
+                image: NetworkImage(
+                  'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR8OzJEOFMrqSrHluYAfPjHHLEmsK5TGb5XlsfVw9dJEOSQBqyGw64poa7vPYlPIIp0ROA&usqp=CAU',
+                ),
+                fit: BoxFit.fill,
+              ),
             ),
             // child: Row(
             //   mainAxisSize: MainAxisSize.min,
@@ -87,7 +92,9 @@ class TshirtBanner extends StatelessWidget {
             fit: BoxFit.fill),
       ),
       child: Padding(
-        padding: const EdgeInsets.all(8.0),
+        padding: const EdgeInsets.all(
+          8.0,
+        ),
         child: Container(
           width: 200,
           height: 100,

@@ -21,7 +21,9 @@ class Button extends StatelessWidget {
   Widget build(BuildContext context) {
     return Center(
       child: Container(
-        margin: EdgeInsets.only(top: size.height * 0.40),
+        margin: EdgeInsets.only(
+          top: size.height * 0.40,
+        ),
         child: SizedBox(
           width: size.width * 0.5,
           height: 50.0,
@@ -29,7 +31,9 @@ class Button extends StatelessWidget {
             elevation: 10.0,
             color: AppColor.primary,
             shape: RoundedRectangleBorder(
-              borderRadius: BorderRadius.circular(100.0),
+              borderRadius: BorderRadius.circular(
+                100.0,
+              ),
             ),
             onPressed: () {
               context.read<OtpVerifyProvider>().otpVerifing(context);

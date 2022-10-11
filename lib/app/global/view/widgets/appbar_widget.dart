@@ -29,7 +29,9 @@ class ActiveApppbarWidget extends StatelessWidget {
               decoration: InputDecoration(
                 hintText: "Search",
                 border: InputBorder.none,
-                hintStyle: TextStyle(color: Colors.grey),
+                hintStyle: TextStyle(
+                  color: Colors.grey,
+                ),
               ),
             ),
             actions: <Widget>[

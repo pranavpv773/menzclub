@@ -15,9 +15,13 @@ class ThirdScreen extends StatelessWidget {
         crossAxisAlignment: CrossAxisAlignment.center,
         mainAxisAlignment: MainAxisAlignment.spaceEvenly,
         children: [
-          Image.asset('assets/get_started/delivery_bg.gif'),
+          Image.asset(
+            'assets/get_started/delivery_bg.gif',
+          ),
           Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 18.0),
+            padding: const EdgeInsets.symmetric(
+              horizontal: 18.0,
+            ),
             child: Text(
               'Lets get the fastest delivery experience',
               style: TextStyle(
@@ -29,7 +33,9 @@ class ThirdScreen extends StatelessWidget {
             ),
           ),
           Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 18.0),
+            padding: const EdgeInsets.symmetric(
+              horizontal: 18.0,
+            ),
             child: Text(
               'Find the cool accessories to support your daily activities.',
               style: TextStyle(
@@ -41,19 +47,25 @@ class ThirdScreen extends StatelessWidget {
             ),
           ),
           Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 38.0),
+            padding: const EdgeInsets.symmetric(
+              horizontal: 38.0,
+            ),
             child: SizedBox(
               width: double.infinity,
               child: TextButton(
                 style: ButtonStyle(
-                  backgroundColor: MaterialStateProperty.all(AppColor.kWhite),
+                  backgroundColor: MaterialStateProperty.all(
+                    AppColor.kWhite,
+                  ),
                 ),
                 onPressed: () {
                   context.read<LiquidProvider>().screeFunction(context);
                 },
                 child: Text(
                   'GET STARTED',
-                  style: TextStyle(color: AppColor.primary),
+                  style: TextStyle(
+                    color: AppColor.primary,
+                  ),
                 ),
               ),
             ),

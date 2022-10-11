@@ -15,7 +15,9 @@ class FirstScreen extends StatelessWidget {
         children: [
           Image.asset('assets/get_started/shopping_bg.gif'),
           Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 18.0),
+            padding: const EdgeInsets.symmetric(
+              horizontal: 18.0,
+            ),
             child: Text(
               'Lets Improve your experience',
               style: TextStyle(
@@ -27,7 +29,9 @@ class FirstScreen extends StatelessWidget {
             ),
           ),
           Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 18.0),
+            padding: const EdgeInsets.symmetric(
+              horizontal: 18.0,
+            ),
             child: Text(
               'Menswear Founded on Fit, Built on Service, and Focused on Style. However You Fit, Menzclub Fits You.',
               style: TextStyle(

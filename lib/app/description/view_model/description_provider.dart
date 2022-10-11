@@ -25,7 +25,9 @@ class DescriptionProvider with ChangeNotifier {
           context: context,
           builder: (BuildContext context) {
             return AlertDialog(
-              title: const Text('Sucessfully added to cart'),
+              title: const Text(
+                'Sucessfully added to cart',
+              ),
               content: Container(
                 width: 100,
                 height: 80,

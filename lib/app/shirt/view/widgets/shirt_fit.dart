@@ -52,7 +52,9 @@ class ShirtFitWidget extends StatelessWidget {
           crossAxisAlignment: crossAxisAlignment,
         ),
         GridView.builder(
-            padding: const EdgeInsets.symmetric(vertical: 16.0),
+            padding: const EdgeInsets.symmetric(
+              vertical: 16.0,
+            ),
             physics: const ScrollPhysics(),
             shrinkWrap: true,
             gridDelegate: SliverGridDelegateWithMaxCrossAxisExtent(
@@ -72,24 +74,26 @@ class ShirtFitWidget extends StatelessWidget {
                   onTap: () async {
                     switch (type) {
                       case ActionType.shirt:
-                        await context
-                            .read<ShirtProvider>()
-                            .fetchShirtFit(shirtFitListMap[index].toString());
+                        await context.read<ShirtProvider>().fetchShirtFit(
+                              shirtFitListMap[index].toString(),
+                            );
                         break;
                       case ActionType.jeans:
-                        await context
-                            .read<JeansProvider>()
-                            .fetchJeansFit(shirtFitListMap[index].toString());
+                        await context.read<JeansProvider>().fetchJeansFit(
+                              shirtFitListMap[index].toString(),
+                            );
                         break;
                       case ActionType.tshirt:
-                        await context
-                            .read<TshirtProvider>()
-                            .fetchTshirtFit(shirtFitListMap[index].toString());
+                        await context.read<TshirtProvider>().fetchTshirtFit(
+                              shirtFitListMap[index].toString(),
+                            );
                         break;
                       default:
                         break;
                     }
-                    log(shirtFitListMap[index].toString());
+                    log(
+                      shirtFitListMap[index].toString(),
+                    );
 
                     RoutesProvider.nextScreen(
                       screen: ProductsScreen(
@@ -160,7 +164,9 @@ class ShirtContentBanner extends StatelessWidget {
         ),
       ),
       child: Padding(
-        padding: const EdgeInsets.symmetric(horizontal: 18.0),
+        padding: const EdgeInsets.symmetric(
+          horizontal: 18.0,
+        ),
         child: Column(
           mainAxisAlignment: mainAxisAlignment,
           crossAxisAlignment: crossAxisAlignment,
@@ -191,7 +197,9 @@ class ShirtBannerBuilder extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return GridView.builder(
-      padding: const EdgeInsets.symmetric(vertical: 16.0),
+      padding: const EdgeInsets.symmetric(
+        vertical: 16.0,
+      ),
       physics: const ScrollPhysics(),
       shrinkWrap: true,
       gridDelegate: SliverGridDelegateWithMaxCrossAxisExtent(
@@ -209,10 +217,12 @@ class ShirtBannerBuilder extends StatelessWidget {
           ),
           child: GestureDetector(
             onTap: () async {
-              log(shirtList[index]['color'].toString());
-              await context
-                  .read<ShirtProviderTwo>()
-                  .fetchShirtColor(shirtList[index]['color'].toString());
+              log(
+                shirtList[index]['color'].toString(),
+              );
+              await context.read<ShirtProviderTwo>().fetchShirtColor(
+                    shirtList[index]['color'].toString(),
+                  );
               RoutesProvider.nextScreen(
                 screen: ProductsScreen(
                   title: shirtList[index]['color'].toString(),
@@ -222,28 +232,38 @@ class ShirtBannerBuilder extends StatelessWidget {
               );
             },
             child: Material(
-              borderRadius: BorderRadius.circular(10),
+              borderRadius: BorderRadius.circular(
+                10,
+              ),
               elevation: 10,
               shadowColor: Colors.black,
               child: Container(
                 decoration: BoxDecoration(
                   color: AppColor.primary1,
-                  borderRadius: BorderRadius.circular(10),
+                  borderRadius: BorderRadius.circular(
+                    10,
+                  ),
                 ),
                 child: Column(
                   children: [
                     Padding(
-                      padding: const EdgeInsets.all(8.0),
+                      padding: const EdgeInsets.all(
+                        8.0,
+                      ),
                       child: Container(
                         width: width / 5,
                         height: height / 8,
                         decoration: BoxDecoration(
                           color: AppColor.colorList[index],
-                          borderRadius: BorderRadius.circular(5),
+                          borderRadius: BorderRadius.circular(
+                            5,
+                          ),
                         ),
                       ),
                     ),
-                    Text(shirtList[index]['color'].toString()),
+                    Text(
+                      shirtList[index]['color'].toString(),
+                    ),
                   ],
                 ),
               ),

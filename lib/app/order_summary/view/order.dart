@@ -14,15 +14,22 @@ class OrderSummary extends StatelessWidget {
         title: const Text('Order Summary'),
       ),
       body: Padding(
-        padding: const EdgeInsets.all(8.0),
+        padding: const EdgeInsets.all(
+          8.0,
+        ),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.center,
           mainAxisAlignment: MainAxisAlignment.start,
           children: [
-            Image.asset('assets/lottee/emptyCart1.gif'),
+            Image.asset(
+              'assets/lottee/emptyCart1.gif',
+            ),
             const Text(
               "You haven't placed any order yet!",
-              style: TextStyle(fontWeight: FontWeight.bold, fontSize: 16),
+              style: TextStyle(
+                fontWeight: FontWeight.bold,
+                fontSize: 16,
+              ),
             ),
             const Padding(
               padding: EdgeInsets.all(8.0),
@@ -34,7 +41,9 @@ class OrderSummary extends StatelessWidget {
               ),
             ),
             ShopTransparentButton(
-              buttonBgColor: Colors.transparent.withOpacity(0.1),
+              buttonBgColor: Colors.transparent.withOpacity(
+                0.1,
+              ),
               buttonColor: AppColor.primary,
               button: "START SHOPPING",
             ),

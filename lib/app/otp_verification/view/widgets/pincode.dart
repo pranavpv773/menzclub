@@ -12,12 +12,17 @@ class PinCodeFieldWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      padding: const EdgeInsets.all(20.0),
+      padding: const EdgeInsets.all(
+        20.0,
+      ),
       // color: kPrimary,
       // width: 50, height: 50,
       child: Form(
         child: Padding(
-            padding: const EdgeInsets.symmetric(vertical: 8.0, horizontal: 30),
+            padding: const EdgeInsets.symmetric(
+              vertical: 8.0,
+              horizontal: 30,
+            ),
             child: PinCodeTextField(
               autoDisposeControllers: false,
               appContext: context,
@@ -44,13 +49,17 @@ class PinCodeFieldWidget extends StatelessWidget {
               },
               pinTheme: PinTheme(
                 shape: PinCodeFieldShape.box,
-                borderRadius: BorderRadius.circular(5),
+                borderRadius: BorderRadius.circular(
+                  5,
+                ),
                 fieldHeight: 50,
                 fieldWidth: 40,
                 activeFillColor: Colors.white,
               ),
               cursorColor: Colors.black,
-              animationDuration: const Duration(milliseconds: 300),
+              animationDuration: const Duration(
+                milliseconds: 300,
+              ),
               enableActiveFill: true,
               // errorAnimationController: errorController,
               controller: context.read<OtpVerifyProvider>().otpController,
@@ -58,7 +67,10 @@ class PinCodeFieldWidget extends StatelessWidget {
 
               boxShadows: const [
                 BoxShadow(
-                  offset: Offset(0, 1),
+                  offset: Offset(
+                    0,
+                    1,
+                  ),
                   color: Colors.black12,
                   blurRadius: 10,
                 )

@@ -11,17 +11,23 @@ class MyWishListScreen extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         backgroundColor: AppColor.primary,
-        title: const Text('Wishlist'),
+        title: const Text(
+          'Wishlist',
+        ),
       ),
       body: Container(
         width: double.infinity,
         height: double.infinity,
         decoration: BoxDecoration(
           image: DecorationImage(
-            image: const AssetImage('assets/lottee/wishlistbg.jpg'),
+            image: const AssetImage(
+              'assets/lottee/wishlistbg.jpg',
+            ),
             fit: BoxFit.fill,
             colorFilter: ColorFilter.mode(
-                AppColor.primary.withOpacity(0.36), BlendMode.dstATop),
+              AppColor.primary.withOpacity(0.36),
+              BlendMode.dstATop,
+            ),
           ),
         ),
         child: Column(
@@ -55,7 +61,9 @@ class MyWishListScreen extends StatelessWidget {
             ),
             ShopTransparentButton(
               button: 'SHOP NOW',
-              buttonBgColor: Colors.transparent.withOpacity(0.1),
+              buttonBgColor: Colors.transparent.withOpacity(
+                0.1,
+              ),
               buttonColor: AppColor.primary,
             )
           ],

@@ -14,14 +14,17 @@ class BorderContainerWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-        width: width / 2,
-        height: height / 10,
-        padding: const EdgeInsets.all(5),
-        decoration: BoxDecoration(
-            border: Border.all(
-          color: AppColor.kWhite,
-          width: 2,
-        )),
-        child: child);
+      width: width / 2,
+      height: height / 10,
+      padding: const EdgeInsets.all(
+        5,
+      ),
+      decoration: BoxDecoration(
+          border: Border.all(
+        color: AppColor.kWhite,
+        width: 2,
+      )),
+      child: child,
+    );
   }
 }

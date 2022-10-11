@@ -14,12 +14,16 @@ class MoreOptions extends StatelessWidget {
         PopupMenuItem<int>(
           value: 0,
           child: ListTile(
-            leading: const Text('Prize-- Low to High'),
+            leading: const Text(
+              'Prize-- Low to High',
+            ),
             title: Radio(
               value: 0,
               groupValue: context.read<ProductsProvider>().val,
               onChanged: (value) {
-                context.read<ProductsProvider>().chekRadio(value);
+                context.read<ProductsProvider>().chekRadio(
+                      value,
+                    );
               },
               activeColor: AppColor.primary,
             ),
@@ -28,12 +32,16 @@ class MoreOptions extends StatelessWidget {
         PopupMenuItem<int>(
           value: 0,
           child: ListTile(
-            leading: const Text('Prize-- Low to High'),
+            leading: const Text(
+              'Prize-- Low to High',
+            ),
             title: Radio(
               value: 1,
               groupValue: context.read<ProductsProvider>().val,
               onChanged: (value) {
-                context.read<ProductsProvider>().chekRadio(value);
+                context.read<ProductsProvider>().chekRadio(
+                      value,
+                    );
               },
               activeColor: AppColor.primary,
             ),
@@ -42,12 +50,16 @@ class MoreOptions extends StatelessWidget {
         PopupMenuItem<int>(
           value: 0,
           child: ListTile(
-            leading: const Text('Prize-- Low to High'),
+            leading: const Text(
+              'Prize-- Low to High',
+            ),
             title: Radio(
               value: 2,
               groupValue: context.read<ProductsProvider>().val,
               onChanged: (value) {
-                context.read<ProductsProvider>().chekRadio(value);
+                context.read<ProductsProvider>().chekRadio(
+                      value,
+                    );
               },
               activeColor: AppColor.primary,
             ),
@@ -60,7 +72,9 @@ class MoreOptions extends StatelessWidget {
       child: Row(
         children: const [
           Padding(
-            padding: EdgeInsets.all(8.0),
+            padding: EdgeInsets.all(
+              8.0,
+            ),
             child: Text('SORT'),
           ),
           Icon(

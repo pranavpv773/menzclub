@@ -23,10 +23,15 @@ class OtpVerificationScreen extends StatelessWidget {
                 decoration: BoxDecoration(
                   boxShadow: [
                     BoxShadow(
-                      color: Colors.grey.withOpacity(0.1),
+                      color: Colors.grey.withOpacity(
+                        0.1,
+                      ),
                       blurRadius: 10.0,
                       spreadRadius: 0.0,
-                      offset: const Offset(2.0, 5.0),
+                      offset: const Offset(
+                        2.0,
+                        5.0,
+                      ),
                     ),
                   ],
                 ),
