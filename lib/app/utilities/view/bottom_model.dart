@@ -26,9 +26,10 @@ class HomeModalBottom extends StatelessWidget {
             child: Text(
               "Do you want to continue without Login? ",
               style: TextStyle(
-                  fontSize: 30,
-                  color: AppColor.kWhite,
-                  fontFamily: GoogleFonts.firaSansCondensed().fontFamily),
+                fontSize: 30,
+                color: AppColor.kWhite,
+                fontFamily: GoogleFonts.firaSansCondensed().fontFamily,
+              ),
             ),
           ),
           Divider(thickness: 2, color: AppColor.primary),
