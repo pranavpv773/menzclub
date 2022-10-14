@@ -51,7 +51,7 @@ class HomeScreen extends StatelessWidget {
             decoration: const BoxDecoration(
               image: DecorationImage(
                 image: NetworkImage(
-                  'https://png.pngtree.com/thumb_back/fh260/background/20200731/pngtree-blue-carbon-background-with-sport-style-and-golden-light-image_371487.jpg',
+                  'https://i.pinimg.com/474x/00/fc/43/00fc431524d66a733776fdcd66c5f287.jpg',
                 ),
                 fit: BoxFit.cover,
               ),
