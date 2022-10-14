@@ -8,4 +8,5 @@ class ApiEndPoints {
   static String getJeans = '$baseUrl/api/menzclub/get-jeans';
   static String getshoes = '$baseUrl/api/menzclub/get-shoes';
   static String getWatches = '$baseUrl/api/menzclub/get-watches';
+  static String getHomeBanner = '$baseUrl/api/menzclub/banner?banner_category=';
 }

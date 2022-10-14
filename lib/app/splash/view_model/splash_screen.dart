@@ -3,6 +3,7 @@
 import 'package:flutter/material.dart';
 import 'package:menz_cart_app/app/get_started/view/main_screen.dart';
 import 'package:menz_cart_app/app/global/view/global_screen.dart';
+import 'package:menz_cart_app/app/home/view_model/home_provider.dart';
 import 'package:menz_cart_app/app/jeans/view_model/jeans_provider.dart';
 import 'package:menz_cart_app/app/shirt/view_model/shirt_provider.dart';
 import 'package:menz_cart_app/app/shoes/view_model/shoes_provider.dart';
@@ -35,6 +36,7 @@ class SplashProvider with ChangeNotifier {
 
   getToHome(BuildContext context) async {
     await context.read<ShirtProvider>().fetchShirtFuction();
+    await context.read<HomeProvider>().fetchBanner("banners");
     await context.read<TshirtProvider>().fetchTShirtFuction();
     await context.read<JeansProvider>().fetchJeans();
     await context.read<WatchProvider>().fetchWatchesfromApi();

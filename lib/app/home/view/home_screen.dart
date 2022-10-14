@@ -35,7 +35,7 @@ class HomeScreen extends StatelessWidget {
           child: HomeCarouselBanners(
             width: width,
             heights: heights / 1.5,
-            list: context.read<HomeProvider>().banners,
+            list: context.read<HomeProvider>().listBanner[0].images,
           ),
         ),
         FadeInRight(
