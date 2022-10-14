@@ -21,7 +21,6 @@ import 'package:menz_cart_app/app/t_shirt/view_model/tshirt_provider_two.dart';
 import 'package:menz_cart_app/app/user/view_model/user_provider.dart';
 import 'package:menz_cart_app/app/utilities/view_model/service_utility.dart';
 import 'package:menz_cart_app/app/watches/view_model/watch_provider.dart';
-import 'package:menz_cart_app/services/view_model/http_services.dart';
 import 'package:provider/provider.dart';
 import 'app/home/view_model/home_provider.dart';
 import 'app/shoes/view_model/shoes_provider_two.dart';
@@ -64,9 +63,6 @@ class MyApp extends StatelessWidget {
         ),
         ChangeNotifierProvider(
           create: (crete) => DescriptionProvider(),
-        ),
-        ChangeNotifierProvider(
-          create: (crete) => HttpServicere(),
         ),
         ChangeNotifierProvider(
           create: (crete) => PaymentScreenProvider(),
