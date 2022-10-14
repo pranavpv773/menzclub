@@ -41,6 +41,7 @@ class OrderSummary extends StatelessWidget {
               ),
             ),
             ShopTransparentButton(
+              amount: 125,
               buttonBgColor: Colors.transparent.withOpacity(
                 0.1,
               ),

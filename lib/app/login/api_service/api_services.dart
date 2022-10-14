@@ -4,7 +4,7 @@ import 'package:menz_cart_app/app/login/model/login_model.dart';
 import 'package:menz_cart_app/services/api_endpoints.dart';
 
 class ApiService {
-  static login(EmailSignin data) async {
+  Future<EmailSigninResp> login(EmailSignin data) async {
     log('reached Login');
     try {
       Response response =

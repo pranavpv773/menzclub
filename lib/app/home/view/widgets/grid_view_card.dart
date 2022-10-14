@@ -59,7 +59,9 @@ class GridViewCard extends StatelessWidget {
                     height: heights / 4,
                     decoration: BoxDecoration(
                       image: DecorationImage(
-                        image: NetworkImage(data[index].images[0]),
+                        image: NetworkImage(
+                          data[index].images[0],
+                        ),
                         fit: BoxFit.fill,
                       ),
                     ),
