@@ -14,15 +14,9 @@ import 'package:shared_preferences/shared_preferences.dart';
 
 class SplashProvider with ChangeNotifier {
   Future<void> goHome(BuildContext context) async {
-    final checkLogged = await SharedPreferences.getInstance();
-    final checkResult = checkLogged.getBool('get_started') ?? false;
-
-    await context.read<ShirtProvider>().fetchShirtFuction();
-    await context.read<TshirtProvider>().fetchTShirtFuction();
-    await context.read<JeansProvider>().fetchJeans();
-    await context.read<WatchProvider>().fetchWatchesfromApi();
-    await context.read<ShoesProvider>().fetchShoes();
-
+    final checkGetStart = await SharedPreferences.getInstance();
+    final checkResult = checkGetStart.getBool('get_started') ?? false;
+    await getToHome(context);
     await Future.delayed(
       const Duration(
         seconds: 5,
@@ -37,5 +31,13 @@ class SplashProvider with ChangeNotifier {
         screen: const LiquidSwiperScreen(),
       );
     }
+  }
+
+  getToHome(BuildContext context) async {
+    await context.read<ShirtProvider>().fetchShirtFuction();
+    await context.read<TshirtProvider>().fetchTShirtFuction();
+    await context.read<JeansProvider>().fetchJeans();
+    await context.read<WatchProvider>().fetchWatchesfromApi();
+    await context.read<ShoesProvider>().fetchShoes();
   }
 }

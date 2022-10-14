@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 // ignore: depend_on_referenced_packages
 import 'package:fluttertoast/fluttertoast.dart';
+import 'package:menz_cart_app/app/user/model/user_model.dart';
+import 'package:provider/provider.dart';
 import 'package:razorpay_flutter/razorpay_flutter.dart';
 
 class PaymentScreenProvider with ChangeNotifier {
@@ -12,15 +14,18 @@ class PaymentScreenProvider with ChangeNotifier {
     razorpay.clear();
   }
 
-  void openCheckout() async {
+  void openCheckout(int amount, BuildContext context) async {
     var options = {
       'key': 'rzp_live_ILgsfZCZoFIKMb',
-      'amount': 26800,
+      'amount': amount,
       'name': 'MenzClub',
       'description': 'Fine T-Shirt',
       'retry': {'enabled': true, 'max_count': 1},
       'send_sms_hash': true,
-      'prefill': {'contact': '7034888756', 'email': 'pranavpv257@gmail.com'},
+      'prefill': {
+        'contact': context.read<User>().userName,
+        'email': context.read<User>().userMail
+      },
       'external': {
         'wallets': ['paytm']
       }

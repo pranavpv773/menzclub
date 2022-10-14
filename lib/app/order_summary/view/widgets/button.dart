@@ -10,10 +10,12 @@ class ShopTransparentButton extends StatelessWidget {
     required this.button,
     required this.buttonBgColor,
     required this.buttonColor,
+    required this.amount,
   }) : super(key: key);
   final String button;
   final Color buttonColor;
   final Color buttonBgColor;
+  final int amount;
 
   @override
   Widget build(BuildContext context) {
@@ -45,7 +47,7 @@ class ShopTransparentButton extends StatelessWidget {
             ),
           ),
           onPressed: () {
-            value.openCheckout();
+            value.openCheckout(amount, context);
           },
           padding: const EdgeInsets.all(
             10.0,

@@ -105,11 +105,13 @@ class ProductCartCard extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
                 ShopTransparentButton(
+                  amount: 125,
                   button: 'Remove ',
                   buttonBgColor: AppColor.kWhite,
                   buttonColor: AppColor.kRed,
                 ),
                 ShopTransparentButton(
+                  amount: 125,
                   button: 'Buy this now ',
                   buttonBgColor: AppColor.kWhite,
                   buttonColor: AppColor.kGreen,

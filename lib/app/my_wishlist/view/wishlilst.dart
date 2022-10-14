@@ -60,6 +60,7 @@ class MyWishListScreen extends StatelessWidget {
               ),
             ),
             ShopTransparentButton(
+              amount: 125,
               button: 'SHOP NOW',
               buttonBgColor: Colors.transparent.withOpacity(
                 0.1,

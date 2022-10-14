@@ -28,7 +28,7 @@ class LoginProvider with ChangeNotifier {
         userPassword: password.text.trim(),
       );
 
-      EmailSigninResp resp = await ApiService.login(data);
+      EmailSigninResp resp = await ApiService().login(data);
 
       if (resp.status) {
         context
