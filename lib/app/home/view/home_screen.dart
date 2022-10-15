@@ -3,6 +3,7 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:menz_cart_app/app/constants/widgets.dart';
 import 'package:menz_cart_app/app/home/view_model/home_provider.dart';
 import 'package:animate_do/animate_do.dart';
+import 'package:menz_cart_app/app/products/view/product_screen.dart';
 import 'package:menz_cart_app/app/shirt/view_model/shirt_provider.dart';
 import 'package:menz_cart_app/app/shoes/view_model/shoes_provider.dart';
 import 'package:menz_cart_app/app/t_shirt/view_model/t_shirt_provider.dart';
@@ -45,78 +46,100 @@ class HomeScreen extends StatelessWidget {
           child: const ThirdBanner(),
         ),
         sizedBox20,
-        Container(
-          decoration: const BoxDecoration(
-            image: DecorationImage(
-              image: NetworkImage(
-                'https://static.vecteezy.com/system/resources/thumbnails/009/482/368/small/bunting-hanging-halloween-color-orange-black-purple-theme-flag-triangles-banner-background-bunting-flags-for-the-party-halloween-night-trick-or-treats-concepts-vector.jpg',
+        FadeInLeftBig(
+          child: Container(
+            decoration: const BoxDecoration(
+              image: DecorationImage(
+                image: NetworkImage(
+                  'https://static.vecteezy.com/system/resources/thumbnails/009/482/368/small/bunting-hanging-halloween-color-orange-black-purple-theme-flag-triangles-banner-background-bunting-flags-for-the-party-halloween-night-trick-or-treats-concepts-vector.jpg',
+                ),
+                fit: BoxFit.cover,
               ),
-              fit: BoxFit.cover,
+            ),
+            child: Padding(
+              padding: const EdgeInsets.symmetric(
+                vertical: 8.0,
+              ),
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  const HeaderWidget(
+                    text: '   SHIRTS',
+                  ),
+                  LargeCardsWidget(
+                    width: width,
+                    heights: heights,
+                    list: context.read<ShirtProvider>().shirtMapList,
+                  ),
+                ],
+              ),
             ),
           ),
-          child: Padding(
-            padding: const EdgeInsets.symmetric(
-              vertical: 8.0,
+        ),
+        sizedBox20,
+        FadeInRightBig(
+          child: const Padding(
+            padding: EdgeInsets.all(
+              8.0,
             ),
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                const HeaderWidget(
-                  text: '   SHIRTS',
-                ),
-                LargeCardsWidget(
-                  width: width,
-                  heights: heights,
-                  list: context.read<ShirtProvider>().shirtMapList,
-                ),
-              ],
-            ),
+            child: TshirtBanner(),
           ),
         ),
         sizedBox20,
-        const Padding(
-          padding: EdgeInsets.all(
-            8.0,
+        FadeInUp(
+          child: ContainerCardGrid(
+            heights: heights,
+            width: width,
+            image:
+                'https://thumbs.dreamstime.com/b/texture-blue-decorative-plaster-concrete-vignette-abstract-grunge-background-design-234969184.jpg',
+            name: 'T-Shirts',
+            list: context.read<TshirtProvider>().tShirtList,
           ),
-          child: TshirtBanner(),
+        ),
+        FadeInRight(
+          child: NotImportant(
+            heights: heights,
+            width: width,
+          ),
+        ),
+        FadeInDownBig(
+          child: VerticalBulder(
+            list: context.read<ShoesProvider>().shoesList,
+            image:
+                'https://i.pinimg.com/736x/24/52/e8/2452e861c7e902c1fc2e184c56807fd6.jpg',
+            width: width,
+            height: heights,
+          ),
         ),
         sizedBox20,
-        ContainerCardGrid(
-          heights: heights,
-          width: width,
-          image:
-              'https://thumbs.dreamstime.com/b/texture-blue-decorative-plaster-concrete-vignette-abstract-grunge-background-design-234969184.jpg',
-          name: 'T-Shirts',
-          list: context.read<TshirtProvider>().tShirtList,
-        ),
-        NotImportant(
-          heights: heights,
-          width: width,
-        ),
-        VerticalBulder(
-          list: context.read<ShoesProvider>().shoesList,
-          image:
-              'https://i.pinimg.com/736x/24/52/e8/2452e861c7e902c1fc2e184c56807fd6.jpg',
-          width: width,
-          height: heights,
+        FadeInUpBig(
+          child: ContainerCardGrid(
+            heights: heights,
+            width: width,
+            image:
+                'https://st4.depositphotos.com/3503231/22048/v/450/depositphotos_220485076-stock-illustration-blue-square-grid-mosaic-background.jpg',
+            name: 'T-Shirts',
+            list: context.read<WatchProvider>().watchList,
+          ),
         ),
         sizedBox20,
-        ContainerCardGrid(
-          heights: heights,
-          width: width,
-          image:
-              'https://st4.depositphotos.com/3503231/22048/v/450/depositphotos_220485076-stock-illustration-blue-square-grid-mosaic-background.jpg',
-          name: 'T-Shirts',
-          list: context.read<WatchProvider>().watchList,
+        FadeInUpBig(
+          child: VerticalBulder(
+            list: context.read<ShirtProvider>().shirtMapList,
+            image:
+                'https://static.vecteezy.com/system/resources/previews/000/627/162/non_2x/vector-red-square-grid-mosaic-background-creative-design-templates.jpg',
+            width: width,
+            height: heights,
+          ),
         ),
-        sizedBox20,
-        VerticalBulder(
-          list: context.read<ShirtProvider>().shirtMapList,
-          image:
-              'https://static.vecteezy.com/system/resources/previews/000/627/162/non_2x/vector-red-square-grid-mosaic-background-creative-design-templates.jpg',
-          width: width,
-          height: heights,
-        ),
+        sizedBox50,
+        ShopNowButton(
+          screen: ProductsScreen(
+            list: allProducts,
+            title: 'ALL PRODUCTS',
+          ),
+          textButton: 'SHOP ALL PRODUCTS',
+        )
       ],
     );
   }

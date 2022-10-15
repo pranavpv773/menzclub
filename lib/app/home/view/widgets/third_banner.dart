@@ -1,3 +1,4 @@
+import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 
 class ThirdBanner extends StatelessWidget {
@@ -30,7 +31,7 @@ class ThirdBanner extends StatelessWidget {
             height: 200,
             decoration: const BoxDecoration(
               image: DecorationImage(
-                image: NetworkImage(
+                image: CachedNetworkImageProvider(
                   'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR8OzJEOFMrqSrHluYAfPjHHLEmsK5TGb5XlsfVw9dJEOSQBqyGw64poa7vPYlPIIp0ROA&usqp=CAU',
                 ),
                 fit: BoxFit.fill,
