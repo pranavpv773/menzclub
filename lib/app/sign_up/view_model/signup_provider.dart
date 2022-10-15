@@ -20,11 +20,9 @@ class SignUpProvider with ChangeNotifier {
   ) async {
     log('Reached');
     if (signUpKey.currentState!.validate()) {
-      log('get in to form');
       log(password.text);
       log(confirmPassword.text);
       if (password.text == confirmPassword.text) {
-        log('get in to password');
         final data = SignUpModel(
           userMail: email.text,
           userPassword: password.text,
@@ -33,7 +31,6 @@ class SignUpProvider with ChangeNotifier {
         );
 
         SignUpResponse? resp = await SignupApiService().signUp(data);
-        log('get in to second');
         if (resp!.status) {
           otpToken = resp.id!;
           Fluttertoast.showToast(
