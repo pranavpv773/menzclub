@@ -1,3 +1,4 @@
+import 'package:cached_network_image/cached_network_image.dart';
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
 import 'package:menz_cart_app/app/app_style/color_style.dart';
@@ -32,7 +33,7 @@ class HomeCarouselBanners extends StatelessWidget {
                 8.0,
               ),
               image: DecorationImage(
-                image: NetworkImage(
+                image: CachedNetworkImageProvider(
                   list[index],
                 ),
                 fit: BoxFit.cover,

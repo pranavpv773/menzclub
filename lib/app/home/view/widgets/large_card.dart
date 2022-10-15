@@ -1,3 +1,4 @@
+import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:menz_cart_app/app/app_style/color_style.dart';
 
@@ -33,7 +34,7 @@ class LargeCardsWidget extends StatelessWidget {
                       15,
                     ),
                     image: DecorationImage(
-                      image: NetworkImage(
+                      image: CachedNetworkImageProvider(
                         list[index].images[0],
                       ),
                       fit: BoxFit.cover,

@@ -1,3 +1,4 @@
+import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:menz_cart_app/app/app_style/color_style.dart';
 import 'package:menz_cart_app/app/description/view/description.dart';
@@ -96,7 +97,7 @@ class ProductCardBuilder extends StatelessWidget {
                                 5,
                               ),
                               image: DecorationImage(
-                                image: NetworkImage(
+                                image: CachedNetworkImageProvider(
                                   list[index].images[0].toString(),
                                 ),
                                 fit: BoxFit.fill,

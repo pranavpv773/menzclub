@@ -1,4 +1,5 @@
 import 'package:animate_do/animate_do.dart';
+import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:menz_cart_app/app/categories/view_model/map.dart';
 import 'package:menz_cart_app/app/jeans/view/jeans_screen.dart';
@@ -105,7 +106,7 @@ class CategoryCards extends StatelessWidget {
                 8,
               ),
               image: DecorationImage(
-                image: NetworkImage(
+                image: CachedNetworkImageProvider(
                   categoryList[index]['backgroundImg'].toString(),
                 ),
                 fit: BoxFit.cover,

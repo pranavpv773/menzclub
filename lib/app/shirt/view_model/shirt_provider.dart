@@ -14,7 +14,6 @@ class ShirtProvider with ChangeNotifier {
   List<Shirt> shirtFit = [];
   List<Shirt> shirtMaterial = [];
 
-  // List<Shirt> shirtCategoryList = [];
   fetchShirtFuction() async {
     ShirtModel resp = await ShirtApiServices().fetchProducts();
 
@@ -37,7 +36,6 @@ class ShirtProvider with ChangeNotifier {
 
   fetchShirtFit(String fit) async {
     shirtFit.clear();
-    log('first');
     ShirtModel resp =
         await ShirtFitApiServices().fetchShirtfit(fit.toLowerCase());
 
@@ -57,7 +55,6 @@ class ShirtProvider with ChangeNotifier {
 
   fetchShirtMaterial(String material) async {
     shirtFit.clear();
-    log('first');
     ShirtModel resp = await ShirtMaterialApiServices()
         .fetchShirtMaterial(material.toLowerCase());
     log(material);
@@ -68,7 +65,6 @@ class ShirtProvider with ChangeNotifier {
 
       notifyListeners();
     } else {
-      log('error');
       Fluttertoast.showToast(
         msg: resp.message,
         toastLength: Toast.LENGTH_LONG,
