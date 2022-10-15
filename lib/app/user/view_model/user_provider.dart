@@ -29,4 +29,26 @@ class UserProvider extends ChangeNotifier {
       );
     }
   }
+
+  User _user = User(
+    id: '',
+    userName: '',
+    userMail: '',
+    userPassword: '',
+    address: '',
+    userNumber: 0,
+    cart: [],
+  );
+
+  User get user => _user;
+
+  void setUser(user) {
+    _user = User.fromJson(user);
+    notifyListeners();
+  }
+
+  void setUserFromModel(User user) {
+    _user = user;
+    notifyListeners();
+  }
 }

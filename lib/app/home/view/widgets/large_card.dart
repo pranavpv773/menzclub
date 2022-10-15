@@ -67,10 +67,11 @@ class VerticalBulder extends StatelessWidget {
     return Container(
       decoration: BoxDecoration(
         image: DecorationImage(
-            image: NetworkImage(
-              image,
-            ),
-            fit: BoxFit.fill),
+          image: CachedNetworkImageProvider(
+            image,
+          ),
+          fit: BoxFit.fill,
+        ),
       ),
       width: width,
       height: height / 2,
@@ -114,7 +115,7 @@ class VerticalBulder extends StatelessWidget {
                               5,
                             ),
                             image: DecorationImage(
-                              image: NetworkImage(
+                              image: CachedNetworkImageProvider(
                                 list[index].images[0],
                               ),
                               fit: BoxFit.fill,
