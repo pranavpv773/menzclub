@@ -9,4 +9,5 @@ class ApiEndPoints {
   static String getshoes = '$baseUrl/api/menzclub/get-shoes';
   static String getWatches = '$baseUrl/api/menzclub/get-watches';
   static String getHomeBanner = '$baseUrl/api/menzclub/banner?banner_category=';
+  static String addToCartApi = '$baseUrl/api/add-to-cart';
 }

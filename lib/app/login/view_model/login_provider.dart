@@ -18,6 +18,7 @@ class LoginProvider with ChangeNotifier {
   final password = TextEditingController();
   bool isLogged = false;
   bool onLoad = false;
+
   Future<void> onTabLoginFunction(BuildContext context) async {
     if (formKey.currentState!.validate()) {
       onLoad = true;
