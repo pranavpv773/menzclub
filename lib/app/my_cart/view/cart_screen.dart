@@ -1,8 +1,12 @@
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
+import 'package:menz_cart_app/app/app_style/color_style.dart';
 import 'package:menz_cart_app/app/constants/widgets.dart';
 import 'package:menz_cart_app/app/home/view/widgets/grid_view_card.dart';
 import 'package:menz_cart_app/app/login/view_model/login_provider.dart';
 import 'package:menz_cart_app/app/order_summary/view/order.dart';
+import 'package:menz_cart_app/app/order_summary/view/widgets/button.dart';
+import 'package:menz_cart_app/app/user/view_model/user_provider.dart';
 import 'package:menz_cart_app/app/utilities/view/divider_widget.dart';
 import 'package:provider/provider.dart';
 import 'widgets/products_card.dart';
@@ -54,38 +58,108 @@ class LoginCartScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return SingleChildScrollView(
       physics: const ScrollPhysics(),
-      child: Column(
-        children: [
-          ProductCartCard(
-            width: width,
-          ),
-          DividerWidget(
-            height: height,
-          ),
-          ProductCartCard(
-            width: width,
-          ),
-          DividerWidget(
-            height: height,
-          ),
-          ProductCartCard(
-            width: width,
-          ),
-          DividerWidget(
-            height: height,
-          ),
-          // PriceDetails(
-          //   height: height,
-          //   amount: amount,
-          //   discout: discount,
-          // ),
-          sizedBox50,
-          const ShopNowButton(
-            textButton: 'Place Order',
-            screen: OrderSummary(),
-          )
-        ],
-      ),
+      child: context.watch<UserProvider>().users[0].cart.isEmpty
+          ? SizedBox(
+              width: width,
+              height: height,
+              child: Container(
+                width: double.infinity,
+                height: double.infinity,
+                color: AppColor.kWhite,
+                child: Column(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    Image.asset(
+                      'assets/mustash.gif',
+                      width: width / 2,
+                      height: height / 5,
+                    ),
+                    Text(
+                      'Your Cart is empty',
+                      style: TextStyle(
+                        fontSize: 25,
+                        fontWeight: FontWeight.bold,
+                        fontFamily: GoogleFonts.aBeeZee().fontFamily,
+                      ),
+                    ),
+                    Text(
+                      'Save items that you like in your Cart',
+                      style: TextStyle(
+                        fontSize: 20,
+                        fontWeight: FontWeight.w600,
+                        color: Colors.black38,
+                        fontFamily: GoogleFonts.actor().fontFamily,
+                      ),
+                    ),
+                    Text(
+                      'Review them anytime and easily order them',
+                      style: TextStyle(
+                        fontSize: 20,
+                        fontWeight: FontWeight.w600,
+                        color: Colors.black38,
+                        fontFamily: GoogleFonts.actor().fontFamily,
+                      ),
+                    ),
+                    ShopTransparentButton(
+                      amount: 125,
+                      button: 'SHOP NOW',
+                      buttonBgColor: Colors.transparent.withOpacity(
+                        0.1,
+                      ),
+                      buttonColor: AppColor.primary,
+                    )
+                  ],
+                ),
+              ),
+            )
+          : CartCardList(width: width, height: height),
+    );
+  }
+}
+
+class CartCardList extends StatelessWidget {
+  const CartCardList({
+    Key? key,
+    required this.width,
+    required this.height,
+  }) : super(key: key);
+
+  final double width;
+  final double height;
+
+  @override
+  Widget build(BuildContext context) {
+    return Column(
+      children: [
+        ProductCartCard(
+          width: width,
+        ),
+        DividerWidget(
+          height: height,
+        ),
+        ProductCartCard(
+          width: width,
+        ),
+        DividerWidget(
+          height: height,
+        ),
+        ProductCartCard(
+          width: width,
+        ),
+        DividerWidget(
+          height: height,
+        ),
+        // PriceDetails(
+        //   height: height,
+        //   amount: amount,
+        //   discout: discount,
+        // ),
+        sizedBox50,
+        const ShopNowButton(
+          textButton: 'Place Order',
+          screen: OrderSummary(),
+        )
+      ],
     );
   }
 }
