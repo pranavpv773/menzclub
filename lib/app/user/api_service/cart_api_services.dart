@@ -5,7 +5,7 @@ import 'package:menz_cart_app/app/user/model/user_model.dart';
 import 'package:menz_cart_app/services/api_endpoints.dart';
 
 class UserCartApiService {
-  Future<UserModel> cartUserData(User data, Product product) async {
+  Future<UserModel> cartUserData(data, Product product) async {
     try {
       Response response = await Dio().post(
           '${ApiEndPoints.baseUrl}/api/add-to-cart${product.id}',

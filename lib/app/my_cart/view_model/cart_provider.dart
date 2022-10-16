@@ -12,7 +12,7 @@ class CartProvider with ChangeNotifier {
   List<UserModel> cartList = [];
   fetchShirtColor(BuildContext context, Product product, data) async {
     final data = context.read<UserProvider>().users;
-    UserModel resp = await UserCartApiService().cartUserData(data!, product);
+    UserModel resp = await UserCartApiService().cartUserData(data, product);
 
     if (resp.status && resp.user.isNotEmpty) {
       Fluttertoast.showToast(
