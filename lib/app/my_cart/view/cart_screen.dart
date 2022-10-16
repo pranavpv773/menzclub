@@ -16,7 +16,7 @@ class CartScreen extends StatelessWidget {
     final width = MediaQuery.of(context).size.width;
     final height = MediaQuery.of(context).size.height;
     return Scaffold(
-      body: context.read<LoginProvider>().isLogged
+      body: context.watch<LoginProvider>().isLogged
           ? LoginCartScreen(
               width: width,
               height: height,

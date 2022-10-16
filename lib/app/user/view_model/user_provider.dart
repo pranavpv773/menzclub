@@ -10,11 +10,13 @@ import 'package:fluttertoast/fluttertoast.dart';
 class UserProvider extends ChangeNotifier {
   List<User> userList = [];
   final securedStorage = const FlutterSecureStorage();
+  User? users;
   Future<void> onTabGetUser(String mail) async {
     UserModel resp = await UserApiService().getUserData(mail);
 
     if (resp.status) {
       userList.addAll(resp.user);
+      users = resp.user as User;
       // log("${UserList}");
       log("get user");
       Fluttertoast.showToast(

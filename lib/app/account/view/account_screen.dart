@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:menz_cart_app/app/app_style/color_style.dart';
+import 'package:menz_cart_app/app/login/view_model/login_provider.dart';
+import 'package:provider/provider.dart';
 import 'widgets/account_listtile.dart';
 import 'widgets/profile_card.dart';
 
@@ -23,18 +25,21 @@ class AccountScreen extends StatelessWidget {
           ColoredBox(
             color: AppColor.kWhite,
             child: Column(
-              children: const [
-                AcountTexWidgget(
+              children: [
+                const AcountTexWidgget(
                   text: 'ABOUT US',
                 ),
-                AcountTexWidgget(
+                const AcountTexWidgget(
                   text: 'PRIVACY POLICY',
                 ),
-                AcountTexWidgget(
+                const AcountTexWidgget(
                   text: 'TERMS OF USE',
                 ),
-                AcountTexWidgget(
-                  text: 'Logout',
+                Visibility(
+                  visible: context.watch<LoginProvider>().isLogged,
+                  child: const AcountTexWidgget(
+                    text: 'Logout',
+                  ),
                 ),
               ],
             ),
