@@ -51,7 +51,7 @@ class HomeScreen extends StatelessWidget {
             decoration: const BoxDecoration(
               image: DecorationImage(
                 image: NetworkImage(
-                  'https://static.vecteezy.com/system/resources/thumbnails/009/482/368/small/bunting-hanging-halloween-color-orange-black-purple-theme-flag-triangles-banner-background-bunting-flags-for-the-party-halloween-night-trick-or-treats-concepts-vector.jpg',
+                  'https://visme.co/blog/wp-content/uploads/2017/07/50-Beautiful-and-Minimalist-Presentation-Backgrounds-046.jpg',
                 ),
                 fit: BoxFit.cover,
               ),
