@@ -21,7 +21,7 @@ class ShirtProvider with ChangeNotifier {
       shirtMapList.clear();
       log(resp.toString());
       shirtMapList.addAll(resp.shirt);
-      allProducts.addAll(shirtMapList);
+      allProducts.addAll(resp.shirt);
       log(allProducts.length.toString());
       log(shirtMapList.toString());
 

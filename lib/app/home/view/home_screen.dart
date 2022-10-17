@@ -1,3 +1,4 @@
+import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:menz_cart_app/app/constants/widgets.dart';
@@ -165,7 +166,7 @@ class ContainerCardGrid extends StatelessWidget {
     return Container(
       decoration: BoxDecoration(
         image: DecorationImage(
-          image: NetworkImage(
+          image: CachedNetworkImageProvider(
             image,
           ),
           fit: BoxFit.cover,
