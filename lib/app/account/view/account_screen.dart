@@ -70,8 +70,13 @@ class AccountScreen extends StatelessWidget {
                   ),
                   Visibility(
                     visible: context.watch<LoginProvider>().isLogged,
-                    child: const AcountTexWidgget(
-                      text: 'Logout',
+                    child: GestureDetector(
+                      onTap: () {
+                        context.read<LoginProvider>().logOut();
+                      },
+                      child: const AcountTexWidgget(
+                        text: 'Logout',
+                      ),
                     ),
                   ),
                 ],

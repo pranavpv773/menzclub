@@ -1,5 +1,11 @@
+// ignore_for_file: use_build_context_synchronously
+
 import 'package:flutter/material.dart';
 import 'package:menz_cart_app/app/app_style/color_style.dart';
+import 'package:menz_cart_app/app/products/view/product_screen.dart';
+import 'package:menz_cart_app/app/search/view_model/search_provider.dart';
+import 'package:menz_cart_app/routes/routes.dart';
+import 'package:provider/provider.dart';
 
 class ActiveApppbarWidget extends StatelessWidget {
   const ActiveApppbarWidget({
@@ -25,8 +31,9 @@ class ActiveApppbarWidget extends StatelessWidget {
               'assets/mc.png',
             ),
             primary: false,
-            title: const TextField(
-              decoration: InputDecoration(
+            title: TextFormField(
+              controller: context.read<SearchProvider>().searchController,
+              decoration: const InputDecoration(
                 hintText: "Search",
                 border: InputBorder.none,
                 hintStyle: TextStyle(
@@ -40,7 +47,18 @@ class ActiveApppbarWidget extends StatelessWidget {
                   Icons.search,
                   color: AppColor.primary,
                 ),
-                onPressed: () {},
+                onPressed: () async {
+                  await context
+                      .read<SearchProvider>()
+                      .onChangeFunction(context);
+                  RoutesProvider.nextScreen(
+                    screen: ProductsScreen(
+                      title:
+                          context.read<SearchProvider>().searchController.text,
+                      list: context.read<SearchProvider>().temp,
+                    ),
+                  );
+                },
               ),
               IconButton(
                 icon: Icon(
