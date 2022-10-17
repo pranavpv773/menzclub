@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:menz_cart_app/app/app_style/color_style.dart';
 import 'package:menz_cart_app/app/login/view_model/login_provider.dart';
+import 'package:menz_cart_app/app/my_cart/view/cart_screen.dart';
+import 'package:menz_cart_app/app/user/view_model/user_provider.dart';
 import 'package:provider/provider.dart';
 import 'widgets/account_listtile.dart';
 import 'widgets/profile_card.dart';
@@ -12,39 +14,71 @@ class AccountScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: AppColor.secondary,
-      body: ListView(
-        children: [
-          const ProfileCard(),
-          const Padding(
-            padding: EdgeInsets.only(
-              top: 10.0,
-              bottom: 10,
+      body: SafeArea(
+        child: ListView(
+          children: [
+            context.watch<LoginProvider>().isLogged
+                ? Container(
+                    height: 100,
+                    width: MediaQuery.of(context).size.width,
+                    color: AppColor.primary,
+                    child: Padding(
+                      padding: const EdgeInsets.all(8.0),
+                      child: Row(children: [
+                        CircleAvatar(
+                          radius: 22,
+                          backgroundColor: AppColor.kGrey,
+                          child: CircleAvatar(
+                            radius: 20,
+                            backgroundColor: AppColor.kWhite,
+                            child: Text(context
+                                .read<UserProvider>()
+                                .userList[0]
+                                .userName[0]
+                                .toUpperCase()),
+                          ),
+                        ),
+                        Padding(
+                          padding: const EdgeInsets.all(8.0),
+                          child: TextStyleWidget(
+                              text:
+                                  "Hello ${context.read<UserProvider>().userList[0].userName}"),
+                        )
+                      ]),
+                    ),
+                  )
+                : const ProfileCard(),
+            const Padding(
+              padding: EdgeInsets.only(
+                top: 10.0,
+                bottom: 10,
+              ),
+              child: AcountUserSection(),
             ),
-            child: AcountUserSection(),
-          ),
-          ColoredBox(
-            color: AppColor.kWhite,
-            child: Column(
-              children: [
-                const AcountTexWidgget(
-                  text: 'ABOUT US',
-                ),
-                const AcountTexWidgget(
-                  text: 'PRIVACY POLICY',
-                ),
-                const AcountTexWidgget(
-                  text: 'TERMS OF USE',
-                ),
-                Visibility(
-                  visible: context.watch<LoginProvider>().isLogged,
-                  child: const AcountTexWidgget(
-                    text: 'Logout',
+            ColoredBox(
+              color: AppColor.kWhite,
+              child: Column(
+                children: [
+                  const AcountTexWidgget(
+                    text: 'ABOUT US',
                   ),
-                ),
-              ],
-            ),
-          )
-        ],
+                  const AcountTexWidgget(
+                    text: 'PRIVACY POLICY',
+                  ),
+                  const AcountTexWidgget(
+                    text: 'TERMS OF USE',
+                  ),
+                  Visibility(
+                    visible: context.watch<LoginProvider>().isLogged,
+                    child: const AcountTexWidgget(
+                      text: 'Logout',
+                    ),
+                  ),
+                ],
+              ),
+            )
+          ],
+        ),
       ),
     );
   }
