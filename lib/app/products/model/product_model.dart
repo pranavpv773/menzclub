@@ -9,55 +9,55 @@ String productModelToJson(List<ProductModel> data) =>
 class ProductModel {
   ProductModel({
     this.id,
-    required this.productName,
-    required this.productDescription,
+    required this.name,
+    required this.description,
     required this.images,
-    required this.productPrice,
-    required this.productOffer,
-    required this.productCategory,
-    required this.productColor,
-    required this.productBrand,
-    required this.productSize,
-    required this.productMaterial,
+    required this.price,
+    required this.offer,
+    required this.category,
+    required this.color,
+    required this.brand,
+    required this.size,
+    required this.material,
   });
 
   String? id;
-  String productName;
-  String productDescription;
+  String name;
+  String description;
   List<String> images;
-  int productPrice;
-  int productOffer;
-  String productCategory;
-  String productColor;
-  String productBrand;
-  int productSize;
-  String productMaterial;
+  int price;
+  int offer;
+  String category;
+  String color;
+  String brand;
+  int size;
+  String material;
 
   factory ProductModel.fromJson(Map<String, dynamic> json) => ProductModel(
         id: json["_id"],
-        productName: json["product_name"],
-        productDescription: json["product_description"],
+        name: json["product_name"],
+        description: json["product_description"],
         images: List<String>.from(json["images"].map((x) => x)),
-        productPrice: json["product_price"],
-        productOffer: json["product_offer"],
-        productCategory: json["product_category"],
-        productColor: json["product_color"],
-        productBrand: json["product_brand"],
-        productSize: json["product_size"],
-        productMaterial: json["product_material"],
+        price: json["product_price"],
+        offer: json["product_offer"],
+        category: json["product_category"],
+        color: json["product_color"],
+        brand: json["product_brand"],
+        size: json["product_size"],
+        material: json["product_material"],
       );
 
   Map<String, dynamic> toJson() => {
         "_id": id,
-        "product_name": productName,
-        "product_description": productDescription,
+        "product_name": name,
+        "product_description": description,
         "images": List<dynamic>.from(images.map((x) => x)),
-        "product_price": productPrice,
-        "product_offer": productOffer,
-        "product_category": productCategory,
-        "product_color": productColor,
-        "product_brand": productBrand,
-        "product_size": productSize,
-        "product_material": productMaterial,
+        "product_price": price,
+        "product_offer": offer,
+        "product_category": category,
+        "product_color": color,
+        "product_brand": brand,
+        "product_size": size,
+        "product_material": material,
       };
 }
