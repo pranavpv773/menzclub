@@ -31,11 +31,11 @@ class CartScreen extends StatelessWidget {
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
+                  Image.asset(
+                    "assets/lottee/login.png",
+                  ),
                   const TextStyleWidget(
                     text: "Please Login and add products to cart",
-                  ),
-                  Image.asset(
-                    "assets/lottee/emptyCartr.gif",
                   ),
                 ],
               ),
@@ -62,54 +62,49 @@ class LoginCartScreen extends StatelessWidget {
           ? SizedBox(
               width: width,
               height: height,
-              child: Container(
-                width: double.infinity,
-                height: double.infinity,
-                color: AppColor.kWhite,
-                child: Column(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: [
-                    Image.asset(
-                      'assets/mustash.gif',
-                      width: width / 2,
-                      height: height / 5,
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  Image.asset(
+                    'assets/lottee/cart_empty.png',
+                    width: width / 2,
+                    height: height / 5,
+                  ),
+                  Text(
+                    'Your Cart is empty',
+                    style: TextStyle(
+                      fontSize: 25,
+                      fontWeight: FontWeight.bold,
+                      fontFamily: GoogleFonts.aBeeZee().fontFamily,
                     ),
-                    Text(
-                      'Your Cart is empty',
-                      style: TextStyle(
-                        fontSize: 25,
-                        fontWeight: FontWeight.bold,
-                        fontFamily: GoogleFonts.aBeeZee().fontFamily,
-                      ),
+                  ),
+                  Text(
+                    'Save items that you like in your Cart',
+                    style: TextStyle(
+                      fontSize: 20,
+                      fontWeight: FontWeight.w600,
+                      color: Colors.black38,
+                      fontFamily: GoogleFonts.actor().fontFamily,
                     ),
-                    Text(
-                      'Save items that you like in your Cart',
-                      style: TextStyle(
-                        fontSize: 20,
-                        fontWeight: FontWeight.w600,
-                        color: Colors.black38,
-                        fontFamily: GoogleFonts.actor().fontFamily,
-                      ),
+                  ),
+                  Text(
+                    'Review them anytime and easily order them',
+                    style: TextStyle(
+                      fontSize: 20,
+                      fontWeight: FontWeight.w600,
+                      color: Colors.black38,
+                      fontFamily: GoogleFonts.actor().fontFamily,
                     ),
-                    Text(
-                      'Review them anytime and easily order them',
-                      style: TextStyle(
-                        fontSize: 20,
-                        fontWeight: FontWeight.w600,
-                        color: Colors.black38,
-                        fontFamily: GoogleFonts.actor().fontFamily,
-                      ),
+                  ),
+                  ShopTransparentButton(
+                    amount: 125,
+                    button: 'SHOP NOW',
+                    buttonBgColor: Colors.transparent.withOpacity(
+                      0.1,
                     ),
-                    ShopTransparentButton(
-                      amount: 125,
-                      button: 'SHOP NOW',
-                      buttonBgColor: Colors.transparent.withOpacity(
-                        0.1,
-                      ),
-                      buttonColor: AppColor.primary,
-                    )
-                  ],
-                ),
+                    buttonColor: AppColor.primary,
+                  )
+                ],
               ),
             )
           : CartCardList(width: width, height: height),

@@ -79,7 +79,7 @@ class CarouselBannerCard extends StatelessWidget {
             8.0,
           ),
           image: DecorationImage(
-            image: NetworkImage(
+            image: CachedNetworkImageProvider(
               value.listBanner[0].images[1].toString(),
             ),
             fit: BoxFit.fill,

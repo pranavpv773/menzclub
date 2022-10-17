@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:menz_cart_app/app/app_style/color_style.dart';
-import 'package:menz_cart_app/app/t_shirt/view/t_shirt_screen.dart';
+import 'package:menz_cart_app/app/description/view/description.dart';
 import 'package:menz_cart_app/routes/routes.dart';
 
 class GridViewCard extends StatelessWidget {
@@ -80,8 +80,15 @@ class GridViewCard extends StatelessWidget {
                           color: Colors.green,
                         ),
                       ),
-                      const ShopNowButton(
-                        screen: TshirtScreen(),
+                      ShopNowButton(
+                        screen: DescriptionScreen(
+                          amount: data[index].price.toString(),
+                          discout: data[index].offer.toString(),
+                          price: data[index].price.toString(),
+                          topcollection: data[index].description.toString(),
+                          image: data[index].images[0].toString(),
+                          name: data[index].name.toString(),
+                        ),
                         textButton: 'SHOP NOW',
                       ),
                     ],

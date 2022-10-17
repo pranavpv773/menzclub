@@ -21,7 +21,7 @@ class AccountScreen extends StatelessWidget {
                 ? Container(
                     height: 100,
                     width: MediaQuery.of(context).size.width,
-                    color: AppColor.primary,
+                    color: AppColor.primary1,
                     child: Padding(
                       padding: const EdgeInsets.all(8.0),
                       child: Row(children: [
