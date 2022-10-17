@@ -32,42 +32,11 @@ class ThirdBanner extends StatelessWidget {
             decoration: const BoxDecoration(
               image: DecorationImage(
                 image: CachedNetworkImageProvider(
-                  'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR8OzJEOFMrqSrHluYAfPjHHLEmsK5TGb5XlsfVw9dJEOSQBqyGw64poa7vPYlPIIp0ROA&usqp=CAU',
+                  'https://m.media-amazon.com/images/S/stores-image-uploads-eu-prod/8/AmazonStores/A21TJRUUN4KGV/b8f57e0aee6a4d4e5fd14c4cc5ddcd67.w600.h300.jpg',
                 ),
                 fit: BoxFit.fill,
               ),
             ),
-            // child: Row(
-            //   mainAxisSize: MainAxisSize.min,
-            //   children: <Widget>[
-            //     const SizedBox(width: 20.0, height: 100.0),
-            //     const Text(
-            //       'Be',
-            //       style: TextStyle(fontSize: 43.0),
-            //     ),
-            //     const SizedBox(width: 20.0, height: 100.0),
-            //     DefaultTextStyle(
-            //       style: const TextStyle(
-            //         fontSize: 40.0,
-            //         fontFamily: 'Horizon',
-            //       ),
-            //       child: AnimatedTextKit(
-            //         totalRepeatCount: 100,
-            //         animatedTexts: [
-            //           RotateAnimatedText('Shirt'),
-            //           RotateAnimatedText('Jeans'),
-            //           RotateAnimatedText('T-Shirt'),
-            //           RotateAnimatedText('Trousers'),
-            //           RotateAnimatedText('Watches'),
-            //           RotateAnimatedText('Accessories'),
-            //         ],
-            //         onTap: () {
-            //           print("Tap Event");
-            //         },
-            //       ),
-            //     ),
-            //   ],
-            // )),
           ),
         ),
       ),
