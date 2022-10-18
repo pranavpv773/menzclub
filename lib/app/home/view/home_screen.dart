@@ -1,4 +1,3 @@
-import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:menz_cart_app/app/constants/widgets.dart';
@@ -51,8 +50,8 @@ class HomeScreen extends StatelessWidget {
           child: Container(
             decoration: const BoxDecoration(
               image: DecorationImage(
-                image: NetworkImage(
-                  'https://visme.co/blog/wp-content/uploads/2017/07/50-Beautiful-and-Minimalist-Presentation-Backgrounds-046.jpg',
+                image: AssetImage(
+                  'assets/bg/firstbg.jpg',
                 ),
                 fit: BoxFit.cover,
               ),
@@ -91,8 +90,7 @@ class HomeScreen extends StatelessWidget {
           child: ContainerCardGrid(
             heights: heights,
             width: width,
-            image:
-                'https://thumbs.dreamstime.com/b/texture-blue-decorative-plaster-concrete-vignette-abstract-grunge-background-design-234969184.jpg',
+            image: 'assets/bg/tshirtbg.jpg',
             name: 'T-Shirts',
             list: context.read<TshirtProvider>().tShirtList,
           ),
@@ -106,8 +104,7 @@ class HomeScreen extends StatelessWidget {
         FadeInDownBig(
           child: VerticalBulder(
             list: context.read<ShoesProvider>().shoesList,
-            image:
-                'https://i.pinimg.com/736x/24/52/e8/2452e861c7e902c1fc2e184c56807fd6.jpg',
+            image: 'assets/bg/shoesbg.jpg',
             width: width,
             height: heights,
           ),
@@ -117,8 +114,7 @@ class HomeScreen extends StatelessWidget {
           child: ContainerCardGrid(
             heights: heights,
             width: width,
-            image:
-                'https://st4.depositphotos.com/3503231/22048/v/450/depositphotos_220485076-stock-illustration-blue-square-grid-mosaic-background.jpg',
+            image: 'assets/bg/shirtbg.jpg',
             name: 'T-Shirts',
             list: context.read<WatchProvider>().watchList,
           ),
@@ -127,8 +123,7 @@ class HomeScreen extends StatelessWidget {
         FadeInUpBig(
           child: VerticalBulder(
             list: context.read<ShirtProvider>().shirtMapList,
-            image:
-                'https://static.vecteezy.com/system/resources/previews/000/627/162/non_2x/vector-red-square-grid-mosaic-background-creative-design-templates.jpg',
+            image: 'assets/bg/shirt2bg.jpg',
             width: width,
             height: heights,
           ),
@@ -166,7 +161,7 @@ class ContainerCardGrid extends StatelessWidget {
     return Container(
       decoration: BoxDecoration(
         image: DecorationImage(
-          image: CachedNetworkImageProvider(
+          image: AssetImage(
             image,
           ),
           fit: BoxFit.cover,
