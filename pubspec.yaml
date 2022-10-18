@@ -82,6 +82,7 @@ flutter:
     - assets/jeans/
     - assets/shoes/
     - assets/watches/
+    - assets/bg/
     - assets/get_started/
 
   # An image asset can refer to one or more resolution-specific "variants", see
