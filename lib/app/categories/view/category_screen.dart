@@ -145,7 +145,7 @@ class CategoryCards extends StatelessWidget {
   }
 }
 
-List bgImages = [
+List bgImagesyh = [
   'https://png.pngtree.com/thumb_back/fh260/back_our/20190620/ourmid/pngtree-tmall-t-shirt-festival-taobao-e-commerce-home-poster-banner-image_153340.jpg',
   'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQTeH_RvF4PvMT_dQQgdI93iS5qWm-qKRcjXCW4OXbgM3ZZyuA_xGYcfGXZLDdYoKW36xw&usqp=CAU',
   'https://media.istockphoto.com/photos/texture-banner-neutral-fabric-background-panoramic-picture-id1313116746?b=1&k=20&m=1313116746&s=170667a&w=0&h=NLosrN0eX2CObND853a2f_CfutrKKEdTQGYjJ2m2ckQ=',
