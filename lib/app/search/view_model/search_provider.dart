@@ -11,18 +11,20 @@ class SearchProvider with ChangeNotifier {
     onTabLoad = true;
     notifyListeners();
     if (searchController.text.isEmpty) {
+      onTabLoad = false;
       notifyListeners();
     } else {
       temp.clear();
       for (dynamic i in context.read<ProductsProvider>().allProducts) {
         if (i.name.toLowerCase().contains(
-                  searchController.text.toLowerCase(),
+                  searchController.text.trim().toLowerCase(),
                 ) ||
             (i.category.toLowerCase().contains(
-                  searchController.text.toLowerCase(),
+                  searchController.text.trim().toLowerCase(),
                 ))) {
           temp.add(i);
         }
+        onTabLoad = false;
         notifyListeners();
       }
     }
