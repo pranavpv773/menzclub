@@ -38,7 +38,7 @@ const categoryList = [
     'circleAvatharImg':
         'https://assets.gqindia.com/photos/5cdc6032e994c8ee73b68f52/master/pass/wedding-outfits-top-image.jpg',
     'backgroundImg':
-        'https://www.mohanlalsons.com/image/cache/catalog/indowest-1000x370.jpg',
+        'https://m.media-amazon.com/images/S/aplus-media-library-service-brand-media/ead8a76137fb4b76f0cb373715e070e5.w1297.h861.__CR0,29,1297,802_PT0_SX970_V1___.jpg',
   },
   {
     'categary': 'Shoes',
@@ -64,7 +64,7 @@ const categoryList = [
     'circleAvatharImg':
         'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcScMApytfkHvkDQNQImltkVoCWz73EFYLMOj_s6Opkf2BdFeFTr4VNlxgEk1PyNYHDRq0M&usqp=CAU',
     'backgroundImg':
-        'https://cdn.shopify.com/s/files/1/2318/6005/collections/hermes-background_1200x600_crop_center.png?v=1571149772',
+        'https://i.pinimg.com/originals/cd/d3/9d/cdd39d5cb98bdc9c291b0b45e9e3aab1.jpg',
   },
   {
     'categary': 'Inner-wear',

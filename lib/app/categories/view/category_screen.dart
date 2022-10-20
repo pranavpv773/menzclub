@@ -17,57 +17,63 @@ class CategoriesScreen extends StatelessWidget {
     return ListView(
       physics: const BouncingScrollPhysics(),
       children: [
-        FadeInUp(
+        FadeInUpBig(
           child: const CategoryCards(
             index: 0,
             screen: ShirtScreen(string: 'Shirts'),
           ),
         ),
-        FadeInLeft(
+        FadeInUpBig(
           child: const CategoryCards(
             index: 1,
             screen: TshirtScreen(),
           ),
         ),
-        FadeInDown(
+        FadeInUpBig(
           child: const CategoryCards(
             index: 2,
             screen: JeansScreen(),
           ),
         ),
-        FadeInRight(
+        FadeInUpBig(
           child: const CategoryCards(
             index: 3,
             screen: CategoriesScreen(),
           ),
         ),
-        FadeInLeft(
+        FadeInUpBig(
           child: const CategoryCards(
             index: 4,
             screen: CategoriesScreen(),
           ),
         ),
-        FadeInUp(
+        FadeInUpBig(
           child: const CategoryCards(
             index: 5,
             screen: ShoesScreen(),
           ),
         ),
-        FadeInDown(
+        FadeInUpBig(
           child: const CategoryCards(
             index: 6,
             screen: CategoriesScreen(),
           ),
         ),
-        FadeInUp(
+        FadeInUpBig(
           child: const CategoryCards(
             index: 7,
             screen: WatchesScreen(),
           ),
         ),
-        FadeInRight(
+        FadeInUpBig(
           child: const CategoryCards(
             index: 8,
+            screen: CategoriesScreen(),
+          ),
+        ),
+        FadeInUpBig(
+          child: const CategoryCards(
+            index: 9,
             screen: CategoriesScreen(),
           ),
         ),

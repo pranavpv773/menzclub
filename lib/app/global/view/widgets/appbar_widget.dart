@@ -52,15 +52,17 @@ class ActiveApppbarWidget extends StatelessWidget {
                         ),
                         onPressed: () async {
                           await value.onChangeFunction(context);
-                          RoutesProvider.nextScreen(
-                            screen: ProductsScreen(
-                              title: context
-                                  .read<SearchProvider>()
-                                  .searchController
-                                  .text,
-                              list: context.read<SearchProvider>().temp,
-                            ),
-                          );
+                          value.searchController.text.isEmpty
+                              ? () {}
+                              : RoutesProvider.nextScreen(
+                                  screen: ProductsScreen(
+                                    title: context
+                                        .read<SearchProvider>()
+                                        .searchController
+                                        .text,
+                                    list: context.read<SearchProvider>().temp,
+                                  ),
+                                );
                           value.searchController.clear();
                         },
                       );
