@@ -7,7 +7,6 @@ import 'package:menz_cart_app/services/api_endpoints.dart';
 
 class TShirtApiServices {
   Future<TshirtModel> fetchApiTshirts() async {
-    log('reached Tshirt');
     try {
       Response response = await Dio().get(ApiEndPoints.getTshits);
       if (response.statusCode == 200) {

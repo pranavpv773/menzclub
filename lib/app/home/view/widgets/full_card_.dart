@@ -1,16 +1,16 @@
 import 'package:flutter/material.dart';
 import 'package:menz_cart_app/app/app_style/color_style.dart';
-import 'package:menz_cart_app/app/jeans/view_model/jeans_provider.dart';
-import 'package:provider/provider.dart';
+import 'package:shimmer_animation/shimmer_animation.dart';
 
 class NotImportant extends StatelessWidget {
   const NotImportant({
     Key? key,
     required this.width,
     required this.heights,
+    required this.list,
   }) : super(key: key);
   final double width;
-
+  final List list;
   final double heights;
 
   @override
@@ -46,75 +46,84 @@ class NotImportant extends StatelessWidget {
             ListView.builder(
               physics: const ScrollPhysics(),
               shrinkWrap: true,
-              itemCount: 5,
+              itemCount: 4,
               itemBuilder: (context, index) {
-                final data = context.read<JeansProvider>().jeansList;
-                return Padding(
-                  padding: const EdgeInsets.symmetric(
-                    horizontal: 10,
-                    vertical: 10,
-                  ),
-                  child: Container(
-                    decoration: BoxDecoration(
-                      gradient: LinearGradient(colors: [
-                        Colors.yellow.shade600,
-                        Colors.orange,
-                        Colors.red
-                      ]),
-                      borderRadius: BorderRadius.circular(
-                        20,
-                      ),
-                    ),
-                    child: Padding(
-                      padding: const EdgeInsets.all(
-                        1.0,
-                      ),
-                      child: Column(
-                        children: [
-                          Container(
-                            height: heights / 2,
-                            width: width / 1,
-                            decoration: BoxDecoration(
-                              borderRadius: const BorderRadius.only(
-                                topLeft: Radius.circular(
-                                  20,
+                return list.isEmpty
+                    ? SizedBox(
+                        width: 200.0,
+                        height: 100.0,
+                        child: Shimmer(
+                          child: Container(
+                            color: Colors.grey,
+                          ),
+                        ),
+                      )
+                    : Padding(
+                        padding: const EdgeInsets.symmetric(
+                          horizontal: 10,
+                          vertical: 10,
+                        ),
+                        child: Container(
+                          decoration: BoxDecoration(
+                            image: const DecorationImage(
+                                image: AssetImage(
+                                  "assets/lottee/image_shimmer.gif",
                                 ),
-                                topRight: Radius.circular(
-                                  20,
-                                ),
-                              ),
-                              image: DecorationImage(
-                                image: NetworkImage(
-                                  data[index].images[0],
-                                ),
-                                fit: BoxFit.cover,
-                              ),
+                                fit: BoxFit.cover),
+                            borderRadius: BorderRadius.circular(
+                              20,
                             ),
                           ),
-                          Positioned(
-                            left: 0,
-                            bottom: 0,
-                            child: Container(
-                              decoration: BoxDecoration(
-                                color: AppColor.kWhite,
-                                borderRadius: const BorderRadius.only(
-                                  bottomLeft: Radius.circular(
-                                    20,
-                                  ),
-                                  bottomRight: Radius.circular(
-                                    20,
+                          child: Padding(
+                            padding: const EdgeInsets.all(
+                              1.0,
+                            ),
+                            child: Column(
+                              children: [
+                                Container(
+                                  height: heights / 2,
+                                  width: width / 1,
+                                  decoration: BoxDecoration(
+                                    borderRadius: const BorderRadius.only(
+                                      topLeft: Radius.circular(
+                                        20,
+                                      ),
+                                      topRight: Radius.circular(
+                                        20,
+                                      ),
+                                    ),
+                                    image: DecorationImage(
+                                      image: NetworkImage(
+                                        list[index].images[0],
+                                      ),
+                                      fit: BoxFit.cover,
+                                    ),
                                   ),
                                 ),
-                              ),
-                              width: width,
-                              height: 80,
+                                Positioned(
+                                  left: 0,
+                                  bottom: 0,
+                                  child: Container(
+                                    decoration: BoxDecoration(
+                                      color: AppColor.kWhite,
+                                      borderRadius: const BorderRadius.only(
+                                        bottomLeft: Radius.circular(
+                                          20,
+                                        ),
+                                        bottomRight: Radius.circular(
+                                          20,
+                                        ),
+                                      ),
+                                    ),
+                                    width: width,
+                                    height: 80,
+                                  ),
+                                )
+                              ],
                             ),
-                          )
-                        ],
-                      ),
-                    ),
-                  ),
-                );
+                          ),
+                        ),
+                      );
               },
             ),
           ],

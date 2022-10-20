@@ -14,15 +14,12 @@ class TshirtProvider with ChangeNotifier {
   List<TShirt> tShirtList = [];
   List<TShirt> tShirtFitList = [];
   Future<void> fetchTShirtFuction() async {
-    log('Reached');
     TshirtModel resp = await TShirtApiServices().fetchApiTshirts();
 
     if (resp.status && resp.tShirt.isNotEmpty) {
       tShirtList.clear();
-      log(resp.toString());
       tShirtList.addAll(resp.tShirt);
       allProducts.addAll(tShirtList);
-      log(allProducts.length.toString());
       notifyListeners();
     } else {
       Fluttertoast.showToast(

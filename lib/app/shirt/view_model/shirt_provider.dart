@@ -10,6 +10,9 @@ import 'package:fluttertoast/fluttertoast.dart';
 List allProducts = [];
 
 class ShirtProvider with ChangeNotifier {
+  ShirtProvider() {
+    fetchShirtFuction();
+  }
   List<Shirt> shirtMapList = [];
   List<Shirt> shirtFit = [];
   List<Shirt> shirtMaterial = [];
@@ -21,6 +24,8 @@ class ShirtProvider with ChangeNotifier {
       shirtMapList.clear();
       log(resp.toString());
       shirtMapList.addAll(resp.shirt);
+      notifyListeners();
+      log(shirtMapList.length.toString());
       allProducts.addAll(resp.shirt);
       log(allProducts.length.toString());
       log(shirtMapList.toString());
