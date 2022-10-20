@@ -1,18 +1,19 @@
+// ignore_for_file: use_build_context_synchronously
+
 import 'dart:developer';
 import 'package:flutter/widgets.dart';
+import 'package:menz_cart_app/app/app_style/color_style.dart';
 import 'package:menz_cart_app/app/shirt/api_services/api_services.dart';
 import 'package:menz_cart_app/app/shirt/api_services/fit_categories.dart';
 import 'package:menz_cart_app/app/shirt/api_services/material_api.dart';
 import 'package:menz_cart_app/app/shirt/model/shirt_model.dart';
 // ignore: depend_on_referenced_packages
 import 'package:fluttertoast/fluttertoast.dart';
+import 'package:provider/provider.dart';
 
-List allProducts = [];
+import '../../products/view_model/products_provider.dart';
 
 class ShirtProvider with ChangeNotifier {
-  ShirtProvider() {
-    fetchShirtFuction();
-  }
   List<Shirt> shirtMapList = [];
   List<Shirt> shirtFit = [];
   List<Shirt> shirtMaterial = [];
@@ -26,8 +27,10 @@ class ShirtProvider with ChangeNotifier {
       shirtMapList.addAll(resp.shirt);
       notifyListeners();
       log(shirtMapList.length.toString());
-      allProducts.addAll(resp.shirt);
-      log(allProducts.length.toString());
+      AppColor.rootScaffoldMessengerKey.currentState!.context
+          .read<ProductsProvider>()
+          .allProducts
+          .addAll(resp.shirt);
       log(shirtMapList.toString());
 
       notifyListeners();

@@ -4,7 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:fluttertoast/fluttertoast.dart';
 import 'package:menz_cart_app/app/app_style/color_style.dart';
 import 'package:menz_cart_app/app/home/view_model/home_provider.dart';
-import 'package:menz_cart_app/app/shirt/view_model/shirt_provider.dart';
+import 'package:menz_cart_app/app/products/view_model/products_provider.dart';
 import 'package:menz_cart_app/app/shoes/api_services/api_services.dart';
 import 'package:menz_cart_app/app/shoes/api_services/fit_categories.dart';
 import 'package:menz_cart_app/app/shoes/api_services/material_api.dart';
@@ -13,9 +13,6 @@ import 'package:menz_cart_app/app/shoes/model/shoes_model.dart';
 import 'package:provider/provider.dart';
 
 class ShoesProvider with ChangeNotifier {
-  ShoesProvider() {
-    fetchShoes();
-  }
   List<Shoes> shoesList = [];
   List<Shoes> shoesFitList = [];
   List<Shoes> shoesSizeList = [];
@@ -27,8 +24,10 @@ class ShoesProvider with ChangeNotifier {
       shoesList.clear();
       log(resp.toString());
       shoesList.addAll(resp.shoes);
-      allProducts.addAll(shoesList);
-      log(allProducts.length.toString());
+      AppColor.rootScaffoldMessengerKey.currentState!.context
+          .read<ProductsProvider>()
+          .allProducts
+          .addAll(shoesList);
       log(shoesList.toString());
       AppColor.rootScaffoldMessengerKey.currentState!.context
           .read<HomeProvider>()

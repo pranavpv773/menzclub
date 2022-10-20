@@ -1,10 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:menz_cart_app/app/app_style/color_style.dart';
 import 'package:menz_cart_app/app/constants/widgets.dart';
 import 'package:menz_cart_app/app/home/view_model/home_provider.dart';
 import 'package:animate_do/animate_do.dart';
 import 'package:menz_cart_app/app/jeans/view_model/jeans_provider.dart';
 import 'package:menz_cart_app/app/products/view/product_screen.dart';
+import 'package:menz_cart_app/app/products/view_model/products_provider.dart';
 import 'package:menz_cart_app/app/shirt/view_model/shirt_provider.dart';
 import 'package:menz_cart_app/app/shoes/view_model/shoes_provider.dart';
 import 'package:menz_cart_app/app/t_shirt/view_model/t_shirt_provider.dart';
@@ -138,7 +140,10 @@ class HomeScreen extends StatelessWidget {
                 sizedBox50,
                 ShopNowButton(
                   screen: ProductsScreen(
-                    list: allProducts,
+                    list: AppColor
+                        .rootScaffoldMessengerKey.currentState!.context
+                        .read<ProductsProvider>()
+                        .allProducts,
                     title: 'ALL PRODUCTS',
                   ),
                   textButton: 'SHOP ALL PRODUCTS',
