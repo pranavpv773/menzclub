@@ -1,4 +1,4 @@
-# menz_cart_app
+# Menz_Club_Application
 ![menzclub](https://user-images.githubusercontent.com/91565180/197003945-3cd5e0f7-6f3a-43fd-a633-d6d6cac656dc.jpeg)
 
 A new Flutter project.
