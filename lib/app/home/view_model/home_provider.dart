@@ -6,8 +6,18 @@ import 'package:fluttertoast/fluttertoast.dart';
 import 'package:flutter/widgets.dart';
 import 'package:menz_cart_app/app/home/api_services/banner_api.dart';
 import 'package:menz_cart_app/app/home/model/banner_model.dart';
+import 'package:menz_cart_app/app/jeans/view_model/jeans_provider.dart';
+import 'package:menz_cart_app/app/shirt/view_model/shirt_provider.dart';
+import 'package:menz_cart_app/app/shoes/view_model/shoes_provider.dart';
+import 'package:menz_cart_app/app/t_shirt/view_model/t_shirt_provider.dart';
+import 'package:menz_cart_app/app/watches/view_model/watch_provider.dart';
 
 class HomeProvider with ChangeNotifier {
+  bool checkingFn = false;
+  HomeProvider() {
+    getToHome();
+    checkingFn;
+  }
   int currentIndex = 0;
   List<Banners> listBanner = [];
 
@@ -16,9 +26,7 @@ class HomeProvider with ChangeNotifier {
 
     if (resp.status && resp.banner.isNotEmpty) {
       listBanner.clear();
-      log(resp.toString());
       listBanner.addAll(resp.banner);
-      log(listBanner[0].images[1].toString());
       notifyListeners();
     } else {
       Fluttertoast.showToast(
@@ -30,6 +38,17 @@ class HomeProvider with ChangeNotifier {
 
   indexCheck(int index) {
     currentIndex = index;
+    notifyListeners();
+  }
+
+  getToHome() async {
+    await ShirtProvider().fetchShirtFuction();
+    await fetchBanner("banners");
+    await TshirtProvider().fetchTShirtFuction();
+    await JeansProvider().fetchJeans();
+    await WatchProvider().fetchWatchesfromApi();
+    await ShoesProvider().fetchShoes();
+    log("hai");
     notifyListeners();
   }
 }

@@ -5,10 +5,11 @@ import 'package:menz_cart_app/services/api_endpoints.dart';
 
 class JeansApiService {
   Future<JeansModel> fetchProducts() async {
-    log('reached shirt');
+    log('reached jeans');
     try {
       Response response = await Dio().get(ApiEndPoints.getJeans);
       if (response.statusCode == 200) {
+        log("jeans success");
         // final jsonData = response.data as List;
         // final newList = jsonData.map((e) => ShirtModel.fromJson(e)).toList();
         return JeansModel.fromJson(response.data);

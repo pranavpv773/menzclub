@@ -35,42 +35,42 @@ class CategoriesScreen extends StatelessWidget {
             screen: JeansScreen(),
           ),
         ),
-        // FadeInRight(
-        //   child: const CategoryCards(
-        //     index: 3,
-        //     screen: CategoriesScreen(),
-        //   ),
-        // ),
-        // FadeInLeft(
-        //   child: const CategoryCards(
-        //     index: 4,
-        //     screen: CategoriesScreen(),
-        //   ),
-        // ),
+        FadeInRight(
+          child: const CategoryCards(
+            index: 3,
+            screen: CategoriesScreen(),
+          ),
+        ),
+        FadeInLeft(
+          child: const CategoryCards(
+            index: 4,
+            screen: CategoriesScreen(),
+          ),
+        ),
         FadeInUp(
           child: const CategoryCards(
             index: 5,
             screen: ShoesScreen(),
           ),
         ),
-        // FadeInDown(
-        //   child: const CategoryCards(
-        //     index: 6,
-        //     screen: CategoriesScreen(),
-        //   ),
-        // ),
+        FadeInDown(
+          child: const CategoryCards(
+            index: 6,
+            screen: CategoriesScreen(),
+          ),
+        ),
         FadeInUp(
           child: const CategoryCards(
             index: 7,
             screen: WatchesScreen(),
           ),
         ),
-        // FadeInRight(
-        //   child: const CategoryCards(
-        //     index: 8,
-        //     screen: CategoriesScreen(),
-        //   ),
-        // ),
+        FadeInRight(
+          child: const CategoryCards(
+            index: 8,
+            screen: CategoriesScreen(),
+          ),
+        ),
       ],
     );
   }

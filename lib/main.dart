@@ -118,6 +118,7 @@ class MyApp extends StatelessWidget {
       ],
       child: MaterialApp(
         navigatorKey: RoutesProvider.navigatorKey,
+        scaffoldMessengerKey: AppColor.rootScaffoldMessengerKey,
         debugShowCheckedModeBanner: false,
         theme: ThemeData(
           scaffoldBackgroundColor: AppColor.kWhite,

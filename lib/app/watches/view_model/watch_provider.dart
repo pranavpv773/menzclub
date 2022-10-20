@@ -8,6 +8,9 @@ import 'package:menz_cart_app/app/watches/api_services/offer_api_services.dart';
 import 'package:menz_cart_app/app/watches/model/watch_model.dart';
 
 class WatchProvider with ChangeNotifier {
+  WatchProvider() {
+    fetchWatchesfromApi();
+  }
   List<Watch> watchList = [];
   List<Watch> watchPriceList = [];
   Future<void> fetchWatchesfromApi() async {

@@ -9,7 +9,7 @@ class UserCartApiService {
     try {
       Response response = await Dio().post(
           '${ApiEndPoints.baseUrl}/api/add-to-cart${product.id}',
-          data: data.toJson());
+          data: product.toJson());
       if (response.statusCode! == 200) {
         log(response.data.toString());
         return UserModel.fromJson(response.data);

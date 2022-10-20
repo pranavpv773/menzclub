@@ -8,7 +8,6 @@ import 'package:menz_cart_app/services/api_endpoints.dart';
 
 class ShirtApiServices {
   Future<ShirtModel> fetchProducts() async {
-    log('reached shirt');
     try {
       Response response = await Dio().get(ApiEndPoints.getShirts);
       if (response.statusCode == 200) {

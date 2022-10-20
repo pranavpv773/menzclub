@@ -8,6 +8,9 @@ import 'package:fluttertoast/fluttertoast.dart';
 import 'package:menz_cart_app/app/shirt/view_model/shirt_provider.dart';
 
 class JeansProvider with ChangeNotifier {
+  JeansProvider() {
+    fetchJeans();
+  }
   List<Jeans> jeansList = [];
   List<Jeans> jeansFitList = [];
   Future<void> fetchJeans() async {
@@ -15,8 +18,10 @@ class JeansProvider with ChangeNotifier {
 
     if (resp.status && resp.jeans.isNotEmpty) {
       jeansList.clear();
-      log(resp.toString());
+      log(resp.jeans.toString());
       jeansList.addAll(resp.jeans);
+      notifyListeners();
+      log(jeansFitList.length.toString());
       allProducts.addAll(jeansList);
       log(allProducts.length.toString());
       notifyListeners();

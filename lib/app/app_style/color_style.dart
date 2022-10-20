@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 
 class AppColor {
+  static GlobalKey<ScaffoldMessengerState> rootScaffoldMessengerKey =
+      GlobalKey<ScaffoldMessengerState>();
   static Color kWhite = Colors.white;
   static Color kBlack = Colors.black;
   static Color primary = const Color.fromARGB(224, 78, 88, 151);
