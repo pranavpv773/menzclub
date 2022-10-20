@@ -1,16 +1,17 @@
+// ignore_for_file: use_build_context_synchronously
+
 import 'dart:developer';
 import 'package:flutter/widgets.dart';
-import 'package:menz_cart_app/app/shirt/view_model/shirt_provider.dart';
+import 'package:menz_cart_app/app/app_style/color_style.dart';
+import 'package:menz_cart_app/app/products/view_model/products_provider.dart';
 import 'package:menz_cart_app/app/t_shirt/api_services/api_services.dart';
 import 'package:menz_cart_app/app/t_shirt/api_services/fit_categories.dart';
 import 'package:menz_cart_app/app/t_shirt/model/tshirt_model.dart';
 // ignore: depend_on_referenced_packages
 import 'package:fluttertoast/fluttertoast.dart';
+import 'package:provider/provider.dart';
 
 class TshirtProvider with ChangeNotifier {
-  TshirtProvider() {
-    fetchTShirtFuction();
-  }
   List<TShirt> tShirtList = [];
   List<TShirt> tShirtFitList = [];
   Future<void> fetchTShirtFuction() async {
@@ -19,7 +20,10 @@ class TshirtProvider with ChangeNotifier {
     if (resp.status && resp.tShirt.isNotEmpty) {
       tShirtList.clear();
       tShirtList.addAll(resp.tShirt);
-      allProducts.addAll(tShirtList);
+      AppColor.rootScaffoldMessengerKey.currentState!.context
+          .read<ProductsProvider>()
+          .allProducts
+          .addAll(tShirtList);
       notifyListeners();
     } else {
       Fluttertoast.showToast(
