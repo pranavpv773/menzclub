@@ -8,7 +8,7 @@ import 'package:menz_cart_app/app/my_cart/model/cart_model.dart';
 import 'package:menz_cart_app/services/api_endpoints.dart';
 
 class CartApiServices {
-  Future<CartModel> addToCart(BuildContext context, Cart data) async {
+  Future<CartRespoModel> addToCart(BuildContext context, data) async {
     log('reached cart');
     try {
       log('reached try');
@@ -16,19 +16,19 @@ class CartApiServices {
       Response response =
           await Dio().post(ApiEndPoints.addToCartApi, data: data.toJson());
       if (response.statusCode == 200) {
+        log(response.data.toString());
         log('reached success');
 
-        return CartModel.fromJson(response.data);
+        return CartRespoModel.fromJson(response.data);
       } else {
-        return CartModel.fromJson(response.data);
+        return CartRespoModel.fromJson(response.data);
       }
     } on DioError catch (e) {
       log('message');
-      return CartModel.fromJson(e.response!.data);
+      return CartRespoModel.fromJson(e.response!.data);
     } catch (e) {
       log(e.toString());
-      return CartModel(
-        cart: [],
+      return CartRespoModel(
         status: false,
         message: e.toString(),
       );

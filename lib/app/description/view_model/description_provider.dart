@@ -1,57 +1,38 @@
 import 'package:flutter/material.dart';
 import 'package:menz_cart_app/app/login/view/login.dart';
+import 'package:menz_cart_app/app/login/view_model/login_provider.dart';
+import 'package:menz_cart_app/app/my_cart/view_model/cart_provider.dart';
 import 'package:menz_cart_app/routes/routes.dart';
+import 'package:provider/provider.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 class DescriptionProvider with ChangeNotifier {
   void selectedItem(
-    BuildContext context,
-    item,
-  ) {
+      BuildContext context, item, name, description, images, price, offer, id) {
     switch (item) {
       case 0:
-        showDialog(
-            context: context,
-            builder: (BuildContext context) {
-              return AlertboxWidget(
-                title: 'You have to login first',
-                btn: 'Cancel',
-                function: () => RoutesProvider.backScreen(),
-              );
-            });
+        loginDialog(context);
         break;
       case 1:
-        showDialog(
-          context: context,
-          builder: (BuildContext context) {
-            return AlertDialog(
-              title: const Text(
-                'Sucessfully added to cart',
-              ),
-              content: Container(
-                width: 100,
-                height: 80,
-                decoration: const BoxDecoration(
-                  image: DecorationImage(
-                    image: AssetImage(
-                      'assets/get_started/success_cart.gif',
-                    ),
-                  ),
-                ),
-              ),
-              actions: <Widget>[
-                TextButton(
-                  child: const Text('Ok'),
-                  onPressed: () {
-                    Navigator.pop(context);
-                  },
-                ),
-              ],
-            );
-          },
-        );
+        context.read<LoginProvider>().isLogged
+            ? context
+                .read<CartProvider>()
+                .addToCart(context, name, description, images, price, offer, id)
+            : loginDialog(context);
         break;
     }
+  }
+
+  Future<dynamic> loginDialog(BuildContext context) {
+    return showDialog(
+        context: context,
+        builder: (BuildContext context) {
+          return AlertboxWidget(
+            title: 'You have to login first',
+            btn: 'Cancel',
+            function: () => RoutesProvider.backScreen(),
+          );
+        });
   }
 }
 
@@ -102,3 +83,32 @@ class AlertboxWidget extends StatelessWidget {
     );
   }
 }
+//  showDialog(
+//           context: context,
+//           builder: (BuildContext context) {
+//             return AlertDialog(
+//               title: const Text(
+//                 'Sucessfully added to cart',
+//               ),
+//               content: Container(
+//                 width: 100,
+//                 height: 80,
+//                 decoration: const BoxDecoration(
+//                   image: DecorationImage(
+//                     image: AssetImage(
+//                       'assets/get_started/success_cart.gif',
+//                     ),
+//                   ),
+//                 ),
+//               ),
+//               actions: <Widget>[
+//                 TextButton(
+//                   child: const Text('Ok'),
+//                   onPressed: () {
+//                     Navigator.pop(context);
+//                   },
+//                 ),
+//               ],
+//             );
+//           },
+//         );
