@@ -145,8 +145,11 @@ class ProductCardBuilder extends StatelessWidget {
                               ),
                               ShopNowButton(
                                 screen: DescriptionScreen(
+                                  id: list[index].id.toString(),
                                   amount: list[index].price.toString(),
                                   discout: list[index].offer.toString(),
+                                  description:
+                                      list[index].description.toString(),
                                   // star: rating!.rate!.toDouble(),
                                   price: list[index].price.toString(),
                                   topcollection:

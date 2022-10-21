@@ -9,22 +9,26 @@ import 'widgets/profile_card.dart';
 import 'widgets/profile_card_image.dart';
 
 class DescriptionScreen extends StatelessWidget {
-  const DescriptionScreen({
-    Key? key,
-    required this.image,
-    required this.amount,
-    required this.discout,
-    required this.name,
-    required this.topcollection,
-    required this.price,
-    // required this.star,
-  }) : super(key: key);
+  const DescriptionScreen(
+      {Key? key,
+      required this.image,
+      required this.amount,
+      required this.discout,
+      required this.name,
+      required this.topcollection,
+      required this.price,
+      required this.description,
+      required this.id
+      // required this.star,
+      })
+      : super(key: key);
   final String image;
   final String amount;
   final String discout;
-  final String name;
+  final String name, id;
+
   final String topcollection;
-  final String price;
+  final String price, description;
   // final double star;
   @override
   Widget build(BuildContext context) {
@@ -102,6 +106,12 @@ class DescriptionScreen extends StatelessWidget {
                 width: width,
                 name: 'BUY NOW',
                 color: AppColor.primary,
+                description: description,
+                images: image,
+                price: price,
+                offer: amount,
+                productName: name,
+                id: id,
               ),
               BottomTab(
                 index: 1,
@@ -113,6 +123,12 @@ class DescriptionScreen extends StatelessWidget {
                   199,
                   13,
                 ),
+                description: description,
+                productName: name,
+                images: image,
+                price: price,
+                offer: amount,
+                id: id,
               ),
             ],
           ),
