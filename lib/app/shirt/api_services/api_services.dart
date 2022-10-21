@@ -11,8 +11,6 @@ class ShirtApiServices {
     try {
       Response response = await Dio().get(ApiEndPoints.getShirts);
       if (response.statusCode == 200) {
-        //final jsonData = response.data as List;
-        // final newList = jsonData.map((e) => ShirtModel.fromJson(e)).toList();
         return ShirtModel.fromJson(response.data);
       } else {
         return ShirtModel.fromJson(response.data);
