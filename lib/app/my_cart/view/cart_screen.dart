@@ -4,9 +4,9 @@ import 'package:menz_cart_app/app/app_style/color_style.dart';
 import 'package:menz_cart_app/app/constants/widgets.dart';
 import 'package:menz_cart_app/app/home/view/widgets/grid_view_card.dart';
 import 'package:menz_cart_app/app/login/view_model/login_provider.dart';
+import 'package:menz_cart_app/app/my_cart/view_model/cart_provider_two.dart';
 import 'package:menz_cart_app/app/order_summary/view/order.dart';
 import 'package:menz_cart_app/app/order_summary/view/widgets/button.dart';
-import 'package:menz_cart_app/app/user/view_model/user_provider.dart';
 import 'package:menz_cart_app/app/utilities/view/divider_widget.dart';
 import 'package:provider/provider.dart';
 import 'widgets/products_card.dart';
@@ -58,7 +58,7 @@ class LoginCartScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return SingleChildScrollView(
       physics: const ScrollPhysics(),
-      child: context.watch<UserProvider>().users[0].cart.isEmpty
+      child: context.watch<CartNotifier>().cartList.isEmpty
           ? SizedBox(
               width: width,
               height: height,
@@ -126,30 +126,44 @@ class CartCardList extends StatelessWidget {
   Widget build(BuildContext context) {
     return Column(
       children: [
-        ProductCartCard(
-          width: width,
-        ),
-        DividerWidget(
-          height: height,
-        ),
-        ProductCartCard(
-          width: width,
-        ),
-        DividerWidget(
-          height: height,
-        ),
-        ProductCartCard(
-          width: width,
-        ),
-        DividerWidget(
-          height: height,
-        ),
-        // PriceDetails(
-        //   height: height,
-        //   amount: amount,
-        //   discout: discount,
-        // ),
-        sizedBox50,
+        ListView.builder(
+            physics: const ScrollPhysics(),
+            shrinkWrap: true,
+            itemCount: context.read<CartNotifier>().cartList.length,
+            itemBuilder: (context, index) {
+              final data = context.read<CartNotifier>().cartList;
+              return Column(
+                children: [
+                  ProductCartCard(
+                    price: data[index].userCart[0].productPrice.toString(),
+                    name: data[index].userCart[0].productName,
+                    image: data[index].userCart[0].images[0],
+                    width: width,
+                  ),
+                  DividerWidget(
+                    height: height,
+                  ),
+                  // ProductCartCard(
+                  //   width: width,
+                  // ),
+                  // DividerWidget(
+                  //   height: height,
+                  // ),
+                  // ProductCartCard(
+                  //   width: width,
+                  // ),
+                  // DividerWidget(
+                  //   height: height,
+                  // ),
+                  // PriceDetails(
+                  //   height: height,
+                  //   amount: amount,
+                  //   discout: discount,
+                  // ),
+                  sizedBox50,
+                ],
+              );
+            }),
         const ShopNowButton(
           textButton: 'Place Order',
           screen: OrderSummary(),

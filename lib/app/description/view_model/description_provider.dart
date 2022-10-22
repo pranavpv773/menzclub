@@ -8,16 +8,40 @@ import 'package:shared_preferences/shared_preferences.dart';
 
 class DescriptionProvider with ChangeNotifier {
   void selectedItem(
-      BuildContext context, item, name, description, images, price, offer, id) {
+    BuildContext context,
+    item,
+    name,
+    description,
+    images,
+    price,
+    offer,
+    id,
+    category,
+    color,
+    brand,
+    size,
+    material,
+  ) {
     switch (item) {
       case 0:
         loginDialog(context);
         break;
       case 1:
         context.read<LoginProvider>().isLogged
-            ? context
-                .read<CartProvider>()
-                .addToCart(context, name, description, images, price, offer, id)
+            ? context.read<CartProvider>().addToCarts(
+                  context,
+                  name,
+                  description,
+                  images,
+                  price,
+                  offer,
+                  id,
+                  category,
+                  color,
+                  brand,
+                  size,
+                  material,
+                )
             : loginDialog(context);
         break;
     }

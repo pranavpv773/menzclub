@@ -4,12 +4,16 @@ import 'package:menz_cart_app/app/app_style/color_style.dart';
 import 'package:menz_cart_app/app/order_summary/view/widgets/button.dart';
 
 class ProductCartCard extends StatelessWidget {
-  const ProductCartCard({
-    Key? key,
-    required this.width,
-  }) : super(key: key);
+  const ProductCartCard(
+      {Key? key,
+      required this.width,
+      required this.name,
+      required this.image,
+      required this.price})
+      : super(key: key);
 
   final double width;
+  final String image, name, price;
 
   @override
   Widget build(BuildContext context) {
@@ -22,8 +26,8 @@ class ProductCartCard extends StatelessWidget {
         children: [
           Row(
             children: [
-              Image.asset(
-                'assets/tshirt/tshirt1.png',
+              Image.network(
+                image,
                 width: width / 3,
               ),
               Expanded(
@@ -34,9 +38,9 @@ class ProductCartCard extends StatelessWidget {
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
-                      const Text(
-                        'Sports Shoes 131 upto ######',
-                        style: TextStyle(
+                      Text(
+                        name,
+                        style: const TextStyle(
                             overflow: TextOverflow.ellipsis,
                             fontWeight: FontWeight.bold,
                             fontSize: 20),
@@ -61,7 +65,7 @@ class ProductCartCard extends StatelessWidget {
                           text: TextSpan(
                             children: <TextSpan>[
                               TextSpan(
-                                text: '\$8.99',
+                                text: '\$ $price',
                                 style: TextStyle(
                                   fontSize: 16,
                                   color: AppColor.kRed,
@@ -69,7 +73,7 @@ class ProductCartCard extends StatelessWidget {
                                 ),
                               ),
                               TextSpan(
-                                text: ' \$3.99',
+                                text: ' \$ $price',
                                 style: TextStyle(
                                   color: AppColor.kGreen,
                                 ),

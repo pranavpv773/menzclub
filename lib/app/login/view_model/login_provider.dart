@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:menz_cart_app/app/global/view/global_screen.dart';
 import 'package:menz_cart_app/app/login/api_service/api_services.dart';
 import 'package:menz_cart_app/app/login/model/login_model.dart';
+import 'package:menz_cart_app/app/my_cart/view_model/cart_provider_two.dart';
 import 'package:menz_cart_app/app/user/view_model/user_provider.dart';
 import 'package:menz_cart_app/routes/routes.dart';
 import 'package:fluttertoast/fluttertoast.dart';
@@ -37,6 +38,7 @@ class LoginProvider with ChangeNotifier {
             .onTabGetUser(email.text)
             .then((value) async {
           isLogged = true;
+          context.read<CartNotifier>().fetchCart(context);
           Fluttertoast.showToast(
             msg: resp.message,
             toastLength: Toast.LENGTH_LONG,
