@@ -101,7 +101,7 @@ class VerticalBulder extends StatelessWidget {
                     ),
                   ),
                   child: Column(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    mainAxisAlignment: MainAxisAlignment.center,
                     children: [
                       Padding(
                         padding: const EdgeInsets.all(
@@ -124,7 +124,7 @@ class VerticalBulder extends StatelessWidget {
                         ),
                       ),
                       Text(
-                        list[index].color,
+                        list[index].price.toString(),
                       ),
                     ],
                   ),

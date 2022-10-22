@@ -3,6 +3,10 @@ import 'package:flutter/material.dart';
 import 'package:menz_cart_app/app/app_style/color_style.dart';
 import 'package:menz_cart_app/app/description/view/description.dart';
 import 'package:menz_cart_app/app/home/view/widgets/grid_view_card.dart';
+import 'package:menz_cart_app/app/login/view_model/login_provider.dart';
+import 'package:menz_cart_app/app/my_cart/view_model/cart_provider.dart';
+import 'package:fluttertoast/fluttertoast.dart';
+import 'package:provider/provider.dart';
 
 class ProductCardBuilder extends StatelessWidget {
   const ProductCardBuilder({
@@ -107,21 +111,63 @@ class ProductCardBuilder extends StatelessWidget {
                                   children: [
                                     Expanded(
                                       child: Text(
-                                        lists[index].name.toString(),
+                                        lists[index]
+                                            .name
+                                            .toString()
+                                            .toUpperCase(),
                                         style: const TextStyle(
+                                          fontWeight: FontWeight.bold,
+                                          letterSpacing: 1,
                                           overflow: TextOverflow.ellipsis,
                                         ),
                                       ),
                                     ),
-                                    const Icon(
-                                      Icons.favorite_border_outlined,
-                                    )
+                                    GestureDetector(
+                                      onTap: () {
+                                        context.read<LoginProvider>().isLogged
+                                            ? context
+                                                .read<CartProvider>()
+                                                .addToCarts(
+                                                  context,
+                                                  lists[index].name,
+                                                  lists[index]
+                                                      .description
+                                                      .toString(),
+                                                  lists[index]
+                                                      .images[0]
+                                                      .toString(),
+                                                  lists[index].price,
+                                                  lists[index].offer,
+                                                  lists[index].id.toString(),
+                                                  lists[index]
+                                                      .category
+                                                      .toString(),
+                                                  lists[index].color.toString(),
+                                                  lists[index].brand.toString(),
+                                                  lists[index].size.toString(),
+                                                  lists[index]
+                                                      .material
+                                                      .toString(),
+                                                )
+                                            : Fluttertoast.showToast(
+                                                msg:
+                                                    "Please login to add product to cart",
+                                                toastLength: Toast.LENGTH_LONG,
+                                              );
+                                      },
+                                      child: Image.asset(
+                                        "assets/lottee/add-to-cart.png",
+                                        width: 50,
+                                        height: 30,
+                                      ),
+                                    ),
                                   ],
                                 ),
                               ),
                               Padding(
                                 padding: const EdgeInsets.symmetric(
-                                  horizontal: 0.0,
+                                  vertical: 5,
+                                  horizontal: 10.0,
                                 ),
                                 child: Row(
                                   mainAxisAlignment:
@@ -134,9 +180,9 @@ class ProductCardBuilder extends StatelessWidget {
                                         color: Colors.green,
                                       ),
                                     ),
-                                    const Text(
-                                      '60-80% Off',
-                                      style: TextStyle(
+                                    Text(
+                                      '${lists[index].offer.toString()} Off',
+                                      style: const TextStyle(
                                         color: Colors.green,
                                       ),
                                     ),
