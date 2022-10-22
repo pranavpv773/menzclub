@@ -82,6 +82,12 @@ class GridViewCard extends StatelessWidget {
                       ),
                       ShopNowButton(
                         screen: DescriptionScreen(
+                          category: data[index].category.toString(),
+                          colors: data[index].color.toString(),
+                          size: data[index].size.toString(),
+                          offer: data[index].offer.toString(),
+                          brand: data[index].brand,
+                          material: data[index].category,
                           id: data[index].id.toString(),
                           amount: data[index].price.toString(),
                           discout: data[index].offer.toString(),

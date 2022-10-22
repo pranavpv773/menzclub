@@ -9,14 +9,14 @@ class ProductCardBuilder extends StatelessWidget {
     Key? key,
     required this.height,
     required this.width,
-    required this.list,
+    required this.lists,
   }) : super(key: key);
   final double height;
   final double width;
-  final List list;
+  final List lists;
   @override
   Widget build(BuildContext context) {
-    return list.isEmpty
+    return lists.isEmpty
         ? Center(
             child: Container(
               width: width,
@@ -51,7 +51,7 @@ class ProductCardBuilder extends StatelessWidget {
               crossAxisSpacing: 5,
               mainAxisSpacing: 20,
             ),
-            itemCount: list.length,
+            itemCount: lists.length,
             itemBuilder: (BuildContext ctx, index) {
               return Padding(
                 padding: const EdgeInsets.all(
@@ -82,7 +82,7 @@ class ProductCardBuilder extends StatelessWidget {
                             ),
                             image: DecorationImage(
                               image: CachedNetworkImageProvider(
-                                list[index].images[0].toString(),
+                                lists[index].images[0].toString(),
                               ),
                               fit: BoxFit.fill,
                             ),
@@ -107,7 +107,7 @@ class ProductCardBuilder extends StatelessWidget {
                                   children: [
                                     Expanded(
                                       child: Text(
-                                        list[index].name.toString(),
+                                        lists[index].name.toString(),
                                         style: const TextStyle(
                                           overflow: TextOverflow.ellipsis,
                                         ),
@@ -128,7 +128,7 @@ class ProductCardBuilder extends StatelessWidget {
                                       MainAxisAlignment.spaceBetween,
                                   children: [
                                     Text(
-                                      '\$ ${list[index].price.toString()}',
+                                      '\$ ${lists[index].price.toString()}',
                                       style: const TextStyle(
                                         fontSize: 16,
                                         color: Colors.green,
@@ -145,17 +145,23 @@ class ProductCardBuilder extends StatelessWidget {
                               ),
                               ShopNowButton(
                                 screen: DescriptionScreen(
-                                  id: list[index].id.toString(),
-                                  amount: list[index].price.toString(),
-                                  discout: list[index].offer.toString(),
+                                  brand: lists[index].brand.toString(),
+                                  offer: lists[index].offer.toString(),
+                                  material: lists[index].material.toString(),
+                                  colors: lists[index].color.toString(),
+                                  size: lists[index].size.toString(),
+                                  category: lists[index].category.toString(),
+                                  id: lists[index].id.toString(),
+                                  amount: lists[index].price.toString(),
+                                  discout: lists[index].offer.toString(),
                                   description:
-                                      list[index].description.toString(),
+                                      lists[index].description.toString(),
                                   // star: rating!.rate!.toDouble(),
-                                  price: list[index].price.toString(),
+                                  price: lists[index].price.toString(),
                                   topcollection:
-                                      list[index].description.toString(),
-                                  image: list[index].images[0].toString(),
-                                  name: list[index].name.toString(),
+                                      lists[index].description.toString(),
+                                  image: lists[index].images[0].toString(),
+                                  name: lists[index].name.toString(),
                                 ),
                                 textButton: 'SHOP NOW',
                               ),

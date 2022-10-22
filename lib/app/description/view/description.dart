@@ -18,7 +18,13 @@ class DescriptionScreen extends StatelessWidget {
       required this.topcollection,
       required this.price,
       required this.description,
-      required this.id
+      required this.id,
+      required this.brand,
+      required this.category,
+      required this.colors,
+      required this.material,
+      required this.offer,
+      required this.size
       // required this.star,
       })
       : super(key: key);
@@ -28,7 +34,14 @@ class DescriptionScreen extends StatelessWidget {
   final String name, id;
 
   final String topcollection;
-  final String price, description;
+  final String description,
+      price,
+      offer,
+      category,
+      colors,
+      brand,
+      size,
+      material;
   // final double star;
   @override
   Widget build(BuildContext context) {
@@ -129,6 +142,11 @@ class DescriptionScreen extends StatelessWidget {
                 price: price,
                 offer: amount,
                 id: id,
+                material: material,
+                brand: brand,
+                colors: colors,
+                category: category,
+                size: size,
               ),
             ],
           ),
