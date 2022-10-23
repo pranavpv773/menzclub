@@ -50,6 +50,8 @@ dependencies:
   cached_network_image: ^3.2.1
   shimmer_animation: ^2.1.0+1
   badges: ^2.0.3
+  timeline_tile: ^2.0.0
+  percent_indicator: ^4.2.2
 dev_dependencies:
   flutter_test:
     sdk: flutter
