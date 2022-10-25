@@ -17,13 +17,13 @@ class CartProvider with ChangeNotifier {
     String name,
     String description,
     images,
-    price,
-    offer,
+    int price,
+    int offer,
     String id,
     category,
     color,
     brand,
-    size,
+    int size,
     String material,
   ) async {
     log(id);
@@ -32,12 +32,12 @@ class CartProvider with ChangeNotifier {
       productName: name,
       productDescription: description,
       images: [images],
-      productPrice: int.parse(price),
-      productOffer: int.parse(offer),
+      productPrice: price,
+      productOffer: offer,
       productCategory: category,
       productColor: color.toString(),
       productBrand: brand.toString(),
-      productSize: int.parse(size),
+      productSize: size,
       productMaterial: material.toString(),
     );
     final datas = Cart(

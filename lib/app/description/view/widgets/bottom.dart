@@ -12,14 +12,14 @@ class BottomTab extends StatelessWidget {
     required this.name,
     this.description,
     this.images,
-    this.price,
+    required this.price,
     this.productName,
-    this.offer,
+    required this.offer,
     this.id,
     this.category,
     this.colors,
     this.brand,
-    this.size,
+    required this.size,
     this.material,
   }) : super(key: key);
 
@@ -29,15 +29,13 @@ class BottomTab extends StatelessWidget {
   final int index;
   final String? description,
       images,
-      price,
-      offer,
       productName,
       id,
       category,
       colors,
       brand,
-      size,
       material;
+  final int price, offer, size;
   @override
   Widget build(BuildContext context) {
     return Container(
