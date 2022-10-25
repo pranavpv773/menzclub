@@ -69,9 +69,8 @@ class UserCart {
     required this.productBrand,
     required this.productSize,
     required this.productMaterial,
-    this.id,
+    required this.id,
   });
-
   String productName;
   String productDescription;
   List<String> images;
@@ -82,7 +81,7 @@ class UserCart {
   String productBrand;
   int productSize;
   String productMaterial;
-  String? id;
+  String id;
 
   factory UserCart.fromJson(Map<String, dynamic> json) => UserCart(
         productName: json["product_name"],
@@ -95,7 +94,7 @@ class UserCart {
         productBrand: json["product_brand"],
         productSize: json["product_size"],
         productMaterial: json["product_material"],
-        id: json["_id"],
+        id: json["product_id"],
       );
 
   Map<String, dynamic> toJson() => {
@@ -109,6 +108,6 @@ class UserCart {
         "product_brand": productBrand,
         "product_size": productSize,
         "product_material": productMaterial,
-        "_id": id,
+        "product_id": id,
       };
 }

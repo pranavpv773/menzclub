@@ -1,6 +1,7 @@
 // ignore_for_file: body_might_complete_normally_nullable
 import 'package:flutter/material.dart';
 import 'package:menz_cart_app/app/app_style/color_style.dart';
+import 'package:menz_cart_app/app/app_style/text_style.dart';
 import 'package:menz_cart_app/app/login/view_model/login_provider.dart';
 import 'package:provider/provider.dart';
 
@@ -28,10 +29,7 @@ class LoginTextforms extends StatelessWidget {
                       : "Check your email",
               keyboardType: TextInputType.emailAddress,
               controller: context.read<LoginProvider>().email,
-              style: TextStyle(
-                color: AppColor.kGrey,
-                fontSize: 18,
-              ),
+              style: AppTextStyles.formField,
               decoration: InputDecoration(
                 fillColor: AppColor.kWhite,
                 filled: true,
@@ -93,10 +91,7 @@ class LoginTextforms extends StatelessWidget {
                 }
               },
               controller: context.read<LoginProvider>().password,
-              style: TextStyle(
-                color: AppColor.kGrey,
-                fontSize: 18,
-              ),
+              style: AppTextStyles.formField,
               obscuringCharacter: '*',
               obscureText: true,
               decoration: InputDecoration(

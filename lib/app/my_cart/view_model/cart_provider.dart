@@ -1,5 +1,7 @@
 // ignore_for_file: depend_on_referenced_packages, use_build_context_synchronously
 
+import 'dart:developer';
+
 import 'package:flutter/widgets.dart';
 import 'package:menz_cart_app/app/my_cart/api_services/api_services.dart';
 import 'package:menz_cart_app/app/my_cart/model/cart_get_model.dart';
@@ -10,21 +12,23 @@ import 'package:provider/provider.dart';
 import 'package:fluttertoast/fluttertoast.dart';
 
 class CartProvider with ChangeNotifier {
-  addToCarts(
+  addToCart(
     BuildContext context,
     String name,
     String description,
     images,
     price,
     offer,
-    id,
+    String id,
     category,
     color,
     brand,
     size,
     String material,
   ) async {
+    log(id);
     final userCart = UserCart(
+      id: id,
       productName: name,
       productDescription: description,
       images: [images],

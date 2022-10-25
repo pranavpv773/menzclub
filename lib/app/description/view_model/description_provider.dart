@@ -28,7 +28,7 @@ class DescriptionProvider with ChangeNotifier {
         break;
       case 1:
         context.read<LoginProvider>().isLogged
-            ? context.read<CartProvider>().addToCarts(
+            ? context.read<CartProvider>().addToCart(
                   context,
                   name,
                   description,

@@ -128,7 +128,7 @@ class ProductCardBuilder extends StatelessWidget {
                                         context.read<LoginProvider>().isLogged
                                             ? context
                                                 .read<CartProvider>()
-                                                .addToCarts(
+                                                .addToCart(
                                                   context,
                                                   lists[index].name,
                                                   lists[index]
