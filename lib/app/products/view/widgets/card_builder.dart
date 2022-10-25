@@ -29,7 +29,7 @@ class ProductCardBuilder extends StatelessWidget {
               decoration: const BoxDecoration(
                 image: DecorationImage(
                   image: AssetImage(
-                    'assets/lottee/emptyCart1.gif',
+                    'assets/lottee/urban-man-with-mobile-phone-is-shopping-in-online-store-shopping-bag-is-in-supermarket-cart (1).png',
                   ),
                 ),
               ),
@@ -51,7 +51,7 @@ class ProductCardBuilder extends StatelessWidget {
             shrinkWrap: true,
             gridDelegate: SliverGridDelegateWithMaxCrossAxisExtent(
               maxCrossAxisExtent: 250,
-              mainAxisExtent: height / 2,
+              mainAxisExtent: height / 1.9,
               childAspectRatio: 3 / 2,
               crossAxisSpacing: 5,
               mainAxisSpacing: 20,
