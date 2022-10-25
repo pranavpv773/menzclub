@@ -26,38 +26,57 @@ class CartProvider with ChangeNotifier {
     int size,
     String material,
   ) async {
-    log(id);
-    final userCart = UserCart(
-      id: id,
-      productName: name,
-      productDescription: description,
-      images: [images],
-      productPrice: price,
-      productOffer: offer,
-      productCategory: category,
-      productColor: color.toString(),
-      productBrand: brand.toString(),
-      productSize: size,
-      productMaterial: material.toString(),
-    );
-    final datas = Cart(
-      userMail: context.read<UserProvider>().userList[0].userMail,
-      userCart: [userCart],
-    );
-    CartRespoModel resp = await CartApiServices().addToCart(context, datas);
-
-    if (resp.status) {
-      context.read<CartNotifier>().fetchCart(context);
-      Fluttertoast.showToast(
-        msg: resp.message,
-        toastLength: Toast.LENGTH_LONG,
+    final vaal = productCheck(context, id);
+    if (vaal == false) {
+      final userCart = UserCart(
+        id: id,
+        productName: name,
+        productDescription: description,
+        images: [images],
+        productPrice: price,
+        productOffer: offer,
+        productCategory: category,
+        productColor: color.toString(),
+        productBrand: brand.toString(),
+        productSize: size,
+        productMaterial: material.toString(),
       );
-      notifyListeners();
+      final datas = Cart(
+        userMail: context.read<UserProvider>().userList[0].userMail,
+        userCart: [userCart],
+      );
+      CartRespoModel resp = await CartApiServices().addToCart(context, datas);
+
+      if (resp.status) {
+        context.read<CartNotifier>().fetchCart(context);
+        Fluttertoast.showToast(
+          msg: resp.message,
+          toastLength: Toast.LENGTH_LONG,
+        );
+        notifyListeners();
+      } else {
+        Fluttertoast.showToast(
+          msg: resp.message,
+          toastLength: Toast.LENGTH_LONG,
+        );
+      }
     } else {
       Fluttertoast.showToast(
-        msg: resp.message,
+        msg: "Product already added to cart",
         toastLength: Toast.LENGTH_LONG,
       );
     }
+  }
+
+  bool productCheck(BuildContext context, String id) {
+    bool boole = false;
+    for (int i = 0; i < context.read<CartNotifier>().cartList.length; i++) {
+      if (context.read<CartNotifier>().cartList[i].userCart[0].id == id) {
+        boole = true;
+        break;
+      }
+    }
+    log(boole.toString());
+    return boole;
   }
 }

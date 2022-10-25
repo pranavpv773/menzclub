@@ -52,6 +52,7 @@ dependencies:
   badges: ^2.0.3
   timeline_tile: ^2.0.0
   percent_indicator: ^4.2.2
+  shimmer: ^2.0.0
 dev_dependencies:
   flutter_test:
     sdk: flutter
