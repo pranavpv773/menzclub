@@ -9,6 +9,7 @@ import 'package:menz_cart_app/app/my_cart/view_model/cart_provider.dart';
 import 'package:fluttertoast/fluttertoast.dart';
 import 'package:menz_cart_app/app/shirt/view_model/shirt_provider_two.dart';
 import 'package:provider/provider.dart';
+import 'package:shimmer_animation/shimmer_animation.dart';
 
 class ProductCardBuilder extends StatelessWidget {
   const ProductCardBuilder({
@@ -22,17 +23,38 @@ class ProductCardBuilder extends StatelessWidget {
   final List lists;
   @override
   Widget build(BuildContext context) {
-    return context.watch<ShirtProviderTwo>().fetchBool
-        ? Container(
-            width: width,
-            height: height,
-            decoration: const BoxDecoration(
-              image: DecorationImage(
-                image: AssetImage("assets/lottee/shimmer.gif"),
-                fit: BoxFit.cover,
-              ),
+    return context.watch<ShirtProviderTwo>().fetchBool == true
+        ? GridView.builder(
+            padding: const EdgeInsets.symmetric(
+              vertical: 16.0,
             ),
-          )
+            physics: const ScrollPhysics(),
+            shrinkWrap: true,
+            gridDelegate: SliverGridDelegateWithMaxCrossAxisExtent(
+              maxCrossAxisExtent: 250,
+              mainAxisExtent: height / 3,
+              childAspectRatio: 3 / 2,
+              crossAxisSpacing: 5,
+              mainAxisSpacing: 20,
+            ),
+            itemCount: 15,
+            itemBuilder: (BuildContext ctx, index) {
+              return Padding(
+                padding: const EdgeInsets.all(8.0),
+                child: Shimmer(
+                  direction: const ShimmerDirection.fromRightToLeft(),
+                  color: Colors.white,
+                  child: Container(
+                    decoration: BoxDecoration(
+                      color: Colors.grey[350],
+                      borderRadius: BorderRadius.circular(
+                        10,
+                      ),
+                    ),
+                  ),
+                ),
+              );
+            })
         : lists.isEmpty
             ? EmptyCart(width: width, height: height)
             : GridView.builder(

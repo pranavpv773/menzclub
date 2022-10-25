@@ -40,8 +40,8 @@ class TopCollectionsWidget extends StatelessWidget {
               itemCount: 4,
               itemBuilder: (BuildContext ctx, index) {
                 return GestureDetector(
-                  onTap: () async {
-                    await context.read<ShirtProviderTwo>().fetchShirtCollection(
+                  onTap: () {
+                    context.read<ShirtProviderTwo>().fetchShirtCollection(
                           shirtList[index]['topcollection'].toString(),
                         );
                     RoutesProvider.nextScreen(

@@ -16,7 +16,6 @@ class ShirtApiServices {
         return ShirtModel.fromJson(response.data);
       }
     } on DioError catch (e) {
-      log('message');
       return ShirtModel.fromJson(e.response!.data);
     } catch (e) {
       log(e.toString());
