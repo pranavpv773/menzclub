@@ -36,6 +36,11 @@ class AppTextStyles {
     letterSpacing: 2,
     fontFamily: GoogleFonts.radley().fontFamily,
   );
+  static TextStyle formField = TextStyle(
+    color: AppColor.kBlack,
+    fontWeight: FontWeight.bold,
+    fontSize: 18,
+  );
 
   static TextStyle h3 = TextStyle(
     fontFamily: fontFamily,

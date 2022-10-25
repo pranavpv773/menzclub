@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_rating_bar/flutter_rating_bar.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:menz_cart_app/app/app_style/color_style.dart';
 
 class ProductDetailsCard extends StatelessWidget {
@@ -22,15 +23,16 @@ class ProductDetailsCard extends StatelessWidget {
     return Padding(
       padding: const EdgeInsets.symmetric(horizontal: 10.0),
       child: Column(
+        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          Center(
-            child: Text(
-              name,
-              style: const TextStyle(
-                  overflow: TextOverflow.ellipsis,
-                  fontWeight: FontWeight.bold,
-                  fontSize: 20),
+          Text(
+            name.toUpperCase(),
+            style: TextStyle(
+              overflow: TextOverflow.ellipsis,
+              fontFamily: GoogleFonts.gafata().fontFamily,
+              fontWeight: FontWeight.bold,
+              fontSize: 20,
             ),
           ),
           RatingBarIndicator(
