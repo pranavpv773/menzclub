@@ -139,13 +139,13 @@ class ProductCardBuilder extends StatelessWidget {
                                                       .toString(),
                                                   lists[index].price,
                                                   lists[index].offer,
-                                                  lists[index].id.toString(),
+                                                  lists[index].id,
                                                   lists[index]
                                                       .category
                                                       .toString(),
                                                   lists[index].color.toString(),
                                                   lists[index].brand.toString(),
-                                                  lists[index].size.toString(),
+                                                  lists[index].size,
                                                   lists[index]
                                                       .material
                                                       .toString(),
@@ -193,18 +193,17 @@ class ProductCardBuilder extends StatelessWidget {
                               ShopNowButton(
                                 screen: DescriptionScreen(
                                   brand: lists[index].brand.toString(),
-                                  offer: lists[index].offer.toString(),
+                                  offer: lists[index].offer,
                                   material: lists[index].material.toString(),
                                   colors: lists[index].color.toString(),
-                                  size: lists[index].size.toString(),
+                                  size: lists[index].size,
                                   category: lists[index].category.toString(),
                                   id: lists[index].id.toString(),
                                   amount: lists[index].price.toString(),
                                   discout: lists[index].offer.toString(),
                                   description:
                                       lists[index].description.toString(),
-                                  // star: rating!.rate!.toDouble(),
-                                  price: lists[index].price.toString(),
+                                  price: lists[index].price,
                                   topcollection:
                                       lists[index].description.toString(),
                                   image: lists[index].images[0].toString(),

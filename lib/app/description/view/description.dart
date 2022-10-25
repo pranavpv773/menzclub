@@ -34,14 +34,8 @@ class DescriptionScreen extends StatelessWidget {
   final String name, id;
 
   final String topcollection;
-  final String description,
-      price,
-      offer,
-      category,
-      colors,
-      brand,
-      size,
-      material;
+  final String description, category, colors, brand, material;
+  final int price, offer, size;
   // final double star;
   @override
   Widget build(BuildContext context) {
@@ -71,8 +65,8 @@ class DescriptionScreen extends StatelessWidget {
                 name: name,
                 topcollection: topcollection,
                 star: 5,
-                price: price,
-                discount: discout,
+                price: price.toString(),
+                discount: discout.toString(),
               ),
               DividerWidget(
                 height: height / 2,
@@ -122,7 +116,8 @@ class DescriptionScreen extends StatelessWidget {
                 description: description,
                 images: image,
                 price: price,
-                offer: amount,
+                size: size,
+                offer: int.parse(amount),
                 productName: name,
                 id: id,
               ),
@@ -140,7 +135,7 @@ class DescriptionScreen extends StatelessWidget {
                 productName: name,
                 images: image,
                 price: price,
-                offer: amount,
+                offer: int.parse(amount),
                 id: id,
                 material: material,
                 brand: brand,
