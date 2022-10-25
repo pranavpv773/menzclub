@@ -220,7 +220,7 @@ class ShirtBannerBuilder extends StatelessWidget {
               log(
                 shirtList[index]['color'].toString(),
               );
-              await context.read<ShirtProviderTwo>().fetchShirtColor(
+              context.read<ShirtProviderTwo>().fetchShirtColor(
                     shirtList[index]['color'].toString(),
                   );
               RoutesProvider.nextScreen(

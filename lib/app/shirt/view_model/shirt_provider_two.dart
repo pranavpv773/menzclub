@@ -13,18 +13,24 @@ class ShirtProviderTwo with ChangeNotifier {
   List<Shirt> shirtcolor = [];
   List<Shirt> shirtCollection = [];
   List<Shirt> shirtCategory = [];
+  bool fetchBool = false;
 
   fetchShirtColor(String color) async {
+    fetchBool = true;
+    notifyListeners();
     shirtcolor.clear();
     ShirtModel resp =
         await ShirtColorApiServices().fetchShirtColor(color.toLowerCase());
 
     if (resp.status && resp.shirt.isNotEmpty) {
       shirtcolor.clear();
+      fetchBool = false;
       shirtcolor.addAll(resp.shirt);
 
       notifyListeners();
     } else {
+      fetchBool = false;
+      notifyListeners();
       Fluttertoast.showToast(
         msg: resp.message,
         toastLength: Toast.LENGTH_LONG,

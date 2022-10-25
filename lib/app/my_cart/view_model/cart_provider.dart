@@ -27,8 +27,6 @@ class CartProvider with ChangeNotifier {
     String material,
   ) async {
     final vaal = productCheck(context, id);
-
-    log(vaal.toString());
     if (vaal == false) {
       final userCart = UserCart(
         id: id,
