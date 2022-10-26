@@ -7,9 +7,11 @@ import 'package:menz_cart_app/app/login/view_model/login_provider.dart';
 import 'package:menz_cart_app/app/my_cart/view_model/cart_provider.dart';
 // ignore: depend_on_referenced_packages
 import 'package:fluttertoast/fluttertoast.dart';
+import 'package:menz_cart_app/app/products/view/widgets/empty_cart.dart';
 import 'package:menz_cart_app/app/shirt/view_model/shirt_provider_two.dart';
 import 'package:provider/provider.dart';
-import 'package:shimmer_animation/shimmer_animation.dart';
+
+import 'smimmer_card.dart';
 
 class ProductCardBuilder extends StatelessWidget {
   const ProductCardBuilder({
@@ -24,37 +26,7 @@ class ProductCardBuilder extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return context.watch<ShirtProviderTwo>().fetchBool == true
-        ? GridView.builder(
-            padding: const EdgeInsets.symmetric(
-              vertical: 16.0,
-            ),
-            physics: const ScrollPhysics(),
-            shrinkWrap: true,
-            gridDelegate: SliverGridDelegateWithMaxCrossAxisExtent(
-              maxCrossAxisExtent: 250,
-              mainAxisExtent: height / 3,
-              childAspectRatio: 3 / 2,
-              crossAxisSpacing: 5,
-              mainAxisSpacing: 20,
-            ),
-            itemCount: 15,
-            itemBuilder: (BuildContext ctx, index) {
-              return Padding(
-                padding: const EdgeInsets.all(8.0),
-                child: Shimmer(
-                  direction: const ShimmerDirection.fromRightToLeft(),
-                  color: Colors.white,
-                  child: Container(
-                    decoration: BoxDecoration(
-                      color: Colors.grey[350],
-                      borderRadius: BorderRadius.circular(
-                        10,
-                      ),
-                    ),
-                  ),
-                ),
-              );
-            })
+        ? ShimmerCardBuilder(height: height)
         : lists.isEmpty
             ? EmptyCart(width: width, height: height)
             : GridView.builder(
@@ -197,14 +169,14 @@ class ProductCardBuilder extends StatelessWidget {
                                           MainAxisAlignment.spaceBetween,
                                       children: [
                                         Text(
-                                          '\$ ${lists[index].price.toString()}',
+                                          '\u{20B9} ${lists[index].price.toString()}',
                                           style: const TextStyle(
                                             fontSize: 16,
                                             color: Colors.green,
                                           ),
                                         ),
                                         Text(
-                                          '${lists[index].offer.toString()} Off',
+                                          '${lists[index].offer.toString()}% Off',
                                           style: const TextStyle(
                                             color: Colors.green,
                                           ),
@@ -245,41 +217,5 @@ class ProductCardBuilder extends StatelessWidget {
                   );
                 },
               );
-  }
-}
-
-class EmptyCart extends StatelessWidget {
-  const EmptyCart({
-    Key? key,
-    required this.width,
-    required this.height,
-  }) : super(key: key);
-
-  final double width;
-  final double height;
-
-  @override
-  Widget build(BuildContext context) {
-    return Center(
-      child: Container(
-        width: width,
-        height: height,
-        decoration: const BoxDecoration(
-          image: DecorationImage(
-            image: AssetImage(
-              'assets/lottee/urban-man-with-mobile-phone-is-shopping-in-online-store-shopping-bag-is-in-supermarket-cart (1).png',
-            ),
-          ),
-        ),
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.start,
-          children: const [
-            Text(
-              'Nothing found',
-            ),
-          ],
-        ),
-      ),
-    );
   }
 }

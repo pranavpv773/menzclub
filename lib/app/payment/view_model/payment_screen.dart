@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 // ignore: depend_on_referenced_packages
 import 'package:fluttertoast/fluttertoast.dart';
 import 'package:menz_cart_app/app/app_style/text_style.dart';
-import 'package:menz_cart_app/app/my_cart/view/cart_screen.dart';
+import 'package:menz_cart_app/app/global/view/global_screen.dart';
 import 'package:menz_cart_app/app/payment/view/success_screen.dart';
 import 'package:menz_cart_app/app/payment/view/unsuccess_screen.dart';
 import 'package:menz_cart_app/routes/routes.dart';
@@ -65,8 +65,8 @@ class PaymentProvider with ChangeNotifier {
       const Duration(
         seconds: 2,
       ),
-    ).then((value) => RoutesProvider.removeScreen(
-          screen: const CartScreen(),
+    ).then((value) => RoutesProvider.removeScreenUntil(
+          screen: const GlobalScreen(),
         ));
   }
 }

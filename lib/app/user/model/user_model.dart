@@ -36,7 +36,6 @@ class User {
     required this.userNumber,
     required this.userPassword,
     required this.address,
-    required this.cart,
   });
 
   String? id;
@@ -45,7 +44,6 @@ class User {
   int userNumber;
   String userPassword;
   String address;
-  List<dynamic> cart;
 
   factory User.fromJson(Map<String, dynamic> json) => User(
         id: json["_id"],
@@ -54,7 +52,6 @@ class User {
         userNumber: json["user_number"],
         userPassword: json["user_password"],
         address: json["address"],
-        cart: List<dynamic>.from(json["cart"].map((x) => x)),
       );
 
   Map<String, dynamic> toJson() => {
@@ -64,7 +61,6 @@ class User {
         "user_number": userNumber,
         "user_password": userPassword,
         "address": address,
-        "cart": List<dynamic>.from(cart.map((x) => x)),
       };
   User copyWith({
     String? id,
@@ -82,7 +78,6 @@ class User {
       userPassword: userPassword ?? this.userPassword,
       address: address ?? this.address,
       userNumber: userNumber ?? this.userNumber,
-      cart: cart ?? this.cart,
     );
   }
 }

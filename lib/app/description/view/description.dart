@@ -1,8 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:menz_cart_app/app/app_style/color_style.dart';
+import 'package:menz_cart_app/app/login/view_model/login_provider.dart';
 import 'package:menz_cart_app/app/my_cart/view/widgets/price_details.dart';
+import 'package:menz_cart_app/app/my_cart/view_model/cart_provider.dart';
 import 'package:menz_cart_app/app/utilities/view/appbar_widget.dart';
 import 'package:menz_cart_app/app/utilities/view/divider_widget.dart';
+import 'package:provider/provider.dart';
 import 'widgets/bottom.dart';
 import 'widgets/delivery.dart';
 import 'widgets/profile_card.dart';
@@ -124,7 +127,11 @@ class DescriptionScreen extends StatelessWidget {
               BottomTab(
                 index: 1,
                 width: width,
-                name: 'Add to cart',
+                name: context.watch<LoginProvider>().isLogged
+                    ? context.watch<CartProvider>().productCheck(context, id)
+                        ? "Remove from cart"
+                        : 'Add to cart'
+                    : 'Add to cart',
                 color: const Color.fromARGB(
                   199,
                   220,

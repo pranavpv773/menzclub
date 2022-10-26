@@ -41,7 +41,6 @@ class UserProvider extends ChangeNotifier {
     userPassword: '',
     address: '',
     userNumber: 0,
-    cart: [],
   );
 
   User get user => _user;
