@@ -18,7 +18,9 @@ class NointernetScreen extends StatelessWidget {
         decoration: BoxDecoration(
           color: AppColor.primary1,
           image: const DecorationImage(
-            image: AssetImage("assets/lottee/no_internet.png"),
+            image: AssetImage(
+              "assets/lottee/no_internet.png",
+            ),
           ),
         ),
         child: Column(

@@ -75,7 +75,7 @@ class GridViewCard extends StatelessWidget {
                         ),
                       ),
                       Text(
-                        '${data[index].offer} Off',
+                        '${data[index].offer}% Off',
                         style: const TextStyle(
                           color: Colors.green,
                         ),

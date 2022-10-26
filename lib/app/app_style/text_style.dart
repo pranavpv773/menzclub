@@ -86,4 +86,8 @@ class AppTextStyles {
     fontFamily: fontFamily,
     fontSize: 10,
   );
+  static TextStyle currency = const TextStyle(
+    fontSize: 16,
+    color: Colors.green,
+  );
 }

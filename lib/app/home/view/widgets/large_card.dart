@@ -1,6 +1,7 @@
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:menz_cart_app/app/app_style/color_style.dart';
+import 'package:menz_cart_app/app/app_style/text_style.dart';
 
 class LargeCardsWidget extends StatelessWidget {
   const LargeCardsWidget({
@@ -78,7 +79,7 @@ class VerticalBulder extends StatelessWidget {
       child: ListView(
         scrollDirection: Axis.horizontal,
         children: List.generate(
-          list.length,
+          6,
           (index) => Padding(
             padding: const EdgeInsets.all(
               8.0,
@@ -124,8 +125,9 @@ class VerticalBulder extends StatelessWidget {
                         ),
                       ),
                       Text(
-                        list[index].price.toString(),
-                      ),
+                        '\u{20B9} ${list[index].price.toString()}',
+                        style: AppTextStyles.currency,
+                      )
                     ],
                   ),
                 ),
