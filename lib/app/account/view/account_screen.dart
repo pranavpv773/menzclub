@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:menz_cart_app/app/app_style/color_style.dart';
+import 'package:menz_cart_app/app/app_style/text_style.dart';
 import 'package:menz_cart_app/app/login/view_model/login_provider.dart';
 import 'package:menz_cart_app/app/my_cart/view/cart_screen.dart';
 import 'package:menz_cart_app/app/user/view_model/user_provider.dart';
@@ -31,11 +32,14 @@ class AccountScreen extends StatelessWidget {
                           child: CircleAvatar(
                             radius: 20,
                             backgroundColor: AppColor.kWhite,
-                            child: Text(context
-                                .read<UserProvider>()
-                                .userList[0]
-                                .userName[0]
-                                .toUpperCase()),
+                            child: Text(
+                              context
+                                  .read<UserProvider>()
+                                  .userList[0]
+                                  .userName[0]
+                                  .toUpperCase(),
+                              style: AppTextStyles.h3,
+                            ),
                           ),
                         ),
                         Padding(

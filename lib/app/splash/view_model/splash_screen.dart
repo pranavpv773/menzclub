@@ -16,7 +16,6 @@ class SplashProvider with ChangeNotifier {
     log(check.toString());
     final checkGetStart = await SharedPreferences.getInstance();
     final checkResult = checkGetStart.getBool('get_started') ?? false;
-    //await getToHome(context);
     await Future.delayed(
       const Duration(
         seconds: 5,
@@ -24,7 +23,6 @@ class SplashProvider with ChangeNotifier {
     );
     if (checkResult) {
       RoutesProvider.removeScreenUntil(
-        // ignore: unrelated_type_equality_checks
         screen: check == true ? const GlobalScreen() : const NointernetScreen(),
       );
     } else {

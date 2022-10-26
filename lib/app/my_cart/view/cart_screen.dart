@@ -102,11 +102,11 @@ class LoginCartScreen extends StatelessWidget {
                   ShopTransparentButton(
                     fn: () {
                       RoutesProvider.nextScreen(
-                          screen: ProductsScreen(
-                              title: "All Products",
-                              list: context
-                                  .read<ProductsProvider>()
-                                  .allProducts));
+                        screen: ProductsScreen(
+                          title: "All Products",
+                          list: context.read<ProductsProvider>().allProducts,
+                        ),
+                      );
                     },
                     amount: 125,
                     button: 'SHOP NOW',

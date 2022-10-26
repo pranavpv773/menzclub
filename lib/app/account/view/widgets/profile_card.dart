@@ -31,8 +31,8 @@ class ProfileCard extends StatelessWidget {
             borderRadius: BorderRadius.circular(
               20,
             ),
-            child: Image.network(
-              'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSLlUIlrkWrEKWhugFbim3s8h33j9Uk4hdRbkHI2TEn7ueop1DQ9yEoiW9vz4_jtJc786A&usqp=CAU',
+            child: Image.asset(
+              'assets/utils/avathar.png',
               width: 120,
             ),
           ),

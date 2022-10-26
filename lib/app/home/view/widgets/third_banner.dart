@@ -17,10 +17,11 @@ class ThirdBanner extends StatelessWidget {
         height: 300,
         decoration: const BoxDecoration(
           image: DecorationImage(
-              image: AssetImage(
-                'assets/rect_frame.jpg',
-              ),
-              fit: BoxFit.fill),
+            image: AssetImage(
+              'assets/rect_frame.jpg',
+            ),
+            fit: BoxFit.fill,
+          ),
         ),
         child: Padding(
           padding: const EdgeInsets.all(
@@ -56,10 +57,11 @@ class TshirtBanner extends StatelessWidget {
       height: 150,
       decoration: const BoxDecoration(
         image: DecorationImage(
-            image: AssetImage(
-              'assets/rect_frame.jpg',
-            ),
-            fit: BoxFit.fill),
+          image: AssetImage(
+            'assets/rect_frame.jpg',
+          ),
+          fit: BoxFit.fill,
+        ),
       ),
       child: Padding(
         padding: const EdgeInsets.all(

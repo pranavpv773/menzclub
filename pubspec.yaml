@@ -89,6 +89,8 @@ flutter:
     - assets/watches/
     - assets/bg/
     - assets/get_started/
+    - assets/utils/
+
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware
