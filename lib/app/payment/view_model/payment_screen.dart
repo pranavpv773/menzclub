@@ -1,20 +1,24 @@
 import 'package:flutter/material.dart';
 // ignore: depend_on_referenced_packages
 import 'package:fluttertoast/fluttertoast.dart';
-import 'package:menz_cart_app/app/user/model/user_model.dart';
-import 'package:provider/provider.dart';
+import 'package:menz_cart_app/app/app_style/text_style.dart';
+import 'package:menz_cart_app/app/my_cart/view/cart_screen.dart';
+import 'package:menz_cart_app/app/payment/view/success_screen.dart';
+import 'package:menz_cart_app/app/payment/view/unsuccess_screen.dart';
+import 'package:menz_cart_app/routes/routes.dart';
 import 'package:razorpay_flutter/razorpay_flutter.dart';
 
-class PaymentScreenProvider with ChangeNotifier {
+class PaymentProvider with ChangeNotifier {
   late Razorpay razorpay;
 
-  @override
-  void dispose() {
-    super.dispose();
-    razorpay.clear();
-  }
+  // void dispose() {
+  //   super.dispose();
+  //   razorpay.clear();
+  // }
 
-  void openCheckout(int amount, BuildContext context) async {
+  void openCheckout(
+    int amount,
+  ) async {
     var options = {
       'key': 'rzp_live_ILgsfZCZoFIKMb',
       'amount': amount,
@@ -23,8 +27,8 @@ class PaymentScreenProvider with ChangeNotifier {
       'retry': {'enabled': true, 'max_count': 1},
       'send_sms_hash': true,
       'prefill': {
-        'contact': context.read<User>().userName,
-        'email': context.read<User>().userMail
+        'contact': AppTextStyles.payName,
+        'email': AppTextStyles.payEmail,
       },
       'external': {
         'wallets': ['paytm']
@@ -41,17 +45,11 @@ class PaymentScreenProvider with ChangeNotifier {
   }
 
   void handlePaymentSuccess(PaymentSuccessResponse response) {
-    Fluttertoast.showToast(
-      msg: "SUCCESS: ${response.paymentId!}",
-      toastLength: Toast.LENGTH_SHORT,
-    );
+    RoutesProvider.nextScreen(screen: const SuccessScreen());
   }
 
   void handlePaymentError(PaymentFailureResponse response) {
-    Fluttertoast.showToast(
-      msg: " ${response.message!}",
-      toastLength: Toast.LENGTH_SHORT,
-    );
+    RoutesProvider.nextScreen(screen: const UnSuccessScreen());
   }
 
   void handleExternalWallet(ExternalWalletResponse response) {
@@ -59,5 +57,16 @@ class PaymentScreenProvider with ChangeNotifier {
       msg: "EXTERNAL_WALLET: ${response.walletName!}",
       toastLength: Toast.LENGTH_SHORT,
     );
+  }
+
+  Future<void> goBack(BuildContext context) async {
+    //await getToHome(context);
+    await Future.delayed(
+      const Duration(
+        seconds: 2,
+      ),
+    ).then((value) => RoutesProvider.removeScreen(
+          screen: const CartScreen(),
+        ));
   }
 }

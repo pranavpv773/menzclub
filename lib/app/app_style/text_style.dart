@@ -4,6 +4,9 @@ import 'package:google_fonts/google_fonts.dart';
 import 'color_style.dart';
 
 class AppTextStyles {
+  static String payEmail = "";
+
+  static String payName = "";
   static String? fontFamily = GoogleFonts.breeSerif().fontFamily;
 
   static TextStyle h1 = TextStyle(

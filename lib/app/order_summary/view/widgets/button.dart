@@ -1,9 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:menz_cart_app/app/app_style/color_style.dart';
-import 'package:menz_cart_app/app/payment/view/payment_screen.dart';
-import 'package:menz_cart_app/app/products/view/product_screen.dart';
-import 'package:menz_cart_app/app/products/view_model/products_provider.dart';
-import 'package:menz_cart_app/routes/routes.dart';
+import 'package:menz_cart_app/app/payment/view_model/payment_screen.dart';
 import 'package:provider/provider.dart';
 import 'package:razorpay_flutter/razorpay_flutter.dart';
 
@@ -14,30 +11,32 @@ class ShopTransparentButton extends StatelessWidget {
     required this.buttonBgColor,
     required this.buttonColor,
     required this.amount,
+    required this.fn,
   }) : super(key: key);
   final String button;
   final Color buttonColor;
   final Color buttonBgColor;
   final int amount;
+  final VoidCallback fn;
 
   @override
   Widget build(BuildContext context) {
     WidgetsBinding.instance.addPostFrameCallback((_) {
-      context.read<PaymentScreenProvider>().razorpay = Razorpay();
-      context.read<PaymentScreenProvider>().razorpay.on(
+      context.read<PaymentProvider>().razorpay = Razorpay();
+      context.read<PaymentProvider>().razorpay.on(
             Razorpay.EVENT_PAYMENT_SUCCESS,
-            context.read<PaymentScreenProvider>().handlePaymentSuccess,
+            context.read<PaymentProvider>().handlePaymentSuccess,
           );
-      context.read<PaymentScreenProvider>().razorpay.on(
+      context.read<PaymentProvider>().razorpay.on(
             Razorpay.EVENT_PAYMENT_ERROR,
-            context.read<PaymentScreenProvider>().handlePaymentError,
+            context.read<PaymentProvider>().handlePaymentError,
           );
-      context.read<PaymentScreenProvider>().razorpay.on(
+      context.read<PaymentProvider>().razorpay.on(
             Razorpay.EVENT_EXTERNAL_WALLET,
-            context.read<PaymentScreenProvider>().handleExternalWallet,
+            context.read<PaymentProvider>().handleExternalWallet,
           );
     });
-    return Consumer<PaymentScreenProvider>(builder: (context, value, _) {
+    return Consumer<PaymentProvider>(builder: (context, value, _) {
       return Container(
         margin: const EdgeInsets.all(10),
         height: 50.0,
@@ -49,15 +48,7 @@ class ShopTransparentButton extends StatelessWidget {
               color: AppColor.primary,
             ),
           ),
-          onPressed: () {
-            RoutesProvider.nextScreen(
-                screen: ProductsScreen(
-                    title: "All Products",
-                    list: AppColor
-                        .rootScaffoldMessengerKey.currentState!.context
-                        .read<ProductsProvider>()
-                        .allProducts));
-          },
+          onPressed: fn,
           padding: const EdgeInsets.all(
             10.0,
           ),

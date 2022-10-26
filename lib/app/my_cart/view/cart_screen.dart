@@ -7,7 +7,10 @@ import 'package:menz_cart_app/app/login/view_model/login_provider.dart';
 import 'package:menz_cart_app/app/my_cart/view_model/cart_provider_two.dart';
 import 'package:menz_cart_app/app/order_summary/view/order.dart';
 import 'package:menz_cart_app/app/order_summary/view/widgets/button.dart';
+import 'package:menz_cart_app/app/products/view/product_screen.dart';
+import 'package:menz_cart_app/app/products/view_model/products_provider.dart';
 import 'package:menz_cart_app/app/utilities/view/divider_widget.dart';
+import 'package:menz_cart_app/routes/routes.dart';
 import 'package:provider/provider.dart';
 import 'widgets/products_card.dart';
 
@@ -97,6 +100,14 @@ class LoginCartScreen extends StatelessWidget {
                     ),
                   ),
                   ShopTransparentButton(
+                    fn: () {
+                      RoutesProvider.nextScreen(
+                          screen: ProductsScreen(
+                              title: "All Products",
+                              list: context
+                                  .read<ProductsProvider>()
+                                  .allProducts));
+                    },
                     amount: 125,
                     button: 'SHOP NOW',
                     buttonBgColor: Colors.transparent.withOpacity(

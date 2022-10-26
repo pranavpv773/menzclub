@@ -71,20 +71,20 @@ class ShirtFitWidget extends StatelessWidget {
                   8.0,
                 ),
                 child: GestureDetector(
-                  onTap: () {
+                  onTap: () async {
                     switch (type) {
                       case ActionType.shirt:
-                        context.read<ShirtProvider>().fetchShirtFit(
+                        await context.read<ShirtProvider>().fetchShirtFit(
                               shirtFitListMap[index].toString(),
                             );
                         break;
                       case ActionType.jeans:
-                        context.read<JeansProvider>().fetchJeansFit(
+                        await context.read<JeansProvider>().fetchJeansFit(
                               shirtFitListMap[index].toString(),
                             );
                         break;
                       case ActionType.tshirt:
-                        context.read<TshirtProvider>().fetchTshirtFit(
+                        await context.read<TshirtProvider>().fetchTshirtFit(
                               shirtFitListMap[index].toString(),
                             );
                         break;

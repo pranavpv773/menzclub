@@ -53,21 +53,9 @@ class ShirtProvider with ChangeNotifier {
       notifyListeners();
     } else {
       Fluttertoast.showToast(
-        msg: resp.message,
+        msg: "Sorry list is empty",
         toastLength: Toast.LENGTH_LONG,
       );
     }
   }
-
-  // fetchCategoryList() {
-  //   for (int i = 0; i <= shirtMapList.length; i++) {
-  //     shirtCategoryList.clear();
-  //     for (int j = 1 + 1; j < shirtMapList.length - 1; j++) {
-  //       if (shirtMapList[i].category != shirtMapList[j].category) {
-  //         shirtCategoryList.add(shirtMapList[i]);
-  //       }
-  //     }
-  //     log(shirtCategoryList[i].category);
-  //   }
-  // }
 }

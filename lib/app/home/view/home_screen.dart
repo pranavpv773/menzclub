@@ -154,12 +154,13 @@ class HomeScreen extends StatelessWidget {
               width: width,
               height: heights,
               decoration: const BoxDecoration(
-                  image: DecorationImage(
-                image: AssetImage(
-                  "assets/lottee/ezgif.com-gif-maker(1).gif",
+                image: DecorationImage(
+                  image: AssetImage(
+                    "assets/lottee/ezgif.com-gif-maker(1).gif",
+                  ),
+                  fit: BoxFit.fitHeight,
                 ),
-                fit: BoxFit.fitHeight,
-              )),
+              ),
             );
     });
   }
