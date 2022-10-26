@@ -2,9 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_rating_bar/flutter_rating_bar.dart';
 import 'package:menz_cart_app/app/app_style/color_style.dart';
 import 'package:menz_cart_app/app/order_summary/view/widgets/button.dart';
-import 'package:menz_cart_app/app/payment/view/success_screen.dart';
-import 'package:menz_cart_app/app/payment/view/unsuccess_screen.dart';
-import 'package:menz_cart_app/routes/routes.dart';
+import 'package:menz_cart_app/app/payment/view_model/payment_screen.dart';
+import 'package:provider/provider.dart';
 
 class ProductCartCard extends StatelessWidget {
   const ProductCartCard(
@@ -42,7 +41,7 @@ class ProductCartCard extends StatelessWidget {
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
                       Text(
-                        name,
+                        name.toUpperCase(),
                         style: const TextStyle(
                             overflow: TextOverflow.ellipsis,
                             fontWeight: FontWeight.bold,
@@ -112,9 +111,7 @@ class ProductCartCard extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
                 ShopTransparentButton(
-                  fn: () {
-                    RoutesProvider.nextScreen(screen: const UnSuccessScreen());
-                  },
+                  fn: () {},
                   amount: 125,
                   button: 'Remove ',
                   buttonBgColor: AppColor.kWhite,
@@ -122,7 +119,9 @@ class ProductCartCard extends StatelessWidget {
                 ),
                 ShopTransparentButton(
                   fn: () {
-                    RoutesProvider.nextScreen(screen: const SuccessScreen());
+                    context.read<PaymentProvider>().openCheckout(
+                          int.parse(price),
+                        );
                   },
                   amount: 125,
                   button: 'Buy this now ',

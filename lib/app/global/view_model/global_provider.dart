@@ -4,6 +4,8 @@ import 'package:menz_cart_app/app/app_style/color_style.dart';
 import 'package:menz_cart_app/app/categories/view/category_screen.dart';
 import 'package:menz_cart_app/app/home/view/home_screen.dart';
 import 'package:menz_cart_app/app/my_cart/view/cart_screen.dart';
+// ignore: depend_on_referenced_packages
+import 'package:fluttertoast/fluttertoast.dart';
 
 class GlobalProvider with ChangeNotifier {
   int pageIndex = 0;
@@ -14,6 +16,7 @@ class GlobalProvider with ChangeNotifier {
     const CartScreen(),
     const AccountScreen(),
   ];
+  DateTime? currentBackPressTime;
 
   onTabIndexChange(int number) {
     pageIndex = number;
@@ -40,5 +43,17 @@ class GlobalProvider with ChangeNotifier {
 
   onTabAppbarCheck() {
     notifyListeners();
+  }
+
+  Future<bool> onWillPop() {
+    DateTime now = DateTime.now();
+    if (currentBackPressTime == null ||
+        now.difference(currentBackPressTime!) > const Duration(seconds: 2)) {
+      currentBackPressTime = now;
+      Fluttertoast.showToast(
+          msg: "Double Tab to Exit", toastLength: Toast.LENGTH_LONG);
+      return Future.value(false);
+    }
+    return Future.value(true);
   }
 }

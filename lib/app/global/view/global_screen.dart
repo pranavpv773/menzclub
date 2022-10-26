@@ -49,9 +49,11 @@ class GlobalScreen extends StatelessWidget {
                     )
             ];
           },
-          body: Consumer<GlobalProvider>(builder: (context, value, _) {
-            return value.pages[value.pageIndex];
-          }),
+          body: WillPopScope(
+              onWillPop: context.watch<GlobalProvider>().onWillPop,
+              child: Consumer<GlobalProvider>(builder: (context, value, _) {
+                return value.pages[value.pageIndex];
+              })),
         ),
         bottomNavigationBar: const BottomNavyWidget(),
       ),
