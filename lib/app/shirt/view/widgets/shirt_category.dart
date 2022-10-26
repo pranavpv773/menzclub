@@ -35,10 +35,10 @@ class ShirtCategoryCards extends StatelessWidget {
         itemCount: 3,
         itemBuilder: (BuildContext ctx, index) {
           return GestureDetector(
-            onTap: () async {
+            onTap: () {
               final String category =
                   shirtCategoryList[index]['category'].toString();
-              await context.read<ShirtProviderTwo>().fetchShirtCategory(
+              context.read<ShirtProviderTwo>().fetchShirtCategory(
                     category,
                   );
               RoutesProvider.nextScreen(

@@ -2,6 +2,7 @@ import 'dart:developer';
 
 import 'package:flutter/material.dart';
 import 'package:flutter_secure_storage/flutter_secure_storage.dart';
+import 'package:menz_cart_app/app/app_style/text_style.dart';
 import 'package:menz_cart_app/app/user/api_service/api_services.dart';
 import 'package:menz_cart_app/app/user/model/user_model.dart';
 // ignore: depend_on_referenced_packages
@@ -17,7 +18,8 @@ class UserProvider extends ChangeNotifier {
     if (resp.status) {
       userList.addAll(resp.user);
       users = resp.user;
-      // log("${UserList}");
+      AppTextStyles.payName = user.userName;
+      AppTextStyles.payEmail = user.userMail;
       log("get user");
       Fluttertoast.showToast(
         msg: resp.message,

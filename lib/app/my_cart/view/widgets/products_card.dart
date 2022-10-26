@@ -2,6 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:flutter_rating_bar/flutter_rating_bar.dart';
 import 'package:menz_cart_app/app/app_style/color_style.dart';
 import 'package:menz_cart_app/app/order_summary/view/widgets/button.dart';
+import 'package:menz_cart_app/app/payment/view/success_screen.dart';
+import 'package:menz_cart_app/app/payment/view/unsuccess_screen.dart';
+import 'package:menz_cart_app/routes/routes.dart';
 
 class ProductCartCard extends StatelessWidget {
   const ProductCartCard(
@@ -83,7 +86,7 @@ class ProductCartCard extends StatelessWidget {
                         ),
                       ),
                       const Text(
-                        'Deliver in 2 Days,Fri',
+                        'Deliver in 1 Week',
                         style: TextStyle(
                           fontSize: 16,
                         ),
@@ -109,12 +112,18 @@ class ProductCartCard extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
                 ShopTransparentButton(
+                  fn: () {
+                    RoutesProvider.nextScreen(screen: const UnSuccessScreen());
+                  },
                   amount: 125,
                   button: 'Remove ',
                   buttonBgColor: AppColor.kWhite,
                   buttonColor: AppColor.kRed,
                 ),
                 ShopTransparentButton(
+                  fn: () {
+                    RoutesProvider.nextScreen(screen: const SuccessScreen());
+                  },
                   amount: 125,
                   button: 'Buy this now ',
                   buttonBgColor: AppColor.kWhite,

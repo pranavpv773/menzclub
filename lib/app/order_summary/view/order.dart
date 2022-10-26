@@ -1,5 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:menz_cart_app/app/app_style/color_style.dart';
+import 'package:menz_cart_app/app/products/view/product_screen.dart';
+import 'package:menz_cart_app/app/products/view_model/products_provider.dart';
+import 'package:menz_cart_app/routes/routes.dart';
+import 'package:provider/provider.dart';
 import 'widgets/button.dart';
 
 class OrderSummary extends StatelessWidget {
@@ -41,6 +45,14 @@ class OrderSummary extends StatelessWidget {
               ),
             ),
             ShopTransparentButton(
+              fn: () {
+                RoutesProvider.nextScreen(
+                  screen: ProductsScreen(
+                    title: "All Products",
+                    list: context.read<ProductsProvider>().allProducts,
+                  ),
+                );
+              },
               amount: 125,
               buttonBgColor: Colors.transparent.withOpacity(
                 0.1,
