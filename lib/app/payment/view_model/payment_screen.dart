@@ -1,3 +1,5 @@
+import 'dart:developer';
+
 import 'package:flutter/material.dart';
 // ignore: depend_on_referenced_packages
 import 'package:fluttertoast/fluttertoast.dart';
@@ -16,18 +18,17 @@ class PaymentProvider with ChangeNotifier {
   //   razorpay.clear();
   // }
 
-  void openCheckout(
-    int amount,
-  ) async {
+  void openCheckout(int amount, String name) async {
+    log(AppTextStyles.payName.toString());
     var options = {
       'key': 'rzp_live_ILgsfZCZoFIKMb',
-      'amount': amount,
+      'amount': amount * 100,
       'name': 'MenzClub',
-      'description': 'Fine T-Shirt',
+      'description': name,
       'retry': {'enabled': true, 'max_count': 1},
       'send_sms_hash': true,
       'prefill': {
-        'contact': AppTextStyles.payName,
+        'contact': '${AppTextStyles.payName}',
         'email': AppTextStyles.payEmail,
       },
       'external': {

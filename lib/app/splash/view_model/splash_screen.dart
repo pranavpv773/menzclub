@@ -11,6 +11,7 @@ import 'package:menz_cart_app/routes/routes.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 class SplashProvider with ChangeNotifier {
+  bool checkingButton = false;
   Future<void> goHome(BuildContext context) async {
     final check = await checking();
     log(check.toString());
@@ -33,15 +34,25 @@ class SplashProvider with ChangeNotifier {
   }
 
   Future<bool> checking() async {
+    checkingButton = true;
+    notifyListeners();
     try {
       final result = await InternetAddress.lookup('www.google.com');
       if (result.isNotEmpty && result[0].rawAddress.isNotEmpty) {
         log('connected');
+        checkingButton = false;
+        notifyListeners();
         return true;
       }
+      checkingButton = false;
+      notifyListeners();
+
       return false;
     } on SocketException catch (_) {
       log('not connected');
+      checkingButton = false;
+      notifyListeners();
+
       return false;
     }
   }
