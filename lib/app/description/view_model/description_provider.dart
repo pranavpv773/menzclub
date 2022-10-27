@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:menz_cart_app/app/login/view/login.dart';
 import 'package:menz_cart_app/app/login/view_model/login_provider.dart';
 import 'package:menz_cart_app/app/my_cart/view_model/cart_provider.dart';
+import 'package:menz_cart_app/app/payment/view_model/payment_screen.dart';
 import 'package:menz_cart_app/routes/routes.dart';
 import 'package:provider/provider.dart';
 import 'package:shared_preferences/shared_preferences.dart';
@@ -24,7 +25,12 @@ class DescriptionProvider with ChangeNotifier {
   ) {
     switch (item) {
       case 0:
-        loginDialog(context);
+        context.read<LoginProvider>().isLogged
+            ? context.read<PaymentProvider>().openCheckout(
+                  price,
+                  name,
+                )
+            : loginDialog(context);
         break;
       case 1:
         context.read<LoginProvider>().isLogged
