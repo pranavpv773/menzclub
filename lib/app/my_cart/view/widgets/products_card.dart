@@ -121,6 +121,7 @@ class ProductCartCard extends StatelessWidget {
                   fn: () {
                     context.read<PaymentProvider>().openCheckout(
                           int.parse(price),
+                          name,
                         );
                   },
                   amount: 125,

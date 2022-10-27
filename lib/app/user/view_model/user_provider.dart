@@ -18,9 +18,8 @@ class UserProvider extends ChangeNotifier {
     if (resp.status) {
       userList.addAll(resp.user);
       users = resp.user;
-      AppTextStyles.payName = user.userName;
-      AppTextStyles.payEmail = user.userMail;
-      log("get user");
+      AppTextStyles.payName = resp.user[0].userNumber;
+      AppTextStyles.payEmail = resp.user[0].userMail;
       Fluttertoast.showToast(
         msg: resp.message,
         toastLength: Toast.LENGTH_LONG,
