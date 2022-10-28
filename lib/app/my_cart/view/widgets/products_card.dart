@@ -1,3 +1,4 @@
+import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_rating_bar/flutter_rating_bar.dart';
 import 'package:menz_cart_app/app/app_style/color_style.dart';
@@ -30,8 +31,8 @@ class ProductCartCard extends StatelessWidget {
         children: [
           Row(
             children: [
-              Image.network(
-                image,
+              CachedNetworkImage(
+                imageUrl: image,
                 width: width / 3,
               ),
               Expanded(
@@ -45,9 +46,10 @@ class ProductCartCard extends StatelessWidget {
                       Text(
                         name.toUpperCase(),
                         style: const TextStyle(
-                            overflow: TextOverflow.ellipsis,
-                            fontWeight: FontWeight.bold,
-                            fontSize: 20),
+                          overflow: TextOverflow.ellipsis,
+                          fontWeight: FontWeight.bold,
+                          fontSize: 20,
+                        ),
                       ),
                       const Text(
                         'Multi color',

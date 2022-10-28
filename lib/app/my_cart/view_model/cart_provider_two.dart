@@ -1,7 +1,5 @@
 // ignore_for_file: depend_on_referenced_packages, use_build_context_synchronously
 
-import 'dart:developer';
-
 import 'package:flutter/widgets.dart';
 import 'package:menz_cart_app/app/my_cart/api_services/api_services_get.dart';
 import 'package:menz_cart_app/app/my_cart/api_services/api_services_remove.dart';
@@ -19,11 +17,7 @@ class CartNotifier with ChangeNotifier {
 
     if (resp.status && resp.cart.isNotEmpty) {
       cartList.clear();
-      log("Cartlist");
-      log(resp.cart.toString());
       cartList.addAll(resp.cart);
-      notifyListeners();
-
       notifyListeners();
     } else {
       cartList.clear();
@@ -45,7 +39,6 @@ class CartNotifier with ChangeNotifier {
         msg: resp.message,
         toastLength: Toast.LENGTH_LONG,
       );
-      notifyListeners();
 
       notifyListeners();
     } else {

@@ -1,7 +1,13 @@
+// ignore_for_file: depend_on_referenced_packages
+
 import 'package:flutter/material.dart';
 import 'package:menz_cart_app/app/app_style/color_style.dart';
 import 'package:menz_cart_app/app/description/view/description.dart';
+import 'package:menz_cart_app/app/login/view_model/login_provider.dart';
+import 'package:menz_cart_app/app/my_cart/view_model/cart_provider.dart';
 import 'package:menz_cart_app/routes/routes.dart';
+import 'package:provider/provider.dart';
+import 'package:fluttertoast/fluttertoast.dart';
 
 class GridViewCard extends StatelessWidget {
   const GridViewCard({
@@ -47,9 +53,34 @@ class GridViewCard extends StatelessWidget {
                     ),
                     child: Row(
                       mainAxisAlignment: MainAxisAlignment.end,
-                      children: const [
-                        Icon(
-                          Icons.favorite_border,
+                      children: [
+                        GestureDetector(
+                          onTap: () {
+                            context.read<LoginProvider>().isLogged
+                                ? context.read<CartProvider>().addToCart(
+                                      context,
+                                      list[index].name,
+                                      list[index].description.toString(),
+                                      list[index].images[0].toString(),
+                                      list[index].price,
+                                      list[index].offer,
+                                      list[index].id,
+                                      list[index].category.toString(),
+                                      list[index].color.toString(),
+                                      list[index].brand.toString(),
+                                      list[index].size,
+                                      list[index].material.toString(),
+                                    )
+                                : Fluttertoast.showToast(
+                                    msg: "Please login to add product to cart",
+                                    toastLength: Toast.LENGTH_LONG,
+                                  );
+                          },
+                          child: Image.asset(
+                            "assets/lottee/add-to-cart.png",
+                            width: 50,
+                            height: 30,
+                          ),
                         ),
                       ],
                     ),
