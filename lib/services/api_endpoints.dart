@@ -11,4 +11,5 @@ class ApiEndPoints {
   static String getHomeBanner = '$baseUrl/api/menzclub/banner?banner_category=';
   static String addToCartApi = '$baseUrl/api/add-to-cart';
   static String fetchCart = "$baseUrl/api/menzclub/get-cart?user_mail=";
+  static String removeCart = "$baseUrl/admin/delete-cart?_id=";
 }
