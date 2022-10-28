@@ -9,18 +9,23 @@ class SignUpTextforms extends StatelessWidget {
     required this.obscureText,
     required this.vertical,
     required this.controller,
+    this.type,
+    this.maxLines,
   }) : super(key: key);
   final IconData icon;
   final String text;
   final bool obscureText;
   final double vertical;
   final TextEditingController controller;
-
+  final TextInputType? type;
+  final int? maxLines;
   @override
   Widget build(BuildContext context) {
     return Padding(
       padding: const EdgeInsets.all(8.0),
       child: TextFormField(
+        keyboardType: type ?? TextInputType.name,
+        maxLines: maxLines ?? 5,
         // ignore: body_might_complete_normally_nullable
         validator: (value) {
           if (value!.isEmpty) {
