@@ -25,30 +25,32 @@ class AccountScreen extends StatelessWidget {
                     color: AppColor.primary1,
                     child: Padding(
                       padding: const EdgeInsets.all(8.0),
-                      child: Row(children: [
-                        CircleAvatar(
-                          radius: 22,
-                          backgroundColor: AppColor.kGrey,
-                          child: CircleAvatar(
-                            radius: 20,
-                            backgroundColor: AppColor.kWhite,
-                            child: Text(
-                              context
-                                  .read<UserProvider>()
-                                  .userList[0]
-                                  .userName[0]
-                                  .toUpperCase(),
-                              style: AppTextStyles.h3,
+                      child: Row(
+                        children: [
+                          CircleAvatar(
+                            radius: 22,
+                            backgroundColor: AppColor.kGrey,
+                            child: CircleAvatar(
+                              radius: 20,
+                              backgroundColor: AppColor.kWhite,
+                              child: Text(
+                                context
+                                    .read<UserProvider>()
+                                    .userList[0]
+                                    .userName[0]
+                                    .toUpperCase(),
+                                style: AppTextStyles.h3,
+                              ),
                             ),
                           ),
-                        ),
-                        Padding(
-                          padding: const EdgeInsets.all(8.0),
-                          child: TextStyleWidget(
-                              text:
-                                  "Hello ${context.read<UserProvider>().userList[0].userName}"),
-                        )
-                      ]),
+                          Padding(
+                            padding: const EdgeInsets.all(8.0),
+                            child: TextStyleWidget(
+                                text:
+                                    "Hello ${context.read<UserProvider>().userList[0].userName}"),
+                          )
+                        ],
+                      ),
                     ),
                   )
                 : const ProfileCard(),
