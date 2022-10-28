@@ -3,9 +3,11 @@
 import 'dart:developer';
 
 import 'package:flutter/widgets.dart';
+import 'package:menz_cart_app/app/description/api_services/api_services.dart';
 import 'package:menz_cart_app/app/my_cart/api_services/api_services_get.dart';
 import 'package:menz_cart_app/app/my_cart/model/cart_get_model.dart';
 import 'package:fluttertoast/fluttertoast.dart';
+import 'package:menz_cart_app/app/my_cart/model/cart_model.dart';
 import 'package:menz_cart_app/app/user/view_model/user_provider.dart';
 import 'package:provider/provider.dart';
 
@@ -20,6 +22,25 @@ class CartNotifier with ChangeNotifier {
       log("Cartlist");
       log(resp.cart.toString());
       cartList.addAll(resp.cart);
+      notifyListeners();
+
+      notifyListeners();
+    } else {
+      Fluttertoast.showToast(
+        msg: resp.message,
+        toastLength: Toast.LENGTH_LONG,
+      );
+    }
+  }
+
+  Future<void> removeCart(BuildContext context, String id) async {
+    CartRespoModel resp = await CartRemove().removeFromCart(context, id);
+
+    if (resp.status) {
+      Fluttertoast.showToast(
+        msg: resp.message,
+        toastLength: Toast.LENGTH_LONG,
+      );
       notifyListeners();
 
       notifyListeners();

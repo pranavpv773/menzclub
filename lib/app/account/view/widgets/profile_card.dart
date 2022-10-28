@@ -13,6 +13,8 @@ class ProfileCard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final width = MediaQuery.of(context).size.width;
+
     final data = context.read<UserProvider>().userList;
     return Stack(
       children: [
@@ -61,8 +63,8 @@ class ProfileCard extends StatelessWidget {
                       AppColor.primary,
                     ),
                     padding: MaterialStateProperty.all(
-                      const EdgeInsets.symmetric(
-                        horizontal: 70,
+                      EdgeInsets.symmetric(
+                        horizontal: width / 7,
                       ),
                     ),
                   ),
