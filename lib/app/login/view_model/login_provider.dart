@@ -38,7 +38,7 @@ class LoginProvider with ChangeNotifier {
             .onTabGetUser(email.text)
             .then((value) async {
           isLogged = true;
-          context.read<CartNotifier>().fetchCart(context);
+          context.read<CartNotifier>().fetchUserCart(context);
           Fluttertoast.showToast(
             msg: resp.message,
             toastLength: Toast.LENGTH_LONG,
