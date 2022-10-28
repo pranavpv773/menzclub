@@ -38,7 +38,7 @@ class OtpVerifyProvider with ChangeNotifier {
           .then((value) async {
         context.read<LoginProvider>().isLogged = true;
         notifyListeners();
-        context.read<CartNotifier>().fetchCart(context);
+        context.read<CartNotifier>().fetchUserCart(context);
       });
       Fluttertoast.showToast(
         msg: resp.message,

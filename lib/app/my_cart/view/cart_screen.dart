@@ -61,64 +61,66 @@ class LoginCartScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return SingleChildScrollView(
       physics: const ScrollPhysics(),
-      child: context.watch<CartNotifier>().cartList.isEmpty
-          ? SizedBox(
-              width: width,
-              height: height,
-              child: Column(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  Image.asset(
-                    'assets/lottee/cart_empty.png',
-                    width: width / 2,
-                    height: height / 5,
-                  ),
-                  Text(
-                    'Your Cart is empty',
-                    style: TextStyle(
-                      fontSize: 25,
-                      fontWeight: FontWeight.bold,
-                      fontFamily: GoogleFonts.aBeeZee().fontFamily,
+      child: Consumer<CartNotifier>(builder: (context, val, _) {
+        return context.watch<CartNotifier>().cartList.isEmpty
+            ? SizedBox(
+                width: width,
+                height: height,
+                child: Column(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    Image.asset(
+                      'assets/lottee/cart_empty.png',
+                      width: width / 2,
+                      height: height / 5,
                     ),
-                  ),
-                  Text(
-                    'Save items that you like in your Cart',
-                    style: TextStyle(
-                      fontSize: 20,
-                      fontWeight: FontWeight.w600,
-                      color: Colors.black38,
-                      fontFamily: GoogleFonts.actor().fontFamily,
+                    Text(
+                      'Your Cart is empty',
+                      style: TextStyle(
+                        fontSize: 25,
+                        fontWeight: FontWeight.bold,
+                        fontFamily: GoogleFonts.aBeeZee().fontFamily,
+                      ),
                     ),
-                  ),
-                  Text(
-                    'Review them anytime and easily order them',
-                    style: TextStyle(
-                      fontSize: 20,
-                      fontWeight: FontWeight.w600,
-                      color: Colors.black38,
-                      fontFamily: GoogleFonts.actor().fontFamily,
+                    Text(
+                      'Save items that you like in your Cart',
+                      style: TextStyle(
+                        fontSize: 20,
+                        fontWeight: FontWeight.w600,
+                        color: Colors.black38,
+                        fontFamily: GoogleFonts.actor().fontFamily,
+                      ),
                     ),
-                  ),
-                  ShopTransparentButton(
-                    fn: () {
-                      RoutesProvider.nextScreen(
-                        screen: ProductsScreen(
-                          title: "All Products",
-                          list: context.read<ProductsProvider>().allProducts,
-                        ),
-                      );
-                    },
-                    amount: 125,
-                    button: 'SHOP NOW',
-                    buttonBgColor: Colors.transparent.withOpacity(
-                      0.1,
+                    Text(
+                      'Review them anytime and easily order them',
+                      style: TextStyle(
+                        fontSize: 20,
+                        fontWeight: FontWeight.w600,
+                        color: Colors.black38,
+                        fontFamily: GoogleFonts.actor().fontFamily,
+                      ),
                     ),
-                    buttonColor: AppColor.primary,
-                  )
-                ],
-              ),
-            )
-          : CartCardList(width: width, height: height),
+                    ShopTransparentButton(
+                      fn: () {
+                        RoutesProvider.nextScreen(
+                          screen: ProductsScreen(
+                            title: "All Products",
+                            list: context.read<ProductsProvider>().allProducts,
+                          ),
+                        );
+                      },
+                      amount: 125,
+                      button: 'SHOP NOW',
+                      buttonBgColor: Colors.transparent.withOpacity(
+                        0.1,
+                      ),
+                      buttonColor: AppColor.primary,
+                    )
+                  ],
+                ),
+              )
+            : CartCardList(width: width, height: height);
+      }),
     );
   }
 }
@@ -146,6 +148,7 @@ class CartCardList extends StatelessWidget {
               return Column(
                 children: [
                   ProductCartCard(
+                    id: data[index].id.toString(),
                     price: data[index].userCart[0].productPrice.toString(),
                     name: data[index].userCart[0].productName,
                     image: data[index].userCart[0].images[0],
@@ -154,23 +157,6 @@ class CartCardList extends StatelessWidget {
                   DividerWidget(
                     height: height,
                   ),
-                  // ProductCartCard(
-                  //   width: width,
-                  // ),
-                  // DividerWidget(
-                  //   height: height,
-                  // ),
-                  // ProductCartCard(
-                  //   width: width,
-                  // ),
-                  // DividerWidget(
-                  //   height: height,
-                  // ),
-                  // PriceDetails(
-                  //   height: height,
-                  //   amount: amount,
-                  //   discout: discount,
-                  // ),
                   sizedBox50,
                 ],
               );

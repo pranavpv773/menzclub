@@ -48,7 +48,7 @@ class CartProvider with ChangeNotifier {
       CartRespoModel resp = await CartApiServices().addToCart(context, datas);
 
       if (resp.status) {
-        context.read<CartNotifier>().fetchCart(context);
+        context.read<CartNotifier>().fetchUserCart(context);
         Fluttertoast.showToast(
           msg: resp.message,
           toastLength: Toast.LENGTH_LONG,

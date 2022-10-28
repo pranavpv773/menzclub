@@ -1,21 +1,23 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_rating_bar/flutter_rating_bar.dart';
 import 'package:menz_cart_app/app/app_style/color_style.dart';
+import 'package:menz_cart_app/app/my_cart/view_model/cart_provider_two.dart';
 import 'package:menz_cart_app/app/order_summary/view/widgets/button.dart';
 import 'package:menz_cart_app/app/payment/view_model/payment_screen.dart';
 import 'package:provider/provider.dart';
 
 class ProductCartCard extends StatelessWidget {
-  const ProductCartCard(
-      {Key? key,
-      required this.width,
-      required this.name,
-      required this.image,
-      required this.price})
-      : super(key: key);
+  const ProductCartCard({
+    Key? key,
+    required this.width,
+    required this.name,
+    required this.image,
+    required this.price,
+    required this.id,
+  }) : super(key: key);
 
   final double width;
-  final String image, name, price;
+  final String image, name, price, id;
 
   @override
   Widget build(BuildContext context) {
@@ -111,7 +113,9 @@ class ProductCartCard extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
                 ShopTransparentButton(
-                  fn: () {},
+                  fn: () {
+                    context.read<CartNotifier>().removeCart(context, id);
+                  },
                   amount: 125,
                   button: 'Remove ',
                   buttonBgColor: AppColor.kWhite,
