@@ -4,7 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:menz_cart_app/app/description/view/widgets/alert_box.dart';
 import 'package:menz_cart_app/app/login/view_model/login_provider.dart';
 import 'package:menz_cart_app/app/my_cart/view_model/cart_provider.dart';
-import 'package:menz_cart_app/app/payment/view_model/payment_screen.dart';
+import 'package:menz_cart_app/app/order_summary/view_model/order_provider.dart';
 import 'package:menz_cart_app/app/user/view_model/user_provider.dart';
 import 'package:menz_cart_app/routes/routes.dart';
 import 'package:provider/provider.dart';
@@ -34,9 +34,19 @@ class DescriptionProvider with ChangeNotifier {
                     msg: "Please Add your address",
                     toastLength: Toast.LENGTH_LONG,
                   )
-                : context.read<PaymentProvider>().openCheckout(
-                      price,
+                : context.read<OrderNotifier>().orderProduct(
+                      context,
                       name,
+                      description,
+                      images,
+                      price,
+                      offer,
+                      id,
+                      category,
+                      color,
+                      brand,
+                      size,
+                      material,
                     )
             : loginDialog(context);
         break;

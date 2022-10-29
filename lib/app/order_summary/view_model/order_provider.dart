@@ -1,11 +1,16 @@
+// ignore_for_file: depend_on_referenced_packages
+
+import 'dart:developer';
+
 import 'package:flutter/widgets.dart';
 import 'package:menz_cart_app/app/app_style/text_style.dart';
 import 'package:menz_cart_app/app/order_summary/api_services/api_services.dart';
 import 'package:menz_cart_app/app/order_summary/model/order_model.dart';
 import 'package:fluttertoast/fluttertoast.dart';
+import 'package:menz_cart_app/app/order_summary/model/response_model.dart';
 
 class OrderNotifier with ChangeNotifier {
-  addToCart(
+  orderProduct(
     BuildContext context,
     String name,
     String description,
@@ -19,6 +24,7 @@ class OrderNotifier with ChangeNotifier {
     int size,
     String material,
   ) async {
+    log("fn");
     final product = Product(
       id: id,
       productName: name,
@@ -32,25 +38,25 @@ class OrderNotifier with ChangeNotifier {
       productSize: size,
       productMaterial: material.toString(),
     );
+    log(AppTextStyles.payEmail);
     final data = Order(
       products: [product],
       totalPrice: price,
-      address: "dhgjkhkjhg",
+      address: "context.read<UserProvider>().user.address",
       userMail: AppTextStyles.payEmail,
-      orderedAt: int.parse(DateTime.now().toString()),
     );
 
-    OrderResponseModel resp = await OrderApi().orderProduct(context, data);
+    ResponseModel resp = await OrderApi().orderProduct(context, data);
 
-    if (resp.status!) {
+    if (resp.status) {
       Fluttertoast.showToast(
-        msg: resp.message!,
+        msg: resp.message,
         toastLength: Toast.LENGTH_LONG,
       );
       notifyListeners();
     } else {
       Fluttertoast.showToast(
-        msg: resp.message!,
+        msg: resp.message,
         toastLength: Toast.LENGTH_LONG,
       );
     }
