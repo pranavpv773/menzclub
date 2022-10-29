@@ -56,8 +56,11 @@ class DeliveryAddress extends StatelessWidget {
                               maxLines: 8,
                             ),
                             TextButton(
-                                onPressed: () {},
-                                child: const Text("Add Adress"))
+                              onPressed: () {},
+                              child: const Text(
+                                "Add Adress",
+                              ),
+                            )
                           ],
                         ),
                       );
