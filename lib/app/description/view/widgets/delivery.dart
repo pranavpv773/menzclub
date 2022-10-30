@@ -27,10 +27,10 @@ class DeliveryAddress extends StatelessWidget {
                     'Deliver to:Pranav',
                   ),
                   Wrap(
-                    children: [
+                    children: const [
                       Text(
                         overflow: TextOverflow.clip,
-                        context.read<UserProvider>().userList[0].address,
+                        "address",
                       ),
                     ],
                   ),

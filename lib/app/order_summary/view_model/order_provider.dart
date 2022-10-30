@@ -26,7 +26,7 @@ class OrderNotifier with ChangeNotifier {
   ) async {
     log("fn");
     final product = Product(
-      id: id,
+      productId: id,
       productName: name,
       productDescription: description,
       images: [images],
@@ -38,25 +38,24 @@ class OrderNotifier with ChangeNotifier {
       productSize: size,
       productMaterial: material.toString(),
     );
-    log(AppTextStyles.payEmail);
     final data = Order(
       products: [product],
-      totalPrice: price,
-      address: "context.read<UserProvider>().user.address",
+      totalPrice: 25,
+      address: "heello",
       userMail: AppTextStyles.payEmail,
     );
 
     ResponseModel resp = await OrderApi().orderProduct(context, data);
 
-    if (resp.status) {
+    if (resp.status!) {
       Fluttertoast.showToast(
-        msg: resp.message,
+        msg: resp.message!,
         toastLength: Toast.LENGTH_LONG,
       );
       notifyListeners();
     } else {
       Fluttertoast.showToast(
-        msg: resp.message,
+        msg: resp.message!,
         toastLength: Toast.LENGTH_LONG,
       );
     }
