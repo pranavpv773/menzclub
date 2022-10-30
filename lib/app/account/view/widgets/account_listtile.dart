@@ -34,10 +34,8 @@ class AccountListTile extends StatelessWidget {
         size: 15,
       ),
       onTap: () {
-        context
-            .read<OrderNotifierTwo>()
-            .fetchUserOrder(context)
-            .then((value) => RoutesProvider.nextScreen(screen: screen));
+        context.read<OrderNotifierTwo>().fetchUserOrder(context);
+        RoutesProvider.nextScreen(screen: screen);
       },
     );
   }
