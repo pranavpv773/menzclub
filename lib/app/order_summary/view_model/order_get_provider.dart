@@ -8,17 +8,17 @@ import 'package:menz_cart_app/app/user/view_model/user_provider.dart';
 import 'package:provider/provider.dart';
 
 class OrderNotifierTwo with ChangeNotifier {
-  List<Order> cartList = [];
-  Future<void> fetchUserCart(BuildContext context) async {
+  List<Order> orderList = [];
+  Future<void> fetchUserOrder(BuildContext context) async {
     final mail = context.read<UserProvider>().userList[0].userMail;
-    OrderResponseModel resp = await OrderGetApiService().fetchCart(mail);
+    OrderResponseModel resp = await OrderGetApiService().fetchOrder(mail);
 
     if (resp.status && resp.orders.isNotEmpty) {
-      cartList.clear();
-      cartList.addAll(resp.orders);
+      orderList.clear();
+      orderList.addAll(resp.orders);
       notifyListeners();
     } else {
-      cartList.clear();
+      orderList.clear();
       notifyListeners();
       Fluttertoast.showToast(
         msg: "Your Cart is empty",

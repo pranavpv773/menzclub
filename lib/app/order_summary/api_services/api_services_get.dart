@@ -4,7 +4,7 @@ import 'package:menz_cart_app/app/order_summary/model/order_model.dart';
 import 'package:menz_cart_app/services/api_endpoints.dart';
 
 class OrderGetApiService {
-  Future<OrderResponseModel> fetchCart(String mail) async {
+  Future<OrderResponseModel> fetchOrder(String mail) async {
     try {
       Response response = await Dio().get("${ApiEndPoints.fetchorder}$mail");
       if (response.statusCode == 200) {

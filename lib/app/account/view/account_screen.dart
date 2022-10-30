@@ -46,8 +46,9 @@ class AccountScreen extends StatelessWidget {
                           Padding(
                             padding: const EdgeInsets.all(8.0),
                             child: TextStyleWidget(
-                                text:
-                                    "Hello ${context.read<UserProvider>().userList[0].userName}"),
+                              text:
+                                  "Hello ${context.read<UserProvider>().userList[0].userName}",
+                            ),
                           )
                         ],
                       ),
