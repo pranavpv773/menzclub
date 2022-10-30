@@ -13,4 +13,6 @@ class ApiEndPoints {
   static String fetchCart = "$baseUrl/api/menzclub/get-cart?user_mail=";
   static String removeCart = "$baseUrl/admin/delete-cart?_id=";
   static String orderProduct = "https://menzclub.herokuapp.com/api/order";
+  static String fetchorder =
+      "https://menzclub.herokuapp.com/api/orders/me?user_mail=";
 }

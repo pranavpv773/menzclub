@@ -11,20 +11,20 @@ String responseModelToJson(ResponseModel data) => json.encode(data.toJson());
 
 class ResponseModel {
   ResponseModel({
-    required this.status,
-    required this.message,
+    this.status,
+    this.message,
   });
 
-  bool status;
-  String message;
+  bool? status;
+  String? message;
 
   factory ResponseModel.fromJson(Map<String, dynamic> json) => ResponseModel(
-        status: json["status"],
-        message: json["message"],
+        status: json["status"] ?? false,
+        message: json["message"] ?? "",
       );
 
   Map<String, dynamic> toJson() => {
-        "status": status,
-        "message": message,
+        "status": status ?? false,
+        "message": message ?? "",
       };
 }

@@ -1,17 +1,17 @@
 // To parse this JSON data, do
 //
-//     final cartResponseModel = cartResponseModelFromJson(jsonString);
+//     final orderResponseModel = orderResponseModelFromJson(jsonString);
 
 import 'dart:convert';
 
-CartResponseModel cartResponseModelFromJson(String str) =>
-    CartResponseModel.fromJson(json.decode(str));
+OrderResponseModel orderResponseModelFromJson(String str) =>
+    OrderResponseModel.fromJson(json.decode(str));
 
-String cartResponseModelToJson(CartResponseModel data) =>
+String orderResponseModelToJson(OrderResponseModel data) =>
     json.encode(data.toJson());
 
-class CartResponseModel {
-  CartResponseModel({
+class OrderResponseModel {
+  OrderResponseModel({
     required this.orders,
     required this.status,
     required this.message,
@@ -21,8 +21,8 @@ class CartResponseModel {
   bool status;
   String message;
 
-  factory CartResponseModel.fromJson(Map<String, dynamic> json) =>
-      CartResponseModel(
+  factory OrderResponseModel.fromJson(Map<String, dynamic> json) =>
+      OrderResponseModel(
         orders: List<Order>.from(json["orders"].map((x) => Order.fromJson(x))),
         status: json["status"],
         message: json["message"],
@@ -68,13 +68,13 @@ class Order {
         "totalPrice": totalPrice,
         "address": address,
         "user_mail": userMail,
-        "orderedAt": orderedAt
+        "orderedAt": orderedAt,
       };
 }
 
 class Product {
   Product({
-    this.productId,
+    required this.productId,
     required this.productName,
     required this.productDescription,
     required this.images,
@@ -88,7 +88,7 @@ class Product {
     this.id,
   });
 
-  String? productId;
+  String productId;
   String productName;
   String productDescription;
   List<String> images;
