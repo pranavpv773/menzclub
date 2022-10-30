@@ -1,3 +1,4 @@
+import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:menz_cart_app/app/app_style/color_style.dart';
 import 'package:menz_cart_app/app/order_summary/view_model/order_get_provider.dart';
@@ -69,8 +70,8 @@ class OrderSummary extends StatelessWidget {
               itemBuilder: (context, index) {
                 final data = context.read<OrderNotifierTwo>().orderList;
                 return ListTile(
-                  leading: Image.network(
-                    data[index].products[0].images[0],
+                  leading: CachedNetworkImage(
+                    imageUrl: data[index].products[0].images[0],
                   ),
                   title: Text(
                     data[index].products[0].productName.toString(),
