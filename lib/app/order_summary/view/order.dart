@@ -1,6 +1,7 @@
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:menz_cart_app/app/app_style/color_style.dart';
+import 'package:menz_cart_app/app/order_summary/view/widgets/shimmer.dart';
 import 'package:menz_cart_app/app/order_summary/view_model/order_get_provider.dart';
 import 'package:menz_cart_app/app/products/view/product_screen.dart';
 import 'package:menz_cart_app/app/products/view_model/products_provider.dart';
@@ -19,69 +20,73 @@ class OrderSummary extends StatelessWidget {
         elevation: 0,
         title: const Text('Order Summary'),
       ),
-      body: context.watch<OrderNotifierTwo>().orderList.isEmpty
-          ? Padding(
-              padding: const EdgeInsets.all(
-                8.0,
-              ),
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.center,
-                mainAxisAlignment: MainAxisAlignment.start,
-                children: [
-                  Image.asset(
-                    'assets/lottee/emptyCart1.gif',
+      body: context.watch<OrderNotifierTwo>().isLoad
+          ? const OrderShimmerEffect()
+          : context.watch<OrderNotifierTwo>().orderList.isEmpty
+              ? Padding(
+                  padding: const EdgeInsets.all(
+                    8.0,
                   ),
-                  const Text(
-                    "You haven't placed any order yet!",
-                    style: TextStyle(
-                      fontWeight: FontWeight.bold,
-                      fontSize: 16,
-                    ),
-                  ),
-                  const Padding(
-                    padding: EdgeInsets.all(8.0),
-                    child: Text(
-                      "Order section is empty. After placing order,You can track them from here!",
-                      style: TextStyle(
-                        fontWeight: FontWeight.w400,
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.center,
+                    mainAxisAlignment: MainAxisAlignment.start,
+                    children: [
+                      Image.asset(
+                        'assets/lottee/emptyCart1.gif',
                       ),
-                    ),
-                  ),
-                  ShopTransparentButton(
-                    fn: () {
-                      RoutesProvider.nextScreen(
-                        screen: ProductsScreen(
-                          title: "All Products",
-                          list: context.read<ProductsProvider>().allProducts,
+                      const Text(
+                        "You haven't placed any order yet!",
+                        style: TextStyle(
+                          fontWeight: FontWeight.bold,
+                          fontSize: 16,
                         ),
-                      );
-                    },
-                    amount: 125,
-                    buttonBgColor: Colors.transparent.withOpacity(
-                      0.1,
-                    ),
-                    buttonColor: AppColor.primary,
-                    button: "START SHOPPING",
+                      ),
+                      const Padding(
+                        padding: EdgeInsets.all(8.0),
+                        child: Text(
+                          "Order section is empty. After placing order,You can track them from here!",
+                          style: TextStyle(
+                            fontWeight: FontWeight.w400,
+                          ),
+                        ),
+                      ),
+                      ShopTransparentButton(
+                        fn: () {
+                          RoutesProvider.nextScreen(
+                            screen: ProductsScreen(
+                              title: "All Products",
+                              list:
+                                  context.read<ProductsProvider>().allProducts,
+                            ),
+                          );
+                        },
+                        amount: 125,
+                        buttonBgColor: Colors.transparent.withOpacity(
+                          0.1,
+                        ),
+                        buttonColor: AppColor.primary,
+                        button: "START SHOPPING",
+                      ),
+                    ],
                   ),
-                ],
-              ),
-            )
-          : ListView.builder(
-              itemBuilder: (context, index) {
-                final data = context.read<OrderNotifierTwo>().orderList;
-                return ListTile(
-                  leading: CachedNetworkImage(
-                    imageUrl: data[index].products[0].images[0],
-                  ),
-                  title: Text(
-                    data[index].products[0].productName.toString(),
-                  ),
-                  trailing: Text(data[index].orderedAt.toString()),
-                  subtitle: const Text("Delivery with in One week"),
-                );
-              },
-              itemCount: context.read<OrderNotifierTwo>().orderList.length,
-            ),
+                )
+              : ListView.builder(
+                  itemBuilder: (context, index) {
+                    final data = context.read<OrderNotifierTwo>().orderList;
+
+                    return ListTile(
+                      leading: CachedNetworkImage(
+                        imageUrl: data[index].products[0].images[0],
+                      ),
+                      title: Text(
+                        data[index].products[0].productName.toString(),
+                      ),
+                      trailing: Text(data[index].orderedAt.toString()),
+                      subtitle: const Text("Delivery with in One week"),
+                    );
+                  },
+                  itemCount: context.read<OrderNotifierTwo>().orderList.length,
+                ),
     );
   }
 }

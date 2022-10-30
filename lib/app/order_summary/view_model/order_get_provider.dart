@@ -9,16 +9,21 @@ import 'package:provider/provider.dart';
 
 class OrderNotifierTwo with ChangeNotifier {
   List<Order> orderList = [];
+  bool isLoad = false;
   Future<void> fetchUserOrder(BuildContext context) async {
+    isLoad = true;
+    notifyListeners();
     final mail = context.read<UserProvider>().userList[0].userMail;
     OrderResponseModel resp = await OrderGetApiService().fetchOrder(mail);
 
     if (resp.status && resp.orders.isNotEmpty) {
       orderList.clear();
       orderList.addAll(resp.orders);
+      isLoad = false;
       notifyListeners();
     } else {
       orderList.clear();
+      isLoad = false;
       notifyListeners();
       Fluttertoast.showToast(
         msg: "Your Cart is empty",
