@@ -4,6 +4,7 @@ import 'package:menz_cart_app/app/app_style/color_style.dart';
 import 'package:menz_cart_app/app/login/view_model/login_provider.dart';
 import 'package:menz_cart_app/app/my_wishlist/view/wishlilst.dart';
 import 'package:menz_cart_app/app/order_summary/view/order.dart';
+import 'package:menz_cart_app/app/order_summary/view_model/order_get_provider.dart';
 import 'package:menz_cart_app/routes/routes.dart';
 import 'package:provider/provider.dart';
 
@@ -33,7 +34,10 @@ class AccountListTile extends StatelessWidget {
         size: 15,
       ),
       onTap: () {
-        RoutesProvider.nextScreen(screen: screen);
+        context
+            .read<OrderNotifierTwo>()
+            .fetchUserOrder(context)
+            .then((value) => RoutesProvider.nextScreen(screen: screen));
       },
     );
   }
