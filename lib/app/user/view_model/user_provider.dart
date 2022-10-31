@@ -20,6 +20,15 @@ class UserProvider extends ChangeNotifier {
       users = resp.user;
       AppTextStyles.payName = resp.user[0].userNumber;
       AppTextStyles.payEmail = resp.user[0].userMail;
+      var split = resp.user[0].address.split('\n').map((i) {
+        if (i == ",") {
+          return const Divider();
+        } else {
+          return Text(i);
+        }
+      }).toList();
+      AppTextStyles.userAddress = Column(children: split);
+      log(AppTextStyles.userAddress.toString());
       Fluttertoast.showToast(
         msg: resp.message,
         toastLength: Toast.LENGTH_LONG,

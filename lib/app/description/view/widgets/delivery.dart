@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:menz_cart_app/app/app_style/color_style.dart';
+import 'package:menz_cart_app/app/app_style/text_style.dart';
+import 'package:menz_cart_app/app/login/view_model/login_provider.dart';
 import 'package:menz_cart_app/app/sign_up/view/widgets/text_form.dart';
 import 'package:menz_cart_app/app/sign_up/view_model/signup_provider.dart';
 import 'package:menz_cart_app/app/user/view_model/user_provider.dart';
@@ -26,14 +28,9 @@ class DeliveryAddress extends StatelessWidget {
                   const Text(
                     'Deliver to:Pranav',
                   ),
-                  Wrap(
-                    children: const [
-                      Text(
-                        overflow: TextOverflow.clip,
-                        "address",
-                      ),
-                    ],
-                  ),
+                  context.watch<LoginProvider>().isLogged
+                      ? AppTextStyles.userAddress
+                      : const Text("Address"),
                 ],
               ),
               TextButton(
