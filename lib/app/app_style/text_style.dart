@@ -5,7 +5,7 @@ import 'color_style.dart';
 
 class AppTextStyles {
   static String payEmail = "";
-
+  static var userAddress;
   static int payName = 0;
   static String? fontFamily = GoogleFonts.breeSerif().fontFamily;
 

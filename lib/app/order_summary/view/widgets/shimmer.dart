@@ -7,9 +7,11 @@ class OrderShimmerEffect extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-        width: double.infinity,
-        padding: const EdgeInsets.symmetric(horizontal: 16.0, vertical: 16.0),
-        child: Column(mainAxisSize: MainAxisSize.max, children: <Widget>[
+      width: double.infinity,
+      padding: const EdgeInsets.symmetric(horizontal: 16.0, vertical: 16.0),
+      child: Column(
+        mainAxisSize: MainAxisSize.max,
+        children: <Widget>[
           Expanded(
             child: Shimmer.fromColors(
               baseColor: Colors.grey[300] as Color,
@@ -59,10 +61,12 @@ class OrderShimmerEffect extends StatelessWidget {
                     ],
                   ),
                 ),
-                itemCount: 6,
+                itemCount: 16,
               ),
             ),
           ),
-        ]));
+        ],
+      ),
+    );
   }
 }
