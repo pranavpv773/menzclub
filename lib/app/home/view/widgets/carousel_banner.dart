@@ -57,35 +57,3 @@ class HomeCarouselBanners extends StatelessWidget {
     });
   }
 }
-
-class CarouselBannerCard extends StatelessWidget {
-  const CarouselBannerCard({Key? key, required this.width, required this.list})
-      : super(key: key);
-  final List list;
-
-  final double width;
-
-  @override
-  Widget build(BuildContext context) {
-    return Consumer<HomeProvider>(builder: (context, value, _) {
-      return Container(
-        width: width / 1,
-        margin: const EdgeInsets.all(
-          6.0,
-        ),
-        decoration: BoxDecoration(
-          color: AppColor.primary,
-          borderRadius: BorderRadius.circular(
-            8.0,
-          ),
-          image: DecorationImage(
-            image: CachedNetworkImageProvider(
-              value.listBanner[0].images[1].toString(),
-            ),
-            fit: BoxFit.fill,
-          ),
-        ),
-      );
-    });
-  }
-}
