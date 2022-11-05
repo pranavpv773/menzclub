@@ -1,5 +1,6 @@
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_slidable/flutter_slidable.dart';
 import 'package:menz_cart_app/app/app_style/color_style.dart';
 import 'package:menz_cart_app/app/order_summary/view/widgets/shimmer.dart';
 import 'package:menz_cart_app/app/order_summary/view_model/order_get_provider.dart';
@@ -75,21 +76,39 @@ class OrderSummary extends StatelessWidget {
                   itemBuilder: (context, index) {
                     final data = context.read<OrderNotifierTwo>().orderList;
 
-                    return ListTile(
-                      leading: CachedNetworkImage(
-                        imageUrl: data[index].products[0].images[0],
-                      ),
-                      title: Text(
-                        data[index].products[0].productName.toString(),
-                      ),
-                      trailing: Text(
-                        DateFormat('dd-MM-yyyy').format(
-                          DateTime.fromMillisecondsSinceEpoch(
-                            data[index].orderedAt!.toInt(),
+                    return Padding(
+                      padding: const EdgeInsets.symmetric(
+                          horizontal: 8.0, vertical: 2),
+                      child: Slidable(
+                          key: const ValueKey(1),
+                          startActionPane: ActionPane(
+                            motion: const ScrollMotion(),
+                            children: [
+                              SlidableAction(
+                                onPressed: (BuildContext context) {},
+                                backgroundColor: const Color(0xFFFE4A49),
+                                foregroundColor: Colors.white,
+                                icon: Icons.cancel,
+                                label: 'Cancel Order',
+                              ),
+                            ],
                           ),
-                        ),
-                      ),
-                      subtitle: const Text("Delivery with in one week"),
+                          child: ListTile(
+                            leading: CachedNetworkImage(
+                              imageUrl: data[index].products[0].images[0],
+                            ),
+                            title: Text(
+                              data[index].products[0].productName.toString(),
+                            ),
+                            trailing: Text(
+                              DateFormat('dd-MM-yyyy').format(
+                                DateTime.fromMillisecondsSinceEpoch(
+                                  data[index].orderedAt!.toInt(),
+                                ),
+                              ),
+                            ),
+                            subtitle: const Text("Delivery with in ne week"),
+                          )),
                     );
                   },
                   itemCount: context.read<OrderNotifierTwo>().orderList.length,
