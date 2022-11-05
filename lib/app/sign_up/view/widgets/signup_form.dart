@@ -3,7 +3,6 @@ import 'package:menz_cart_app/app/app_style/color_style.dart';
 import 'package:menz_cart_app/app/sign_up/view/widgets/password_form.dart';
 import 'package:menz_cart_app/app/sign_up/view_model/signup_provider.dart';
 import 'package:provider/provider.dart';
-import 'sign_up_btn.dart';
 import 'text_form.dart';
 
 class SignupForm extends StatelessWidget {
@@ -83,10 +82,6 @@ class SignupForm extends StatelessWidget {
                   ),
                 ),
               ),
-              const Padding(
-                padding: EdgeInsets.only(top: 8.0),
-                child: SignUpButtons(primary: Colors.blue, text: "GOOGLE"),
-              )
             ],
           ),
         ),
