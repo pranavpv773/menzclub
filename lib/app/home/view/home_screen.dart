@@ -74,13 +74,14 @@ class HomeScreen extends StatelessWidget {
                               text: '   SHIRTS',
                             ),
                             Consumer<ShirtProvider>(
-                                builder: (context, valule, _) {
-                              return LargeCardsWidget(
-                                width: width,
-                                heights: heights,
-                                list: valule.shirtMapList,
-                              );
-                            }),
+                              builder: (context, valule, _) {
+                                return LargeCardsWidget(
+                                  width: width,
+                                  heights: heights,
+                                  list: valule.shirtMapList,
+                                );
+                              },
+                            ),
                           ],
                         ),
                       ),

@@ -2,12 +2,8 @@
 
 import 'package:flutter/material.dart';
 import 'package:menz_cart_app/app/app_style/color_style.dart';
-import 'package:menz_cart_app/app/filter/view/filter_screen.dart';
 import 'package:menz_cart_app/app/products/view/widgets/card_builder.dart';
 import 'package:menz_cart_app/app/utilities/view/appbar_widget.dart';
-import 'package:menz_cart_app/routes/routes.dart';
-import 'widgets/border_container.dart';
-import 'widgets/radio_btn.dart';
 
 class ProductsScreen extends StatelessWidget {
   const ProductsScreen({
@@ -41,43 +37,43 @@ class ProductsScreen extends StatelessWidget {
           ],
         ),
       ),
-      bottomNavigationBar: Container(
-        height: height / 15,
-        color: AppColor.primary,
-        child: Row(
-          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            BorderContainerWidget(
-              height: height,
-              width: width,
-              child: const MoreOptions(),
-            ),
-            BorderContainerWidget(
-              height: height,
-              width: width,
-              child: GestureDetector(
-                onTap: () {
-                  RoutesProvider.nextScreen(
-                    screen: const FilterScreen(),
-                  );
-                },
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.end,
-                  children: const [
-                    Icon(
-                      Icons.filter_alt_outlined,
-                    ),
-                    Text(
-                      'FILTER',
-                    ),
-                  ],
-                ),
-              ),
-            ),
-          ],
-        ),
-      ),
+      // bottomNavigationBar: Container(
+      //   height: height / 15,
+      //   color: AppColor.primary,
+      //   child: Row(
+      //     mainAxisAlignment: MainAxisAlignment.spaceBetween,
+      //     crossAxisAlignment: CrossAxisAlignment.start,
+      //     children: [
+      //       BorderContainerWidget(
+      //         height: height,
+      //         width: width,
+      //         child: const MoreOptions(),
+      //       ),
+      //       BorderContainerWidget(
+      //         height: height,
+      //         width: width,
+      //         child: GestureDetector(
+      //           onTap: () {
+      //             RoutesProvider.nextScreen(
+      //               screen: const FilterScreen(),
+      //             );
+      //           },
+      //           child: Row(
+      //             mainAxisAlignment: MainAxisAlignment.end,
+      //             children: const [
+      //               Icon(
+      //                 Icons.filter_alt_outlined,
+      //               ),
+      //               Text(
+      //                 'FILTER',
+      //               ),
+      //             ],
+      //           ),
+      //         ),
+      //       ),
+      //     ],
+      //   ),
+      // ),
     );
   }
 }

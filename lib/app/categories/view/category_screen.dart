@@ -1,9 +1,14 @@
 import 'package:animate_do/animate_do.dart';
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
+import 'package:menz_cart_app/app/accessories/view/accessories.dart';
 import 'package:menz_cart_app/app/categories/view_model/map.dart';
+import 'package:menz_cart_app/app/ethic_wear/view/ethic_wear.dart';
+import 'package:menz_cart_app/app/innerwear/view/inner_wear_screen.dart';
 import 'package:menz_cart_app/app/jeans/view/jeans_screen.dart';
 import 'package:menz_cart_app/app/shoes/view/shoes_screen.dart';
+import 'package:menz_cart_app/app/sportswear/view/sports_wear.dart';
+import 'package:menz_cart_app/app/trousers/view/trousers.dart';
 import 'package:menz_cart_app/app/watches/view/watches_screen.dart';
 import 'package:menz_cart_app/routes/routes.dart';
 import 'package:menz_cart_app/app/shirt/view/shirt_screen.dart';
@@ -20,7 +25,9 @@ class CategoriesScreen extends StatelessWidget {
         FadeInUpBig(
           child: const CategoryCards(
             index: 0,
-            screen: ShirtScreen(string: 'Shirts'),
+            screen: ShirtScreen(
+              string: 'Shirts',
+            ),
           ),
         ),
         FadeInUpBig(
@@ -38,13 +45,13 @@ class CategoriesScreen extends StatelessWidget {
         FadeInUpBig(
           child: const CategoryCards(
             index: 3,
-            screen: CategoriesScreen(),
+            screen: TrousersScreen(),
           ),
         ),
         FadeInUpBig(
           child: const CategoryCards(
             index: 4,
-            screen: CategoriesScreen(),
+            screen: EthicWearScreen(),
           ),
         ),
         FadeInUpBig(
@@ -56,7 +63,7 @@ class CategoriesScreen extends StatelessWidget {
         FadeInUpBig(
           child: const CategoryCards(
             index: 6,
-            screen: CategoriesScreen(),
+            screen: SportsWearScreen(),
           ),
         ),
         FadeInUpBig(
@@ -68,13 +75,13 @@ class CategoriesScreen extends StatelessWidget {
         FadeInUpBig(
           child: const CategoryCards(
             index: 8,
-            screen: CategoriesScreen(),
+            screen: InnerWearScreen(),
           ),
         ),
         FadeInUpBig(
           child: const CategoryCards(
             index: 9,
-            screen: CategoriesScreen(),
+            screen: AccessoriesScreen(),
           ),
         ),
       ],

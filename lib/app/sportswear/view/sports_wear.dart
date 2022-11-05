@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
-class EthicWearScreen extends StatelessWidget {
-  const EthicWearScreen({Key? key}) : super(key: key);
+class SportsWearScreen extends StatelessWidget {
+  const SportsWearScreen({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {

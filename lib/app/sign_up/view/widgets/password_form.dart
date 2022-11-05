@@ -9,13 +9,13 @@ class PasswordTextforms extends StatelessWidget {
     required this.icon,
     required this.text,
     required this.obscureText,
-    required this.vertical,
+    //   required this.vertical,
     required this.controller,
   }) : super(key: key);
   final IconData icon;
   final String text;
   final bool obscureText;
-  final double vertical;
+  // final double vertical;
   final TextEditingController controller;
 
   @override
