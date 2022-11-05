@@ -8,6 +8,7 @@ import 'package:menz_cart_app/app/products/view_model/products_provider.dart';
 import 'package:menz_cart_app/routes/routes.dart';
 import 'package:provider/provider.dart';
 import 'widgets/button.dart';
+import 'package:intl/intl.dart';
 
 class OrderSummary extends StatelessWidget {
   const OrderSummary({Key? key}) : super(key: key);
@@ -81,8 +82,14 @@ class OrderSummary extends StatelessWidget {
                       title: Text(
                         data[index].products[0].productName.toString(),
                       ),
-                      trailing: Text(data[index].orderedAt.toString()),
-                      subtitle: const Text("Delivery with in One week"),
+                      trailing: Text(
+                        DateFormat('dd-MM-yyyy').format(
+                          DateTime.fromMillisecondsSinceEpoch(
+                            data[index].orderedAt!.toInt(),
+                          ),
+                        ),
+                      ),
+                      subtitle: const Text("Delivery with in one week"),
                     );
                   },
                   itemCount: context.read<OrderNotifierTwo>().orderList.length,

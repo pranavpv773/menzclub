@@ -17,9 +17,10 @@ class SignUpScreen extends StatelessWidget {
         body: SingleChildScrollView(
           physics: const ScrollPhysics(),
           child: Container(
+            height: MediaQuery.of(context).size.height,
             color: AppColor.primary1,
             child: Column(
-              mainAxisAlignment: MainAxisAlignment.center,
+              mainAxisAlignment: MainAxisAlignment.start,
               children: const [
                 AvatharCard(),
                 SignupForm(),

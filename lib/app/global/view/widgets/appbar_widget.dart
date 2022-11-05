@@ -42,38 +42,33 @@ class ActiveApppbarWidget extends StatelessWidget {
               ),
             ),
             actions: <Widget>[
-              Consumer<SearchProvider>(builder: (context, value, _) {
-                return value.onTabLoad == true
-                    ? const Icon(Icons.search_off)
-                    : IconButton(
-                        icon: Icon(
-                          Icons.search,
-                          color: AppColor.primary,
-                        ),
-                        onPressed: () async {
-                          await value.onChangeFunction(context);
-                          value.searchController.text.isEmpty
-                              ? () {}
-                              : RoutesProvider.nextScreen(
-                                  screen: ProductsScreen(
-                                    title: context
-                                        .read<SearchProvider>()
-                                        .searchController
-                                        .text,
-                                    list: context.read<SearchProvider>().temp,
-                                  ),
-                                );
-                          value.searchController.clear();
-                        },
-                      );
-              }),
-              IconButton(
-                icon: Icon(
-                  Icons.notifications,
-                  color: AppColor.primary,
-                ),
-                onPressed: () {},
-              )
+              Consumer<SearchProvider>(
+                builder: (context, value, _) {
+                  return value.onTabLoad == true
+                      ? const Icon(Icons.search_off)
+                      : IconButton(
+                          icon: Icon(
+                            Icons.search,
+                            color: AppColor.primary,
+                          ),
+                          onPressed: () async {
+                            await value.onChangeFunction(context);
+                            value.searchController.text.isEmpty
+                                ? () {}
+                                : RoutesProvider.nextScreen(
+                                    screen: ProductsScreen(
+                                      title: context
+                                          .read<SearchProvider>()
+                                          .searchController
+                                          .text,
+                                      list: context.read<SearchProvider>().temp,
+                                    ),
+                                  );
+                            value.searchController.clear();
+                          },
+                        );
+                },
+              ),
             ],
           ),
         )
