@@ -2,7 +2,9 @@ import 'package:flutter/widgets.dart';
 import 'package:menz_cart_app/app/account/view/account_screen.dart';
 import 'package:menz_cart_app/app/app_style/color_style.dart';
 import 'package:menz_cart_app/app/categories/view/category_screen.dart';
+import 'package:menz_cart_app/app/categories/view/shimmer_widget.dart';
 import 'package:menz_cart_app/app/home/view/home_screen.dart';
+import 'package:menz_cart_app/app/home/view/shimmer_widget.dart';
 import 'package:menz_cart_app/app/my_cart/view/cart_screen.dart';
 // ignore: depend_on_referenced_packages
 import 'package:fluttertoast/fluttertoast.dart';
@@ -15,6 +17,12 @@ class GlobalProvider with ChangeNotifier {
     const CategoriesScreen(),
     const CartScreen(),
     const AccountScreen(),
+  ];
+  final shimmer = [
+    const ShimmerHome(),
+    const ShimmerCategories(),
+    const ShimmerCategories(),
+    const ShimmerCategories()
   ];
   DateTime? currentBackPressTime;
 

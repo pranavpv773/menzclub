@@ -30,141 +30,127 @@ class HomeScreen extends StatelessWidget {
     final heights = MediaQuery.of(context).size.height;
     return Consumer<HomeProvider>(
       builder: (context, value, _) {
-        return value.checkingFn
-            ? ListView(
-                // crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  FadeInUp(
-                    child: CircleAvatharTop(
-                      width: width,
-                    ),
-                  ),
-                  FadeInLeft(
-                    child: HomeCarouselBanners(
-                      width: width,
-                      heights: heights / 1.5,
-                      list: context.read<HomeProvider>().listBanner[0].images,
-                    ),
-                  ),
-                  FadeInRight(
-                    child: const DotIndicator(),
-                  ),
-                  FadeInDown(
-                    child: const ThirdBanner(),
-                  ),
-                  sizedBox20,
-                  FadeInLeftBig(
-                    child: Container(
-                      decoration: const BoxDecoration(
-                        image: DecorationImage(
-                          image: AssetImage(
-                            'assets/bg/firstbg.jpg',
-                          ),
-                          fit: BoxFit.cover,
-                        ),
-                      ),
-                      child: Padding(
-                        padding: const EdgeInsets.symmetric(
-                          vertical: 8.0,
-                        ),
-                        child: Column(
-                          crossAxisAlignment: CrossAxisAlignment.start,
-                          children: [
-                            const HeaderWidget(
-                              text: '   SHIRTS',
-                            ),
-                            Consumer<ShirtProvider>(
-                              builder: (context, valule, _) {
-                                return LargeCardsWidget(
-                                  width: width,
-                                  heights: heights,
-                                  list: valule.shirtMapList,
-                                );
-                              },
-                            ),
-                          ],
-                        ),
-                      ),
-                    ),
-                  ),
-                  sizedBox20,
-                  FadeInRightBig(
-                    child: const Padding(
-                      padding: EdgeInsets.all(
-                        8.0,
-                      ),
-                      child: TshirtBanner(),
-                    ),
-                  ),
-                  sizedBox20,
-                  FadeInUp(
-                    child: ContainerCardGrid(
-                      heights: heights,
-                      width: width,
-                      image: 'assets/bg/tshirtbg.jpg',
-                      name: 'T-Shirts',
-                      list: context.read<TshirtProvider>().tShirtList,
-                    ),
-                  ),
-                  FadeInRight(
-                    child: NotImportant(
-                      heights: heights,
-                      width: width,
-                      list: context.read<JeansProvider>().jeansList,
-                    ),
-                  ),
-                  FadeInDownBig(
-                    child: VerticalBulder(
-                      list: context.read<ShoesProvider>().shoesList,
-                      image: 'assets/bg/shoesbg.jpg',
-                      width: width,
-                      height: heights,
-                    ),
-                  ),
-                  sizedBox20,
-                  FadeInUpBig(
-                    child: ContainerCardGrid(
-                      heights: heights,
-                      width: width,
-                      image: 'assets/bg/shirtbg.jpg',
-                      name: 'T-Shirts',
-                      list: context.read<WatchProvider>().watchList,
-                    ),
-                  ),
-                  sizedBox20,
-                  FadeInUpBig(
-                    child: VerticalBulder(
-                      list: context.read<ShirtProvider>().shirtMapList,
-                      image: 'assets/bg/shirt2bg.jpg',
-                      width: width,
-                      height: heights,
-                    ),
-                  ),
-                  sizedBox50,
-                  ShopNowButton(
-                    screen: ProductsScreen(
-                      list: AppColor
-                          .rootScaffoldMessengerKey.currentState!.context
-                          .read<ProductsProvider>()
-                          .allProducts,
-                      title: 'ALL PRODUCTS',
-                    ),
-                    textButton: 'SHOP ALL PRODUCTS',
-                  )
-                ],
-              )
-            : Container(
+        return ListView(
+          // crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            FadeInUp(
+              child: CircleAvatharTop(
                 width: width,
-                height: heights,
+              ),
+            ),
+            FadeInLeft(
+              child: HomeCarouselBanners(
+                width: width,
+                heights: heights / 1.5,
+                list: context.read<HomeProvider>().listBanner[0].images,
+              ),
+            ),
+            FadeInRight(
+              child: const DotIndicator(),
+            ),
+            FadeInDown(
+              child: const ThirdBanner(),
+            ),
+            sizedBox20,
+            FadeInLeftBig(
+              child: Container(
                 decoration: const BoxDecoration(
                   image: DecorationImage(
                     image: AssetImage(
-                      "assets/lottee/ezgif.com-gif-maker(1).gif",
+                      'assets/bg/firstbg.jpg',
                     ),
-                    fit: BoxFit.fitHeight,
+                    fit: BoxFit.cover,
                   ),
                 ),
-              );
+                child: Padding(
+                  padding: const EdgeInsets.symmetric(
+                    vertical: 8.0,
+                  ),
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      const HeaderWidget(
+                        text: '   SHIRTS',
+                      ),
+                      Consumer<ShirtProvider>(
+                        builder: (context, valule, _) {
+                          return LargeCardsWidget(
+                            width: width,
+                            heights: heights,
+                            list: valule.shirtMapList,
+                          );
+                        },
+                      ),
+                    ],
+                  ),
+                ),
+              ),
+            ),
+            sizedBox20,
+            FadeInRightBig(
+              child: const Padding(
+                padding: EdgeInsets.all(
+                  8.0,
+                ),
+                child: TshirtBanner(),
+              ),
+            ),
+            sizedBox20,
+            FadeInUp(
+              child: ContainerCardGrid(
+                heights: heights,
+                width: width,
+                image: 'assets/bg/tshirtbg.jpg',
+                name: 'T-Shirts',
+                list: context.read<TshirtProvider>().tShirtList,
+              ),
+            ),
+            FadeInRight(
+              child: NotImportant(
+                heights: heights,
+                width: width,
+                list: context.read<JeansProvider>().jeansList,
+              ),
+            ),
+            FadeInDownBig(
+              child: VerticalBulder(
+                list: context.read<ShoesProvider>().shoesList,
+                image: 'assets/bg/shoesbg.jpg',
+                width: width,
+                height: heights,
+              ),
+            ),
+            sizedBox20,
+            FadeInUpBig(
+              child: ContainerCardGrid(
+                heights: heights,
+                width: width,
+                image: 'assets/bg/shirtbg.jpg',
+                name: 'T-Shirts',
+                list: context.read<WatchProvider>().watchList,
+              ),
+            ),
+            sizedBox20,
+            FadeInUpBig(
+              child: VerticalBulder(
+                list: context.read<ShirtProvider>().shirtMapList,
+                image: 'assets/bg/shirt2bg.jpg',
+                width: width,
+                height: heights,
+              ),
+            ),
+            sizedBox50,
+            ShopNowButton(
+              screen: ProductsScreen(
+                list: AppColor.rootScaffoldMessengerKey.currentState!.context
+                    .read<ProductsProvider>()
+                    .allProducts,
+                title: 'ALL PRODUCTS',
+              ),
+              textButton: 'SHOP ALL PRODUCTS',
+            )
+          ],
+        );
       },
     );
   }
