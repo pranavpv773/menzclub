@@ -1,17 +1,30 @@
 # Menz_Club_Application
 ![menzclub](https://user-images.githubusercontent.com/91565180/197003945-3cd5e0f7-6f3a-43fd-a633-d6d6cac656dc.jpeg)
 
-A new Flutter project.
 
-## Getting Started
+Link to DOwnload apk--- https://drive.google.com/file/d/1B-GQ1ceiNQHxgFsx3-fSlfngC72Jw-x1/view?usp=share_link
 
-This project is a starting point for a Flutter application.
+# Packages used
 
-A few resources to get you started if this is your first Flutter project:
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+ ## provider
+ ## carousel_slider
+ ## google_fonts
+ ## simple_gradient_text
+ ## liquid_swipe
+ ## flutter_rating_bar
+ ## dio
+ ## salomon_bottom_bar
+ ## razorpay_flutter
+ ## pin_code_fields
+ ## shared_preferences
+ ## animate_do
+ ## flutter_secure_storage
+ ## cached_network_image
+ ## shimmer_animation
+ ## badges
+ ## timeline_tile
+ ## percent_indicator
+ ## shimmer
+ ## intl
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
