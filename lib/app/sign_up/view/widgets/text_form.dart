@@ -28,7 +28,7 @@ class SignUpTextforms extends StatelessWidget {
             }
             return null;
           },
-          keyboardType: TextInputType.visiblePassword,
+          //  keyboardType: TextInputType.visiblePassword,
           controller: controller,
           style: TextStyle(
             color: AppColor.kGrey,

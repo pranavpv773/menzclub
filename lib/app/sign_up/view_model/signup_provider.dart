@@ -47,6 +47,11 @@ class SignUpProvider with ChangeNotifier {
             toastLength: Toast.LENGTH_LONG,
           );
         }
+      } else {
+        Fluttertoast.showToast(
+          msg: "Password not matching",
+          toastLength: Toast.LENGTH_LONG,
+        );
       }
     }
   }

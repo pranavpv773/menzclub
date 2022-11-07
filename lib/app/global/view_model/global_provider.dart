@@ -59,7 +59,10 @@ class GlobalProvider with ChangeNotifier {
         now.difference(currentBackPressTime!) > const Duration(seconds: 2)) {
       currentBackPressTime = now;
       Fluttertoast.showToast(
-          msg: "Double Tab to Exit", toastLength: Toast.LENGTH_LONG);
+          backgroundColor: AppColor.primary,
+          textColor: AppColor.kWhite,
+          msg: "Double Tab to Exit",
+          toastLength: Toast.LENGTH_LONG);
       return Future.value(false);
     }
     return Future.value(true);

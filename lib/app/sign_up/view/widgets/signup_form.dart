@@ -1,3 +1,5 @@
+import 'dart:developer';
+
 import 'package:flutter/material.dart';
 import 'package:menz_cart_app/app/app_style/color_style.dart';
 import 'package:menz_cart_app/app/sign_up/view/widgets/password_form.dart';
@@ -12,6 +14,7 @@ class SignupForm extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    log("form");
     return Padding(
       padding: const EdgeInsets.all(25.0),
       child: Form(

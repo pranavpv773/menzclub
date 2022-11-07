@@ -1,8 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:menz_cart_app/app/app_style/color_style.dart';
 import 'package:menz_cart_app/app/sign_up/view/widgets/profile_pic_card.dart';
-import 'package:menz_cart_app/app/sign_up/view_model/signup_provider.dart';
-import 'package:provider/provider.dart';
 import 'widgets/signup_form.dart';
 
 class SignUpScreen extends StatelessWidget {
@@ -10,7 +8,6 @@ class SignUpScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    context.read<SignUpProvider>().disposeControll();
     return SafeArea(
       child: Scaffold(
         resizeToAvoidBottomInset: false,
