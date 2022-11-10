@@ -55,7 +55,10 @@ class Order {
   factory Order.fromJson(Map<String, dynamic> json) => Order(
         id: json["_id"],
         products: List<Product>.from(
-            json["products"].map((x) => Product.fromJson(x))),
+          json["products"].map(
+            (x) => Product.fromJson(x),
+          ),
+        ),
         totalPrice: json["totalPrice"],
         address: json["address"],
         userMail: json["user_mail"],
