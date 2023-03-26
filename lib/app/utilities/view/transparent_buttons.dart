@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:menz_cart_app/app/app_style/color_style.dart';
 import 'package:menz_cart_app/routes/routes.dart';
 
 class GetTransparentButton extends StatelessWidget {
@@ -23,13 +22,13 @@ class GetTransparentButton extends StatelessWidget {
       margin: const EdgeInsets.all(10),
       height: 50.0,
       // ignore: deprecated_member_use
-      child: RaisedButton(
-        shape: RoundedRectangleBorder(
-          borderRadius: BorderRadius.circular(10),
-          side: BorderSide(
-            color: AppColor.primary,
-          ),
-        ),
+      child: ElevatedButton(
+        // shape: RoundedRectangleBorder(
+        //   borderRadius: BorderRadius.circular(10),
+        //   side: BorderSide(
+        //     color: AppColor.primary,
+        //   ),
+        // ),
         onPressed: () {
           if (index == 1) {
             RoutesProvider.nextScreen(screen: screen);
@@ -37,9 +36,9 @@ class GetTransparentButton extends StatelessWidget {
             RoutesProvider.removeScreenUntil(screen: screen);
           }
         },
-        padding: const EdgeInsets.all(10.0),
-        color: buttonBgColor,
-        textColor: buttonColor,
+        // padding: const EdgeInsets.all(10.0),
+        // color: buttonBgColor,
+        // textColor: buttonColor,
         child: Text(
           button,
           style: TextStyle(
