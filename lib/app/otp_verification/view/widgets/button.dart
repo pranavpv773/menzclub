@@ -27,14 +27,14 @@ class Button extends StatelessWidget {
         child: SizedBox(
           width: size.width * 0.5,
           height: 50.0,
-          child: RaisedButton(
-            elevation: 10.0,
-            color: AppColor.primary,
-            shape: RoundedRectangleBorder(
-              borderRadius: BorderRadius.circular(
-                100.0,
-              ),
-            ),
+          child: ElevatedButton(
+            // elevation: 10.0,
+            // color: AppColor.primary,
+            // shape: RoundedRectangleBorder(
+            //   borderRadius: BorderRadius.circular(
+            //     100.0,
+            //   ),
+            // ),
             onPressed: () {
               context.read<OtpVerifyProvider>().otpVerifing(context);
             },

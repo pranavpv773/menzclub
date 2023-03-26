@@ -1,4 +1,3 @@
-import 'package:badges/badges.dart';
 import 'package:flutter/material.dart';
 import 'package:menz_cart_app/app/app_style/color_style.dart';
 import 'package:menz_cart_app/app/global/view_model/global_provider.dart';
@@ -37,20 +36,23 @@ class BottomNavyWidget extends StatelessWidget {
         ),
         SalomonBottomBarItem(
           icon: Consumer<CartNotifier>(builder: (context, val, _) {
-            return val.cartList.isEmpty
-                ? const Icon(
-                    Icons.shopping_cart,
-                  )
-                : Badge(
-                    badgeColor: Colors.pink,
-                    badgeContent: Text(
-                      val.cartList.length.toString(),
-                      style: const TextStyle(color: Colors.white),
-                    ),
-                    child: const Icon(
-                      Icons.shopping_cart,
-                    ),
-                  );
+            return
+                // val.cartList.isEmpty
+                // ?
+                const Icon(
+              Icons.shopping_cart,
+            );
+            // :
+            // Badge(
+            //     badgeColor: Colors.pink,
+            //     badgeContent: Text(
+            //       val.cartList.length.toString(),
+            //       style: const TextStyle(color: Colors.white),
+            //     ),
+            //     child: const Icon(
+            //       Icons.shopping_cart,
+            //     ),
+            //   );
           }),
           title: const Text('Cart'),
           selectedColor: Colors.pink,

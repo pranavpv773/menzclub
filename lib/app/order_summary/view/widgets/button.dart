@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:menz_cart_app/app/app_style/color_style.dart';
 import 'package:menz_cart_app/app/payment/view_model/payment_screen.dart';
 import 'package:provider/provider.dart';
 import 'package:razorpay_flutter/razorpay_flutter.dart';
@@ -41,19 +40,19 @@ class ShopTransparentButton extends StatelessWidget {
         margin: const EdgeInsets.all(10),
         height: 50.0,
         // ignore: deprecated_member_use
-        child: RaisedButton(
-          shape: RoundedRectangleBorder(
-            borderRadius: BorderRadius.circular(0),
-            side: BorderSide(
-              color: AppColor.primary,
-            ),
-          ),
+        child: ElevatedButton(
+          // shape: RoundedRectangleBorder(
+          //   borderRadius: BorderRadius.circular(0),
+          //   side: BorderSide(
+          //     color: AppColor.primary,
+          //   ),
+          // ),
           onPressed: fn,
-          padding: const EdgeInsets.all(
-            10.0,
-          ),
-          color: buttonBgColor,
-          textColor: buttonColor,
+          // padding: const EdgeInsets.all(
+          //   10.0,
+          // ),
+          // color: buttonBgColor,
+          // textColor: buttonColor,
           child: Text(
             button,
             style: const TextStyle(

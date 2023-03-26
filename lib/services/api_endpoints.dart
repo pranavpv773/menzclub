@@ -1,5 +1,5 @@
 class ApiEndPoints {
-  static String baseUrl = 'https://menzclub.herokuapp.com';
+  static String baseUrl = 'https://menzclub.onrender.com';
   static String loginAPI = '$baseUrl/account/login';
   static String signUpAPI = '$baseUrl/account/signup';
   static String otpVerifyAPI = '$baseUrl/account/otp';
@@ -12,7 +12,7 @@ class ApiEndPoints {
   static String addToCartApi = '$baseUrl/api/add-to-cart';
   static String fetchCart = "$baseUrl/api/menzclub/get-cart?user_mail=";
   static String removeCart = "$baseUrl/admin/delete-cart?_id=";
-  static String orderProduct = "https://menzclub.herokuapp.com/api/order";
+  static String orderProduct = "https://menzclub.onrender.com/api/order";
   static String fetchorder =
-      "https://menzclub.herokuapp.com/api/orders/me?user_mail=";
+      "https://menzclub.onrender.com/api/orders/me?user_mail=";
 }
